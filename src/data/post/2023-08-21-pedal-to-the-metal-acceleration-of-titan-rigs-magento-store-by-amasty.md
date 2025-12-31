@@ -1,10 +1,10 @@
 ---
-title: "Pedal to the Metal: Acceleration of Titan Rig’s Magento Store by Amasty"
-publishDate: "2023-08-21T00:00:00.000Z"
-category: "Case Studies"
-author: "Mage-OS Team"
+title: 'Pedal to the Metal: Acceleration of Titan Rig’s Magento Store by Amasty'
+publishDate: '2023-08-21T00:00:00.000Z'
+category: 'Case Studies'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "![](https://mage-os.org/wp-content/uploads/2023/08/Screen-2-1024x768.png) A popular US-based provider of PC cooling components, Titan Rig, helps thousands of..."
+excerpt: '![](https://mage-os.org/wp-content/uploads/2023/08/Screen-2-1024x768.png) A popular US-based provider of PC cooling components, Titan Rig, helps thousands of...'
 ---
 
 ![](https://mage-os.org/wp-content/uploads/2023/08/Screen-2-1024x768.png)

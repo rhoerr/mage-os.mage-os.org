@@ -233,6 +233,7 @@ crontab -e
 ```
 
 Add:
+
 ```
 * * * * * /usr/bin/php /var/www/mageos/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /var/www/mageos/var/log/magento.cron.log
 ```
@@ -291,17 +292,20 @@ Edit `app/etc/env.php`:
 ### Common Issues
 
 **Permission denied errors:**
+
 ```bash
 sudo chown -R www-data:www-data /var/www/mageos
 sudo chmod -R 755 /var/www/mageos
 ```
 
 **Memory limit exceeded:**
+
 ```bash
 php -d memory_limit=4G bin/magento setup:di:compile
 ```
 
 **Static content deployment fails:**
+
 ```bash
 bin/magento setup:static-content:deploy -f --jobs=4
 ```

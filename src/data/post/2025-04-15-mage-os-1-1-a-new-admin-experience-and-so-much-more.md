@@ -1,12 +1,12 @@
 ---
-title: "Mage-OS 1.1: A new admin experience, and so much more!"
-publishDate: "2025-04-15T00:00:00.000Z"
-category: "Releases"
-author: "Mage-OS Team"
+title: 'Mage-OS 1.1: A new admin experience, and so much more!'
+publishDate: '2025-04-15T00:00:00.000Z'
+category: 'Releases'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "We are excited to announce the release of Mage-OS Distribution 1.1.0, a milestone in the development of our community project! This release packs one huge..."
+excerpt: 'We are excited to announce the release of Mage-OS Distribution 1.1.0, a milestone in the development of our community project! This release packs one huge...'
 tags:
-  - "Updates"
+  - 'Updates'
 ---
 
 We are excited to announce the release of Mage-OS Distribution 1.1.0, a milestone in the development of our community project!
@@ -23,18 +23,18 @@ As part of that, Mage-OS 1.1 adds support for PHP 8.4, drops support for PHP 8.1
 
 The latest recommended software versions are:
 
-| Composer | 2.8 |
-| --- | --- |
+| Composer      | 2.8                       |
+| ------------- | ------------------------- |
 | Elasticsearch | \-- (no longer supported) |
-| OpenSearch | 2.19 |
-| MariaDB | 11.4 |
-| MySQL | 8.4 |
-| PHP | 8.4/8.3 |
-| RabbitMQ | 4 |
-| Redis | Valkey 8 (or Redis 7.2+) |
-| Varnish | 7.6 |
-| Apache | 2.4 |
-| nginx | 1.26 |
+| OpenSearch    | 2.19                      |
+| MariaDB       | 11.4                      |
+| MySQL         | 8.4                       |
+| PHP           | 8.4/8.3                   |
+| RabbitMQ      | 4                         |
+| Redis         | Valkey 8 (or Redis 7.2+)  |
+| Varnish       | 7.6                       |
+| Apache        | 2.4                       |
+| nginx         | 1.26                      |
 
 ## A new backend experience
 
@@ -123,10 +123,10 @@ After a successful composer download, you will need to run the installer. Please
 If you are already using Magento 2.4 and PHP 8.2+, you can change to Mage-OS by running the following in SSH:
 
 ```
-composer config repositories.0 composer https://repo.mage-os.org/ && 
-    composer require mage-os/product-community-edition --no-update && 
-    composer remove magento/product-community-edition magento/composer-dependency-version-audit-plugin magento/composer-root-update-plugin --no-update && 
-    composer remove sebastian/comparator --dev --no-update && 
+composer config repositories.0 composer https://repo.mage-os.org/ &&
+    composer require mage-os/product-community-edition --no-update &&
+    composer remove magento/product-community-edition magento/composer-dependency-version-audit-plugin magento/composer-root-update-plugin --no-update &&
+    composer remove sebastian/comparator --dev --no-update &&
     composer update --no-plugins --with-all-dependencies
 ```
 

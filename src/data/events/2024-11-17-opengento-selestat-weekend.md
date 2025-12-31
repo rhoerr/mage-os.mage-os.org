@@ -1,6 +1,4 @@
 ---
-title: "Opengento Sélestat Weekend"
-date: "2024-11-17T00:00:00.000Z"
+title: 'Opengento Sélestat Weekend'
+date: '2024-11-17T00:00:00.000Z'
 ---
-
-

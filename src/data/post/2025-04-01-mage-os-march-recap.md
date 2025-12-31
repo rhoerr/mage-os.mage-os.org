@@ -1,8 +1,8 @@
 ---
-title: "Mage-OS March Recap"
-publishDate: "2025-04-01T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Mage-OS March Recap'
+publishDate: '2025-04-01T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Jonathan Visser\_ – community member          - Alin Munteanu\_ – community member          - Illya Arefiev –..."
 ---
@@ -10,11 +10,9 @@ excerpt: "- Welcome to our newest partners and members!     - Jonathan Visser\_ 
 ## **Association News**
 
 - Welcome to our newest partners and members!
-    - Jonathan Visser  – community member
-    
-    - Alin Munteanu  – community member
-    
-    - Illya Arefiev – community member
+  - Jonathan Visser  – community member
+  - Alin Munteanu  – community member
+  - Illya Arefiev – community member
 
 - You too can become a Mage-OS member and [join](/?page_id=384) our vibrant community, starting from just €10 per year!
 
@@ -62,7 +60,7 @@ The big 1.1 release is brewing. We’re syncing with Magento 2.4.8 and lining up
 - Optional Creatuity interceptor module
 
 - Possibly even a revamped web installer  
-    Testing and merges are ramping up in April.
+   Testing and merges are ramping up in April.
 
 ## **Opportunities**
 

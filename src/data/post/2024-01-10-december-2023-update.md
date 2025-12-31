@@ -1,10 +1,10 @@
 ---
-title: "December 2023 Update"
-publishDate: "2024-01-10T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'December 2023 Update'
+publishDate: '2024-01-10T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Below is our Mage-OS recap for December 2023, but first off a Happy New Year to everyone in the Magento ecosystem from all of us at Mage-OS!..."
+excerpt: 'Below is our Mage-OS recap for December 2023, but first off a Happy New Year to everyone in the Magento ecosystem from all of us at Mage-OS!...'
 ---
 
 Below is our Mage-OS recap for December 2023, but first off a Happy New Year to everyone in the Magento ecosystem from all of us at Mage-OS!
@@ -13,12 +13,12 @@ Below is our Mage-OS recap for December 2023, but first off a Happy New Year to 
 
 [![](https://mage-os.org/wp-content/uploads/2024/01/integer_net-1024x225.png)](https://www.integer-net.com/)
 
-Thank you [integer\_net](https://www.integer-net.com/) for becoming a Bronze sponsor this month!
+Thank you [integer_net](https://www.integer-net.com/) for becoming a Bronze sponsor this month!
 
 > _Mage-OS stands for everything we believe in: a strong community and creative minds._  
-> W_e love to work in a cooperative and future-oriented way - that's why we've been active in the Magento community for a long time. The foundation of Mage-OS has shown us once again that we believe in the right platform and that together we will advance the world of e-commerce!_
-> 
-> Christian Philipp, CEO at integer\_net
+> W*e love to work in a cooperative and future-oriented way - that's why we've been active in the Magento community for a long time. The foundation of Mage-OS has shown us once again that we believe in the right platform and that together we will advance the world of e-commerce!*
+>
+> Christian Philipp, CEO at integer_net
 
 If you, too, want to help us shape the future of the Magento ecosystem, join us!
 
@@ -28,7 +28,7 @@ If you, too, want to help us shape the future of the Magento ecosystem, join us!
 
 ![Magento Meetup Aachen](https://mage-os.org/wp-content/uploads/2024/01/aachen-mage-os-MA-1024x771.jpg)
 
-It was great to connect with people in Aachen! Our president, Vinai, attended and gave a talk, and you can read a nice recap of the event from integer\_net: [https://www.integer-net.com/blog\_english/magento-meetup-aachen-christmas-mage-os-magento-association-en](https://www.integer-net.com/blog_english/magento-meetup-aachen-christmas-mage-os-magento-association-en)
+It was great to connect with people in Aachen! Our president, Vinai, attended and gave a talk, and you can read a nice recap of the event from integer_net: [https://www.integer-net.com/blog_english/magento-meetup-aachen-christmas-mage-os-magento-association-en](https://www.integer-net.com/blog_english/magento-meetup-aachen-christmas-mage-os-magento-association-en)
 
 ## Magento Women Initiative
 
@@ -54,9 +54,9 @@ With those objectives in mind, we took a couple a first steps, in cooperation wi
 
 1. Europe: Dinner in Utrecht (the Netherlands) on January 22nd
 
-3. USA: Get together at [Meet Magento Florida](https://www.eventbrite.com/e/women-in-ecommerce-tickets-783175497997?aff=oddtdtcreator) on January 31th from 5.30 to 6.30pm
+2. USA: Get together at [Meet Magento Florida](https://www.eventbrite.com/e/women-in-ecommerce-tickets-783175497997?aff=oddtdtcreator) on January 31th from 5.30 to 6.30pm
 
-5. Asia: Get together at [Meet Magento India](https://www.meetmagento.in/) February 10th
+3. Asia: Get together at [Meet Magento India](https://www.meetmagento.in/) February 10th
 
 Join us on Slack for details and to register. Also [follow us on LinkedIn](https://www.linkedin.com/company/mage-os) to be notified when event registrations opens.
 
@@ -82,7 +82,7 @@ After the first day, [Mage-OS Netherlands](https://nl.mage-os.org/en/) is shouti
 
 - Where: Uncle Jim, Utrecht ([https://uncle-jim.nl/](https://uncle-jim.nl/))
 
-[Register Here](http://\(https://www.eventbrite.com/e/tickets-mage-os-wwvd-borrel-777521025317)
+[Register Here](http://(https://www.eventbrite.com/e/tickets-mage-os-wwvd-borrel-777521025317)
 
 ### Magento Stammtisch Rhein-Main
 
@@ -136,6 +136,6 @@ Don’t want to get FOMO on all the Magento events?
 
 [Bookmark our Events Calendar](/?page_id=368)
 
-* * *
+---
 
 That's all for this time! The Mage-OS team.

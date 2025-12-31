@@ -1,7 +1,7 @@
 ---
-title: "Mage-OS Live 2024"
-date: "2024-06-12T00:00:00.000Z"
-excerpt: "Join us for our 2024 annual assembly! This is the time when we review our activities for the last year, share plans for the future, and hear your voices and..."
+title: 'Mage-OS Live 2024'
+date: '2024-06-12T00:00:00.000Z'
+excerpt: 'Join us for our 2024 annual assembly! This is the time when we review our activities for the last year, share plans for the future, and hear your voices and...'
 ---
 
 Join us for our 2024 annual assembly! This is the time when we review our activities for the last year, share plans for the future, and hear your voices and votes on the future of Mage-OS.

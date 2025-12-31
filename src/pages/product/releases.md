@@ -53,72 +53,81 @@ composer update --no-plugins --with-all-dependencies
 
 ### Recommended Software Versions
 
-| Component | Version |
-|-----------|---------|
-| PHP | 8.4 / 8.3 |
-| Composer | 2.8 |
-| OpenSearch | 2.19 |
-| MariaDB | 11.4 |
-| MySQL | 8.4 |
-| RabbitMQ | 4 |
+| Component    | Version               |
+| ------------ | --------------------- |
+| PHP          | 8.4 / 8.3             |
+| Composer     | 2.8                   |
+| OpenSearch   | 2.19                  |
+| MariaDB      | 11.4                  |
+| MySQL        | 8.4                   |
+| RabbitMQ     | 4                     |
 | Redis/Valkey | Valkey 8 / Redis 7.2+ |
-| Varnish | 7.6 |
-| Apache | 2.4 |
-| nginx | 1.26 |
+| Varnish      | 7.6                   |
+| Apache       | 2.4                   |
+| nginx        | 1.26                  |
 
 ---
 
 ## Release History
 
 ### Mage-OS 1.3.1
+
 **Released:** September 2025
 **Based on:** Magento 2.4.7-p3
 
 Security patch release.
 
 ### Mage-OS 1.3.0
+
 **Released:** August 2025
 **Based on:** Magento 2.4.7-p3
 
 New features and improvements.
 
 ### Mage-OS 1.2.0
+
 **Released:** June 2025
 **Based on:** Magento 2.4.7-p2
 
 New versioning policy introduced.
 
 ### Mage-OS 1.1.0
+
 **Released:** April 2025
 **Based on:** Magento 2.4.6-p4
 
 New admin experience and more.
 
 ### Mage-OS 1.0.6
+
 **Released:** February 2025
 **Based on:** Magento 2.4.6-p4
 
 Bug fixes and improvements.
 
 ### Mage-OS 1.0.5
+
 **Released:** November 2024
 **Based on:** Magento 2.4.6-p3
 
 Security and stability updates.
 
 ### Mage-OS 1.0.4
+
 **Released:** August 2024
 **Based on:** Magento 2.4.6-p2
 
 Continued improvements.
 
 ### Mage-OS 1.0.3
+
 **Released:** July 2024
 **Based on:** Magento 2.4.6-p2
 
 Bug fixes.
 
 ### Mage-OS 1.0.0
+
 **Released:** October 2023
 **Based on:** Magento 2.4.6
 
@@ -157,13 +166,16 @@ See the [Migration Guide](/get-started/migration-guide) for detailed instruction
 ## Repositories
 
 ### Main Distribution
+
 - **Composer:** `https://repo.mage-os.org/`
 - **GitHub:** [github.com/mage-os/mageos-magento2](https://github.com/mage-os/mageos-magento2)
 
 ### Mage-OS Lab
+
 - **GitHub:** [github.com/mage-os-lab](https://github.com/mage-os-lab)
 
 ### Documentation
+
 - **DevDocs:** [devdocs.mage-os.org](https://devdocs.mage-os.org)
 
 ---

@@ -1,10 +1,10 @@
 ---
-title: "Meet Magento NL 2023 Recap - The Dutch are back"
-publishDate: "2023-11-14T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Meet Magento NL 2023 Recap - The Dutch are back'
+publishDate: '2023-11-14T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "> This post was written and submitted by Jisse Reitsma, Chair of Mage-OS Nederland, in conjunction with our global marketing working group. Thursday, November..."
+excerpt: '> This post was written and submitted by Jisse Reitsma, Chair of Mage-OS Nederland, in conjunction with our global marketing working group. Thursday, November...'
 ---
 
 > This post was written and submitted by Jisse Reitsma, Chair of [Mage-OS Nederland](https://nl.mage-os.org/https://nl.mage-os.org/), in conjunction with our global marketing working group.
@@ -41,23 +41,23 @@ Big thank you to our ten MM23NL organizers
 
 1. [Sanne Bolkenstein](https://www.linkedin.com/in/sanne-bolkenstein-12079726/)
 
-3. [Core de Reeper](https://www.linkedin.com/in/ACoAABPjuSABZBldyz5mp4bLSODwT8S8p6xoKno)
+2. [Core de Reeper](https://www.linkedin.com/in/ACoAABPjuSABZBldyz5mp4bLSODwT8S8p6xoKno)
 
-5.  [Danny Verkade](https://www.linkedin.com/in/ACoAAAB9QvcBNjD0lYsKQLVTe4jmwjdMaqllu00)
+3.  [Danny Verkade](https://www.linkedin.com/in/ACoAAAB9QvcBNjD0lYsKQLVTe4jmwjdMaqllu00)
 
-7.  [Danny Uranka](https://www.linkedin.com/in/ACoAAAd1A7oBal6qYB9RrZxb63DXTfFsecK1V90)
+4.  [Danny Uranka](https://www.linkedin.com/in/ACoAAAd1A7oBal6qYB9RrZxb63DXTfFsecK1V90)
 
-9.  [Dominique de Maa](https://www.linkedin.com/in/ACoAAACjZe0BIlcIAakmgaqmHszLRNEQNZDa1SU)
+5.  [Dominique de Maa](https://www.linkedin.com/in/ACoAAACjZe0BIlcIAakmgaqmHszLRNEQNZDa1SU)
 
-11.  [Charif Eddini](https://www.linkedin.com/in/ACoAABH9oOEBUUxPiDXyW_xcMFWg0EQ39dcD9gg)
+6.  [Charif Eddini](https://www.linkedin.com/in/ACoAABH9oOEBUUxPiDXyW_xcMFWg0EQ39dcD9gg)
 
-13.  [Henk de Gier](https://www.linkedin.com/in/ACoAAAPD49UBNG1OzCe7CctlVv09miQnyduy9yY)
+7.  [Henk de Gier](https://www.linkedin.com/in/ACoAAAPD49UBNG1OzCe7CctlVv09miQnyduy9yY)
 
-15.  [Jelle Siderius](https://www.linkedin.com/in/ACoAABB5hRwBs4G3X55ZapZlWJWdK7cGc1DvJps)
+8.  [Jelle Siderius](https://www.linkedin.com/in/ACoAABB5hRwBs4G3X55ZapZlWJWdK7cGc1DvJps)
 
-17.  [Jelle van Genderen](https://www.linkedin.com/in/ACoAAB_4wOEB6q-Jt_7x36EH3eTcP-CE9YVVUvY) 
+9.  [Jelle van Genderen](https://www.linkedin.com/in/ACoAAB_4wOEB6q-Jt_7x36EH3eTcP-CE9YVVUvY) 
 
-19. [Tom Ketels](https://www.linkedin.com/in/ACoAABlRWw0BZ4rGopCQDSPmJ7MGWR_5yhpLzdI)
+10. [Tom Ketels](https://www.linkedin.com/in/ACoAABlRWw0BZ4rGopCQDSPmJ7MGWR_5yhpLzdI)
 
 I'm kind of glad that it went this way. The board doesn't become solely responsible for events in The Netherlands: It only makes sure that people are able to organize events in such a manner that as many people as possible are reached. And on the other hand, \*anyone\* is able to create an event and have it backed up by Mage-OS Nederland, as long as the event is helping out the Magento / Adobe Commerce / Mage-OS ecosystem.
 

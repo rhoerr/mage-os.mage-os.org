@@ -12,16 +12,19 @@ Our roadmap is community-driven and transparent. See what we're working on, what
 Starting with Mage-OS 1.2, we adopted a new versioning policy:
 
 ### Major Updates (#.0.0)
+
 - **Frequency:** 2x per year, around April/May and October
 - **Content:** New features, bundled extensions, significant changes, or system requirement updates
 - **Compatibility:** Mostly compatible with Magento and existing extensions
 
 ### Minor Updates (2.#.0)
+
 - **Frequency:** Following Magento releases or security patches
 - **Content:** Security patches and compatibility updates
 - **Compatibility:** Compatible with existing installations
 
 ### Patch Updates (2.0.#)
+
 - **Frequency:** As needed for critical fixes
 - **Content:** Small but critical off-schedule fixes
 
@@ -51,21 +54,25 @@ Starting with Mage-OS 1.2, we adopted a new versioning policy:
 ## 2025 Roadmap
 
 ### Q1 2025
+
 - Monthly security patch releases
 - Documentation improvements
 - Community tooling enhancements
 
 ### Q2 2025 (April/May)
+
 - **Mage-OS 2.1** - Minor update with security patches
 - Additional Lab module graduations
 - Ecosystem integrations
 
 ### Q3 2025
+
 - Continued security updates
 - Developer experience improvements
 - Community growth initiatives
 
 ### Q4 2025 (October)
+
 - **Mage-OS 3.0** - Next major release
 - New feature development
 - System requirement updates (if needed)
@@ -104,15 +111,19 @@ Have an open source module you'd like to include? [Get in touch](https://discord
 ## How to Influence the Roadmap
 
 ### Weekly Tech Meetings
+
 Join our technical meetings every **Tuesday at 3 PM CET** on Discord. Everyone is welcome to participate, share ideas, and discuss priorities.
 
 ### GitHub Discussions
+
 Propose features, discuss implementations, and vote on priorities in our [GitHub discussions](https://github.com/mage-os/mageos-magento2/discussions).
 
 ### Become a Member
+
 Members get voting rights in our democratic governance, including roadmap priorities.
 
 ### Contribute Directly
+
 Submit pull requests, develop Lab projects, or help with documentation.
 
 ---
@@ -120,17 +131,20 @@ Submit pull requests, develop Lab projects, or help with documentation.
 ## Long-Term Vision
 
 ### Foundation (Completed)
+
 - Magento mirror distribution
 - Association governance
 - Mage-OS Distribution 1.0
 
 ### Growth (Current)
+
 - Enhanced distribution features
 - Comprehensive documentation
 - Global community expansion
 - Partner ecosystem growth
 
 ### Maturity (2026+)
+
 - Grant program for sponsored development
 - Merchant support services
 - Certification and training programs

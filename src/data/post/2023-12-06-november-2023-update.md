@@ -1,10 +1,10 @@
 ---
-title: "November 2023 Update"
-publishDate: "2023-12-06T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'November 2023 Update'
+publishDate: '2023-12-06T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "We hope that everyone in the Community had a successful Black Friday and Cyber Monday. In the meantime, while it might already be snowing in your part of the..."
+excerpt: 'We hope that everyone in the Community had a successful Black Friday and Cyber Monday. In the meantime, while it might already be snowing in your part of the...'
 ---
 
 We hope that everyone in the Community had a successful Black Friday and Cyber Monday. In the meantime, while it might already be snowing in your part of the world, here’s a recap of what has been going on recently–not just dance parties like at Meet Magento Netherlands, but also taking collaboration within the ecosystem to the next step and funding our future.
@@ -33,14 +33,14 @@ Sincere thank you to the following businesses for being the first to partner wit
 
 #### Silver Partners
 
-- [![ParadoxLabs](https://logo.clearbit.com/paradoxlabs.com)ParadoxLabs](https://opencollective.com/paradoxlabs "ParadoxLabs")
-- [![webvisum GmbH](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/5453724e-1ae6-42fa-817a-ea0c96d55b9d/logoweb450x450.png)webvisum GmbH](https://opencollective.com/webvisum-gmbh "webvisum GmbH")
-- [![Vendic](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/3f6a55b5-e02b-469f-856a-a2dc30e9f62d/vendic-logo-new.jpg)Vendic](https://opencollective.com/vendic "Vendic")
-- [![Hyvä](https://logo.clearbit.com/hyva.io)Hyvä](https://opencollective.com/hyva-themes "Hyvä")
+- [![ParadoxLabs](https://logo.clearbit.com/paradoxlabs.com)ParadoxLabs](https://opencollective.com/paradoxlabs 'ParadoxLabs')
+- [![webvisum GmbH](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/5453724e-1ae6-42fa-817a-ea0c96d55b9d/logoweb450x450.png)webvisum GmbH](https://opencollective.com/webvisum-gmbh 'webvisum GmbH')
+- [![Vendic](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/3f6a55b5-e02b-469f-856a-a2dc30e9f62d/vendic-logo-new.jpg)Vendic](https://opencollective.com/vendic 'Vendic')
+- [![Hyvä](https://logo.clearbit.com/hyva.io)Hyvä](https://opencollective.com/hyva-themes 'Hyvä')
 
 #### Bronze Partners
 
-- [![FindCanary](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/6f27f173-6bf6-4516-96eb-f5021d3d45b5/BIrd%20Copy-BIrd.png)FindCanary](https://opencollective.com/canary "FindCanary")
+- [![FindCanary](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/6f27f173-6bf6-4516-96eb-f5021d3d45b5/BIrd%20Copy-BIrd.png)FindCanary](https://opencollective.com/canary 'FindCanary')
 
 If you want to help us shape the future of the Magento ecosystem, join us!
 
@@ -95,9 +95,8 @@ On the Mage-OS end, we keep focusing on:
 - Community growth and engagement: we gather more people and bring magic to events, we widen the community's footprint on social media, carrying our positive, open and inclusive values everywhere we go
 
 - Product enhancement: improve our infrastructure so that
-    - the platform is easy and cost effective to maintain
-    
-    - it is rewarding for Magento community members to enrich it with creativity, innovation and Magento mastery
+  - the platform is easy and cost effective to maintain
+  - it is rewarding for Magento community members to enrich it with creativity, innovation and Magento mastery
 
 - Product long term support: we plan to set up a commercial entity and provide long term support to the Mage-OS eCommerce platform for merchants of all shapes and sizes.
 

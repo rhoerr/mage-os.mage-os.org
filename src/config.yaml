@@ -11,7 +11,7 @@ metadata:
   title:
     default: Mage-OS | Community-Driven Open Source Commerce
     template: '%s | Mage-OS'
-  description: "Mage-OS is a community-owned, open-source ecommerce platform built on Magento Open Source. Experience innovation, independence, and enterprise-grade performance."
+  description: 'Mage-OS is a community-owned, open-source ecommerce platform built on Magento Open Source. Experience innovation, independence, and enterprise-grade performance.'
   robots:
     index: true
     follow: true

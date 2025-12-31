@@ -9,7 +9,8 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Get Started',
-  description: 'Launch your Mage-OS ecommerce store with our comprehensive getting started guide covering installation, migration, and system requirements.',
+  description:
+    'Launch your Mage-OS ecommerce store with our comprehensive getting started guide covering installation, migration, and system requirements.',
 };
 ---
 
@@ -33,7 +34,8 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Whether you're launching a new store, migrating from Magento Open Source, or exploring Mage-OS capabilities—we've designed a fast, clear path to get you up and running.
+      Whether you're launching a new store, migrating from Magento Open Source, or exploring Mage-OS capabilities—we've
+      designed a fast, clear path to get you up and running.
     </Fragment>
   </Hero>
 
@@ -100,22 +102,19 @@ const metadata = {
       },
       {
         title: 'Step 2: <span class="font-medium">Run the Installer</span>',
-        description:
-          'Configure your database, admin user, and store settings using the Magento installer command.',
+        description: 'Configure your database, admin user, and store settings using the Magento installer command.',
         icon: 'tabler:settings',
       },
       {
         title: 'Step 3: <span class="font-medium">Deploy & Launch</span>',
-        description:
-          'Compile DI, deploy static content, and flush the cache. Your store is ready to go!',
+        description: 'Compile DI, deploy static content, and flush the cache. Your store is ready to go!',
         icon: 'tabler:rocket',
       },
       {
-        title: 'You\'re Live!',
+        title: "You're Live!",
         icon: 'tabler:check',
       },
     ]}
-    {/* TODO: Replace Unsplash placeholder with Mage-OS branded image */}
     image={{
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Getting Started with Mage-OS',
@@ -210,12 +209,8 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Ready to Begin?
-    </Fragment>
+    <Fragment slot="title"> Ready to Begin? </Fragment>
 
-    <Fragment slot="subtitle">
-      Follow our Quick Start guide to have Mage-OS running in under 30 minutes.
-    </Fragment>
+    <Fragment slot="subtitle"> Follow our Quick Start guide to have Mage-OS running in under 30 minutes. </Fragment>
   </CallToAction>
 </Layout>

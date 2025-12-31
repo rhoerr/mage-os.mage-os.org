@@ -1,10 +1,10 @@
 ---
 title: "Mage-OS Async Events: Gowri's Journey"
-publishDate: "2024-03-18T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+publishDate: '2024-03-18T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Gowri Sankar is a DevOps engineer from down under with a lot of interest in distributed systems and programming and solving problems at scale. Gowri is a..."
+excerpt: 'Gowri Sankar is a DevOps engineer from down under with a lot of interest in distributed systems and programming and solving problems at scale. Gowri is a...'
 ---
 
 Gowri Sankar is a DevOps engineer from down under with a lot of interest in distributed systems and programming and solving problems at scale. Gowri is a frequent attendee and contributor to Mage-OS via the technical working group.
@@ -45,11 +45,11 @@ We would like our integrations to be
 
 1. Fast and scalable, so we can have a high throughput stream of events enabling real-time systems like webhooks.
 
-3. Fault-tolerant. If something fails, it shouldn’t be lost in an ocean of events. We should be able to retry as many times as we want automatically and manually.
+2. Fault-tolerant. If something fails, it shouldn’t be lost in an ocean of events. We should be able to retry as many times as we want automatically and manually.
 
-5. Flexible such that modifications don’t need a code change and a deployment.
+3. Flexible such that modifications don’t need a code change and a deployment.
 
-7. Observable so that we can add telemetry tools to collect and aggregate metrics.
+4. Observable so that we can add telemetry tools to collect and aggregate metrics.
 
 <figure>
 
@@ -71,11 +71,11 @@ To provide some more flavour of what I’m talking about, we can look at how a w
 
 1. Webhooks powered by asynchronous events run in a dedicated queue consumer process. It’s possible to offload this entirely off of your main web server.
 
-3. Asynchronous events are fault-tolerant by default. The framework will retry retryable errors (think 50x error codes for HTTP) with exponential backoff.
+2. Asynchronous events are fault-tolerant by default. The framework will retry retryable errors (think 50x error codes for HTTP) with exponential backoff.
 
-5. Asynchronous events are subscription-based, it’s possible to add or disable subscriptions without needing to touch code or do a deployment.
+3. Asynchronous events are subscription-based, it’s possible to add or disable subscriptions without needing to touch code or do a deployment.
 
-7. Events are recorded in a log and they are optionally indexed into Elasticsearch, which makes it a breeze to query failures and anomalies with queries.
+4. Events are recorded in a log and they are optionally indexed into Elasticsearch, which makes it a breeze to query failures and anomalies with queries.
 
 At its core, the module provides a framework to define events that can be listened to outside of the main request thread in Magento. When we talk about asynchronous, we’re actually talking about this and not promises or futures found in other languages.
 
@@ -211,9 +211,9 @@ With that, we would have
 
 1. All `sales.order.created` events will be processed asynchronously without having a hiccup on your request thread, meaning it doesn’t affect users directly if one of those destinations is down or needs multiple retries.
 
-3. Failures and back pressure handling are taken care of by the framework. If one or both destinations are unreachable, the framework will appropriately schedule retries with backoff. If they’re still unreachable, we have an archive of events that we can replay in the future.
+2. Failures and back pressure handling are taken care of by the framework. If one or both destinations are unreachable, the framework will appropriately schedule retries with backoff. If they’re still unreachable, we have an archive of events that we can replay in the future.
 
-5. All deliveries are logged and indexed in the admin panel, which we can query using the Lucene Query Syntax \[3\].
+3. All deliveries are logged and indexed in the admin panel, which we can query using the Lucene Query Syntax \[3\].
 
 These are just the beginnings of what is possible with asynchronous events. The goal is to have wider adoption of async events just like regular events. If extension vendors and developers leverage the tools provided by the framework, it should develop into a very robust ecosystem that is standardised, functional and one that benefits everyone.
 
@@ -225,7 +225,7 @@ Now of course, I had to put on my tourist hat for the next few days and explore 
 
 Thank you, and see you next time Amsterdam!
 
-* * *
+---
 
 ###### Learn More
 
@@ -247,11 +247,11 @@ If you want to help contribute to Asnyc Events or anything else Mage-OS related 
 
 ###### References
 
-1. [https://en.wikipedia.org/wiki/Longest\_flights#Longest\_passenger\_flights](https://en.wikipedia.org/wiki/Longest_flights#Longest_passenger_flights)
+1. [https://en.wikipedia.org/wiki/Longest_flights#Longest_passenger_flights](https://en.wikipedia.org/wiki/Longest_flights#Longest_passenger_flights)
 
-3. [https://refactoring.guru/design-patterns/observer](https://refactoring.guru/design-patterns/observer)
+2. [https://refactoring.guru/design-patterns/observer](https://refactoring.guru/design-patterns/observer)
 
-5. [https://lucene.apache.org/core/2\_9\_4/queryparsersyntax.html](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
+3. [https://lucene.apache.org/core/2_9_4/queryparsersyntax.html](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 

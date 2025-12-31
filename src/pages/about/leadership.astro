@@ -68,7 +68,7 @@ const bccMembers = [
   {
     name: 'Francis Michael Gallagher',
     role: 'Business Control Committee',
-    bio: 'One of Akoova\'s leading Ecommerce Architects, in the Magento community since 2012. Strong passion for helping others and recognizing positive impacts.',
+    bio: "One of Akoova's leading Ecommerce Architects, in the Magento community since 2012. Strong passion for helping others and recognizing positive impacts.",
     country: 'UK',
   },
 ];
@@ -83,23 +83,28 @@ const bccMembers = [
 
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {boardMembers.map((member) => (
-        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-              <span class="text-primary-600 dark:text-primary-400 font-bold text-lg">
-                {member.name.split(' ').map(n => n[0]).join('')}
-              </span>
+      {
+        boardMembers.map((member) => (
+          <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                <span class="text-primary-600 dark:text-primary-400 font-bold text-lg">
+                  {member.name
+                    .split(' ')
+                    .map((n) => n[0])
+                    .join('')}
+                </span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
+                <p class="text-sm text-primary-600 dark:text-primary-400">{member.role}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
-              <p class="text-sm text-primary-600 dark:text-primary-400">{member.role}</p>
-            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+            <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">{member.country}</p>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
-          <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">{member.country}</p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
@@ -113,23 +118,28 @@ const bccMembers = [
     </div>
 
     <div class="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-      {bccMembers.map((member) => (
-        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
-              <span class="text-green-600 dark:text-green-400 font-bold text-lg">
-                {member.name.split(' ').map(n => n[0]).join('')}
-              </span>
+      {
+        bccMembers.map((member) => (
+          <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+                <span class="text-green-600 dark:text-green-400 font-bold text-lg">
+                  {member.name
+                    .split(' ')
+                    .map((n) => n[0])
+                    .join('')}
+                </span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
+                <p class="text-sm text-green-600 dark:text-green-400">{member.role}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
-              <p class="text-sm text-green-600 dark:text-green-400">{member.role}</p>
-            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+            <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">{member.country}</p>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
-          <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">{member.country}</p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
@@ -137,7 +147,8 @@ const bccMembers = [
     <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 text-center">
       <h3 class="font-bold text-lg mb-2">Interested in leadership?</h3>
       <p class="text-muted mb-4">
-        Board elections are held annually at the General Assembly. Members can nominate themselves or others for candidacy.
+        Board elections are held annually at the General Assembly. Members can nominate themselves or others for
+        candidacy.
       </p>
       <a href="/community" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
         Become a Member →

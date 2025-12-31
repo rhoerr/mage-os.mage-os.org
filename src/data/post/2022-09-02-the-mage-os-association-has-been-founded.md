@@ -1,10 +1,10 @@
 ---
-title: "The Mage-OS Association has been founded!"
-publishDate: "2022-09-02T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'The Mage-OS Association has been founded!'
+publishDate: '2022-09-02T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "It finally happened! We have founded Mage-OS as an official association registered in Poland. Huge thanks to Maciej Kalkowski, who took care of the legal..."
+excerpt: 'It finally happened! We have founded Mage-OS as an official association registered in Poland. Huge thanks to Maciej Kalkowski, who took care of the legal...'
 ---
 
 It finally happened!

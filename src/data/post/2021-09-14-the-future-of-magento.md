@@ -1,10 +1,10 @@
 ---
-title: "The Future of Magento"
-publishDate: "2021-09-14T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'The Future of Magento'
+publishDate: '2021-09-14T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Dear Magento community, With this open announcement we are letting you know that there will be a community organization driven fork of Magento. The purpose is..."
+excerpt: 'Dear Magento community, With this open announcement we are letting you know that there will be a community organization driven fork of Magento. The purpose is...'
 ---
 
 ## Open letter to the Magento Community
@@ -40,9 +40,9 @@ _This initiative has been started by the companies and individuals signed below.
 
 - _Vinai Kopp, Hyvä Themes B.V._
 
-- _Andreas von Studnitz, integer\_net GmbH_
+- _Andreas von Studnitz, integer_net GmbH_
 
-- _Fabian Schmengler, integer\_net GmbH_
+- _Fabian Schmengler, integer_net GmbH_
 
 - _Ignacio Riesco, Interactiv4 S.L._
 
@@ -77,7 +77,7 @@ _This initiative has been started by the companies and individuals signed below.
 This list is now closed, but you can subscribe to our newsletter
 
 - ![](https://www.gravatar.com/avatar/34aabcb809cc8dc6bfc57a0596211ed1) Vinai Kopp @ Hyvä-Themes B.V.
-- ![](https://www.gravatar.com/avatar/cc61e526095e0817da84aaae0eb8b88d) Julian Nuß @ integer\_net GmbH
+- ![](https://www.gravatar.com/avatar/cc61e526095e0817da84aaae0eb8b88d) Julian Nuß @ integer_net GmbH
 - ![](https://www.gravatar.com/avatar/6813450f7ef2d42314ff5b20831104b7) Barry Vd. Heuvel @ Fruitcake
 - ![](https://www.gravatar.com/avatar/eb18b62de2aa354dc8322f8e6d6384ba) Petar Borisovski @ CustomGento GmbH
 - ![](https://www.gravatar.com/avatar/da906aac56fd5d0a78fd78eae3f14e8f) Björn Meyer @ Flagbit GmbH & Co. KG
@@ -285,7 +285,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/3213720d4c2328f108e342f193d38ff9) keremhan eke @ dvs
 - ![](https://www.gravatar.com/avatar/0c154512c6c882478b82e2c7ec65d636) Thuần Lưu Quang @ Landofcoder
 - ![](https://www.gravatar.com/avatar/bc75e1c8eff385dd3ea03fb58b0f256f) Richard Jesudason
-- ![](https://www.gravatar.com/avatar/bab56d3ce124da6b8da1e6bc79f92895) Mykola Orlenko @ integer\_net GmbH
+- ![](https://www.gravatar.com/avatar/bab56d3ce124da6b8da1e6bc79f92895) Mykola Orlenko @ integer_net GmbH
 - ![](https://www.gravatar.com/avatar/dc90e3fc150ca09860c0a6706859427b) Bartosz Fluks @ Endora
 - ![](https://www.gravatar.com/avatar/9fef7ad753d743d284bc4be0281fec3a) Umit Tengiz @ umit.dev
 - ![](https://www.gravatar.com/avatar/ab8cd7abc144c472b777ba09f9813bac) Alan Dolina @ Endora
@@ -343,7 +343,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/8b4595276ebd6d1dae008e8826a10e3c) Tim Hofman @ Reach Digital
 - ![](https://www.gravatar.com/avatar/0551bb5ca14b1a241cd11252b6badd41) Carl Simpson @ Xigen
 - ![](https://www.gravatar.com/avatar/a765703cd9b4fb57ad0896573de3d3e0) Dierk Landmann @ AND Media
-- ![](https://www.gravatar.com/avatar/aade359cfa00cf2476ea31c44e24608c) Brain\_Out @ Opengento
+- ![](https://www.gravatar.com/avatar/aade359cfa00cf2476ea31c44e24608c) Brain_Out @ Opengento
 - ![](https://www.gravatar.com/avatar/0352bd0ddda39a66b464b0bfc5229a99) Jens Berg @ BergMedia
 - ![](https://www.gravatar.com/avatar/97b451124b13d341bee337ebf5305b02) Dierk Landmann @ IC Music and Apparel - impericon.com
 - ![](https://www.gravatar.com/avatar/bcfe29618c908911b379249063afaaa7) Kamlesh Luhana
@@ -784,7 +784,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/7e3bed9dbb0c5580120efdcc634718f1) Varun Patel @ Coreway Solution
 - ![](https://www.gravatar.com/avatar/c33e544e5a2910d1a099d2a45f7b528e) Vadym Moiseiuk @ Goodahead
 - ![](https://www.gravatar.com/avatar/45a75dac433ab24759232bdaa97f9672) Aamir Zia @ Aatech
-- ![](https://www.gravatar.com/avatar/2945942fc3759252b08c42cd661ec912) Matthias Walter @ run\_as\_root
+- ![](https://www.gravatar.com/avatar/2945942fc3759252b08c42cd661ec912) Matthias Walter @ run_as_root
 - ![](https://www.gravatar.com/avatar/ca3fb74f3444f96cb2432d494892d88a) Paragi
 - ![](https://www.gravatar.com/avatar/4053f8a968e4c956aa12fd8329d205a1) Vishal Surani @ MageMad
 - ![](https://www.gravatar.com/avatar/0facd353c3891dc3aed81d3f2c6e9e93) Marc Ring @ ECOPLAN E-Commerce GmbH
@@ -838,7 +838,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/ca291827ee189cfe22647a0c82e6b053) Ewald Börger
 - ![](https://www.gravatar.com/avatar/4d41b2ca32596175ee4785c98623d696) Keon Nguyen @ Inviqa
 - ![](https://www.gravatar.com/avatar/c28081e63f5a64faca5d23a6a5f88b15) Janne Nygård @ Pinja
-- ![](https://www.gravatar.com/avatar/0603e466222c717998e41a2755bc9f63) David Lambauer @ run\_as\_root GmbH
+- ![](https://www.gravatar.com/avatar/0603e466222c717998e41a2755bc9f63) David Lambauer @ run_as_root GmbH
 - ![](https://www.gravatar.com/avatar/94a2fe336114f16041e1dd84377df048) Teo Zenner
 - ![](https://www.gravatar.com/avatar/5182e4d4d40e52bd57c5739b562d6122) MaxTa @ SimiCart
 - ![](https://www.gravatar.com/avatar/8442203e853ad588c6d4332e0902cf95) Robbert Goey @ Guapa E-commerce
@@ -920,7 +920,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/d634b812a87f0cc53f4aa95965317b84) Aldo Ruiz
 - ![](https://www.gravatar.com/avatar/9a4087d76f58cf565bfb4d0aacb22358) Nangyial Ahmad @ DX
 - ![](https://www.gravatar.com/avatar/32319bd3f99dd3178bc0caa5348ccc0e) Muhammet Eyvaz
-- ![](https://www.gravatar.com/avatar/cf6483b801a0a4cbb6f6036b8f793e7f) Rico Neitzel @ run\_as\_root GmbH
+- ![](https://www.gravatar.com/avatar/cf6483b801a0a4cbb6f6036b8f793e7f) Rico Neitzel @ run_as_root GmbH
 - ![](https://www.gravatar.com/avatar/222bade898e9f4dd6a3f8121c4c7fa97) Maarten Peeters @ BigBridge
 - ![](https://www.gravatar.com/avatar/39c6b3ba4194c73fae2a0ad614b72226) Vitalii @ Boiko
 - ![](https://www.gravatar.com/avatar/e14b72cc011160908a116e45b97bd921) Ihor Soloviev
@@ -1085,7 +1085,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/b98c2d4c1e83d069de481d623d3c0d14) nainsi
 - ![](https://www.gravatar.com/avatar/b807ad819eaed34bb6e98c48a8e51917) Daniel Dragic @ Guaranteed Software
 - ![](https://www.gravatar.com/avatar/8558ffeb7a6a4298b22d99b2d0580cb5) Sunil Patel @ NextBits WebSolutions
-- ![](https://www.gravatar.com/avatar/30227451e3b9ca052c5b050b88abec76) Gowrisankar SP @ @mandy\_technologies
+- ![](https://www.gravatar.com/avatar/30227451e3b9ca052c5b050b88abec76) Gowrisankar SP @ @mandy_technologies
 - ![](https://www.gravatar.com/avatar/7e6849bcba5035733f763ab6cfffb9a4) Noureddine Ra
 - ![](https://www.gravatar.com/avatar/e64aa7f1509b24847dbeaef1317a3b57) Chris Gath
 - ![](https://www.gravatar.com/avatar/c575d40ae1fb97a1bfa3d5dea3723f83) Saul DSC Ferreira @ Ezzy Ecommerce, LLC
@@ -1184,7 +1184,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/392d3e981b520e179f9f3731e2d6301a) Gaurav Jaiswal @ Kraftors Web Solutions Pvt. Ltd
 - ![](https://www.gravatar.com/avatar/3ded1861e31397e0285c997a88ae3c54) Sven Wappler @ WapplerSystems
 - ![](https://www.gravatar.com/avatar/e357b058f79dd249be70d8024928ca76) Tomasz Gregorczyk @ Left Curly Bracket
-- ![](https://www.gravatar.com/avatar/e8c6380c44a8e3f760dbecba0f96916a) Denis Metzler @ DENIS\_METZLER
+- ![](https://www.gravatar.com/avatar/e8c6380c44a8e3f760dbecba0f96916a) Denis Metzler @ DENIS_METZLER
 - ![](https://www.gravatar.com/avatar/1a48587ee0ffc6dde70424dbbb903f4e) Mohit Kumar Arora
 - ![](https://www.gravatar.com/avatar/dc0656a1391a1179d5e051ec730c0a53) Dimtiris Giouzelis @ webo2
 - ![](https://www.gravatar.com/avatar/41fd129af7834f7dbfc21e5b9853184c) Vyacheslav Shmal @ WebO2
@@ -1266,7 +1266,7 @@ This list is now closed, but you can subscribe to our newsletter
 - ![](https://www.gravatar.com/avatar/cfdcc6c6b24fb0e10e98aeaa05fac807) Kike Martinez @ interactiv4
 - ![](https://www.gravatar.com/avatar/230b3a1eb00b3b83f82eaa3b7ad99b39) Tiago Moura @ Soul MKT
 - ![](https://www.gravatar.com/avatar/d8fcc061192359b303d9701f367d4a4c) Alexsandro Queiroz @ Soulmkt
-- ![](https://www.gravatar.com/avatar/94703ecaa9d255ab06a43b621247b248) Rajeev K Tomy @ Integer\_Net
+- ![](https://www.gravatar.com/avatar/94703ecaa9d255ab06a43b621247b248) Rajeev K Tomy @ Integer_Net
 - ![](https://www.gravatar.com/avatar/3506db38177e81715d85340487580723) Illia Sergeevich Pushnov @ PushSoft
 - ![](https://www.gravatar.com/avatar/9572ab4670585229bffe32b2849310f6) Artur @ Perspective Studio
 - ![](https://www.gravatar.com/avatar/3b254962080be1722cc6eef2243521f5) Jose Luis Oronoz Troconis

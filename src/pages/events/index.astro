@@ -14,8 +14,8 @@ const now = new Date();
 
 const sortedEvents = allEvents.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const upcomingEvents = sortedEvents.filter(event => new Date(event.data.date) >= now);
-const pastEvents = sortedEvents.filter(event => new Date(event.data.date) < now).slice(0, 20);
+const upcomingEvents = sortedEvents.filter((event) => new Date(event.data.date) >= now);
+const pastEvents = sortedEvents.filter((event) => new Date(event.data.date) < now).slice(0, 20);
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('en-US', {
@@ -34,85 +34,92 @@ function formatDate(date: Date) {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Meet the Mage-OS community at events worldwide. From Meet Magento conferences to local hackathons, there's always something happening.
+      Meet the Mage-OS community at events worldwide. From Meet Magento conferences to local hackathons, there's always
+      something happening.
     </Fragment>
   </Hero>
 
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
-    {upcomingEvents.length > 0 && (
-      <div class="mb-16">
-        <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">
-          Upcoming Events
-        </h2>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {upcomingEvents.map((event) => (
-            <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
-              <div class="text-sm text-primary dark:text-blue-400 font-medium mb-2">
-                {formatDate(event.data.date)}
+    {
+      upcomingEvents.length > 0 && (
+        <div class="mb-16">
+          <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">Upcoming Events</h2>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {upcomingEvents.map((event) => (
+              <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border border-gray-200 dark:border-slate-700">
+                <div class="text-sm text-primary dark:text-blue-400 font-medium mb-2">
+                  {formatDate(event.data.date)}
+                </div>
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">{event.data.title}</h3>
+                {event.data.location && (
+                  <p class="text-gray-600 dark:text-slate-400 text-sm mb-2">
+                    <span class="inline-flex items-center">
+                      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      {event.data.location}
+                    </span>
+                  </p>
+                )}
+                {event.data.excerpt && <p class="text-gray-600 dark:text-slate-400 text-sm">{event.data.excerpt}</p>}
+                {event.data.url && (
+                  <a
+                    href={event.data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-4 inline-block text-primary dark:text-blue-400 font-medium text-sm hover:underline"
+                  >
+                    Learn more &rarr;
+                  </a>
+                )}
               </div>
-              <h3 class="text-xl font-semibold mb-2 dark:text-white">{event.data.title}</h3>
-              {event.data.location && (
-                <p class="text-gray-600 dark:text-slate-400 text-sm mb-2">
-                  <span class="inline-flex items-center">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                    {event.data.location}
-                  </span>
-                </p>
-              )}
-              {event.data.excerpt && (
-                <p class="text-gray-600 dark:text-slate-400 text-sm">{event.data.excerpt}</p>
-              )}
-              {event.data.url && (
-                <a
-                  href={event.data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-4 inline-block text-primary dark:text-blue-400 font-medium text-sm hover:underline"
-                >
-                  Learn more &rarr;
-                </a>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )
+    }
 
-    {upcomingEvents.length === 0 && (
-      <div class="mb-16 text-center py-12 bg-gray-50 dark:bg-slate-800 rounded-lg">
-        <h2 class="text-2xl font-bold tracking-tight dark:text-white mb-4">
-          No Upcoming Events
-        </h2>
-        <p class="text-gray-600 dark:text-slate-400">
-          Check back soon for new events, or browse our past events below.
-        </p>
-      </div>
-    )}
+    {
+      upcomingEvents.length === 0 && (
+        <div class="mb-16 text-center py-12 bg-gray-50 dark:bg-slate-800 rounded-lg">
+          <h2 class="text-2xl font-bold tracking-tight dark:text-white mb-4">No Upcoming Events</h2>
+          <p class="text-gray-600 dark:text-slate-400">
+            Check back soon for new events, or browse our past events below.
+          </p>
+        </div>
+      )
+    }
 
-    {pastEvents.length > 0 && (
-      <div>
-        <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">
-          Past Events
-        </h2>
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {pastEvents.map((event) => (
-            <div class="bg-gray-50 dark:bg-slate-800/50 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
-              <div class="text-xs text-gray-500 dark:text-slate-500 font-medium mb-1">
-                {formatDate(event.data.date)}
+    {
+      pastEvents.length > 0 && (
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">Past Events</h2>
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {pastEvents.map((event) => (
+              <div class="bg-gray-50 dark:bg-slate-800/50 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+                <div class="text-xs text-gray-500 dark:text-slate-500 font-medium mb-1">
+                  {formatDate(event.data.date)}
+                </div>
+                <h3 class="text-lg font-medium dark:text-white">{event.data.title}</h3>
+                {event.data.location && (
+                  <p class="text-gray-500 dark:text-slate-500 text-sm mt-1">{event.data.location}</p>
+                )}
               </div>
-              <h3 class="text-lg font-medium dark:text-white">{event.data.title}</h3>
-              {event.data.location && (
-                <p class="text-gray-500 dark:text-slate-500 text-sm mt-1">
-                  {event.data.location}
-                </p>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )
+    }
   </section>
 </Layout>

@@ -1,6 +1,4 @@
 ---
-title: "Christmage"
-date: "2024-11-17T00:00:00.000Z"
+title: 'Christmage'
+date: '2024-11-17T00:00:00.000Z'
 ---
-
-

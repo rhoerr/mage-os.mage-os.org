@@ -2,14 +2,15 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
+import FeaturesWidget from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Features',
-  description: 'Explore Mage-OS features including performance optimization, advanced security, innovation tools, and full compatibility with Magento extensions.',
+  description:
+    'Explore Mage-OS features including performance optimization, advanced security, innovation tools, and full compatibility with Magento extensions.',
 };
 ---
 
@@ -33,14 +34,14 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Mage-OS Distribution delivers the performance, security, and flexibility enterprises demand
-      with the transparency, accessibility, and agility only true open source provides.
+      Mage-OS Distribution delivers the performance, security, and flexibility enterprises demand with the transparency,
+      accessibility, and agility only true open source provides.
     </Fragment>
   </Hero>
 
   <!-- Features Widget: Performance *************** -->
 
-  <Features
+  <FeaturesWidget
     id="performance"
     tagline="Performance"
     title="Performance at Scale"
@@ -72,14 +73,12 @@ const metadata = {
       },
       {
         title: 'Back/Forward Cache',
-        description:
-          'bfcache support enables almost instant browser navigation for cacheable pages.',
+        description: 'bfcache support enables almost instant browser navigation for cacheable pages.',
         icon: 'tabler:arrow-back-up',
       },
       {
         title: 'Speculative Preloading',
-        description:
-          'Intelligently preloads links before users click them for perceived instant navigation.',
+        description: 'Intelligently preloads links before users click them for perceived instant navigation.',
         icon: 'tabler:link',
       },
     ]}
@@ -87,7 +86,7 @@ const metadata = {
 
   <!-- Features Widget: Security *************** -->
 
-  <Features
+  <FeaturesWidget
     id="security"
     tagline="Security"
     title="Security You Can Trust"
@@ -108,26 +107,22 @@ const metadata = {
       },
       {
         title: 'Enhanced Authentication',
-        description:
-          'Two-factor authentication (2FA), OAuth 2.0 support, and role-based access control (RBAC).',
+        description: 'Two-factor authentication (2FA), OAuth 2.0 support, and role-based access control (RBAC).',
         icon: 'tabler:lock',
       },
       {
         title: 'Security Audits',
-        description:
-          'Community-led security audits and transparent vulnerability disclosure ensure rapid response.',
+        description: 'Community-led security audits and transparent vulnerability disclosure ensure rapid response.',
         icon: 'tabler:search',
       },
       {
         title: 'Strengthened Passwords',
-        description:
-          '12-character minimum length and complexity rules for enhanced account security.',
+        description: '12-character minimum length and complexity rules for enhanced account security.',
         icon: 'tabler:key',
       },
       {
         title: 'Session Management',
-        description:
-          '15-minute idle timeout enforcement and improved lockout policies protect admin accounts.',
+        description: '15-minute idle timeout enforcement and improved lockout policies protect admin accounts.',
         icon: 'tabler:clock',
       },
     ]}
@@ -135,7 +130,7 @@ const metadata = {
 
   <!-- Features Widget: Innovation *************** -->
 
-  <Features
+  <FeaturesWidget
     id="innovation"
     tagline="Innovation"
     title="Innovation Without Limits"
@@ -143,38 +138,32 @@ const metadata = {
     items={[
       {
         title: 'Modern PHP Support',
-        description:
-          'Support for PHP 8.3/8.4, Composer 2.8, and modern JavaScript frameworks.',
+        description: 'Support for PHP 8.3/8.4, Composer 2.8, and modern JavaScript frameworks.',
         icon: 'tabler:brand-php',
       },
       {
         title: 'Full Extension Ecosystem',
-        description:
-          'Compatible with 5,000+ Magento extensions while maintaining flexibility for custom development.',
+        description: 'Compatible with 5,000+ Magento extensions while maintaining flexibility for custom development.',
         icon: 'tabler:puzzle',
       },
       {
         title: 'API-First Design',
-        description:
-          'RESTful and GraphQL APIs enable headless commerce, mobile apps, and omnichannel experiences.',
+        description: 'RESTful and GraphQL APIs enable headless commerce, mobile apps, and omnichannel experiences.',
         icon: 'tabler:api',
       },
       {
         title: 'PWA Ready',
-        description:
-          'Native support for PWA Studio and third-party solutions like Vue Storefront.',
+        description: 'Native support for PWA Studio and third-party solutions like Vue Storefront.',
         icon: 'tabler:device-mobile',
       },
       {
         title: 'AI-Powered Translation',
-        description:
-          'Automatic translation using DeepL, OpenAI, or Google Gemini for global expansion.',
+        description: 'Automatic translation using DeepL, OpenAI, or Google Gemini for global expansion.',
         icon: 'tabler:language',
       },
       {
         title: 'PageBuilder Enhancements',
-        description:
-          'CMS Widget support with live previews and import/export capabilities.',
+        description: 'CMS Widget support with live previews and import/export capabilities.',
         icon: 'tabler:layout',
       },
     ]}
@@ -182,12 +171,7 @@ const metadata = {
 
   <!-- Content Widget: Comparison **************** -->
 
-  <Content
-    id="comparison"
-    tagline="Comparison"
-    title="Feature Comparison"
-    isReversed
-  >
+  <Content id="comparison" tagline="Comparison" title="Feature Comparison" isReversed>
     <Fragment slot="content">
       <div class="overflow-x-auto">
         <table class="min-w-full text-sm">
@@ -327,12 +311,8 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      See Mage-OS in Action
-    </Fragment>
+    <Fragment slot="title"> See Mage-OS in Action </Fragment>
 
-    <Fragment slot="subtitle">
-      Download the distribution and experience the difference for yourself.
-    </Fragment>
+    <Fragment slot="subtitle"> Download the distribution and experience the difference for yourself. </Fragment>
   </CallToAction>
 </Layout>

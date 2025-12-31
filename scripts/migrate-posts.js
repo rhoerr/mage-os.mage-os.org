@@ -1,6 +1,6 @@
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
-import { join, basename } from 'path';
+import { join } from 'path';
 import yaml from 'js-yaml';
 
 const WP_POSTS_DIR = '../wp-export/output/posts';
@@ -8,14 +8,14 @@ const ASTRO_POSTS_DIR = './src/data/post';
 
 // Category mapping from lowercase to title case
 const categoryMap = {
-  'updates': 'Updates',
-  'releases': 'Releases',
-  'initiatives': 'Initiatives',
+  updates: 'Updates',
+  releases: 'Releases',
+  initiatives: 'Initiatives',
   'ecommerce-insights': 'eCommerce Insights',
   'case-studies': 'Case Studies',
-  'events': 'Events',
-  'community': 'Community',
-  'technical': 'Technical',
+  events: 'Events',
+  community: 'Community',
+  technical: 'Technical',
 };
 
 function extractFrontmatter(content) {
@@ -88,7 +88,7 @@ function transformPost(filename, content) {
 
   // Add tags if there are additional categories
   if (additionalCategories.length > 0) {
-    newFrontmatter.tags = additionalCategories.map(c => categoryMap[c] || c);
+    newFrontmatter.tags = additionalCategories.map((c) => categoryMap[c] || c);
   }
 
   // Handle cover image
@@ -138,7 +138,7 @@ async function main() {
 
   // Get all markdown files from root level only
   const files = await readdir(WP_POSTS_DIR);
-  const mdFiles = files.filter(f => f.endsWith('.md') && !f.startsWith('.'));
+  const mdFiles = files.filter((f) => f.endsWith('.md') && !f.startsWith('.'));
 
   console.log(`Found ${mdFiles.length} posts to migrate`);
 

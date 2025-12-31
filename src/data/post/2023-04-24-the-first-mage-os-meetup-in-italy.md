@@ -1,10 +1,10 @@
 ---
-title: "The first Mage-OS meetup in Italy"
-publishDate: "2023-04-24T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'The first Mage-OS meetup in Italy'
+publishDate: '2023-04-24T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Hello from Italy! This is Alessandro Ronchi, on behalf of the Mage-OS Association. On April 4th, 2023, I participated as a speaker in the first Mage-OS meetup..."
+excerpt: 'Hello from Italy! This is Alessandro Ronchi, on behalf of the Mage-OS Association. On April 4th, 2023, I participated as a speaker in the first Mage-OS meetup...'
 ---
 
 Hello from Italy! This is Alessandro Ronchi, on behalf of the Mage-OS Association.

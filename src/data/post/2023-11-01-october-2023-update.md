@@ -1,10 +1,10 @@
 ---
-title: "October 2023 Update"
-publishDate: "2023-11-01T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'October 2023 Update'
+publishDate: '2023-11-01T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Another month in 2023 has passed, and yet again, we’ve got lots of updates to bring you! The big news from October is the initial release of the Mage-OS..."
+excerpt: 'Another month in 2023 has passed, and yet again, we’ve got lots of updates to bring you! The big news from October is the initial release of the Mage-OS...'
 ---
 
 Another month in 2023 has passed, and yet again, we’ve got lots of updates to bring you! The big news from October is the initial release of the Mage-OS Distribution, but we’ve also got details on our recently launched membership offering as well community updates from recent (and upcoming) events.

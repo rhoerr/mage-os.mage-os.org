@@ -31,8 +31,18 @@ collections:
           label: 'Category',
           name: 'category',
           widget: 'select',
-          options: ['Releases', 'Updates', 'Community', 'Events', 'Technical', 'Initiatives', 'eCommerce Insights', 'Case Studies'],
-          required: true
+          options:
+            [
+              'Releases',
+              'Updates',
+              'Community',
+              'Events',
+              'Technical',
+              'Initiatives',
+              'eCommerce Insights',
+              'Case Studies',
+            ],
+          required: true,
         }
       - {
           label: 'Tags',
@@ -40,7 +50,7 @@ collections:
           widget: 'list',
           allow_add: true,
           required: false,
-          field: { label: 'Tag', name: 'tag', widget: 'string' }
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
         }
       - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
       - { label: 'Author', name: 'author', widget: 'string', default: 'Mage-OS', required: false }

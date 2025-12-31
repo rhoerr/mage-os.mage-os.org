@@ -1,7 +1,5 @@
 ---
-title: "Meet Magento New York"
-date: "2024-02-23T00:00:00.000Z"
-location: "New York"
+title: 'Meet Magento New York'
+date: '2024-02-23T00:00:00.000Z'
+location: 'New York'
 ---
-
-

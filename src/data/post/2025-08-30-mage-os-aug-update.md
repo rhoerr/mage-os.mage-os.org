@@ -1,10 +1,10 @@
 ---
-title: "Mage-OS Aug Update"
-publishDate: "2025-08-30T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Mage-OS Aug Update'
+publishDate: '2025-08-30T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Conference season is right around the corner! The first stop is Meet Magento Ukraine on September 4, an excellent chance to connect with fellow Mage-OS..."
+excerpt: 'Conference season is right around the corner! The first stop is Meet Magento Ukraine on September 4, an excellent chance to connect with fellow Mage-OS...'
 ---
 
 ## **Community & Events**
@@ -27,8 +27,7 @@ Highlights of this release:
 
 - **Backend theme updates:** Freshened icons, cleaner newsletter and email template views, optimized data grids and modals, improved media galleries, refactored URL rewrites, and better LESS configuration.
 
-- **Bug fixes:** Addressed JavaScript errors, improved integration tests, enhanced LESS handling, and expanded city validation rules.  
-    
+- **Bug fixes:** Addressed JavaScript errors, improved integration tests, enhanced LESS handling, and expanded city validation rules.
 
 A big thank you goes to all contributors: Artem Kozynets, Bhushan Kumar, Fabrizio Balliano, Lucas van Staden, Ryan Hoerr, Simon Humeau (Antadis), Vinai Kopp, Vova Yatsyuk, and many others for making this release happen. 
 
@@ -210,7 +209,7 @@ We are proud to collaborate with industry leaders who believe in open source and
 
 <figcaption>
 
-[integer\_net](https://opencollective.com/integer_net)
+[integer_net](https://opencollective.com/integer_net)
 
 </figcaption>
 

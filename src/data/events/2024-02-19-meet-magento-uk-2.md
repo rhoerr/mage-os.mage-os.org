@@ -1,7 +1,7 @@
 ---
-title: "Meet Magento UK"
-date: "2024-02-19T00:00:00.000Z"
-location: "UK"
+title: 'Meet Magento UK'
+date: '2024-02-19T00:00:00.000Z'
+location: 'UK'
 excerpt: "Meet Magento UK, the world’s biggest conference for the Adobe Commerce and Magento ecosystem, is back for 2024. Hosted by legendary eCommerce agency\_JH\_for the..."
 ---
 

@@ -1,48 +1,48 @@
 # TODO: Download missing partner logos from their websites
 gold:
-  - name: "MDOQ"
-    logo: "~/assets/images/partners/mdoq.png"
-    url: "https://www.mdoq.io/"
-  - name: "Interactiv4"
-    logo: "~/assets/images/partners/interactiv4.webp"
-    url: "https://www.interactiv4.com/"
+  - name: 'MDOQ'
+    logo: '~/assets/images/partners/mdoq.png'
+    url: 'https://www.mdoq.io/'
+  - name: 'Interactiv4'
+    logo: '~/assets/images/partners/interactiv4.webp'
+    url: 'https://www.interactiv4.com/'
 
 silver:
-  - name: "ParadoxLabs"
-    logo: ""  # TODO: Add logo
-    url: "https://www.paradoxlabs.com/"
-  - name: "Hyvä Themes"
-    logo: "~/assets/images/partners/hyva.png"
-    url: "https://www.hyva.io/"
-  - name: "Vendic"
-    logo: "~/assets/images/partners/vendic.jpg"
-    url: "https://www.vendic.nl/"
-  - name: "Inchoo"
-    logo: ""  # TODO: Add logo
-    url: "https://inchoo.net/"
-  - name: "Mollie"
-    logo: ""  # TODO: Add logo
-    url: "https://www.mollie.com/"
-  - name: "WilMa Digital"
-    logo: ""  # TODO: Add logo
-    url: "https://www.wilmadigital.com/"
+  - name: 'ParadoxLabs'
+    logo: '' # TODO: Add logo
+    url: 'https://www.paradoxlabs.com/'
+  - name: 'Hyvä Themes'
+    logo: '~/assets/images/partners/hyva.png'
+    url: 'https://www.hyva.io/'
+  - name: 'Vendic'
+    logo: '~/assets/images/partners/vendic.jpg'
+    url: 'https://www.vendic.nl/'
+  - name: 'Inchoo'
+    logo: '' # TODO: Add logo
+    url: 'https://inchoo.net/'
+  - name: 'Mollie'
+    logo: '' # TODO: Add logo
+    url: 'https://www.mollie.com/'
+  - name: 'WilMa Digital'
+    logo: '' # TODO: Add logo
+    url: 'https://www.wilmadigital.com/'
 
 bronze:
-  - name: "JetRails"
-    logo: ""  # TODO: Add logo
-    url: "https://www.jetrails.com/"
-  - name: "Develo"
-    logo: ""  # TODO: Add logo
-    url: "https://develo.cz/"
-  - name: "FindCanary"
-    logo: ""  # TODO: Add logo
-    url: "https://www.findcanary.com/"
-  - name: "JH"
-    logo: ""  # TODO: Add logo
-    url: "https://www.wearejh.com/"
-  - name: "integer_net"
-    logo: "~/assets/images/partners/integer_net.png"
-    url: "https://www.integer-net.de/"
-  - name: "basecom"
-    logo: ""  # TODO: Add logo
-    url: "https://basecom.de/"
+  - name: 'JetRails'
+    logo: '' # TODO: Add logo
+    url: 'https://www.jetrails.com/'
+  - name: 'Develo'
+    logo: '' # TODO: Add logo
+    url: 'https://develo.cz/'
+  - name: 'FindCanary'
+    logo: '' # TODO: Add logo
+    url: 'https://www.findcanary.com/'
+  - name: 'JH'
+    logo: '' # TODO: Add logo
+    url: 'https://www.wearejh.com/'
+  - name: 'integer_net'
+    logo: '~/assets/images/partners/integer_net.png'
+    url: 'https://www.integer-net.de/'
+  - name: 'basecom'
+    logo: '' # TODO: Add logo
+    url: 'https://basecom.de/'

@@ -1,10 +1,10 @@
 ---
-title: "September 2023 Update"
-publishDate: "2023-09-30T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'September 2023 Update'
+publishDate: '2023-09-30T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "A big step was made thanks to our first-ever Mage-OS Hackathon! Huge thanks to David Lambauer and the Run As Root team for putting that on, and for everyone..."
+excerpt: 'A big step was made thanks to our first-ever Mage-OS Hackathon! Huge thanks to David Lambauer and the Run As Root team for putting that on, and for everyone...'
 ---
 
 ## Product

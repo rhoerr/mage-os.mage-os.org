@@ -27,9 +27,7 @@ const technicalTeam = [
   { name: 'Barbaros Selim Büyükelçi', role: 'Contributor', country: 'TR' },
 ];
 
-const documentationTeam = [
-  { name: 'David Lambauer', role: 'Lead', country: 'DE' },
-];
+const documentationTeam = [{ name: 'David Lambauer', role: 'Lead', country: 'DE' }];
 
 const companyContributions = [
   {
@@ -95,21 +93,30 @@ const companyContributions = [
     </div>
 
     <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {technicalTeam.map((member) => (
-        <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
-          <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0">
-            <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">
-              {member.name.split(' ').map(n => n[0]).join('')}
-            </span>
+      {
+        technicalTeam.map((member) => (
+          <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0">
+              <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">
+                {member.name
+                  .split(' ')
+                  .map((n) => n[0])
+                  .join('')}
+              </span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">
+                {member.role === 'Lead' ? (
+                  <span class="text-primary-600 dark:text-primary-400">{member.role}</span>
+                ) : (
+                  member.country
+                )}
+              </p>
+            </div>
           </div>
-          <div class="min-w-0">
-            <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">
-              {member.role === 'Lead' ? <span class="text-primary-600 dark:text-primary-400">{member.role}</span> : member.country}
-            </p>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
@@ -121,23 +128,32 @@ const companyContributions = [
     </div>
 
     <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-lg">
-      {documentationTeam.map((member) => (
-        <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
-          <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
-            <span class="text-green-600 dark:text-green-400 font-bold text-sm">
-              {member.name.split(' ').map(n => n[0]).join('')}
-            </span>
+      {
+        documentationTeam.map((member) => (
+          <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
+            <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
+              <span class="text-green-600 dark:text-green-400 font-bold text-sm">
+                {member.name
+                  .split(' ')
+                  .map((n) => n[0])
+                  .join('')}
+              </span>
+            </div>
+            <div class="min-w-0">
+              <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
+              <p class="text-xs text-primary-600 dark:text-primary-400">{member.role}</p>
+            </div>
           </div>
-          <div class="min-w-0">
-            <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
-            <p class="text-xs text-primary-600 dark:text-primary-400">{member.role}</p>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <p class="mt-4 text-sm text-muted">
-      Full list of Dev Docs contributors: <a href="https://github.com/mage-os/devdocs/graphs/contributors" class="text-primary-600 dark:text-primary-400 hover:underline" target="_blank">GitHub Contributors</a>
+      Full list of Dev Docs contributors: <a
+        href="https://github.com/mage-os/devdocs/graphs/contributors"
+        class="text-primary-600 dark:text-primary-400 hover:underline"
+        target="_blank">GitHub Contributors</a
+      >
     </p>
   </section>
 
@@ -149,16 +165,18 @@ const companyContributions = [
     </div>
 
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {companyContributions.map((company) => (
-        <a
-          href={company.url}
-          target="_blank"
-          class="block bg-white dark:bg-slate-900 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors"
-        >
-          <h3 class="font-bold text-gray-900 dark:text-white mb-2">{company.name}</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">{company.contribution}</p>
-        </a>
-      ))}
+      {
+        companyContributions.map((company) => (
+          <a
+            href={company.url}
+            target="_blank"
+            class="block bg-white dark:bg-slate-900 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors"
+          >
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">{company.name}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">{company.contribution}</p>
+          </a>
+        ))
+      }
     </div>
   </section>
 
@@ -170,10 +188,18 @@ const companyContributions = [
         We welcome contributions of all kinds: code, documentation, content, design, and more.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://github.com/mage-os" target="_blank" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+        <a
+          href="https://github.com/mage-os"
+          target="_blank"
+          class="text-primary-600 dark:text-primary-400 font-medium hover:underline"
+        >
           GitHub →
         </a>
-        <a href="https://discord.com/invite/nvZDVA2NdC" target="_blank" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+        <a
+          href="https://discord.com/invite/nvZDVA2NdC"
+          target="_blank"
+          class="text-primary-600 dark:text-primary-400 font-medium hover:underline"
+        >
           Discord →
         </a>
         <a href="/community" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">

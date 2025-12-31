@@ -1,10 +1,10 @@
 ---
-title: "MM23NY Follow Up: Q+A"
-publishDate: "2023-10-27T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'MM23NY Follow Up: Q+A'
+publishDate: '2023-10-27T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Thank you to all that turned out to Meet Magento 2023 in New York! It was great to connect with so many of you and share in your hopes and dreams. We got a lot..."
+excerpt: 'Thank you to all that turned out to Meet Magento 2023 in New York! It was great to connect with so many of you and share in your hopes and dreams. We got a lot...'
 ---
 
 Thank you to all that turned out to Meet Magento 2023 in New York! It was great to connect with so many of you and share in your hopes and dreams.

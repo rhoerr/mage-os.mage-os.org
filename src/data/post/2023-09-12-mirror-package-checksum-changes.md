@@ -1,8 +1,8 @@
 ---
-title: "Mirror Package Checksum Changes"
-publishDate: "2023-09-12T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Mirror Package Checksum Changes'
+publishDate: '2023-09-12T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
 excerpt: "On Saturday, the 16. September 2023, the checksum of several of the composer packages on\_mirror.mage-os.org\_will change. This will likely lead to warnings..."
 ---

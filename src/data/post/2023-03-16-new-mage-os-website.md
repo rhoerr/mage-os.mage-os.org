@@ -1,8 +1,8 @@
 ---
-title: "New Mage-OS Website"
-publishDate: "2023-03-16T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'New Mage-OS Website'
+publishDate: '2023-03-16T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
 excerpt: "We're excited to announce the launch of the brand new Mage-OS website, which brings a fresh new design, more content on Mage-OS itself, and, even more..."
 ---

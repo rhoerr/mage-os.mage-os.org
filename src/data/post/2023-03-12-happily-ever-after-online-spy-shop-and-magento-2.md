@@ -1,10 +1,10 @@
 ---
 title: "Happily ever after\_- Online Spy Shop and Magento 2"
-publishDate: "2023-03-12T00:00:00.000Z"
-category: "Case Studies"
-author: "Mage-OS Team"
+publishDate: '2023-03-12T00:00:00.000Z'
+category: 'Case Studies'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Hollywood love stories usually start with some ups and downs in a relationship and then a big showdown – preferably with a great sunset as a backdrop. True..."
+excerpt: 'Hollywood love stories usually start with some ups and downs in a relationship and then a big showdown – preferably with a great sunset as a backdrop. True...'
 ---
 
 Hollywood love stories usually start with some ups and downs in a relationship and then a big showdown – preferably with a great sunset as a backdrop. True love stories are often much simpler: You find the perfect match and stay together. In the case of Magento 2 and [Online Spy Shop](https://www.onlinespyshop.co.uk/), a UK-based company offering surveillance equipment for companies, governments and individuals, one can certainly speak of true love.
@@ -25,13 +25,13 @@ To back this, the online store has, from the beginning, certain functions consid
 
 1. Customer reviews: These show real examples of customer satisfaction to generate trust. (Do you want to implement such a powerful feature? [Read more here](https://mage-os.org/why-magento/features/marketing-seo/).)
 
-3. Site search: Helps the customer to find his product as quickly as possible without any distraction – if not wanted.
+2. Site search: Helps the customer to find his product as quickly as possible without any distraction – if not wanted.
 
-5. Content: Shows that the company has expert knowledge and is, therefore, trustworthy.
+3. Content: Shows that the company has expert knowledge and is, therefore, trustworthy.
 
-7. Live Chat: To offer superior customer service by answering in real time.
+4. Live Chat: To offer superior customer service by answering in real time.
 
-9. Address Validation verification service: Suggests validated addresses for fast and correct delivery.
+5. Address Validation verification service: Suggests validated addresses for fast and correct delivery.
 
 They also set a focus on a streamlined and user-friendly yet comprehensive checkout. Including the acceptance of all payments that they needed and being compatible with PCA Predict, they met their expectations to provide their customers with the possibility of placing an order with minimum friction. 
 
@@ -75,7 +75,7 @@ In every relationship, you’ll need to make an effort to keep the fire burning.
 
 He also found a great agency - [Foundation Commerce](https://foundationcommerce.co.uk/) \- to support him in his next growth phase using new innovative technologies like Hyvä. As Steve Robert puts it:
 
- _“Ryan’s credentials and skillset are a rare find and bringing Foundation Commerce agency onboard was the best decision we’ve made__.”_ 
+ *“Ryan’s credentials and skillset are a rare find and bringing Foundation Commerce agency onboard was the best decision we’ve made\_\_.”* 
 
 Perfect match with technology and people leads to the customer’s trust, which is the base of a longtime relationship and the “happily ever after”.
 

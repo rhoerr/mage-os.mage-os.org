@@ -120,6 +120,7 @@ Mage-OS maintains 100% compatibility with Magento Open Source extensions. Your e
 ### Themes
 
 All Magento 2 themes are fully compatible with Mage-OS, including:
+
 - Luma (default)
 - Blank (base theme)
 - Custom themes
@@ -145,6 +146,7 @@ rsync -avz production/ staging/
 ### 2. Test Migration on Staging
 
 Perform the migration on staging first and thoroughly test:
+
 - Checkout flow
 - Admin panel functionality
 - Third-party integrations
@@ -153,6 +155,7 @@ Perform the migration on staging first and thoroughly test:
 ### 3. Schedule Maintenance Window
 
 For the final switchover:
+
 1. Enable maintenance mode
 2. Sync any database changes
 3. Perform migration
@@ -202,6 +205,7 @@ After successful migration:
 ### Verify New Features
 
 Mage-OS 2.0 includes:
+
 - PCI DSS 4.0 compliance settings
 - AI-powered translation (requires API key)
 - Theme optimization features

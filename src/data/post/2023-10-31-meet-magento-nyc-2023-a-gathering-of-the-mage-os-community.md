@@ -1,10 +1,10 @@
 ---
-title: "Meet Magento NYC 2023: A Gathering of the Mage-OS Community"
-publishDate: "2023-10-31T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Meet Magento NYC 2023: A Gathering of the Mage-OS Community'
+publishDate: '2023-10-31T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "October’s cool New York City breeze witnessed the confluence of Magento aficionados. Nestled in the heart of the city, the New World stage off-broadway theater..."
+excerpt: 'October’s cool New York City breeze witnessed the confluence of Magento aficionados. Nestled in the heart of the city, the New World stage off-broadway theater...'
 ---
 
 ## Setting the Stage in The Big Apple

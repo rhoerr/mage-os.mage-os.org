@@ -1,8 +1,8 @@
 ---
 title: "We're Hiring! Project Manager / Chief of Staff\_Role"
-publishDate: "2024-03-13T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+publishDate: '2024-03-13T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
 excerpt: "Due to the funds raised from our generous partners and members since we opened membership last September, we're now looking to make our first hire to..."
 ---
@@ -13,7 +13,7 @@ The initial role we're looking to fill is for a part-time Project Manager / Chie
 
 To apply or for more information please email [board@mage-os.org](mailto:board@mage-os.org) by Friday, March 22.
 
-* * *
+---
 
 ### Job Description
 
@@ -30,11 +30,9 @@ Project Manager / Chief of Staff (part time)
 ##### Core Tasks
 
 - Attend all the Mage-OS meetings:
-    - Content Mondays 4pm CET
-    
-    - Tech Tuesdays 3pm CET
-    
-    - Board Wednesdays 3pm CET
+  - Content Mondays 4pm CET
+  - Tech Tuesdays 3pm CET
+  - Board Wednesdays 3pm CET
 
 - Drive the agenda, and determine tasks, owners, next steps, and timelines
 
@@ -81,7 +79,7 @@ Project Manager / Chief of Staff (part time)
 ##### What you get
 
 - Salary range: up to €12,000 per year based on 8-16 hours per week  
-    Negotiable based on experience and available hours
+   Negotiable based on experience and available hours
 
 - Remote work, Flexibility (except for the Committee times)
 
@@ -91,7 +89,7 @@ Project Manager / Chief of Staff (part time)
 
 - Great organizational culture and work environment where you will feel rewarded, appreciated, and motivated
 
-* * *
+---
 
 ### Apply now
 

@@ -1,10 +1,10 @@
 ---
-title: "Mage OS Sept Update"
-publishDate: "2025-10-01T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Mage OS Sept Update'
+publishDate: '2025-10-01T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "Meet Magento Italy was attended by several Mage-OS contributors. While the event was more marketing-oriented with fewer technical sessions, the networking..."
+excerpt: 'Meet Magento Italy was attended by several Mage-OS contributors. While the event was more marketing-oriented with fewer technical sessions, the networking...'
 ---
 
 ## **Events and Community Engagement**
@@ -45,14 +45,11 @@ Several community and lab modules received updates, including a geoIP redirect m
 
 ## **Technical Highlights**
 
-- A new version of **Magerun** was released with support for creating Magento 2 module skeletons.  
-    
+- A new version of **Magerun** was released with support for creating Magento 2 module skeletons.
 
-- Experiments with **headless Magento demos** showcased GraphQL API usage and potential for multi-platform storefronts.  
-    
+- Experiments with **headless Magento demos** showcased GraphQL API usage and potential for multi-platform storefronts.
 
-- CSP compliance improvements remain on the agenda, with ongoing discussions about GDPR and security considerations.  
-    
+- CSP compliance improvements remain on the agenda, with ongoing discussions about GDPR and security considerations.
 
 - The SeaVoice bot continues to provide free meeting transcription, working with around 80-90% accuracy.
 
@@ -182,7 +179,7 @@ We are proud to collaborate with industry leaders who believe in open source and
 
 <figcaption>
 
-[integer\_net](https://opencollective.com/integer_net)
+[integer_net](https://opencollective.com/integer_net)
 
 </figcaption>
 

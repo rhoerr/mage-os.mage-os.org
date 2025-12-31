@@ -121,7 +121,7 @@ async function main() {
 
   // Get all markdown files
   const files = await readdir(WP_EVENTS_DIR);
-  const mdFiles = files.filter(f => f.endsWith('.md') && !f.startsWith('.'));
+  const mdFiles = files.filter((f) => f.endsWith('.md') && !f.startsWith('.'));
 
   console.log(`Found ${mdFiles.length} events to migrate`);
 

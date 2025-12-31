@@ -19,6 +19,7 @@ Before you begin, ensure you have:
 - **Web server** (Apache 2.4+ or Nginx 1.26+) configured
 
 **Don't have a development environment?** We recommend:
+
 - [DDEV](https://ddev.com/) - Docker-based, easiest setup
 - [Warden](https://warden.dev/) - Docker-based, Magento-focused
 - [Lando](https://lando.dev/) - Docker-based, flexible
@@ -34,6 +35,7 @@ composer create-project --repository-url=https://repo.mage-os.org/ mage-os/proje
 ```
 
 **What this does:**
+
 - Downloads Mage-OS Distribution and all dependencies
 - Sets up the basic file structure
 - Configures composer autoloading
@@ -83,6 +85,7 @@ bin/magento setup:install \
 ```
 
 **Replace these values with your own:**
+
 - `yourdomain.local` → Your local or production domain
 - Database credentials
 - Admin account details
@@ -134,12 +137,15 @@ bin/magento deploy:mode:set production
 ## Step 6: Access Your Store
 
 ### Storefront
+
 Navigate to: `http://yourdomain.local/`
 
 ### Admin Panel
+
 Navigate to: `http://yourdomain.local/admin`
 
 **Login Credentials:**
+
 - **Username:** admin (or what you specified)
 - **Password:** Admin123! (or what you specified)
 
@@ -168,6 +174,7 @@ crontab -e
 ```
 
 Add:
+
 ```
 * * * * * /usr/bin/php /var/www/html/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /var/www/html/var/log/magento.cron.log
 ```
@@ -187,6 +194,7 @@ bin/magento cache:flush
 ### 404 errors on storefront pages
 
 Enable Apache mod_rewrite:
+
 ```bash
 sudo a2enmod rewrite
 sudo systemctl restart apache2
@@ -201,6 +209,7 @@ php -d memory_limit=4G /usr/local/bin/composer create-project ...
 ### OpenSearch connection failed
 
 Verify OpenSearch is running:
+
 ```bash
 curl http://localhost:9200
 ```

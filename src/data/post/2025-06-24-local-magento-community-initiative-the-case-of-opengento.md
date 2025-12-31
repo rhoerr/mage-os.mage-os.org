@@ -1,10 +1,10 @@
 ---
-title: "Local Magento Community initiative: the case of Opengento"
-publishDate: "2025-06-24T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Local Magento Community initiative: the case of Opengento'
+publishDate: '2025-06-24T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
-excerpt: "On 25th March, a couple of Mage-OS active members attended the first ever Meet Magento France, and since many recaps have already been published online, we..."
+excerpt: 'On 25th March, a couple of Mage-OS active members attended the first ever Meet Magento France, and since many recaps have already been published online, we...'
 ---
 
 On 25th March, a couple of Mage-OS active members attended the first ever [Meet Magento France](https://fr.meet-magento.com/), and since [many recaps](https://www.linkedin.com/search/results/all/?keywords=%23mm25fr&origin=GLOBAL_SEARCH_HEADER&sid=JNM) have already been published online, we thought we’d provide a different angle to the story and shed more light on the organisation that was behind this whole event.
@@ -44,9 +44,8 @@ Their mission is to 
 - Promote the Magento Open Source initiatives
 
 - Organize events for the Magento Community
-    - Weekend Opengento (developer paradise like)
-    
-    - Meetups (networking)
+  - Weekend Opengento (developer paradise like)
+  - Meetups (networking)
 
 - Publish Open-Source modules for free on packagist! ([https://github.com/opengento](https://github.com/opengento))
 

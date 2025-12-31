@@ -1,8 +1,8 @@
 ---
-title: "Mage-OS Sept Recap"
-publishDate: "2024-10-01T00:00:00.000Z"
-category: "Updates"
-author: "Mage-OS Team"
+title: 'Mage-OS Sept Recap'
+publishDate: '2024-10-01T00:00:00.000Z'
+category: 'Updates'
+author: 'Mage-OS Team'
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Ricardo Muñoz Zuñiga\_ - community member          - Michiel Gerritsen - professional member - You too can..."
 ---
@@ -10,12 +10,10 @@ excerpt: "- Welcome to our newest partners and members!     - Ricardo Muñoz Zu�
 ## **Association News**
 
 - Welcome to our newest partners and members!
-    - Ricardo Muñoz Zuñiga  - community member
-    
-    - Michiel Gerritsen - professional member
+  - Ricardo Muñoz Zuñiga  - community member
+  - Michiel Gerritsen - professional member
 
-- You too can become a Mage-OS member and [join](/?page_id=384) our vibrant community, starting from just €10 per year!  
-    
+- You too can become a Mage-OS member and [join](/?page_id=384) our vibrant community, starting from just €10 per year!
 
 **Our first Release Manager**
 
@@ -69,23 +67,19 @@ Great insights and visuals from the event—check out the photos on LinkedIn! Fe
 
 ## **Opportunities**
 
-- Want to help promote Magento and Mage-OS? Join our weekly marketing meeting, public on [Discord](http://chat.mage-os.org/) at 4 PM CET/3 PM UTC / 10 AM EST every Monday: chat.mage-os.org  
-    
+- Want to help promote Magento and Mage-OS? Join our weekly marketing meeting, public on [Discord](http://chat.mage-os.org/) at 4 PM CET/3 PM UTC / 10 AM EST every Monday: chat.mage-os.org
 
-- Have a contribution idea or interested in the Mage-OS Distribution? Join our weekly tech meetings, public on [Discord](http://chat.mage-os.org/) at 3 PM CET / 2 PM UTC / 9 AM EST every Tuesday: chat.mage-os.org  
-    
+- Have a contribution idea or interested in the Mage-OS Distribution? Join our weekly tech meetings, public on [Discord](http://chat.mage-os.org/) at 3 PM CET / 2 PM UTC / 9 AM EST every Tuesday: chat.mage-os.org
 
 - We’re looking for new features to enhance Mage-OS this year that will help to modernize and excite merchants. This might include AI enhancements, low/no code processes, or more. Talk to Vinai Kopp or #tech if you’re interested!
 
 ### **Upcoming Events**
 
-Stay updated with the latest events and gatherings in the worldwide Magento community:  
+Stay updated with the latest events and gatherings in the worldwide Magento community:
 
-- [Meet Magento New York](https://meetmagentonyc.com/) - 10 October 2024, New York  
-    
+- [Meet Magento New York](https://meetmagentonyc.com/) - 10 October 2024, New York
 
-- [Meet Magento NL](https://nl.meet-magento.com/) – 31 October 2024, in Amsterdam  
-    
+- [Meet Magento NL](https://nl.meet-magento.com/) – 31 October 2024, in Amsterdam
 
 Check out our [events page](/?page_id=2587).
 
