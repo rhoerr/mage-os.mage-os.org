@@ -93,7 +93,7 @@ export const footerData = {
     { text: 'Imprint', href: getPermalink('/imprint') },
   ],
   socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/maborak-mage-os/' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/mage-os/' },
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/mage-os' },
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.com/invite/nvZDVA2NdC' },
   ],
