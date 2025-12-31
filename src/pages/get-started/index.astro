@@ -1,0 +1,220 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Get Started',
+  description: 'Launch your Mage-OS ecommerce store with our comprehensive getting started guide covering installation, migration, and system requirements.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Get Started"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Quick Start Guide',
+        href: '/get-started/quick-start',
+        icon: 'tabler:rocket',
+      },
+      { text: 'Migration Guide', href: '/get-started/migration-guide' },
+    ]}
+  >
+    <Fragment slot="title">
+      Your Journey to <span class="text-accent dark:text-white">Open-Source Commerce</span> Starts Here
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Whether you're launching a new store, migrating from Magento Open Source, or exploring Mage-OS capabilities—we've designed a fast, clear path to get you up and running.
+    </Fragment>
+  </Hero>
+
+  <!-- Features Widget: Choose Your Path *************** -->
+
+  <Features
+    tagline="Choose Your Path"
+    title="How Would You Like to Start?"
+    items={[
+      {
+        title: 'New to Mage-OS?',
+        description:
+          'Launch your first project in under 30 minutes with our Quick Start guide. Perfect for new installations and fresh projects.',
+        icon: 'tabler:rocket',
+        callToAction: {
+          text: 'Quick Start Guide',
+          href: '/get-started/quick-start',
+        },
+      },
+      {
+        title: 'Migrating from Magento?',
+        description:
+          'Seamlessly transition from Magento Open Source with zero downtime and full compatibility. Keep your existing extensions and themes.',
+        icon: 'tabler:refresh',
+        callToAction: {
+          text: 'Migration Guide',
+          href: '/get-started/migration-guide',
+        },
+      },
+      {
+        title: 'Custom Installation?',
+        description:
+          'Explore detailed installation methods for Docker, cloud hosting, local development, and production environments.',
+        icon: 'tabler:settings',
+        callToAction: {
+          text: 'Installation Guide',
+          href: '/get-started/installation',
+        },
+      },
+      {
+        title: 'Planning Your Setup?',
+        description:
+          'Review technical prerequisites, server requirements, and compatibility information before you begin.',
+        icon: 'tabler:checklist',
+        callToAction: {
+          text: 'System Requirements',
+          href: '/get-started/system-requirements',
+        },
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Quick Start Overview"
+    subtitle="Get Mage-OS running in three simple steps"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Install via Composer</span>',
+        description:
+          '<code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm">composer create-project --repository-url=https://repo.mage-os.org/ mage-os/project-community-edition .</code>',
+        icon: 'tabler:terminal-2',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Run the Installer</span>',
+        description:
+          'Configure your database, admin user, and store settings using the Magento installer command.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Deploy & Launch</span>',
+        description:
+          'Compile DI, deploy static content, and flush the cache. Your store is ready to go!',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'You\'re Live!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Getting Started with Mage-OS',
+    }}
+  />
+
+  <!-- Features2 Widget: Requirements ************** -->
+
+  <Features2
+    title="What You'll Need"
+    tagline="Prerequisites"
+    items={[
+      {
+        title: 'PHP 8.3 or 8.4',
+        description: 'Modern PHP version with required extensions',
+        icon: 'tabler:brand-php',
+      },
+      {
+        title: 'MySQL 8.4 or MariaDB 11.4',
+        description: 'Database server for storing your data',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Composer 2.8+',
+        description: 'PHP dependency manager',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'OpenSearch 2.19',
+        description: 'Search engine for catalog and site search',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Redis or Valkey',
+        description: 'For cache and session storage',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Web Server',
+        description: 'Apache 2.4 or nginx 1.26',
+        icon: 'tabler:server',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features2 Widget: Common Scenarios ************** -->
+
+  <Features2
+    title="Common Deployment Scenarios"
+    tagline="Environments"
+    items={[
+      {
+        title: 'Local Development',
+        description: 'Docker with DDEV or Warden, perfect for developers testing features or building extensions.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Cloud Hosting',
+        description: 'Deploy to AWS, Google Cloud, Azure, or managed Magento hosting providers like Hypernode.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Shared Hosting',
+        description: 'Budget-friendly option for small stores with SSH and adequate resources.',
+        icon: 'tabler:server-2',
+      },
+      {
+        title: 'Enterprise Infrastructure',
+        description: 'High-availability, multi-server setups with load balancing and dedicated resources.',
+        icon: 'tabler:building',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Quick Start Guide',
+        href: '/get-started/quick-start',
+        icon: 'tabler:rocket',
+      },
+      {
+        text: 'View Documentation',
+        href: '/documentation',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Begin?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Follow our Quick Start guide to have Mage-OS running in under 30 minutes.
+    </Fragment>
+  </CallToAction>
+</Layout>
