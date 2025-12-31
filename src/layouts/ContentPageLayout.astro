@@ -1,0 +1,43 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  frontmatter: {
+    title?: string;
+    description?: string;
+    tagline?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+const metadata: MetaData = {
+  title: frontmatter?.title,
+  description: frontmatter?.description,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    {frontmatter.tagline && (
+      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">
+        {frontmatter.tagline}
+      </p>
+    )}
+    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter">
+      {frontmatter.title}
+    </h1>
+    {frontmatter.description && (
+      <p class="mt-4 text-xl text-muted">
+        {frontmatter.description}
+      </p>
+    )}
+    <div
+      class="mx-auto prose prose-lg max-w-4xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 prose-table:w-full prose-th:text-left prose-th:py-2 prose-th:px-4 prose-td:py-2 prose-td:px-4 prose-tr:border-b dark:prose-tr:border-gray-700"
+    >
+      <slot />
+    </div>
+  </section>
+</Layout>
