@@ -66,10 +66,18 @@ function transformPost(filename, content) {
   const primaryCategory = categories[0] || 'updates';
   const additionalCategories = categories.slice(1);
 
+  // Parse date - handle both string and Date object
+  let dateStr;
+  if (frontmatter.date instanceof Date) {
+    dateStr = frontmatter.date.toISOString();
+  } else {
+    dateStr = new Date(frontmatter.date + 'T00:00:00.000Z').toISOString();
+  }
+
   // Build new frontmatter
   const newFrontmatter = {
     title: frontmatter.title,
-    publishDate: new Date(frontmatter.date + 'T00:00:00.000Z'),
+    publishDate: dateStr,
     category: categoryMap[primaryCategory] || 'Updates',
     author: 'Mage-OS Team',
     draft: false,
