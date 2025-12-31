@@ -1,0 +1,138 @@
+---
+import { Image } from 'astro:assets';
+import yaml from 'js-yaml';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load partners data
+const partnersPath = path.join(process.cwd(), 'src/data/partners.yaml');
+const partnersContent = fs.readFileSync(partnersPath, 'utf8');
+const partnersData = yaml.load(partnersContent) as {
+  gold?: Array<{ name: string; logo: string; url: string }>;
+  silver?: Array<{ name: string; logo: string; url: string }>;
+  bronze?: Array<{ name: string; logo: string; url: string }>;
+};
+
+// Import all partner images dynamically
+const partnerImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/partners/*.{png,jpg,jpeg,webp,svg}',
+  { eager: true }
+);
+
+// Helper to get image from path
+function getPartnerImage(logoPath: string): ImageMetadata | null {
+  if (!logoPath) return null;
+  // Convert ~/assets/images/partners/... to /src/assets/images/partners/...
+  const normalizedPath = logoPath.replace('~/', '/src/');
+  return partnerImages[normalizedPath]?.default || null;
+}
+
+// Combine all partners with their tier info
+type Partner = {
+  name: string;
+  logo: string;
+  url: string;
+  tier: 'gold' | 'silver' | 'bronze';
+  image: ImageMetadata | null;
+};
+
+const allPartners: Partner[] = [
+  ...(partnersData.gold || []).map((p) => ({ ...p, tier: 'gold' as const, image: getPartnerImage(p.logo) })),
+  ...(partnersData.silver || []).map((p) => ({ ...p, tier: 'silver' as const, image: getPartnerImage(p.logo) })),
+  ...(partnersData.bronze || []).map((p) => ({ ...p, tier: 'bronze' as const, image: getPartnerImage(p.logo) })),
+];
+
+// Filter to only partners with logos for the visual carousel
+const partnersWithLogos = allPartners.filter((p) => p.image);
+
+// Tier styling configuration
+const tierStyles = {
+  gold: {
+    size: 'h-12 md:h-14',
+    border: 'ring-2 ring-amber-400',
+    bg: 'bg-amber-50 dark:bg-amber-900/20',
+  },
+  silver: {
+    size: 'h-10 md:h-12',
+    border: 'ring-1 ring-gray-300',
+    bg: 'bg-gray-50 dark:bg-gray-800/30',
+  },
+  bronze: {
+    size: 'h-8 md:h-10',
+    border: 'ring-1 ring-orange-300',
+    bg: 'bg-orange-50/50 dark:bg-orange-900/10',
+  },
+};
+---
+
+{partnersWithLogos.length > 0 && (
+  <section class="bg-gray-50 dark:bg-slate-800/50 py-8 border-t border-gray-200 dark:border-slate-700 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+      <h2 class="text-center text-sm font-medium text-muted uppercase tracking-wider">Our Partners</h2>
+    </div>
+
+    <div class="relative">
+      <!-- Gradient masks for smooth edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none"></div>
+
+      <!-- Scrolling container -->
+      <div class="partners-scroll flex items-center gap-8 md:gap-12">
+        <!-- Double the items for seamless loop -->
+        {[...partnersWithLogos, ...partnersWithLogos].map((partner) => (
+          <a
+            href={partner.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`flex-shrink-0 flex items-center justify-center px-4 py-2 rounded-lg transition-transform hover:scale-105 ${tierStyles[partner.tier].bg}`}
+            title={`${partner.name} - ${partner.tier.charAt(0).toUpperCase() + partner.tier.slice(1)} Partner`}
+          >
+            {partner.image && (
+              <Image
+                src={partner.image}
+                alt={partner.name}
+                class={`${tierStyles[partner.tier].size} w-auto object-contain`}
+              />
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-6">
+      <p class="text-center text-xs text-muted">
+        <a href="/community" class="hover:underline">Become a partner</a>
+      </p>
+    </div>
+  </section>
+)}
+
+<style>
+  .partners-scroll {
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .partners-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .partners-scroll {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+</style>
