@@ -1,302 +1,316 @@
-# 🚀 AstroWind
+# Mage-OS Website
 
-<img src="https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+The official Mage-OS website built with Astro, featuring a product-focused design that showcases the Mage-OS Distribution as the community-driven Magento alternative.
 
-🌟 _Most *starred* & *forked* Astro theme in 2022, 2023 & 2024_. 🌟
+## Table of Contents
 
-**AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
-
-- ✅ **Production-ready** scores in **PageSpeed Insights** reports.
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed**, **MDX** support, **Categories & Tags**, **Social Share**, ...
-- ✅ **Image Optimization** (using new **Astro Assets** and **Unpic** for Universal image CDN).
-- ✅ Generation of **project sitemap** based on your routes.
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
-
-<br>
-
-![AstroWind Theme Screenshot](https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/screenshot-astrowind-1.0.png)
-
-[![arthelokyo](https://custom-icon-badges.demolab.com/badge/made%20by%20-arthelokyo-556bf2?style=flat-square&logo=arthelokyo&logoColor=white&labelColor=101827)](https://github.com/arthelokyo)
-[![License](https://img.shields.io/github/license/arthelokyo/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/arthelokyo/astrowind/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/arthelokyo/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/arthelokyo/astrowind)
-[![Stars](https://img.shields.io/github/stars/arthelokyo/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/arthelokyo/astrowind)
-[![Forks](https://img.shields.io/github/forks/arthelokyo/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/arthelokyo/astrowind)
-
-<br>
-
-<details open>
-<summary>Table of Contents</summary>
-
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [TL;DR](#tldr)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Content Management](#content-management)
+- [Configuration](#configuration)
+- [Commands](#commands)
+- [Deployment](#deployment)
 - [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+- [Communication Standards](#communication-standards)
 
-</details>
 
-<br>
+## Overview
 
-## Demo
+| Section | Pages |
+|---------|-------|
+| Homepage | `/` |
+| Product | `/product`, `/product/features`, `/product/why-mage-os`, `/product/roadmap`, `/product/releases` |
+| Get Started | `/get-started`, `/get-started/quick-start`, `/get-started/installation`, `/get-started/migration-guide`, `/get-started/system-requirements` |
+| Documentation | `/documentation` |
+| Community | `/community` |
+| Events | `/events` |
+| About | `/about`, `/about/leadership`, `/about/contributors`, `/about/statutes` |
+| FAQ | `/faq` |
+| Legal | `/privacy`, `/terms`, `/code-of-conduct`, `/imprint` |
+| Blog | `/blog` |
 
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
+## Tech Stack
 
-<br>
+| Component | Choice | Purpose |
+|-----------|--------|---------|
+| Framework | [Astro 5.x](https://astro.build/) | Static site generation with component islands |
+| Base Theme | AstroWind | Production-ready Astro template |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS with dark mode support |
+| CMS | [Sveltia CMS](https://github.com/sveltia/sveltia-cms) | Git-based CMS with GitHub backend |
+| Content | MDX + YAML | Markdown with components and data files |
 
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
+## Getting Started
 
-We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
+### Prerequisites
 
-[Share Your Feedback in Our Discussion!](https://github.com/arthelokyo/astrowind/discussions/392)
+- [Node.js](https://nodejs.org/) (v18.x or higher recommended)
+- npm or yarn package manager
 
-<br>
+### Installation
 
-## TL;DR
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mage-os/mage-os.org.git
+   cd mage-os.org
+   ```
 
-```shell
-npm create astro@latest -- --template arthelokyo/astrowind
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:4321](http://localhost:4321) in your browser.
+
+## Project Structure
+
 ```
-
-## Getting started
-
-**AstroWind** tries to give you quick access to creating a website using [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
-
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
-
-In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
-
-### Project structure
-
-Inside **AstroWind** template, you'll see the following folders and files:
-
-```
-/
+mage-os.org/
 ├── public/
-│   ├── _headers
+│   ├── admin/           # Sveltia CMS configuration
+│   ├── _redirects       # URL redirects for hosting
 │   └── robots.txt
 ├── src/
 │   ├── assets/
 │   │   ├── favicons/
 │   │   ├── images/
+│   │   │   ├── blog/    # Blog post images by year
+│   │   │   ├── events/  # Event images
+│   │   │   └── team/    # Leadership photos
 │   │   └── styles/
-│   │       └── tailwind.css
 │   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
+│   │   ├── blog/        # Blog-specific components
+│   │   ├── common/      # Shared components
+│   │   ├── ui/          # UI primitives
+│   │   ├── widgets/     # Page section widgets
+│   │   └── Logo.astro   # Site logo
 │   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
+│   │   └── config.ts    # Content collection schemas
+│   ├── data/
+│   │   ├── post/        # Blog posts (Markdown/MDX)
+│   │   ├── events/      # Event entries (Markdown)
+│   │   ├── homepage/    # Homepage section data (YAML)
+│   │   └── partners.yaml
 │   ├── layouts/
 │   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── navigation.js
-├── package.json
+│   │   ├── PageLayout.astro
+│   │   └── ContentPageLayout.astro
+│   ├── pages/           # Route pages
+│   ├── utils/           # Utility functions
+│   ├── config.yaml      # Site configuration
+│   └── navigation.ts    # Navigation structure
 ├── astro.config.ts
-└── ...
+├── tailwind.config.js
+└── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content Management
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Content Collections
 
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
+| Collection | Schema Location | Data Location | Purpose |
+|------------|-----------------|---------------|---------|
+| Blog Posts | `src/content/config.ts` | `src/data/post/` | News, updates, announcements |
+| Events | `src/content/config.ts` | `src/data/events/` | Community events and meetups |
 
-[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/arthelokyo/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/arthelokyo/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/arthelokyo/astrowind)
+### Sveltia CMS
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file `README.md`. Update `src/config.yaml` and contents. Have fun!
+The site includes Sveltia CMS for non-technical content editing at `/admin`.
 
-<br>
+**CMS Collections:**
+- **Blog Posts**: Create and edit blog posts
+- **Events**: Manage community events
+- **Homepage**: Edit hero, stats, testimonials
+- **Partners**: Manage partner listings
 
-### Commands
+**Setup Requirements:**
+- GitHub OAuth application configured for authentication
+- Repository access for the GitHub backend
 
-All commands are run from the root of the project, from a terminal:
+### Adding Content via Git
 
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `npm install`       | Installs dependencies                              |
-| `npm run dev`       | Starts local dev server at `localhost:4321`        |
-| `npm run build`     | Build your production site to `./dist/`            |
-| `npm run preview`   | Preview your build locally, before deploying       |
-| `npm run check`     | Check your project for errors                      |
-| `npm run fix`       | Run Eslint and format codes with Prettier          |
-| `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
+**New Blog Post:**
+```bash
+# Create a new post file
+touch src/data/post/2025-01-15-my-new-post.md
+```
 
-<br>
+```markdown
+---
+title: My New Post
+publishDate: 2025-01-15
+author: Your Name
+category: news
+tags:
+  - announcement
+image: ~/assets/images/blog/2025/my-image.jpg
+excerpt: A brief description of the post.
+---
 
-### Configuration
+Your content here...
+```
 
-Basic configuration file: `./src/config.yaml`
+**New Event:**
+```markdown
+---
+title: Mage-OS Community Meetup
+publishDate: 2025-01-20
+startDate: 2025-02-15T18:00:00
+endDate: 2025-02-15T21:00:00
+location: Online
+image: ~/assets/images/events/meetup.jpg
+excerpt: Join us for our monthly community meetup.
+---
+
+Event details...
+```
+
+## Configuration
+
+### Site Configuration
+
+Edit `src/config.yaml` for site-wide settings:
 
 ```yaml
 site:
-  name: 'Example'
-  site: 'https://example.com'
-  base: '/' # Change this if you need to deploy to Github Pages, for example
-  trailingSlash: false # Generate permalinks with or without "/" at the end
+  name: 'Mage-OS'
+  site: 'https://mage-os.org'
+  base: '/'
+  trailingSlash: false
 
-  googleSiteVerificationId: false # Or some value,
-
-# Default SEO metadata
 metadata:
   title:
-    default: 'Example'
-    template: '%s — Example'
-  description: 'This is the default meta description of Example website'
-  robots:
-    index: true
-    follow: true
-  openGraph:
-    site_name: 'Example'
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
-    type: website
-  twitter:
-    handle: '@twitter_user'
-    site: '@twitter_user'
-    cardType: summary_large_image
-
-i18n:
-  language: en
-  textDirection: ltr
-
-apps:
-  blog:
-    isEnabled: true # If the blog will be enabled
-    postsPerPage: 6 # Number of posts per page
-
-    post:
-      isEnabled: true
-      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
-
-    isRelatedPostsEnabled: true # If a widget with related posts is to be displayed below each post
-    relatedPostsCount: 4 # Number of related posts to display
-
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
-
-ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+    default: 'Mage-OS'
+    template: '%s - Mage-OS'
+  description: 'The community-driven Magento distribution'
+  # ... SEO settings
 ```
 
-<br>
+### Navigation
 
-#### Customize Design
+Edit `src/navigation.ts` to update site navigation:
 
-To customize Font families, Colors or more Elements refer to the following files:
+```typescript
+export const headerData = {
+  links: [
+    { text: 'Product', links: [...] },
+    { text: 'Get Started', links: [...] },
+    // ...
+  ],
+  actions: [{ text: 'Download', href: '...' }],
+};
+```
 
-- `src/components/CustomStyles.astro`
-- `src/assets/styles/tailwind.css`
+### Styling
 
-### Deploy
+Customize appearance in:
+- `src/components/CustomStyles.astro` - Font families and colors
+- `src/assets/styles/tailwind.css` - Tailwind customizations
+- `tailwind.config.js` - Tailwind configuration
 
-#### Deploy to production (manual)
+## Commands
 
-You can create an optimized production build with:
+Run all commands from the `astro/` directory:
 
-```shell
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run check` | Check project for errors |
+| `npm run fix` | Run ESLint and format with Prettier |
+
+## Deployment
+
+### Production Build
+
+```bash
 npm run build
 ```
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+The optimized site is generated in the `dist/` folder.
 
-#### Deploy to Netlify
+### Hosting Platforms
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+**Netlify:**
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/astrowind)
+**Vercel:**
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-#### Deploy to Vercel
+**Cloudflare Pages:**
+Connect your GitHub repository in the Cloudflare dashboard.
 
-Clone this repository on your own GitHub account and deploy to Vercel:
+### URL Redirects
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Fastrowind)
+Legacy WordPress URLs are redirected via `public/_redirects`:
 
-<br>
-
-## Frequently Asked Questions
-
-- Why?
--
--
-
-<br>
-
-## Related projects
-
-- [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
-- [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
+| Old URL | New URL |
+|---------|---------|
+| `/privacy-policy` | `/privacy` |
+| `/leadership-team` | `/about/leadership` |
+| `/frequently-asked-questions` | `/faq` |
+| `/get-involved` | `/community` |
 
 ## Contributing
 
-If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
+Contributions are welcome! Please follow these guidelines:
 
-## Acknowledgements
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-Initially created by **Arthelokyo** and maintained by a community of [contributors](https://github.com/arthelokyo/astrowind/graphs/contributors).
+For content contributions, you can also use the CMS interface at `/admin` (requires GitHub access).
 
-## License
+## Communication Standards
 
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+All content must adhere to these standards:
+
+### Code of Conduct
+
+All writing must comply with the [Mage-OS Code of Conduct](https://mage-os.org/code-of-conduct).
+
+### Language
+
+- Use **US English** exclusively
+- Avoid cultural idioms or references that might confuse international readers
+- Prioritize clarity in technical writing
+
+### Accessibility
+
+- All images require descriptive `alt` tags
+- Maintain proper heading hierarchy
+- Ensure sufficient color contrast
+- Support keyboard navigation
+
+### Core Values
+
+- **Collaboration**: Work together as a community
+- **Positivity**: Maintain a constructive tone
+- **Reliability**: Provide consistent, stable information
+
+## Key Files Reference
+
+| Purpose | File |
+|---------|------|
+| Site config | `src/config.yaml` |
+| Navigation | `src/navigation.ts` |
+| Homepage | `src/pages/index.astro` |
+| CMS config | `public/admin/config.yml` |
+| Content schemas | `src/content/config.ts` |
+| Logo | `src/components/Logo.astro` |
+| Homepage data | `src/data/homepage/*.yaml` |
+| Partners data | `src/data/partners.yaml` |
+| URL redirects | `public/_redirects` |
+
+---
+
+Built with [Astro](https://astro.build/) and the [AstroWind](https://github.com/arthelokyo/astrowind) theme.
