@@ -1,0 +1,40 @@
+# Redirects from old WordPress URLs to new Astro URLs
+# Format: /old-path /new-path [status-code]
+
+# Legal pages
+/privacy-policy /privacy 301
+/privacy-policy/ /privacy 301
+
+# About section
+/about-the-mage-os-association /about 301
+/about-the-mage-os-association/ /about 301
+/leadership-team /about/leadership 301
+/leadership-team/ /about/leadership 301
+/statutes /about/statutes 301
+/statutes/ /about/statutes 301
+/contributors /about/contributors 301
+/contributors/ /about/contributors 301
+
+# FAQ
+/frequently-asked-questions /faq 301
+/frequently-asked-questions/ /faq 301
+/faqs /faq 301
+/faqs/ /faq 301
+
+# Community pages that now redirect to existing pages
+/mage-os-membership /community 301
+/mage-os-membership/ /community 301
+/get-involved /community 301
+/get-involved/ /community 301
+
+# Organization section (old structure)
+/organization/statutes /about/statutes 301
+/organization/statutes/ /about/statutes 301
+/organization/leadership-team /about/leadership 301
+/organization/leadership-team/ /about/leadership 301
+
+# About subpages
+/about/mage-os-membership /community 301
+/about/mage-os-membership/ /community 301
+/about/leadership-team /about/leadership 301
+/about/leadership-team/ /about/leadership 301

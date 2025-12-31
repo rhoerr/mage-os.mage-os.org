@@ -80,16 +80,21 @@ export const footerData = {
       title: 'About',
       links: [
         { text: 'About Mage-OS', href: getPermalink('/about') },
+        { text: 'Leadership', href: getPermalink('/about/leadership') },
+        { text: 'Contributors', href: getPermalink('/about/contributors') },
+        { text: 'FAQ', href: getPermalink('/faq') },
         { text: 'Contact', href: getPermalink('/contact') },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Terms', href: getPermalink('/terms') },
+    { text: 'Code of Conduct', href: getPermalink('/code-of-conduct') },
+    { text: 'Imprint', href: getPermalink('/imprint') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/maborak' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/mage_os' },
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/mage-os' },
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.com/invite/nvZDVA2NdC' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
