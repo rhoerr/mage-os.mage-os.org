@@ -1,0 +1,221 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'About',
+  description: 'Learn about the Mage-OS Association, our mission, governance, and the people behind the project.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget -->
+  <Hero
+    tagline="About"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Become a Member',
+        href: 'https://opencollective.com/mage-os',
+        target: '_blank',
+        icon: 'tabler:heart',
+      },
+      { text: 'View Statutes', href: '/about/statutes' },
+    ]}
+  >
+    <Fragment slot="title">
+      The Mage-OS<br />
+      <span class="text-accent dark:text-white">Association</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      A non-profit organization formed by the Magento community to ensure the long-term success of the Magento ecosystem through development, coordination, and community support.
+    </Fragment>
+  </Hero>
+
+  <!-- Mission Widget -->
+  <Features
+    id="mission"
+    tagline="Our Mission"
+    title="We want to see Magento prosper"
+    subtitle="The Mage-OS Association was founded to represent and further the interests of the Magento community: Merchants, developers, agencies, and everyone supporting this ecosystem."
+    items={[
+      {
+        title: 'Grow the Community',
+        description: 'Increase the number of people involved in the Magento ecosystem and the Mage-OS platform.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Nurture Good Values',
+        description: 'Foster an open, inclusive, and welcoming environment for all community members.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Sustain the Platform',
+        description: 'Position Mage-OS as a leading option for custom ecommerce development.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Increase Market Share',
+        description: 'Grow confidence in the Magento ecosystem and increase its presence in the ecommerce market.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Coordinate Development',
+        description: 'Fund and coordinate the long-term development and support of the Mage-OS platform.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Support the Ecosystem',
+        description: 'Provide documentation, education, events, and resources to support organizations in the ecosystem.',
+        icon: 'tabler:lifebuoy',
+      },
+    ]}
+  />
+
+  <!-- How We Work Widget -->
+  <Steps2
+    title="How the Association Works"
+    subtitle="Mage-OS operates as a transparent, democratic organization"
+    items={[
+      {
+        title: 'Democratic Governance',
+        description: 'Members elect the Board of Directors annually and vote on key decisions at the General Assembly.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Open Finances',
+        description: 'All contributions and expenses are publicly visible through Open Collective for complete transparency.',
+        icon: 'tabler:currency-euro',
+      },
+      {
+        title: 'Community-Driven',
+        description: 'Development priorities and direction are shaped by community input and contributor participation.',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  />
+
+  <!-- Our People Widget -->
+  <Features2
+    title="Our People"
+    tagline="Meet the Team"
+    items={[
+      {
+        title: 'Board of Directors',
+        description: 'Elected leaders who manage association affairs, set strategy, and represent Mage-OS externally.',
+        icon: 'tabler:crown',
+        callToAction: {
+          text: 'Meet the Board',
+          href: '/about/leadership',
+        },
+      },
+      {
+        title: 'Business Control Committee',
+        description: 'Independent oversight ensuring accountability, transparency, and proper use of funds.',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'Learn More',
+          href: '/about/leadership#business-control-committee',
+        },
+      },
+      {
+        title: 'Contributors',
+        description: 'Volunteers and companies who contribute time, code, content, and resources to Mage-OS.',
+        icon: 'tabler:heart',
+        callToAction: {
+          text: 'View Contributors',
+          href: '/about/contributors',
+        },
+      },
+      {
+        title: 'Members',
+        description: 'Individual and company members who support Mage-OS financially and have voting rights.',
+        icon: 'tabler:id-badge-2',
+        callToAction: {
+          text: 'Become a Member',
+          href: '/community',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Governance Widget -->
+  <Features2
+    title="Governance"
+    tagline="Legal Framework"
+    items={[
+      {
+        title: 'Association Statutes',
+        description: 'Our formal bylaws define how the association is structured, governed, and operates.',
+        icon: 'tabler:gavel',
+        callToAction: {
+          text: 'Read Statutes',
+          href: '/about/statutes',
+        },
+      },
+      {
+        title: 'Code of Conduct',
+        description: 'Community standards that all participants are expected to follow.',
+        icon: 'tabler:book',
+        callToAction: {
+          text: 'View Code of Conduct',
+          href: '/code-of-conduct',
+        },
+      },
+      {
+        title: 'Registered in Poland',
+        description: 'Mage-OS Association is legally registered in Poznań, Poland, but operates worldwide.',
+        icon: 'tabler:map-pin',
+        callToAction: {
+          text: 'View Imprint',
+          href: '/imprint',
+        },
+      },
+      {
+        title: 'Open Collective',
+        description: 'All finances are managed transparently through Open Collective.',
+        icon: 'tabler:wallet',
+        callToAction: {
+          text: 'View Finances',
+          href: 'https://opencollective.com/mage-os',
+          target: '_blank',
+        },
+      },
+    ]}
+  />
+
+  <!-- CTA Widget -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Become a Member',
+        href: 'https://opencollective.com/mage-os',
+        target: '_blank',
+        icon: 'tabler:heart',
+      },
+      {
+        text: 'Get Involved',
+        href: '/community',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Join the Mage-OS Association
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Support the future of open-source ecommerce. Members get voting rights, can participate in elections, and help shape the direction of Mage-OS.
+    </Fragment>
+  </CallToAction>
+</Layout>

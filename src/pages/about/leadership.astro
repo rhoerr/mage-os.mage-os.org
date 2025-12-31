@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Leadership Team',
+  description: 'Meet the Mage-OS Board of Directors and Business Control Committee.',
+};
+
+const boardMembers = [
+  {
+    name: 'Vinai Kopp',
+    role: 'President',
+    bio: 'Vinai has been a developer for nearly 25 years. He delivered Magento training for over a decade through the official Magento U program and was awarded Magento Master three times. Today he serves as Partner, CTO, and CIO at Hyvä.',
+    country: 'Germany',
+  },
+  {
+    name: 'David Lambauer',
+    role: 'Vice President',
+    bio: 'Founder and CEO of run_as_root GmbH, specializing in Magento 2, Hyvä, and Shopware development. Adobe Certified Master Architect, creator of the Mage-OS DevDocs, and frequent speaker at industry events.',
+    country: 'Germany',
+  },
+  {
+    name: 'Cezary Kożon',
+    role: 'Treasurer',
+    bio: 'With over ten years of eCommerce experience, Cezary is head of Spyrosoft eCommerce. He helps businesses translate their strategic vision into eCommerce operations.',
+    country: 'Poland',
+  },
+  {
+    name: 'John Prendergast',
+    role: 'Actuary',
+    bio: 'Over 30 years of experience leading web technology businesses. Co-founder and director of Aonach.com, a specialist Magento Open Source agency based in Ireland.',
+    country: 'Ireland',
+  },
+  {
+    name: 'Ryan Hoerr',
+    role: 'Board Member',
+    bio: 'Software developer at ParadoxLabs since 2008, working extensively on payment services, subscriptions, and security. His Magento extensions process billions of dollars in transactions each year.',
+    country: 'USA',
+  },
+  {
+    name: 'Ruggero Landolina',
+    role: 'Board Member',
+    bio: '20 years of experience in e-commerce development, specializing in scalable and high-performance solutions on Magento 2, Laravel and WordPress.',
+    country: 'Italy',
+  },
+  {
+    name: 'Michiel Gerritsen',
+    role: 'Board Member',
+    bio: 'Founder of Control Alt Delete and MageDispatch.com. Over a decade of Magento experience, specializing in checkout flows and automated testing. Active open source contributor.',
+    country: 'Netherlands',
+  },
+  {
+    name: 'Maciej Kalkowski',
+    role: 'Board Member',
+    bio: 'CEO and founder of Centuria (managed service provider). PhD in computer science, assistant professor at AMU in Poznan, and speaker at many retail and Meet Magento conferences.',
+    country: 'Poland',
+  },
+];
+
+const bccMembers = [
+  {
+    name: 'Laura Folco',
+    role: 'Business Control Committee',
+    bio: 'Working with Magento since 2010 as a freelancer. Instructor for Adobe (formerly Magento U) since 2017, teaching the fundamentals of Magento 2 development.',
+    country: 'USA',
+  },
+  {
+    name: 'Francis Michael Gallagher',
+    role: 'Business Control Committee',
+    bio: 'One of Akoova\'s leading Ecommerce Architects, in the Magento community since 2012. Strong passion for helping others and recognizing positive impacts.',
+    country: 'UK',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Leadership"
+    title="Board of Directors"
+    subtitle="The Association is run by an elected Board of Directors. We ensure diversity across countries, stakeholder types, and expertise areas."
+  />
+
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {boardMembers.map((member) => (
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+              <span class="text-primary-600 dark:text-primary-400 font-bold text-lg">
+                {member.name.split(' ').map(n => n[0]).join('')}
+              </span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
+              <p class="text-sm text-primary-600 dark:text-primary-400">{member.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+          <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">{member.country}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="business-control-committee" class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="text-center mb-8">
+      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">Oversight</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Business Control Committee</h2>
+      <p class="text-xl text-muted max-w-3xl mx-auto">
+        Independent oversight ensuring accountability and transparency in Association operations.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+      {bccMembers.map((member) => (
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+              <span class="text-green-600 dark:text-green-400 font-bold text-lg">
+                {member.name.split(' ').map(n => n[0]).join('')}
+              </span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
+              <p class="text-sm text-green-600 dark:text-green-400">{member.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+          <p class="mt-3 text-xs text-gray-500 dark:text-gray-500">{member.country}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+    <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 text-center">
+      <h3 class="font-bold text-lg mb-2">Interested in leadership?</h3>
+      <p class="text-muted mb-4">
+        Board elections are held annually at the General Assembly. Members can nominate themselves or others for candidacy.
+      </p>
+      <a href="/community" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+        Become a Member →
+      </a>
+    </div>
+  </section>
+</Layout>

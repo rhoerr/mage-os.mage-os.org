@@ -1,0 +1,185 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Contributors',
+  description: 'Meet the people and companies who contribute to Mage-OS.',
+};
+
+const technicalTeam = [
+  { name: 'Vinai Kopp', role: 'Lead', country: 'DE' },
+  { name: 'David Lambauer', role: 'Contributor', country: 'DE' },
+  { name: 'Ryan Hoerr', role: 'Contributor', country: 'US' },
+  { name: 'Willem Wigman', role: 'Contributor', country: 'NL' },
+  { name: 'Daniel Sloof', role: 'Contributor', country: 'NL' },
+  { name: 'Adam Crossland', role: 'Contributor', country: 'UK' },
+  { name: 'Christian Münch', role: 'Contributor', country: 'DE' },
+  { name: 'Simon Sprankel', role: 'Contributor', country: 'DE' },
+  { name: 'Alexander Buch', role: 'Contributor', country: 'DE' },
+  { name: 'Damien Retzinger', role: 'Contributor', country: 'US' },
+  { name: 'Gowri Sankar', role: 'Contributor', country: 'AU' },
+  { name: 'Timon de Groot', role: 'Contributor', country: 'NL' },
+  { name: 'Anton Siniorg', role: 'Contributor', country: 'EE' },
+  { name: 'Daniel Fahlke', role: 'Contributor', country: 'DE' },
+  { name: 'Kamlesh Luhana', role: 'Contributor', country: 'IN' },
+  { name: 'Vitaliy Golomozy', role: 'Contributor', country: 'UA' },
+  { name: 'Barbaros Selim Büyükelçi', role: 'Contributor', country: 'TR' },
+];
+
+const documentationTeam = [
+  { name: 'David Lambauer', role: 'Lead', country: 'DE' },
+];
+
+const companyContributions = [
+  {
+    name: 'Amasty',
+    contribution: 'Website design, content, assets and project management.',
+    url: 'https://amasty.com/',
+  },
+  {
+    name: 'MaxCluster',
+    contribution: 'Association and website strategy, architecture and content.',
+    url: 'https://maxcluster.de/',
+  },
+  {
+    name: 'MDOQ',
+    contribution: 'Content, strategy, and testing infrastructure.',
+    url: 'https://www.mdoq.io/',
+  },
+  {
+    name: 'Content Scribers',
+    contribution: 'Website design and content edits.',
+    url: 'https://www.contentscribers.com/',
+  },
+  {
+    name: 'Hyvä',
+    contribution: 'Brand identity and marketing material.',
+    url: 'https://www.hyva.io/',
+  },
+  {
+    name: 'Taurus Media',
+    contribution: 'Content edits and website building.',
+    url: 'https://taurusmedia.nl/',
+  },
+  {
+    name: 'Aonach',
+    contribution: 'Content project contributions.',
+    url: 'https://aonach.com/',
+  },
+  {
+    name: 'run_as_root',
+    contribution: 'Technical and content initiatives, including developer docs.',
+    url: 'https://run-as-root.sh/',
+  },
+  {
+    name: 'Above the Fray',
+    contribution: 'Sponsorship and event space at MMNY.',
+    url: 'https://abovethefray.io/',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Thank You"
+    title="Contributors"
+    subtitle="Mage-OS wouldn't be where it's at today without people working on their free time to improve the product and gather resources around it. It takes a village to make it all happen."
+  />
+
+  <!-- Technical Working Group -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold tracking-tight mb-2">Technical Working Group</h2>
+      <p class="text-muted">Builds, maintains and enhances the Mage-OS Distribution and Magento Open Source mirrors.</p>
+    </div>
+
+    <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {technicalTeam.map((member) => (
+        <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
+          <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0">
+            <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">
+              {member.name.split(' ').map(n => n[0]).join('')}
+            </span>
+          </div>
+          <div class="min-w-0">
+            <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              {member.role === 'Lead' ? <span class="text-primary-600 dark:text-primary-400">{member.role}</span> : member.country}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Documentation Working Group -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold tracking-tight mb-2">Documentation Working Group</h2>
+      <p class="text-muted">Develops and delivers the Dev Docs for Mage-OS.</p>
+    </div>
+
+    <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-lg">
+      {documentationTeam.map((member) => (
+        <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
+          <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
+            <span class="text-green-600 dark:text-green-400 font-bold text-sm">
+              {member.name.split(' ').map(n => n[0]).join('')}
+            </span>
+          </div>
+          <div class="min-w-0">
+            <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
+            <p class="text-xs text-primary-600 dark:text-primary-400">{member.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-4 text-sm text-muted">
+      Full list of Dev Docs contributors: <a href="https://github.com/mage-os/devdocs/graphs/contributors" class="text-primary-600 dark:text-primary-400 hover:underline" target="_blank">GitHub Contributors</a>
+    </p>
+  </section>
+
+  <!-- Company Contributions -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold tracking-tight mb-2">Company Contributions</h2>
+      <p class="text-muted">Companies that have contributed time, resources, and expertise to Mage-OS.</p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {companyContributions.map((company) => (
+        <a
+          href={company.url}
+          target="_blank"
+          class="block bg-white dark:bg-slate-900 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors"
+        >
+          <h3 class="font-bold text-gray-900 dark:text-white mb-2">{company.name}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">{company.contribution}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+    <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 text-center">
+      <h3 class="font-bold text-lg mb-2">Want to contribute?</h3>
+      <p class="text-muted mb-4">
+        We welcome contributions of all kinds: code, documentation, content, design, and more.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://github.com/mage-os" target="_blank" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+          GitHub →
+        </a>
+        <a href="https://discord.com/invite/nvZDVA2NdC" target="_blank" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+          Discord →
+        </a>
+        <a href="/community" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
+          Get Involved →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
