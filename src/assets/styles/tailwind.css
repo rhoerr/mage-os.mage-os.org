@@ -124,6 +124,16 @@ pre.astro-code span {
   background-color: var(--shiki-dark-bg) !important;
 }
 
+/* Remove prose-code background from code inside pre blocks */
+/* This prevents conflict between Tailwind prose styles and Shiki */
+pre.astro-code code,
+pre.astro-code code::before,
+pre.astro-code code::after {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
 /* Code block container styling */
 pre.astro-code {
   border: 1px solid #e1e4e8;
