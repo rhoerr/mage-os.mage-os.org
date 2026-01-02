@@ -227,6 +227,6 @@ Ready to try the latest Mage-OS release?
 
 ## Need Help?
 
-- **Community Support:** Join our [Discord server](https://discord.gg/mage-os) for real-time help
+- **Community Support:** Join our [Discord server](/discord-channel) for real-time help
 - **Documentation:** Browse [devdocs.mage-os.org](https://devdocs.mage-os.org) for technical guides
 - **GitHub Issues:** Report bugs at [github.com/mage-os/mageos-magento2](https://github.com/mage-os/mageos-magento2/issues)

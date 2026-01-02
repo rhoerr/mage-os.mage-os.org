@@ -323,7 +323,7 @@ You are not alone. The Mage-OS community is here to support your migration journ
 
 ### Community Support (Free)
 
-- **Discord** - Get real-time help from community members and core contributors: [chat.mage-os.org](https://discord.com/invite/nvZDVA2NdC)
+- **Discord** - Get real-time help from community members and core contributors: [chat.mage-os.org](/discord-channel)
 - **GitHub Discussions** - Ask questions and share solutions: [github.com/mage-os](https://github.com/mage-os)
 - **Developer Documentation** - Comprehensive technical guides: [devdocs.mage-os.org](https://devdocs.mage-os.org)
 

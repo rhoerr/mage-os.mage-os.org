@@ -107,7 +107,7 @@ The [Mage-OS Lab](https://github.com/mage-os-lab) is our innovation incubator wh
 
 - **Explore active projects:** [github.com/mage-os-lab](https://github.com/mage-os-lab)
 - **Propose a new feature:** Open a discussion on [GitHub](https://github.com/mage-os/mageos-magento2/discussions)
-- **Graduate your existing module:** Have an open-source module you'd like to include? [Join our Discord](https://discord.com/invite/nvZDVA2NdC) to discuss!
+- **Graduate your existing module:** Have an open-source module you'd like to include? [Join our Discord](/discord-channel) to discuss!
 
 ---
 
@@ -117,7 +117,7 @@ Your voice shapes the future of Mage-OS. Here are the ways to get involved:
 
 | Participation Level | How to Participate | Impact |
 |--------------------|--------------------|--------|
-| **Weekly Tech Meetings** | Join every **Tuesday at 3 PM CET** on [Discord](https://discord.com/invite/nvZDVA2NdC) | Direct input on technical decisions |
+| **Weekly Tech Meetings** | Join every **Tuesday at 3 PM CET** on [Discord](/discord-channel) | Direct input on technical decisions |
 | **GitHub Discussions** | Propose and vote on features in [GitHub discussions](https://github.com/mage-os/mageos-magento2/discussions) | Shape feature priorities |
 | **Become a Member** | [Join the Mage-OS Association](/about/membership) | Voting rights on governance and roadmap |
 | **Contribute Code** | Submit pull requests or develop Lab projects | Direct contribution to features |
@@ -154,7 +154,7 @@ Your voice shapes the future of Mage-OS. Here are the ways to get involved:
 | Channel | Purpose | Link |
 |---------|---------|------|
 | **Blog** | Release announcements, community updates | [/blog](/blog) |
-| **Discord** | Real-time discussions, support, weekly meetings | [chat.mage-os.org](https://discord.com/invite/nvZDVA2NdC) |
+| **Discord** | Real-time discussions, support, weekly meetings | [chat.mage-os.org](/discord-channel) |
 | **GitHub** | Code, issues, discussions, contributions | [github.com/mage-os](https://github.com/mage-os) |
 | **Releases** | Download the latest Mage-OS Distribution | [/releases](/releases) |
 
@@ -164,7 +164,7 @@ Your voice shapes the future of Mage-OS. Here are the ways to get involved:
 
 Have questions about the roadmap or want to discuss priorities? We'd love to hear from you.
 
-- **Real-time chat:** Join our [Discord community](https://discord.com/invite/nvZDVA2NdC)
+- **Real-time chat:** Join our [Discord community](/discord-channel)
 - **Async discussions:** Open a [GitHub discussion](https://github.com/mage-os/mageos-magento2/discussions)
 - **Direct contact:** Email us at [info@mage-os.org](mailto:info@mage-os.org)
 
