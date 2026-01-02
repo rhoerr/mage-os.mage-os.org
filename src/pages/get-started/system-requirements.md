@@ -283,6 +283,7 @@ Docker-based local development environments provide consistent, reproducible set
 | -------- | -------------------------------------- | ------------------------------- |
 | DDEV     | Docker-based local development         | Beginners, quick setup          |
 | Warden   | Docker environment for Magento         | Magento-specific workflows      |
+| docker-magento | Production-like Docker setup      | Advanced local development      |
 
 All tools support Mage-OS out of the box with minimal configuration.
 

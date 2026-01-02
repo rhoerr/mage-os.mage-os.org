@@ -35,6 +35,7 @@ Need the full list? See [System Requirements](/get-started/system-requirements).
 | ---- | -------- | ---------- |
 | [DDEV](https://ddev.com/) | Easiest setup, great for beginners | 5 minutes |
 | [Warden](https://warden.dev/) | Magento-focused, production-like | 10 minutes |
+| [docker-magento](https://github.com/markshust/docker-magento) | Production-like, excellent docs | 10 minutes |
 
 For detailed Docker installation, see the [Installation Guide](/get-started/installation#docker-installation).
 

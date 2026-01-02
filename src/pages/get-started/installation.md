@@ -28,6 +28,7 @@ Choose the installation method that best fits your needs:
 | **Composer** | Production servers, VPS, dedicated hosting | Intermediate | 30-45 min |
 | **Docker (DDEV)** | Local development, quick testing | Easy | 15-20 min |
 | **Docker (Warden)** | Magento-focused development teams | Intermediate | 20-30 min |
+| **Docker (docker-magento)** | Production-like local environment | Intermediate | 15-20 min |
 | **Cloud** | Scalable production environments | Advanced | 1-2 hours |
 
 ---
@@ -211,6 +212,41 @@ bin/magento cache:flush
 ```
 
 **Access your store:** `https://app.mageos.test/`
+
+### Using docker-magento
+
+[docker-magento](https://github.com/markshust/docker-magento) by Mark Shust is a production-like Docker environment with excellent documentation and community support.
+
+```bash
+# Download the setup script
+curl -s https://raw.githubusercontent.com/markshust/docker-magento/master/lib/onelinesetup | bash -s -- mageos.test
+
+# Navigate to project directory
+cd mageos.test
+
+# Install Mage-OS (instead of default Magento)
+bin/removeall
+bin/download --repository-url=https://repo.mage-os.org/ mage-os/project-community-edition
+
+# Start containers and install
+bin/setup mageos.test
+
+# Access admin panel
+bin/magento admin:user:create \
+  --admin-user="admin" \
+  --admin-password="Admin123!" \
+  --admin-email="admin@example.com" \
+  --admin-firstname="Admin" \
+  --admin-lastname="User"
+```
+
+**Access your store:** `https://mageos.test/`
+
+**Features:**
+- Production-ready Nginx, PHP-FPM, and Redis configuration
+- Xdebug integration for debugging
+- Comprehensive helper scripts (`bin/magento`, `bin/composer`, etc.)
+- Excellent [documentation](https://github.com/markshust/docker-magento#readme)
 
 ---
 

@@ -36,12 +36,12 @@ const {
   id = 'header',
   links = [],
   actions = [],
-  isSticky = false,
+  isSticky = true,
   isDark = false,
   isFullWidth = false,
   showToggleTheme = false,
   showRssFeed = false,
-  position = 'center',
+  position = 'right',
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
