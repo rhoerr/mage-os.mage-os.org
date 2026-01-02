@@ -14,6 +14,9 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import PartnersGrid from '~/components/widgets/PartnersGrid.astro';
+import { getCommunityStats } from '~/utils/openCollective';
+
+const stats = await getCommunityStats();
 
 const metadata = {
   title: 'Mage-OS | Community-Driven Open Source Commerce Platform',
@@ -254,10 +257,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Financial Contributors', amount: '172+' },
+      { title: 'Financial Contributors', amount: `${stats.totalContributors}+` },
       { title: 'Total Contributions', amount: '€106K+' },
-      { title: 'Community Members', amount: '81+' },
-      { title: 'Professional Members', amount: '67+' },
+      { title: 'Community Members', amount: `${stats.communityMembers}+` },
+      { title: 'Professional Members', amount: `${stats.professionalMembers}+` },
     ]}
   >
     <Fragment slot="bg">
@@ -267,10 +270,7 @@ const metadata = {
 
   <!-- Partners Grid Widget ************ -->
 
-  <PartnersGrid
-    title="Our Partners"
-    subtitle="Companies supporting the Mage-OS community"
-  />
+  <PartnersGrid title="Our Partners" subtitle="Companies supporting the Mage-OS community" />
 
   <!-- FAQs Widget ******************* -->
 
@@ -334,7 +334,8 @@ const metadata = {
       },
       {
         title: 'Join Discord',
-        description: 'Connect with developers and merchants in real-time. Weekly tech meetings every Tuesday at 3 PM CET.',
+        description:
+          'Connect with developers and merchants in real-time. Weekly tech meetings every Tuesday at 3 PM CET.',
         icon: 'tabler:brand-discord',
       },
       {
@@ -377,8 +378,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Download Mage-OS today and join the many merchants and developers building the future of open-source
-      ecommerce.
+      Download Mage-OS today and join the many merchants and developers building the future of open-source ecommerce.
     </Fragment>
   </CallToAction>
 </Layout>

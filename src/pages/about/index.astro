@@ -11,10 +11,14 @@ import Stats from '~/components/widgets/Stats.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getCommunityStats } from '~/utils/openCollective';
+
+const stats = await getCommunityStats();
 
 const metadata = {
   title: 'About the Mage-OS Association',
-  description: 'Learn about the Mage-OS Association, our mission, governance, and the people behind the project. A non-profit formed by 1,641 community members to ensure the future of Magento.',
+  description:
+    'Learn about the Mage-OS Association, our mission, governance, and the people behind the project. A non-profit formed by 1,641 community members to ensure the future of Magento.',
 };
 ---
 
@@ -39,9 +43,10 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      A non-profit organization born from community action, formed to safeguard and advance the Magento ecosystem.
-      We are merchants, developers, agencies, and advocates united by a shared mission: ensuring Magento thrives for generations to come.
-      Together with the Magento Association, we reclaimed the Magento brand in 2024 and continue building the future of open-source ecommerce.
+      A non-profit organization born from community action, formed to safeguard and advance the Magento ecosystem. We
+      are merchants, developers, agencies, and advocates united by a shared mission: ensuring Magento thrives for
+      generations to come. Together with the Magento Association, we reclaimed the Magento brand in 2024 and continue
+      building the future of open-source ecommerce.
     </Fragment>
   </Hero>
 
@@ -74,12 +79,10 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        From Vision to Reality
-      </h3>
-      In 2021, concerns about the future direction of Magento Open Source led community members to draft an Open Letter.
-      That letter sparked a global conversation and united thousands who believed the ecosystem deserved an independent,
-      community-owned organization to champion its interests.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">From Vision to Reality</h3>
+      In 2021, concerns about the future direction of Magento Open Source led community members to draft an Open Letter. That
+      letter sparked a global conversation and united thousands who believed the ecosystem deserved an independent, community-owned
+      organization to champion its interests.
     </Fragment>
 
     <Fragment slot="bg">
@@ -96,7 +99,7 @@ const metadata = {
       {
         title: 'September 2021: <span class="font-normal">The Open Letter</span>',
         description:
-          'Concerns about Magento Open Source\'s future led 18 founding signatories to publish an open letter that ultimately gathered 1,641 signatures from merchants, developers, and agencies worldwide.',
+          "Concerns about Magento Open Source's future led 18 founding signatories to publish an open letter that ultimately gathered 1,641 signatures from merchants, developers, and agencies worldwide.",
         icon: 'tabler:mail',
       },
       {
@@ -139,7 +142,8 @@ const metadata = {
     items={[
       {
         title: 'Grow the Community',
-        description: 'Attract and welcome new merchants, developers, and contributors to strengthen the Magento ecosystem.',
+        description:
+          'Attract and welcome new merchants, developers, and contributors to strengthen the Magento ecosystem.',
         icon: 'tabler:users-group',
       },
       {
@@ -149,12 +153,14 @@ const metadata = {
       },
       {
         title: 'Sustain the Platform',
-        description: 'Position Mage-OS as a leading choice for custom ecommerce development through continuous improvement.',
+        description:
+          'Position Mage-OS as a leading choice for custom ecommerce development through continuous improvement.',
         icon: 'tabler:rocket',
       },
       {
         title: 'Increase Market Share',
-        description: 'Rebuild confidence in the Magento ecosystem and grow its presence in the global ecommerce market.',
+        description:
+          'Rebuild confidence in the Magento ecosystem and grow its presence in the global ecommerce market.',
         icon: 'tabler:chart-line',
       },
       {
@@ -183,7 +189,7 @@ const metadata = {
     stats={[
       { title: 'Open Letter Signatories', amount: '1,641', icon: 'tabler:signature' },
       { title: 'Countries Represented', amount: '30+', icon: 'tabler:world' },
-      { title: 'Financial Contributors', amount: '172+', icon: 'tabler:heart' },
+      { title: 'Financial Contributors', amount: `${stats.totalContributors}+`, icon: 'tabler:heart' },
       { title: 'Total Contributions', amount: '106K+', icon: 'tabler:currency-euro' },
     ]}
   >
@@ -199,7 +205,8 @@ const metadata = {
     items={[
       {
         title: 'Member-Elected Leadership',
-        description: 'The Board of Directors is elected annually by members at the General Assembly. Every member gets a vote in shaping the future direction of the association.',
+        description:
+          'The Board of Directors is elected annually by members at the General Assembly. Every member gets a vote in shaping the future direction of the association.',
         icon: 'tabler:users',
       },
       {
@@ -282,7 +289,8 @@ const metadata = {
     items={[
       {
         title: 'Association Statutes',
-        description: 'Our formal bylaws define how the association is structured, governed, and how decisions are made.',
+        description:
+          'Our formal bylaws define how the association is structured, governed, and how decisions are made.',
         icon: 'tabler:gavel',
         callToAction: {
           text: 'Read Statutes',
@@ -327,7 +335,7 @@ const metadata = {
     testimonials={[
       {
         testimonial:
-          'For us, supporting Mage-OS means taking Magento 2 back to its community roots. We believe this organisation will propel the Magento ecosystem forward. The Magento community has given us so much over the years, now it\'s our turn to contribute.',
+          "For us, supporting Mage-OS means taking Magento 2 back to its community roots. We believe this organisation will propel the Magento ecosystem forward. The Magento community has given us so much over the years, now it's our turn to contribute.",
         name: 'Niek Verkolen & Tjitse Efde',
         job: 'Co-founders, Vendic',
       },
@@ -414,14 +422,13 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Join the Movement
-    </Fragment>
+    <Fragment slot="title"> Join the Movement </Fragment>
 
     <Fragment slot="subtitle">
       Be part of the community that is shaping the future of open-source ecommerce. As a member, you gain voting rights
-      in elections, a voice in strategic decisions, and the satisfaction of supporting an ecosystem that benefits everyone.
-      Whether you contribute code, documentation, ideas, or financial support, every contribution makes a difference.
+      in elections, a voice in strategic decisions, and the satisfaction of supporting an ecosystem that benefits
+      everyone. Whether you contribute code, documentation, ideas, or financial support, every contribution makes a
+      difference.
     </Fragment>
   </CallToAction>
 </Layout>

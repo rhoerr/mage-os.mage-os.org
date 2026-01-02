@@ -10,6 +10,9 @@ import Stats from '~/components/widgets/Stats.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import { getCommunityStats } from '~/utils/openCollective';
+
+const communityStats = await getCommunityStats();
 
 const metadata = {
   title: 'Why Mage-OS | Community-Owned Open Source Commerce',
@@ -38,9 +41,9 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Born from <strong>1,641 community voices</strong> demanding change, Mage-OS is the independent, community-owned
-      Magento distribution. No corporate agenda. No vendor lock-in. Just powerful open-source commerce built by
-      merchants, developers, and agencies worldwide.
+      Born from <strong>1,641 community voices</strong> demanding change, Mage-OS is the independent, community-owned Magento
+      distribution. No corporate agenda. No vendor lock-in. Just powerful open-source commerce built by merchants, developers,
+      and agencies worldwide.
     </Fragment>
   </Hero>
 
@@ -51,7 +54,7 @@ const metadata = {
     subtitle="Real community investment, real community ownership"
     stats={[
       { title: 'Open Letter Signers', amount: '1,641' },
-      { title: 'Financial Contributors', amount: '172+' },
+      { title: 'Financial Contributors', amount: `${communityStats.totalContributors}+` },
       { title: 'Total Contributions', amount: '106K+', icon: 'tabler:currency-euro' },
       { title: 'Years Building Together', amount: '3+' },
     ]}
@@ -139,8 +142,7 @@ const metadata = {
       },
       {
         title: '2024-2025: <span class="font-medium">Mage-OS 2.0 and Beyond</span>',
-        description:
-          'Mage-OS 2.0 launched with PCI DSS 4.0 compliance, AI translations, and performance enhancements. The project now has 172+ financial contributors and a clear roadmap for continued innovation.',
+        description: `Mage-OS 2.0 launched with PCI DSS 4.0 compliance, AI translations, and performance enhancements. The project now has ${communityStats.totalContributors}+ financial contributors and a clear roadmap for continued innovation.`,
         icon: 'tabler:rocket',
       },
     ]}
@@ -280,8 +282,7 @@ const metadata = {
       },
       {
         title: 'How is Mage-OS funded?',
-        description:
-          'We are funded entirely by community contributions and partnerships. We have 172+ financial contributors and multiple partner tiers. There are no investors or shareholders expecting returns.',
+        description: `We are funded entirely by community contributions and partnerships. We have ${communityStats.totalContributors}+ financial contributors and multiple partner tiers. There are no investors or shareholders expecting returns.`,
       },
       {
         title: 'What happens if Adobe discontinues Magento Open Source?',
