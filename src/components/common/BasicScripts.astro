@@ -76,7 +76,34 @@ import { UI } from 'astrowind:config';
       pre.appendChild(button);
     });
 
-    attachEvent('#header nav', 'click', function () {
+    // Mobile dropdown toggle functionality
+    attachEvent('[data-aw-mobile-dropdown]', 'click', function (e, elem) {
+      // Only handle on mobile (when lg:hidden applies)
+      if (window.innerWidth >= 1024) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const dropdownMenu = elem.nextElementSibling;
+      const icon = elem.querySelector('svg');
+      const isExpanded = elem.getAttribute('aria-expanded') === 'true';
+
+      // Close other open dropdowns
+      document.querySelectorAll('[data-aw-mobile-dropdown]').forEach((otherBtn) => {
+        if (otherBtn !== elem) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherBtn.nextElementSibling?.classList.add('hidden');
+          otherBtn.querySelector('svg')?.classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current dropdown
+      elem.setAttribute('aria-expanded', !isExpanded);
+      dropdownMenu?.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-180');
+    });
+
+    attachEvent('#header nav a', 'click', function () {
       const toggleBtn = document.querySelector('[data-aw-toggle-menu]');
       toggleBtn?.classList.remove('expanded');
       toggleBtn?.setAttribute('aria-expanded', 'false');
