@@ -33,10 +33,10 @@ Sincere thank you to the following businesses for being the first to partner wit
 
 #### Silver Partners
 
-- [![ParadoxLabs](https://logo.clearbit.com/paradoxlabs.com)ParadoxLabs](https://opencollective.com/paradoxlabs 'ParadoxLabs')
+- [![ParadoxLabs](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/09a28978-6467-49e3-8bd5-2beccd5c6909/f77c424b-4ea4-4402-b062-67c6d0074494.png)ParadoxLabs](https://opencollective.com/paradoxlabs 'ParadoxLabs')
 - [![webvisum GmbH](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/5453724e-1ae6-42fa-817a-ea0c96d55b9d/logoweb450x450.png)webvisum GmbH](https://opencollective.com/webvisum-gmbh 'webvisum GmbH')
 - [![Vendic](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/3f6a55b5-e02b-469f-856a-a2dc30e9f62d/vendic-logo-new.jpg)Vendic](https://opencollective.com/vendic 'Vendic')
-- [![Hyvä](https://logo.clearbit.com/hyva.io)Hyvä](https://opencollective.com/hyva-themes 'Hyvä')
+- [![Hyvä](https://opencollective-production.s3.us-west-1.amazonaws.com/account-avatar/5d6ec674-7faa-4590-9e98-8c1b75f789ab/331ffa43-c56d-4b34-bb66-96fe94d8215a.png)Hyvä](https://opencollective.com/hyva-themes 'Hyvä')
 
 #### Bronze Partners
 
