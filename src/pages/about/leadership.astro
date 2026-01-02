@@ -7,15 +7,16 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Leadership Team',
-  description: 'Meet the Mage-OS Board of Directors and Business Control Committee members who guide our community-driven open source project through transparent, democratic governance.',
+  description:
+    'Meet the Mage-OS Board of Directors and Business Control Committee members who guide our community-driven open source project through transparent, democratic governance.',
 };
 
 // Role descriptions for officer positions
 const roleDescriptions: Record<string, string> = {
-  'President': 'Chairs board meetings, represents the Association externally, and provides strategic leadership.',
+  President: 'Chairs board meetings, represents the Association externally, and provides strategic leadership.',
   'Vice President': 'Supports the President, leads initiatives, and assumes presidential duties when needed.',
-  'Treasurer': 'Oversees financial management, budgeting, and ensures fiscal responsibility.',
-  'Actuary': 'Manages risk assessment, long-term planning, and organizational sustainability.',
+  Treasurer: 'Oversees financial management, budgeting, and ensures fiscal responsibility.',
+  Actuary: 'Manages risk assessment, long-term planning, and organizational sustainability.',
 };
 
 const boardMembers = [
@@ -44,14 +45,14 @@ const boardMembers = [
     name: 'John Prendergast',
     role: 'Actuary',
     isOfficer: true,
-    bio: 'Over 30 years of experience leading web technology businesses, delivering projects for global brands including Apple, Calvin Klein, HP, and Lidl. Co-founder and director of Aonach.com, a specialist Magento Open Source agency based in Ireland. A long-time advocate for open source power and community strength, committed to the Magento ecosystem\'s growth and sustainability.',
+    bio: "Over 30 years of experience leading web technology businesses, delivering projects for global brands including Apple, Calvin Klein, HP, and Lidl. Co-founder and director of Aonach.com, a specialist Magento Open Source agency based in Ireland. A long-time advocate for open source power and community strength, committed to the Magento ecosystem's growth and sustainability.",
     country: 'Ireland',
   },
   {
     name: 'Ryan Hoerr',
     role: 'Board Member',
     isOfficer: false,
-    bio: 'Software developer at ParadoxLabs since 2008, working extensively on payment services, subscriptions, and security. His Magento extensions process billions of dollars in transactions each year. Previously community manager for one of the internet\'s largest forums under Curse LLC (acquired by Amazon). Holds a degree in Electrical Engineering.',
+    bio: "Software developer at ParadoxLabs since 2008, working extensively on payment services, subscriptions, and security. His Magento extensions process billions of dollars in transactions each year. Previously community manager for one of the internet's largest forums under Curse LLC (acquired by Amazon). Holds a degree in Electrical Engineering.",
     country: 'USA',
   },
   {
@@ -96,22 +97,26 @@ const bccMembers = [
 const governancePrinciples = [
   {
     title: 'Democratic Elections',
-    description: 'Board members are elected annually at the General Assembly, where every Association member has an equal vote.',
+    description:
+      'Board members are elected annually at the General Assembly, where every Association member has an equal vote.',
     icon: 'tabler:checkbox',
   },
   {
     title: 'Stakeholder Diversity',
-    description: 'Our board represents agencies, extension vendors, hosting providers, and freelancers from across the globe.',
+    description:
+      'Our board represents agencies, extension vendors, hosting providers, and freelancers from across the globe.',
     icon: 'tabler:users-group',
   },
   {
     title: 'Financial Transparency',
-    description: 'Monthly financial updates, annual audits, and public reporting through the Business Control Committee.',
+    description:
+      'Monthly financial updates, annual audits, and public reporting through the Business Control Committee.',
     icon: 'tabler:report-money',
   },
   {
     title: 'Open Collaboration',
-    description: 'All governance decisions are documented and shared. Weekly public meetings welcome community participation.',
+    description:
+      'All governance decisions are documented and shared. Weekly public meetings welcome community participation.',
     icon: 'tabler:message-circle',
   },
 ];
@@ -151,48 +156,81 @@ const governancePrinciples = [
   <!-- Officers Section -->
   <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl">
     <div class="text-center mb-10">
-      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">Board of Directors</p>
+      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">
+        Board of Directors
+      </p>
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Executive Officers</h2>
       <p class="text-xl text-muted max-w-3xl mx-auto">
-        Officers hold specific responsibilities for Association operations and governance, elected by the board from among its members.
+        Officers hold specific responsibilities for Association operations and governance, elected by the board from
+        among its members.
       </p>
     </div>
     <div class="grid gap-6 md:grid-cols-2">
       {
-        boardMembers.filter(m => m.isOfficer).map((member) => (
-          <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg p-6 border-2 border-primary-200 dark:border-primary-800 hover:shadow-xl transition-shadow">
-            <div class="flex items-start gap-4 mb-4">
-              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 flex items-center justify-center flex-shrink-0 ring-2 ring-primary-300 dark:ring-primary-700 shadow-md">
-                <span class="text-primary-700 dark:text-primary-300 font-bold text-xl">
-                  {member.name
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
-                </span>
+        boardMembers
+          .filter((m) => m.isOfficer)
+          .map((member) => (
+            <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg p-6 border-2 border-primary-200 dark:border-primary-800 hover:shadow-xl transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 flex items-center justify-center flex-shrink-0 ring-2 ring-primary-300 dark:ring-primary-700 shadow-md">
+                  <span class="text-primary-700 dark:text-primary-300 font-bold text-xl">
+                    {member.name
+                      .split(' ')
+                      .map((n) => n[0])
+                      .join('')}
+                  </span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 dark:text-white">{member.name}</h3>
+                  <span class="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full mt-1">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    {member.role}
+                  </span>
+                </div>
               </div>
-              <div class="flex-1">
-                <h3 class="font-bold text-xl text-gray-900 dark:text-white">{member.name}</h3>
-                <span class="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full mt-1">
-                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                  {member.role}
-                </span>
-              </div>
+              {roleDescriptions[member.role] && (
+                <div class="bg-primary-50 dark:bg-slate-800 rounded-lg p-3 mb-4">
+                  <p class="text-sm text-primary-700 dark:text-primary-300 flex items-start gap-2">
+                    <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    {roleDescriptions[member.role]}
+                  </p>
+                </div>
+              )}
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
+              <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </>
+                </svg>
+                {member.country}
+              </p>
             </div>
-            {roleDescriptions[member.role] && (
-              <div class="bg-primary-50 dark:bg-slate-800 rounded-lg p-3 mb-4">
-                <p class="text-sm text-primary-700 dark:text-primary-300 flex items-start gap-2">
-                  <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                  {roleDescriptions[member.role]}
-                </p>
-              </div>
-            )}
-            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
-            <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              {member.country}
-            </p>
-          </div>
-        ))
+          ))
       }
     </div>
   </section>
@@ -203,33 +241,51 @@ const governancePrinciples = [
       <div class="text-center mb-10">
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Board Members</h2>
         <p class="text-xl text-muted max-w-3xl mx-auto">
-          Elected representatives who vote on Association matters and guide strategic direction. Each serves a two-year term.
+          Elected representatives who vote on Association matters and guide strategic direction. Each serves a two-year
+          term.
         </p>
       </div>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {
-          boardMembers.filter(m => !m.isOfficer).map((member) => (
-            <div class="bg-white dark:bg-slate-900 rounded-xl shadow-md p-5 border border-orange-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center flex-shrink-0 shadow">
-                  <span class="text-orange-700 dark:text-orange-300 font-bold text-base">
-                    {member.name
-                      .split(' ')
-                      .map((n) => n[0])
-                      .join('')}
-                  </span>
+          boardMembers
+            .filter((m) => !m.isOfficer)
+            .map((member) => (
+              <div class="bg-white dark:bg-slate-900 rounded-xl shadow-md p-5 border border-orange-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center flex-shrink-0 shadow">
+                    <span class="text-orange-700 dark:text-orange-300 font-bold text-base">
+                      {member.name
+                        .split(' ')
+                        .map((n) => n[0])
+                        .join('')}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-base text-gray-900 dark:text-white">{member.name}</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <>
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </>
+                      </svg>
+                      {member.country}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="font-bold text-base text-gray-900 dark:text-white">{member.name}</h3>
-                  <p class="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    {member.country}
-                  </p>
-                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
               </div>
-              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
-            </div>
-          ))
+            ))
         }
       </div>
     </div>
@@ -237,7 +293,9 @@ const governancePrinciples = [
 
   <section id="business-control-committee" class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl">
     <div class="text-center mb-10">
-      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">Independent Oversight</p>
+      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">
+        Independent Oversight
+      </p>
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Business Control Committee</h2>
       <p class="text-xl text-muted max-w-3xl mx-auto">
         The BCC provides independent oversight, ensuring accountability and transparency in all Association operations.
@@ -245,32 +303,68 @@ const governancePrinciples = [
     </div>
 
     <!-- BCC Role Explanation -->
-    <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-800/80 rounded-xl p-6 border border-green-200 dark:border-slate-700 max-w-4xl mx-auto mb-10">
+    <div
+      class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-800/80 rounded-xl p-6 border border-green-200 dark:border-slate-700 max-w-4xl mx-auto mb-10"
+    >
       <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-        <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          ></path></svg
+        >
         What Does the BCC Do?
       </h3>
       <div class="grid md:grid-cols-3 gap-4">
         <div class="bg-white dark:bg-slate-900 rounded-lg p-4 shadow-sm">
           <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path></svg
+            >
             <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Financial Oversight</h4>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Reviews financial statements and budget to ensure responsible stewardship of funds.</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Reviews financial statements and budget to ensure responsible stewardship of funds.
+          </p>
         </div>
         <div class="bg-white dark:bg-slate-900 rounded-lg p-4 shadow-sm">
           <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+              ></path></svg
+            >
             <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Governance Review</h4>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Ensures the Board follows proper procedures and adheres to Association bylaws.</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Ensures the Board follows proper procedures and adheres to Association bylaws.
+          </p>
         </div>
         <div class="bg-white dark:bg-slate-900 rounded-lg p-4 shadow-sm">
           <div class="flex items-center gap-2 mb-2">
-            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path></svg
+            >
             <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Member Advocacy</h4>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Acts as an independent voice for members, raising concerns on their behalf.</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Acts as an independent voice for members, raising concerns on their behalf.
+          </p>
         </div>
       </div>
     </div>
@@ -291,14 +385,36 @@ const governancePrinciples = [
               <div>
                 <h3 class="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
                 <span class="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
                   BCC Member
                 </span>
               </div>
             </div>
             <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{member.bio}</p>
             <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </>
+              </svg>
               {member.country}
             </p>
           </div>
@@ -314,31 +430,62 @@ const governancePrinciples = [
         <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-2">Get Involved</p>
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Your Path to Leadership</h2>
         <p class="text-xl text-muted max-w-3xl mx-auto">
-          The Mage-OS Association is member-driven. Our leadership positions are filled through democratic elections, giving every member a voice in shaping our future.
+          The Mage-OS Association is member-driven. Our leadership positions are filled through democratic elections,
+          giving every member a voice in shaping our future.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mb-10">
         <div class="bg-white dark:bg-slate-900 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow">
-            <svg class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow"
+          >
+            <svg class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg
+            >
           </div>
           <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">1. Join as Member</h4>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Become an Association member to participate in governance and vote in elections.</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Become an Association member to participate in governance and vote in elections.
+          </p>
         </div>
         <div class="bg-white dark:bg-slate-900 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow">
-            <svg class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow"
+          >
+            <svg class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg
+            >
           </div>
           <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">2. Attend General Assembly</h4>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Board positions are elected each year at the General Assembly meeting held in June.</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Board positions are elected each year at the General Assembly meeting held in June.
+          </p>
         </div>
         <div class="bg-white dark:bg-slate-900 rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow">
-            <svg class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 shadow"
+          >
+            <svg class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+            >
           </div>
           <h4 class="font-bold text-lg text-gray-900 dark:text-white mb-2">3. Nominate Yourself</h4>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Members can self-nominate or nominate others for Board or BCC candidacy.</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">
+            Members can self-nominate or nominate others for Board or BCC candidacy.
+          </p>
         </div>
       </div>
     </div>
@@ -347,28 +494,82 @@ const governancePrinciples = [
   <!-- Related Links -->
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
     <div class="grid md:grid-cols-2 gap-6">
-      <a href="/about/statutes" class="group bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all">
+      <a
+        href="/about/statutes"
+        class="group bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all"
+      >
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors">
-            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <div
+            class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors"
+          >
+            <svg
+              class="w-6 h-6 text-primary-600 dark:text-primary-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path></svg
+            >
           </div>
           <div>
-            <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Association Statutes</h4>
+            <h4
+              class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors"
+            >
+              Association Statutes
+            </h4>
             <p class="text-sm text-gray-600 dark:text-gray-400">Read our founding documents and governance rules</p>
           </div>
-          <svg class="w-5 h-5 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <svg
+            class="w-5 h-5 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors ml-auto"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg
+          >
         </div>
       </a>
-      <a href="/blog" class="group bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all">
+      <a
+        href="/blog"
+        class="group bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-700 transition-all"
+      >
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors">
-            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+          <div
+            class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors"
+          >
+            <svg
+              class="w-6 h-6 text-primary-600 dark:text-primary-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+              ></path></svg
+            >
           </div>
           <div>
-            <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">News and Updates</h4>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Read about General Assembly results and announcements</p>
+            <h4
+              class="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors"
+            >
+              News and Updates
+            </h4>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Read about General Assembly results and announcements
+            </p>
           </div>
-          <svg class="w-5 h-5 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <svg
+            class="w-5 h-5 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors ml-auto"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg
+          >
         </div>
       </a>
     </div>
@@ -384,7 +585,10 @@ const governancePrinciples = [
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-900 dark:to-slate-900"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-900 dark:to-slate-900"
+      >
+      </div>
     </Fragment>
   </CallToAction>
 </Layout>

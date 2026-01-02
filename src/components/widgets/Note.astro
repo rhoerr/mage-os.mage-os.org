@@ -1,16 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components';
+import type { CallToAction } from '~/types';
 
 export interface Props {
   icon?: string;
   title?: string;
   description?: string;
+  callToAction?: CallToAction;
 }
 
 const {
   icon = 'tabler:info-square',
   title = await Astro.slots.render('title'),
   description = await Astro.slots.render('description'),
+  callToAction,
 } = Astro.props;
 ---
 
@@ -19,5 +22,12 @@ const {
     <Icon name={icon} class="w-5 h-5 inline-block align-text-bottom font-bold" />
     <span class="font-bold" set:html={title} />
     <Fragment set:html={description} />
+    {
+      callToAction && (
+        <a href={callToAction.href} class="ml-2 text-primary hover:underline">
+          {callToAction.text}
+        </a>
+      )
+    }
   </div>
 </section>

@@ -9,7 +9,8 @@ import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Contributors',
-  description: 'Meet the people and companies who contribute to Mage-OS. Learn how to join our global community of developers, writers, and advocates.',
+  description:
+    'Meet the people and companies who contribute to Mage-OS. Learn how to join our global community of developers, writers, and advocates.',
 };
 
 const countryNames: Record<string, string> = {
@@ -140,29 +141,30 @@ const companyContributions = [
 ];
 
 // Calculate stats
-const uniqueCountries = new Set([
-  ...technicalTeam.map((m) => m.country),
-  ...documentationTeam.map((m) => m.country),
-]);
+const uniqueCountries = new Set([...technicalTeam.map((m) => m.country), ...documentationTeam.map((m) => m.country)]);
 const totalContributors = technicalTeam.length + documentationTeam.length;
 
 // Contribution FAQs
 const contributorFaqs = [
   {
     title: 'Do I need to be an expert developer to contribute?',
-    description: 'Not at all! While code contributions are welcome, we also need help with documentation, translations, testing, community support, and spreading the word about Mage-OS. Every skill level is valuable.',
+    description:
+      'Not at all! While code contributions are welcome, we also need help with documentation, translations, testing, community support, and spreading the word about Mage-OS. Every skill level is valuable.',
   },
   {
     title: 'How much time do I need to commit?',
-    description: 'Any amount helps! Some contributors dedicate a few hours a week, while others contribute occasionally. There are no minimum requirements - contribute what works for your schedule.',
+    description:
+      'Any amount helps! Some contributors dedicate a few hours a week, while others contribute occasionally. There are no minimum requirements - contribute what works for your schedule.',
   },
   {
     title: 'How do I get started with code contributions?',
-    description: 'Start by exploring our GitHub repositories, look for issues labeled "good first issue", and join our Discord to connect with the team. We review all pull requests and provide feedback to help you succeed.',
+    description:
+      'Start by exploring our GitHub repositories, look for issues labeled "good first issue", and join our Discord to connect with the team. We review all pull requests and provide feedback to help you succeed.',
   },
   {
     title: 'Can my company contribute to Mage-OS?',
-    description: 'Yes! Many companies support Mage-OS by allowing employees to contribute during work hours, sponsoring events, or providing resources like hosting and design. Contact us to discuss partnership opportunities.',
+    description:
+      'Yes! Many companies support Mage-OS by allowing employees to contribute during work hours, sponsoring events, or providing resources like hosting and design. Contact us to discuss partnership opportunities.',
   },
 ];
 
@@ -175,7 +177,8 @@ const contributionSteps = [
   },
   {
     title: 'Find Your Focus',
-    description: 'Explore the different working groups and identify where you can contribute - code, documentation, testing, or community outreach.',
+    description:
+      'Explore the different working groups and identify where you can contribute - code, documentation, testing, or community outreach.',
     icon: 'tabler:target',
   },
   {
@@ -258,9 +261,7 @@ const contributionSteps = [
             <div
               class:list={[
                 'w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0',
-                member.role === 'Lead'
-                  ? 'bg-primary-200 dark:bg-primary-800'
-                  : 'bg-primary-100 dark:bg-primary-900',
+                member.role === 'Lead' ? 'bg-primary-200 dark:bg-primary-800' : 'bg-primary-100 dark:bg-primary-900',
               ]}
             >
               <span class="text-primary-600 dark:text-primary-400 font-bold">
@@ -487,38 +488,58 @@ const contributionSteps = [
   />
 
   <!-- Ways to Contribute Grid -->
-  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-800 dark:to-slate-900">
+  <section
+    class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-800 dark:to-slate-900"
+  >
     <div class="text-center mb-10">
-      <p class="text-sm font-semibold tracking-wide text-primary-600 dark:text-primary-400 uppercase mb-2">Contribution Areas</p>
+      <p class="text-sm font-semibold tracking-wide text-primary-600 dark:text-primary-400 uppercase mb-2">
+        Contribution Areas
+      </p>
       <h2 class="text-3xl font-bold tracking-tight mb-4">Many Ways to Contribute</h2>
       <p class="text-muted max-w-2xl mx-auto">
         Mage-OS thrives because of diverse contributions. Find the area that matches your skills and interests.
       </p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
-        <div class="w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-4">
+      <div
+        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-4"
+        >
           <Icon name="tabler:code" class="w-7 h-7 text-primary-600 dark:text-primary-400" />
         </div>
         <h3 class="font-bold text-lg mb-2">Code</h3>
         <p class="text-sm text-muted">Fix bugs, add features, and improve the core distribution</p>
       </div>
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
-        <div class="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mx-auto mb-4">
+      <div
+        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mx-auto mb-4"
+        >
           <Icon name="tabler:file-text" class="w-7 h-7 text-green-600 dark:text-green-400" />
         </div>
         <h3 class="font-bold text-lg mb-2">Documentation</h3>
         <p class="text-sm text-muted">Write guides, tutorials, and API documentation</p>
       </div>
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
-        <div class="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center mx-auto mb-4">
+      <div
+        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center mx-auto mb-4"
+        >
           <Icon name="tabler:bug" class="w-7 h-7 text-orange-600 dark:text-orange-400" />
         </div>
         <h3 class="font-bold text-lg mb-2">Testing</h3>
         <p class="text-sm text-muted">Report bugs, test releases, and improve quality assurance</p>
       </div>
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
-        <div class="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mx-auto mb-4">
+      <div
+        class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mx-auto mb-4"
+        >
           <Icon name="tabler:speakerphone" class="w-7 h-7 text-purple-600 dark:text-purple-400" />
         </div>
         <h3 class="font-bold text-lg mb-2">Advocacy</h3>
@@ -533,11 +554,20 @@ const contributionSteps = [
     subtitle="Whether you have 5 minutes or 5 hours, every contribution helps move Mage-OS forward. Start today!"
     actions={[
       { text: 'Join Discord', href: '/discord-channel', icon: 'tabler:brand-discord' },
-      { text: 'Explore GitHub', href: 'https://github.com/mage-os', variant: 'secondary', target: '_blank', icon: 'tabler:brand-github' },
+      {
+        text: 'Explore GitHub',
+        href: 'https://github.com/mage-os',
+        variant: 'secondary',
+        target: '_blank',
+        icon: 'tabler:brand-github',
+      },
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900"
+      >
+      </div>
     </Fragment>
   </CallToAction>
 </Layout>

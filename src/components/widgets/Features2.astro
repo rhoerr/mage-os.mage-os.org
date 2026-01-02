@@ -2,7 +2,12 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
-import type { Features as Props } from '~/types';
+import Button from '~/components/ui/Button.astro';
+import type { Features, CallToAction } from '~/types';
+
+interface Props extends Features {
+  callToAction?: CallToAction;
+}
 
 const {
   title = await Astro.slots.render('title'),
@@ -11,6 +16,7 @@ const {
   items = [],
   columns = 3,
   defaultIcon,
+  callToAction,
 
   id,
   isDark = false,
@@ -35,4 +41,11 @@ const {
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   />
+  {
+    callToAction && (
+      <div class="mt-8 text-center">
+        <Button {...callToAction} />
+      </div>
+    )
+  }
 </WidgetWrapper>

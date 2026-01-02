@@ -9,25 +9,26 @@ const metadata = {
     'Join the Mage-OS community on Discord. Connect with developers, merchants, and contributors in an open, positive, and inclusive environment.',
 };
 
-const discordServerId = '893449664093904936';
 const discordInviteUrl = 'https://discord.gg/nvZDVA2NdC';
 ---
 
 <Layout metadata={metadata}>
   <Hero tagline="Community">
-    <Fragment slot="title">
-      Discord Channel
-    </Fragment>
+    <Fragment slot="title"> Discord Channel </Fragment>
 
     <Fragment slot="subtitle">
-      Join the Discussion! The Mage-OS community hangs out on Discord. This is an open, positive, and inclusive community.
+      Join the Discussion! The Mage-OS community hangs out on Discord. This is an open, positive, and inclusive
+      community.
     </Fragment>
   </Hero>
 
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 lg:py-12 max-w-4xl">
     <div class="text-center mb-8">
       <p class="text-lg text-gray-600 dark:text-slate-400 mb-6">
-        Before joining, please review our <a href="/code-of-conduct" class="text-primary hover:underline dark:text-blue-400">Code of Conduct</a> to help us maintain a welcoming environment for everyone.
+        Before joining, please review our <a
+          href="/code-of-conduct"
+          class="text-primary hover:underline dark:text-blue-400">Code of Conduct</a
+        > to help us maintain a welcoming environment for everyone.
       </p>
       <Button
         variant="primary"
@@ -41,23 +42,20 @@ const discordInviteUrl = 'https://discord.gg/nvZDVA2NdC';
 
     <div class="mt-12 flex justify-center">
       <div class="discord-embed">
-        <widgetbot
-          server="893449664093904936"
-          channel="977264429076992040"
-        ></widgetbot>
+        <widgetbot server="893449664093904936" channel="977264429076992040"></widgetbot>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-      
+
       <style>
         /* Wrapper controls size; widget fills it */
         .discord-embed {
           width: 100%;
           /* keeps a nice shape on desktop while being fluid */
           aspect-ratio: 16 / 10;
-          max-height: 80vh;      /* never taller than viewport */
-          min-height: 420px;     /* reasonable minimum */
+          max-height: 80vh; /* never taller than viewport */
+          min-height: 420px; /* reasonable minimum */
         }
-      
+
         /* Make the widget/iframe fill the wrapper */
         .discord-embed widgetbot,
         .discord-embed iframe {
@@ -65,11 +63,11 @@ const discordInviteUrl = 'https://discord.gg/nvZDVA2NdC';
           height: 100% !important;
           display: block;
         }
-      
+
         /* Mobile tweaks */
         @media (max-width: 768px) {
           .discord-embed {
-            aspect-ratio: 9 / 16;   /* taller on phones */
+            aspect-ratio: 9 / 16; /* taller on phones */
             max-height: 75vh;
             min-height: 380px;
           }
@@ -83,13 +81,15 @@ const discordInviteUrl = 'https://discord.gg/nvZDVA2NdC';
         <div class="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-slate-700">
           <h3 class="font-semibold dark:text-white mb-2">Technical Support</h3>
           <p class="text-gray-600 dark:text-slate-400 text-sm">
-            Get help with installation, migration, development questions, and troubleshooting from experienced community members.
+            Get help with installation, migration, development questions, and troubleshooting from experienced community
+            members.
           </p>
         </div>
         <div class="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-slate-700">
           <h3 class="font-semibold dark:text-white mb-2">Weekly Meetings</h3>
           <p class="text-gray-600 dark:text-slate-400 text-sm">
-            Join our weekly tech meetings on Tuesdays at 3 PM CET to discuss development, roadmap, and community initiatives.
+            Join our weekly tech meetings on Tuesdays at 3 PM CET to discuss development, roadmap, and community
+            initiatives.
           </p>
         </div>
         <div class="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-slate-700">

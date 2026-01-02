@@ -26,12 +26,7 @@ const tiers = [
     gradient: 'from-[#7D3E25] via-[#CB915C] to-[#E9C29B]',
     textColor: 'text-white',
     checkoutUrl: 'https://opencollective.com/mage-os/contribute/bronze-supporter-48131/checkout',
-    features: [
-      'Logo on website',
-      'Partner badge',
-      'Voting rights',
-      'Annual Assembly participation',
-    ],
+    features: ['Logo on website', 'Partner badge', 'Voting rights', 'Annual Assembly participation'],
   },
   {
     name: 'Silver',
@@ -40,12 +35,7 @@ const tiers = [
     gradient: 'from-[#8E96A1] via-[#B3BDCA] to-[#CAD5E1]',
     textColor: 'text-gray-800',
     checkoutUrl: 'https://opencollective.com/mage-os/contribute/silver-partner-48130/checkout',
-    features: [
-      'All Bronze benefits',
-      'Enhanced logo placement',
-      'Social media recognition',
-      'Priority feature input',
-    ],
+    features: ['All Bronze benefits', 'Enhanced logo placement', 'Social media recognition', 'Priority feature input'],
   },
   {
     name: 'Gold',
@@ -85,43 +75,52 @@ const tiers = [
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    {tiers.map((tier) => (
-      <div class={`relative rounded-2xl bg-gradient-to-br ${tier.gradient} p-[2px] shadow-lg hover:shadow-xl transition-shadow duration-300`}>
-        <div class={`h-full rounded-2xl bg-gradient-to-br ${tier.gradient} p-6 flex flex-col`}>
-          <div class="text-center mb-4">
-            <h3 class={`text-2xl font-bold ${tier.textColor}`}>{tier.name}</h3>
-            <div class={`mt-2 ${tier.textColor}`}>
-              <span class="text-3xl font-bold">{tier.price}</span>
-              <span class="text-sm opacity-80">{tier.period}</span>
+    {
+      tiers.map((tier) => (
+        <div
+          class={`relative rounded-2xl bg-gradient-to-br ${tier.gradient} p-[2px] shadow-lg hover:shadow-xl transition-shadow duration-300`}
+        >
+          <div class={`h-full rounded-2xl bg-gradient-to-br ${tier.gradient} p-6 flex flex-col`}>
+            <div class="text-center mb-4">
+              <h3 class={`text-2xl font-bold ${tier.textColor}`}>{tier.name}</h3>
+              <div class={`mt-2 ${tier.textColor}`}>
+                <span class="text-3xl font-bold">{tier.price}</span>
+                <span class="text-sm opacity-80">{tier.period}</span>
+              </div>
             </div>
+
+            <ul class={`flex-1 space-y-2 mb-6 ${tier.textColor}`}>
+              {tier.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 mt-0.5 opacity-80"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-sm opacity-90">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={tier.checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`block w-full text-center py-3 px-4 rounded-full font-medium transition-all duration-200 ${
+                tier.name === 'Gold' || tier.name === 'Platinum'
+                  ? 'bg-gray-900 text-white hover:bg-gray-800'
+                  : 'bg-white/90 text-gray-900 hover:bg-white'
+              }`}
+            >
+              Become {tier.name} Partner
+            </a>
           </div>
-
-          <ul class={`flex-1 space-y-2 mb-6 ${tier.textColor}`}>
-            {tier.features.map((feature) => (
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 flex-shrink-0 mt-0.5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-sm opacity-90">{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href={tier.checkoutUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class={`block w-full text-center py-3 px-4 rounded-full font-medium transition-all duration-200 ${
-              tier.name === 'Gold' || tier.name === 'Platinum'
-                ? 'bg-gray-900 text-white hover:bg-gray-800'
-                : 'bg-white/90 text-gray-900 hover:bg-white'
-            }`}
-          >
-            Become {tier.name} Partner
-          </a>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 
   <div class="mt-8 text-center">

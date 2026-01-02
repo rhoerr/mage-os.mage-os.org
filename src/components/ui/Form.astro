@@ -15,7 +15,11 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
               {label && (
                 <label for={name} class="block text-sm font-medium">
                   {label}
-                  {required && <span class="text-red-500 ml-1" aria-hidden="true">*</span>}
+                  {required && (
+                    <span class="text-red-500 ml-1" aria-hidden="true">
+                      *
+                    </span>
+                  )}
                   {required && <span class="sr-only">(required)</span>}
                 </label>
               )}
@@ -38,7 +42,11 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
       <div class="mb-6">
         <label for="textarea" class="block text-sm font-medium">
           {textarea.label}
-          {textarea.required && <span class="text-red-500 ml-1" aria-hidden="true">*</span>}
+          {textarea.required && (
+            <span class="text-red-500 ml-1" aria-hidden="true">
+              *
+            </span>
+          )}
           {textarea.required && <span class="sr-only">(required)</span>}
         </label>
         <textarea

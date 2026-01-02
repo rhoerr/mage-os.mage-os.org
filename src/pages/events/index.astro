@@ -11,7 +11,8 @@ import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Events | Mage-OS Community',
-  description: 'Join the Mage-OS community at events worldwide. From Meet Magento conferences to weekly tech meetings on Discord, connect with merchants, developers, and agencies shaping the future of open-source commerce.',
+  description:
+    'Join the Mage-OS community at events worldwide. From Meet Magento conferences to weekly tech meetings on Discord, connect with merchants, developers, and agencies shaping the future of open-source commerce.',
 };
 
 // Get all events and sort by date
@@ -35,7 +36,8 @@ function formatDate(date: Date) {
 const eventTypes = [
   {
     title: 'Meet Magento Conferences',
-    description: 'Regional conferences bringing together the global Magento ecosystem for talks, networking, and innovation.',
+    description:
+      'Regional conferences bringing together the global Magento ecosystem for talks, networking, and innovation.',
     icon: 'tabler:users-group',
   },
   {
@@ -103,7 +105,10 @@ const eventTypes = [
     </Fragment>
 
     <Fragment slot="subtitle">
-      From Meet Magento conferences across the globe to weekly tech meetings on Discord, the Mage-OS community gathers to share knowledge, build connections, and shape the future of open-source commerce. Whether you are a merchant exploring solutions, a developer contributing code, or an agency scaling implementations, there is an event for you.
+      From Meet Magento conferences across the globe to weekly tech meetings on Discord, the Mage-OS community gathers
+      to share knowledge, build connections, and shape the future of open-source commerce. Whether you are a merchant
+      exploring solutions, a developer contributing code, or an agency scaling implementations, there is an event for
+      you.
     </Fragment>
   </Hero>
 
@@ -159,32 +164,38 @@ const eventTypes = [
     items={[
       {
         title: 'Learn From Experts',
-        description: 'Gain insights from industry leaders, core contributors, and experienced practitioners sharing real-world knowledge.',
+        description:
+          'Gain insights from industry leaders, core contributors, and experienced practitioners sharing real-world knowledge.',
         icon: 'tabler:school',
       },
       {
         title: 'Network Globally',
-        description: 'Connect with merchants, developers, and agencies from around the world who share your passion for open-source commerce.',
+        description:
+          'Connect with merchants, developers, and agencies from around the world who share your passion for open-source commerce.',
         icon: 'tabler:network',
       },
       {
         title: 'Shape the Future',
-        description: 'Participate in discussions that influence the Mage-OS roadmap and contribute to community-driven innovation.',
+        description:
+          'Participate in discussions that influence the Mage-OS roadmap and contribute to community-driven innovation.',
         icon: 'tabler:rocket',
       },
       {
         title: 'Hands-On Experience',
-        description: 'Join hackathons and contribution days to collaborate on real projects and improve your technical skills.',
+        description:
+          'Join hackathons and contribution days to collaborate on real projects and improve your technical skills.',
         icon: 'tabler:code',
       },
       {
         title: 'Stay Current',
-        description: 'Keep up with the latest developments, best practices, and emerging trends in the Magento ecosystem.',
+        description:
+          'Keep up with the latest developments, best practices, and emerging trends in the Magento ecosystem.',
         icon: 'tabler:trending-up',
       },
       {
         title: 'Find Partners',
-        description: 'Discover agencies, technology providers, and collaborators who can help you achieve your commerce goals.',
+        description:
+          'Discover agencies, technology providers, and collaborators who can help you achieve your commerce goals.',
         icon: 'tabler:heart-handshake',
       },
     ]}
@@ -194,15 +205,17 @@ const eventTypes = [
   <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-orange-50 dark:bg-slate-800/30 rounded-xl my-8">
     <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-8 text-center">Types of Events</h2>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {eventTypes.map((type) => (
-        <div class="text-center p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
-          <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-full inline-block mb-4">
-            <Icon name={type.icon} class="w-8 h-8 text-primary dark:text-blue-400" />
+      {
+        eventTypes.map((type) => (
+          <div class="text-center p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-full inline-block mb-4">
+              <Icon name={type.icon} class="w-8 h-8 text-primary dark:text-blue-400" />
+            </div>
+            <h3 class="text-lg font-semibold dark:text-white mb-2">{type.title}</h3>
+            <p class="text-gray-600 dark:text-slate-400 text-sm">{type.description}</p>
           </div>
-          <h3 class="text-lg font-semibold dark:text-white mb-2">{type.title}</h3>
-          <p class="text-gray-600 dark:text-slate-400 text-sm">{type.description}</p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 
@@ -215,7 +228,10 @@ const eventTypes = [
           </h2>
           <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" role="list">
             {upcomingEvents.map((event) => (
-              <article class="group bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-slate-700 overflow-hidden" role="listitem">
+              <article
+                class="group bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-slate-700 overflow-hidden"
+                role="listitem"
+              >
                 <div class="bg-gradient-to-r from-primary/10 to-orange-100 dark:from-primary/20 dark:to-slate-700 p-4">
                   <div class="flex items-center justify-between">
                     <span class="text-sm font-semibold text-primary dark:text-blue-400">
@@ -250,7 +266,10 @@ const eventTypes = [
                       class="inline-flex items-center text-primary dark:text-blue-400 font-medium text-sm hover:underline group-hover:gap-2 transition-all"
                     >
                       View Details
-                      <Icon name="tabler:arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      <Icon
+                        name="tabler:arrow-right"
+                        class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                      />
                     </a>
                   )}
                 </div>
@@ -301,7 +320,10 @@ const eventTypes = [
           </h2>
           <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" role="list">
             {pastEvents.map((event) => (
-              <article class="bg-gray-50 dark:bg-slate-800/50 rounded-lg p-5 border border-gray-200 dark:border-slate-700 hover:border-gray-300 dark:hover:border-slate-600 transition-colors" role="listitem">
+              <article
+                class="bg-gray-50 dark:bg-slate-800/50 rounded-lg p-5 border border-gray-200 dark:border-slate-700 hover:border-gray-300 dark:hover:border-slate-600 transition-colors"
+                role="listitem"
+              >
                 <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-500 font-medium mb-2">
                   <Icon name="tabler:calendar" class="w-4 h-4" />
                   {formatDate(event.data.date)}
@@ -324,9 +346,12 @@ const eventTypes = [
   <!-- Recent Event Highlights -->
   <section class="bg-blue-50 dark:bg-slate-800/50 not-prose">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4 text-center">Recent Event Highlights</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4 text-center">
+        Recent Event Highlights
+      </h2>
       <p class="text-gray-600 dark:text-slate-400 text-center max-w-3xl mx-auto mb-10">
-        The Magento community continues to demonstrate its dedication to innovation, sustainability, and open collaboration at events worldwide.
+        The Magento community continues to demonstrate its dedication to innovation, sustainability, and open
+        collaboration at events worldwide.
       </p>
       <div class="grid gap-6 md:grid-cols-2">
         <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-slate-700">
@@ -340,7 +365,9 @@ const eventTypes = [
             </div>
           </div>
           <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">
-            Focused on "Need for Speed," this event emphasized balancing high-performance eCommerce with sustainability. The "Future of Magento Open Source vol. 2" panel highlighted the collaboration between the Magento Association and Mage-OS.
+            Focused on "Need for Speed," this event emphasized balancing high-performance eCommerce with sustainability.
+            The "Future of Magento Open Source vol. 2" panel highlighted the collaboration between the Magento
+            Association and Mage-OS.
           </p>
           <p class="text-primary dark:text-blue-400 font-medium text-sm">#MagentoOpenForLife</p>
         </div>
@@ -355,7 +382,9 @@ const eventTypes = [
             </div>
           </div>
           <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">
-            Adobe acknowledged the critical role Magento Open Source plays in their strategy, emphasizing community-led prioritization. Mathias Schreiber of the Magento Association called for more active participation in shaping the platform's future.
+            Adobe acknowledged the critical role Magento Open Source plays in their strategy, emphasizing community-led
+            prioritization. Mathias Schreiber of the Magento Association called for more active participation in shaping
+            the platform's future.
           </p>
           <p class="text-primary dark:text-blue-400 font-medium text-sm">Community-Driven Innovation</p>
         </div>
@@ -370,7 +399,8 @@ const eventTypes = [
             </div>
           </div>
           <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">
-            After a five-year break, MageTitans returned to the Netherlands offering an exciting mix of technical talks and community networking, including the unveiling of MageWire Version 3.
+            After a five-year break, MageTitans returned to the Netherlands offering an exciting mix of technical talks
+            and community networking, including the unveiling of MageWire Version 3.
           </p>
           <p class="text-primary dark:text-blue-400 font-medium text-sm">Code, Community, and Career</p>
         </div>
@@ -385,7 +415,8 @@ const eventTypes = [
             </div>
           </div>
           <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">
-            After a three-year hiatus, the Italian Magento community came together highlighting the resurgence of interest in Magento Open Source, with significant contributions from Mage-OS and Hyva projects.
+            After a three-year hiatus, the Italian Magento community came together highlighting the resurgence of
+            interest in Magento Open Source, with significant contributions from Mage-OS and Hyva projects.
           </p>
           <p class="text-primary dark:text-blue-400 font-medium text-sm">Italian Magento Revival</p>
         </div>
@@ -401,27 +432,33 @@ const eventTypes = [
     items={[
       {
         title: 'How can I attend a Meet Magento conference?',
-        description: 'Meet Magento conferences are organized regionally by local community members. Visit the specific event website for registration details and ticket information. Many events offer early bird pricing and community discounts.',
+        description:
+          'Meet Magento conferences are organized regionally by local community members. Visit the specific event website for registration details and ticket information. Many events offer early bird pricing and community discounts.',
       },
       {
         title: 'What are the weekly tech meetings?',
-        description: 'Every week, the Mage-OS community holds open tech meetings on Discord where developers and contributors discuss ongoing development, roadmap priorities, and community initiatives. Anyone is welcome to join and participate.',
+        description:
+          'Every week, the Mage-OS community holds open tech meetings on Discord where developers and contributors discuss ongoing development, roadmap priorities, and community initiatives. Anyone is welcome to join and participate.',
       },
       {
         title: 'How can I organize a local Mage-OS event?',
-        description: 'We encourage community members to organize local meetups and events. Contact us at events@mage-os.org for support, promotional materials, and guidance on hosting a successful Mage-OS gathering.',
+        description:
+          'We encourage community members to organize local meetups and events. Contact us at events@mage-os.org for support, promotional materials, and guidance on hosting a successful Mage-OS gathering.',
       },
       {
         title: 'Are events in-person only or also virtual?',
-        description: 'Most major conferences are in-person events, while our weekly tech meetings are held virtually on Discord. Some events also offer hybrid formats with live streaming for remote attendees.',
+        description:
+          'Most major conferences are in-person events, while our weekly tech meetings are held virtually on Discord. Some events also offer hybrid formats with live streaming for remote attendees.',
       },
       {
         title: 'How do I become a speaker at a Mage-OS event?',
-        description: 'Most events have a call for papers or speaker application process. Watch for announcements on our calendar and community channels. We welcome speakers of all experience levels sharing valuable insights.',
+        description:
+          'Most events have a call for papers or speaker application process. Watch for announcements on our calendar and community channels. We welcome speakers of all experience levels sharing valuable insights.',
       },
       {
         title: 'How do I subscribe to the community calendar?',
-        description: 'You can subscribe to our Google Calendar maintained by Simon Sprankel to stay updated on all upcoming Mage-OS and Magento community events worldwide. The subscribe link is available at the top of this page.',
+        description:
+          'You can subscribe to our Google Calendar maintained by Simon Sprankel to stay updated on all upcoming Mage-OS and Magento community events worldwide. The subscribe link is available at the top of this page.',
       },
     ]}
   >

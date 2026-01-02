@@ -58,8 +58,7 @@ switch (type) {
       '@type': 'WebSite',
       name: 'Mage-OS',
       url: 'https://mage-os.org',
-      description:
-        'Mage-OS is an independent, community-driven distribution of Magento Open Source.',
+      description: 'Mage-OS is an independent, community-driven distribution of Magento Open Source.',
       publisher: baseOrganization,
       ...data,
     };
@@ -99,7 +98,4 @@ switch (type) {
 }
 ---
 
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify(structuredData, null, 0)}
-/>
+<script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 0)} />

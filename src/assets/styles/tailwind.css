@@ -12,7 +12,7 @@
   /* Interactive elements with enhanced focus states */
   a:focus-visible,
   button:focus-visible,
-  [role="button"]:focus-visible,
+  [role='button']:focus-visible,
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
@@ -22,7 +22,7 @@
   /* Remove default outline when using ring */
   a:focus-visible,
   button:focus-visible,
-  [role="button"]:focus-visible {
+  [role='button']:focus-visible {
     @apply outline-none;
   }
 }
@@ -148,7 +148,10 @@ pre.astro-code {
   color: #6b7280;
   cursor: pointer;
   opacity: 0.4;
-  transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s,
+    color 0.2s;
 }
 
 pre.astro-code:hover .code-copy-btn {
