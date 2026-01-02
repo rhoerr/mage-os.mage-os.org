@@ -1,10 +1,32 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Contributors',
-  description: 'Meet the people and companies who contribute to Mage-OS.',
+  description: 'Meet the people and companies who contribute to Mage-OS. Learn how to join our global community of developers, writers, and advocates.',
+};
+
+const countryNames: Record<string, string> = {
+  DE: 'Germany',
+  US: 'United States',
+  NL: 'Netherlands',
+  UK: 'United Kingdom',
+  AU: 'Australia',
+  EE: 'Estonia',
+  IN: 'India',
+  UA: 'Ukraine',
+  TR: 'Turkey',
+  FR: 'France',
+  IE: 'Ireland',
+  ES: 'Spain',
+  PL: 'Poland',
+  IT: 'Italy',
 };
 
 const technicalTeam = [
@@ -28,6 +50,46 @@ const technicalTeam = [
 ];
 
 const documentationTeam = [{ name: 'David Lambauer', role: 'Lead', country: 'DE' }];
+
+const formerWorkingGroups = [
+  {
+    name: 'Marketing Strategy',
+    description: 'Developed marketing strategy and brand awareness initiatives for Mage-OS.',
+    note: 'For Magento brand awareness and marketing, please get involved via the Magento Association marketing committee.',
+    members: [
+      { name: 'Thien-Lan Weber', role: 'Lead', country: 'FR' },
+      { name: 'John Hughes', country: 'UK' },
+      { name: 'John Prendergast', country: 'IE' },
+      { name: 'David Lambauer', country: 'DE' },
+      { name: 'Roland Haselager', country: 'NL' },
+      { name: 'Arron Moss', country: 'UK' },
+    ],
+  },
+  {
+    name: 'Website',
+    description: 'Content, design and functional updates to the Mage-OS website.',
+    members: [
+      { name: 'John Hughes', role: 'Lead', country: 'UK' },
+      { name: 'Bernard Robbins', country: 'US' },
+      { name: 'Dominik Rammert', country: 'DE' },
+      { name: 'Nicole Mentzen', country: 'DE' },
+      { name: 'Thien-Lan Weber', country: 'FR' },
+      { name: 'Arron Moss', country: 'UK' },
+      { name: 'Brent Peterson', country: 'US' },
+      { name: 'Indraneil Khedekar', country: 'IN' },
+      { name: 'Reuben Southall', country: 'UK' },
+      { name: 'Willem Wigman', country: 'NL' },
+      { name: 'Barbaros Selim Büyükelçi', country: 'TR' },
+      { name: 'Damien Retzinger', country: 'US' },
+      { name: 'Jisse Reitsma', country: 'NL' },
+      { name: 'Roland Haselager', country: 'NL' },
+      { name: 'Benno Lippert', country: 'DE' },
+      { name: 'David Lambauer', country: 'DE' },
+      { name: 'John Prendergast', country: 'IE' },
+      { name: 'Sergej Derzap', country: 'ES' },
+    ],
+  },
+];
 
 const companyContributions = [
   {
@@ -76,28 +138,132 @@ const companyContributions = [
     url: 'https://abovethefray.io/',
   },
 ];
+
+// Calculate stats
+const uniqueCountries = new Set([
+  ...technicalTeam.map((m) => m.country),
+  ...documentationTeam.map((m) => m.country),
+]);
+const totalContributors = technicalTeam.length + documentationTeam.length;
+
+// Contribution FAQs
+const contributorFaqs = [
+  {
+    title: 'Do I need to be an expert developer to contribute?',
+    description: 'Not at all! While code contributions are welcome, we also need help with documentation, translations, testing, community support, and spreading the word about Mage-OS. Every skill level is valuable.',
+  },
+  {
+    title: 'How much time do I need to commit?',
+    description: 'Any amount helps! Some contributors dedicate a few hours a week, while others contribute occasionally. There are no minimum requirements - contribute what works for your schedule.',
+  },
+  {
+    title: 'How do I get started with code contributions?',
+    description: 'Start by exploring our GitHub repositories, look for issues labeled "good first issue", and join our Discord to connect with the team. We review all pull requests and provide feedback to help you succeed.',
+  },
+  {
+    title: 'Can my company contribute to Mage-OS?',
+    description: 'Yes! Many companies support Mage-OS by allowing employees to contribute during work hours, sponsoring events, or providing resources like hosting and design. Contact us to discuss partnership opportunities.',
+  },
+];
+
+// Steps to become a contributor
+const contributionSteps = [
+  {
+    title: 'Join Our Community',
+    description: 'Connect with us on Discord and GitHub. Introduce yourself and let us know your interests and skills.',
+    icon: 'tabler:message-circle',
+  },
+  {
+    title: 'Find Your Focus',
+    description: 'Explore the different working groups and identify where you can contribute - code, documentation, testing, or community outreach.',
+    icon: 'tabler:target',
+  },
+  {
+    title: 'Make Your First Contribution',
+    description: 'Start with something small. Fix a typo, improve docs, or tackle a "good first issue" on GitHub.',
+    icon: 'tabler:rocket',
+  },
+  {
+    title: 'Grow With Us',
+    description: 'As you become familiar with the project, take on larger challenges and help mentor new contributors.',
+    icon: 'tabler:trending-up',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <HeroText
-    tagline="Thank You"
-    title="Contributors"
-    subtitle="Mage-OS wouldn't be where it's at today without people working on their free time to improve the product and gather resources around it. It takes a village to make it all happen."
+    tagline="Our Global Community"
+    title="Meet the Contributors"
+    subtitle="Mage-OS is built by passionate individuals and companies from around the world, volunteering their time and expertise to advance open-source e-commerce. Every contribution matters, and we celebrate everyone who helps make Mage-OS better."
+  />
+
+  <!-- Community Stats -->
+  <Stats
+    stats={[
+      { title: 'Active Contributors', amount: `${totalContributors}+`, icon: 'tabler:users' },
+      { title: 'Countries Represented', amount: `${uniqueCountries.size}`, icon: 'tabler:world' },
+      { title: 'Working Groups', amount: '2', icon: 'tabler:sitemap' },
+      { title: 'Contributing Companies', amount: `${companyContributions.length}`, icon: 'tabler:building' },
+    ]}
   />
 
   <!-- Technical Working Group -->
-  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-blue-50 dark:bg-slate-800/50">
     <div class="mb-8">
-      <h2 class="text-2xl font-bold tracking-tight mb-2">Technical Working Group</h2>
-      <p class="text-muted">Builds, maintains and enhances the Mage-OS Distribution and Magento Open Source mirrors.</p>
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <div class="w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+          <Icon name="tabler:code" class="w-6 h-6 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight">Technical Working Group</h2>
+          <p class="text-sm text-primary-600 dark:text-primary-400">Core Development Team</p>
+        </div>
+      </div>
+      <p class="text-muted mb-4 max-w-3xl">
+        Builds, maintains and enhances the Mage-OS Distribution and Magento Open Source mirrors. This group is
+        responsible for the core codebase, release management, and technical direction of the project.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="https://github.com/mage-os"
+          target="_blank"
+          class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline"
+        >
+          <Icon name="tabler:brand-github" class="w-4 h-4" />
+          View on GitHub
+        </a>
+        <a
+          href="https://github.com/mage-os/mageos-magento2/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+          target="_blank"
+          class="inline-flex items-center gap-2 text-sm font-medium text-green-600 dark:text-green-400 hover:underline"
+        >
+          <Icon name="tabler:heart" class="w-4 h-4" />
+          Good First Issues
+        </a>
+      </div>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {
         technicalTeam.map((member) => (
-          <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
-            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0">
-              <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">
+          <div
+            class:list={[
+              'flex items-center gap-3 rounded-lg p-4 border transition-shadow hover:shadow-md',
+              member.role === 'Lead'
+                ? 'bg-primary-50 dark:bg-primary-900/20 border-primary-200 dark:border-primary-800'
+                : 'bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700',
+            ]}
+          >
+            <div
+              class:list={[
+                'w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0',
+                member.role === 'Lead'
+                  ? 'bg-primary-200 dark:bg-primary-800'
+                  : 'bg-primary-100 dark:bg-primary-900',
+              ]}
+            >
+              <span class="text-primary-600 dark:text-primary-400 font-bold">
                 {member.name
                   .split(' ')
                   .map((n) => n[0])
@@ -105,14 +271,15 @@ const companyContributions = [
               </span>
             </div>
             <div class="min-w-0">
-              <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
-              <p class="text-xs text-gray-500 dark:text-gray-400">
-                {member.role === 'Lead' ? (
-                  <span class="text-primary-600 dark:text-primary-400">{member.role}</span>
-                ) : (
-                  member.country
+              <div class="flex items-center gap-2">
+                <p class="font-medium text-gray-900 dark:text-white truncate">{member.name}</p>
+                {member.role === 'Lead' && (
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">
+                    Lead
+                  </span>
                 )}
-              </p>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{countryNames[member.country] || member.country}</p>
             </div>
           </div>
         ))
@@ -121,18 +288,47 @@ const companyContributions = [
   </section>
 
   <!-- Documentation Working Group -->
-  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl">
     <div class="mb-8">
-      <h2 class="text-2xl font-bold tracking-tight mb-2">Documentation Working Group</h2>
-      <p class="text-muted">Develops and delivers the Dev Docs for Mage-OS.</p>
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <div class="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900 flex items-center justify-center">
+          <Icon name="tabler:book" class="w-6 h-6 text-green-600 dark:text-green-400" />
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight">Documentation Working Group</h2>
+          <p class="text-sm text-green-600 dark:text-green-400">Developer Documentation Team</p>
+        </div>
+      </div>
+      <p class="text-muted mb-4 max-w-3xl">
+        Develops and delivers the Dev Docs for Mage-OS. This group ensures developers have comprehensive, up-to-date
+        documentation to work with the Mage-OS Distribution.
+      </p>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <a
+          href="https://github.com/mage-os/devdocs"
+          target="_blank"
+          class="inline-flex items-center gap-2 font-medium text-green-600 dark:text-green-400 hover:underline"
+        >
+          <Icon name="tabler:brand-github" class="w-4 h-4" />
+          DevDocs Repository
+        </a>
+        <a
+          href="https://github.com/mage-os/devdocs/graphs/contributors"
+          target="_blank"
+          class="inline-flex items-center gap-2 font-medium text-green-600 dark:text-green-400 hover:underline"
+        >
+          <Icon name="tabler:users" class="w-4 h-4" />
+          All Contributors
+        </a>
+      </div>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-lg">
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-lg">
       {
         documentationTeam.map((member) => (
-          <div class="flex items-center gap-3 bg-white dark:bg-slate-900 rounded-lg p-3 border border-gray-200 dark:border-gray-700">
-            <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
-              <span class="text-green-600 dark:text-green-400 font-bold text-sm">
+          <div class="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+            <div class="w-12 h-12 rounded-full bg-green-200 dark:bg-green-800 flex items-center justify-center flex-shrink-0">
+              <span class="text-green-600 dark:text-green-400 font-bold">
                 {member.name
                   .split(' ')
                   .map((n) => n[0])
@@ -140,28 +336,51 @@ const companyContributions = [
               </span>
             </div>
             <div class="min-w-0">
-              <p class="font-medium text-sm text-gray-900 dark:text-white truncate">{member.name}</p>
-              <p class="text-xs text-primary-600 dark:text-primary-400">{member.role}</p>
+              <div class="flex items-center gap-2">
+                <p class="font-medium text-gray-900 dark:text-white truncate">{member.name}</p>
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                  Lead
+                </span>
+              </div>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{countryNames[member.country] || member.country}</p>
             </div>
           </div>
         ))
       }
     </div>
 
-    <p class="mt-4 text-sm text-muted">
-      Full list of Dev Docs contributors: <a
-        href="https://github.com/mage-os/devdocs/graphs/contributors"
-        class="text-primary-600 dark:text-primary-400 hover:underline"
-        target="_blank">GitHub Contributors</a
-      >
-    </p>
+    <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+      <div class="flex items-start gap-3">
+        <Icon name="tabler:pencil" class="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+        <p class="text-sm text-muted">
+          <strong>Want to help with documentation?</strong> The DevDocs project welcomes contributions from the community.
+          Whether you want to fix typos, improve explanations, or add new guides, check out the
+          <a
+            href="https://github.com/mage-os/devdocs"
+            class="text-green-600 dark:text-green-400 hover:underline font-medium"
+            target="_blank">repository</a
+          > to get started.
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- Company Contributions -->
-  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-orange-50 dark:bg-slate-800/50">
     <div class="mb-8">
-      <h2 class="text-2xl font-bold tracking-tight mb-2">Company Contributions</h2>
-      <p class="text-muted">Companies that have contributed time, resources, and expertise to Mage-OS.</p>
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <div class="w-12 h-12 rounded-lg bg-orange-100 dark:bg-orange-900 flex items-center justify-center">
+          <Icon name="tabler:building" class="w-6 h-6 text-orange-600 dark:text-orange-400" />
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight">Company Contributions</h2>
+          <p class="text-sm text-orange-600 dark:text-orange-400">Corporate Partners and Sponsors</p>
+        </div>
+      </div>
+      <p class="text-muted max-w-3xl">
+        These companies have contributed time, resources, and expertise to help build and grow the Mage-OS project. We
+        are deeply grateful for their support and commitment to open-source e-commerce.
+      </p>
     </div>
 
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -170,42 +389,155 @@ const companyContributions = [
           <a
             href={company.url}
             target="_blank"
-            class="block bg-white dark:bg-slate-900 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors"
+            rel="noopener noreferrer"
+            class="group block bg-white dark:bg-slate-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 transition-all hover:shadow-lg"
           >
-            <h3 class="font-bold text-gray-900 dark:text-white mb-2">{company.name}</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">{company.contribution}</p>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                {company.name}
+              </h3>
+              <Icon
+                name="tabler:external-link"
+                class="w-4 h-4 text-gray-400 group-hover:text-purple-500 transition-colors flex-shrink-0 mt-1"
+              />
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{company.contribution}</p>
           </a>
         ))
       }
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
-    <div class="bg-orange-50 dark:bg-slate-800 rounded-lg p-6 text-center">
-      <h3 class="font-bold text-lg mb-2">Want to contribute?</h3>
-      <p class="text-muted mb-4">
-        We welcome contributions of all kinds: code, documentation, content, design, and more.
+  <!-- Former Working Groups (Collapsed) -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="mb-8">
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+          <Icon name="tabler:history" class="w-5 h-5 text-gray-600 dark:text-gray-400" />
+        </div>
+        <h2 class="text-2xl font-bold tracking-tight">Former Working Groups</h2>
+      </div>
+      <p class="text-muted">
+        These groups are no longer actively meeting, but we recognize the valuable contributions they made to the
+        project.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a
-          href="https://github.com/mage-os"
-          target="_blank"
-          class="text-primary-600 dark:text-primary-400 font-medium hover:underline"
-        >
-          GitHub →
-        </a>
-        <a
-          href="https://discord.com/invite/nvZDVA2NdC"
-          target="_blank"
-          class="text-primary-600 dark:text-primary-400 font-medium hover:underline"
-        >
-          Discord →
-        </a>
-        <a href="/community" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">
-          Get Involved →
-        </a>
+    </div>
+
+    <div class="space-y-6">
+      {
+        formerWorkingGroups.map((group) => (
+          <details class="group bg-gray-50 dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-gray-700">
+            <summary class="flex items-center justify-between p-4 cursor-pointer list-none">
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">{group.name}</h3>
+                <p class="text-sm text-muted">{group.description}</p>
+              </div>
+              <Icon
+                name="tabler:chevron-down"
+                class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180"
+              />
+            </summary>
+            <div class="px-4 pb-4">
+              {group.note && (
+                <p class="text-sm text-muted mb-4 p-3 bg-white dark:bg-slate-900 rounded border border-gray-200 dark:border-gray-700">
+                  {group.note}
+                </p>
+              )}
+              <div class="flex flex-wrap gap-2">
+                {group.members.map((member) => (
+                  <span
+                    class:list={[
+                      'inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm',
+                      member.role === 'Lead'
+                        ? 'bg-gray-200 dark:bg-gray-700 font-medium'
+                        : 'bg-gray-100 dark:bg-gray-800',
+                    ]}
+                  >
+                    {member.name}
+                    {member.role === 'Lead' && <span class="text-xs text-gray-500">(Lead)</span>}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- How to Become a Contributor -->
+  <Steps
+    title="Become a Contributor"
+    subtitle="Ready to make an impact? Follow these steps to start your contribution journey with Mage-OS."
+    tagline="Get Started"
+    items={contributionSteps}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <!-- Contributor FAQs -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions from potential contributors"
+    tagline="FAQs"
+    items={contributorFaqs}
+    columns={2}
+  />
+
+  <!-- Ways to Contribute Grid -->
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-800 dark:to-slate-900">
+    <div class="text-center mb-10">
+      <p class="text-sm font-semibold tracking-wide text-primary-600 dark:text-primary-400 uppercase mb-2">Contribution Areas</p>
+      <h2 class="text-3xl font-bold tracking-tight mb-4">Many Ways to Contribute</h2>
+      <p class="text-muted max-w-2xl mx-auto">
+        Mage-OS thrives because of diverse contributions. Find the area that matches your skills and interests.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:code" class="w-7 h-7 text-primary-600 dark:text-primary-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Code</h3>
+        <p class="text-sm text-muted">Fix bugs, add features, and improve the core distribution</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:file-text" class="w-7 h-7 text-green-600 dark:text-green-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Documentation</h3>
+        <p class="text-sm text-muted">Write guides, tutorials, and API documentation</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:bug" class="w-7 h-7 text-orange-600 dark:text-orange-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Testing</h3>
+        <p class="text-sm text-muted">Report bugs, test releases, and improve quality assurance</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:speakerphone" class="w-7 h-7 text-purple-600 dark:text-purple-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Advocacy</h3>
+        <p class="text-sm text-muted">Share Mage-OS, speak at events, and grow our community</p>
       </div>
     </div>
   </section>
+
+  <!-- Call to Action -->
+  <CallToAction
+    title="Ready to Join Us?"
+    subtitle="Whether you have 5 minutes or 5 hours, every contribution helps move Mage-OS forward. Start today!"
+    actions={[
+      { text: 'Join Discord', href: 'https://discord.com/invite/nvZDVA2NdC', target: '_blank', icon: 'tabler:brand-discord' },
+      { text: 'Explore GitHub', href: 'https://github.com/mage-os', variant: 'secondary', target: '_blank', icon: 'tabler:brand-github' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900"></div>
+    </Fragment>
+  </CallToAction>
 </Layout>

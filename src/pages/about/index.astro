@@ -4,19 +4,24 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'About',
-  description: 'Learn about the Mage-OS Association, our mission, governance, and the people behind the project.',
+  title: 'About the Mage-OS Association',
+  description: 'Learn about the Mage-OS Association, our mission, governance, and the people behind the project. A non-profit formed by 1,641 community members to ensure the future of Magento.',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget -->
   <Hero
-    tagline="About"
+    tagline="About Us"
     actions={[
       {
         variant: 'primary',
@@ -34,76 +39,193 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      A non-profit organization formed by the Magento community to ensure the long-term success of the Magento ecosystem
-      through development, coordination, and community support.
+      A non-profit organization born from community action, formed to safeguard and advance the Magento ecosystem.
+      We are merchants, developers, agencies, and advocates united by a shared mission: ensuring Magento thrives for generations to come.
+      Together with the Magento Association, we reclaimed the Magento brand in 2024 and continue building the future of open-source ecommerce.
     </Fragment>
   </Hero>
+
+  <!-- Origin Story Widget -->
+  <Content
+    id="origin"
+    tagline="Our Origin"
+    title="Born from an Open Letter"
+    isReversed
+    items={[
+      {
+        title: '1,641 Signatories',
+        description:
+          'The Open Letter about the future of Magento was signed by merchants, developers, agencies, and stakeholders who depend on Magento for their livelihood.',
+      },
+      {
+        title: 'Community Action',
+        description:
+          'What started as a call for transparency and collaboration evolved into a movement that established the Mage-OS Association as a permanent home for community-driven development.',
+      },
+      {
+        title: 'A New Chapter',
+        description:
+          'In 2022, the Mage-OS Association was formally incorporated, bringing the vision of the Open Letter to life and ensuring the Magento ecosystem has a voice of its own.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Community collaboration',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        From Vision to Reality
+      </h3>
+      In 2021, concerns about the future direction of Magento Open Source led community members to draft an Open Letter.
+      That letter sparked a global conversation and united thousands who believed the ecosystem deserved an independent,
+      community-owned organization to champion its interests.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Timeline/Milestones Widget -->
+  <Steps
+    id="milestones"
+    title="Our Journey"
+    tagline="Key Milestones"
+    items={[
+      {
+        title: 'September 2021: <span class="font-normal">The Open Letter</span>',
+        description:
+          'Concerns about Magento Open Source\'s future led 18 founding signatories to publish an open letter that ultimately gathered 1,641 signatures from merchants, developers, and agencies worldwide.',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'September 2022: <span class="font-normal">Association Founded</span>',
+        description:
+          'The Mage-OS Association was officially incorporated in Poland as a non-profit organization, with a founding board of 8 directors and 2 Business Control Committee members.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'October 2023: <span class="font-normal">Distribution 1.0 Released</span>',
+        description:
+          'The first official Mage-OS Distribution was released, providing an enhanced, community-driven alternative to Magento Open Source with performance improvements and a refreshed admin panel.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'November 2023: <span class="font-normal">Membership Opens</span>',
+        description:
+          'Individual and company memberships became available, allowing supporters to directly fund and shape the future of Mage-OS through voting rights and governance participation.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: '2024: <span class="font-normal">Magento Brand Reclaimed</span>',
+        description:
+          'Together with the Magento Association, we achieved a historic milestone by acquiring the Magento brand, ensuring the community controls its own destiny.',
+        icon: 'tabler:award',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Team collaboration and milestones',
+    }}
+  />
 
   <!-- Mission Widget -->
   <Features
     id="mission"
     tagline="Our Mission"
     title="We want to see Magento prosper"
-    subtitle="The Mage-OS Association was founded to represent and further the interests of the Magento community: Merchants, developers, agencies, and everyone supporting this ecosystem."
+    subtitle="The Mage-OS Association exists to represent and further the interests of the entire Magento community: Merchants, developers, agencies, and everyone who builds, supports, or depends on this ecosystem."
     items={[
       {
         title: 'Grow the Community',
-        description: 'Increase the number of people involved in the Magento ecosystem and the Mage-OS platform.',
+        description: 'Attract and welcome new merchants, developers, and contributors to strengthen the Magento ecosystem.',
         icon: 'tabler:users-group',
       },
       {
         title: 'Nurture Good Values',
-        description: 'Foster an open, inclusive, and welcoming environment for all community members.',
+        description: 'Foster an open, inclusive, and welcoming environment where everyone can contribute and thrive.',
         icon: 'tabler:heart-handshake',
       },
       {
         title: 'Sustain the Platform',
-        description: 'Position Mage-OS as a leading option for custom ecommerce development.',
+        description: 'Position Mage-OS as a leading choice for custom ecommerce development through continuous improvement.',
         icon: 'tabler:rocket',
       },
       {
         title: 'Increase Market Share',
-        description: 'Grow confidence in the Magento ecosystem and increase its presence in the ecommerce market.',
+        description: 'Rebuild confidence in the Magento ecosystem and grow its presence in the global ecommerce market.',
         icon: 'tabler:chart-line',
       },
       {
         title: 'Coordinate Development',
-        description: 'Fund and coordinate the long-term development and support of the Mage-OS platform.',
+        description: 'Fund and coordinate the long-term development, security, and support of the Mage-OS platform.',
         icon: 'tabler:code',
       },
       {
         title: 'Support the Ecosystem',
         description:
-          'Provide documentation, education, events, and resources to support organizations in the ecosystem.',
+          'Provide documentation, education, events, and resources that empower organizations throughout the ecosystem.',
         icon: 'tabler:lifebuoy',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Stats Widget -->
+  <Stats
+    tagline="By the Numbers"
+    title="The Association in Numbers"
+    subtitle="From a grassroots movement to a thriving global organization"
+    stats={[
+      { title: 'Open Letter Signatories', amount: '1,641', icon: 'tabler:signature' },
+      { title: 'Countries Represented', amount: '30+', icon: 'tabler:world' },
+      { title: 'Financial Contributors', amount: '172+', icon: 'tabler:heart' },
+      { title: 'Total Contributions', amount: '106K+', icon: 'tabler:currency-euro' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Stats>
 
   <!-- How We Work Widget -->
   <Steps2
-    title="How the Association Works"
-    subtitle="Mage-OS operates as a transparent, democratic organization"
+    title="Democratic Governance"
+    subtitle="Mage-OS operates with complete transparency and democratic accountability. Every decision is made in the open, every euro is tracked publicly, and every member has a voice."
     items={[
       {
-        title: 'Democratic Governance',
-        description: 'Members elect the Board of Directors annually and vote on key decisions at the General Assembly.',
+        title: 'Member-Elected Leadership',
+        description: 'The Board of Directors is elected annually by members at the General Assembly. Every member gets a vote in shaping the future direction of the association.',
         icon: 'tabler:users',
       },
       {
-        title: 'Open Finances',
+        title: 'Transparent Finances',
         description:
-          'All contributions and expenses are publicly visible through Open Collective for complete transparency.',
+          'All contributions and expenses are publicly visible through Open Collective. Anyone can see exactly how funds are raised and spent.',
         icon: 'tabler:currency-euro',
       },
       {
-        title: 'Community-Driven',
+        title: 'Community-Driven Development',
         description:
-          'Development priorities and direction are shaped by community input and contributor participation.',
+          'Development priorities are shaped by community input. Contributors participate directly in technical decisions through open discussions and weekly meetings.',
         icon: 'tabler:message-circle',
       },
+      {
+        title: 'Independent Oversight',
+        description:
+          'The Business Control Committee provides independent oversight to ensure accountability, proper use of funds, and adherence to our statutes.',
+        icon: 'tabler:shield-check',
+      },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps2>
 
   <!-- Our People Widget -->
   <Features2
@@ -155,12 +277,12 @@ const metadata = {
 
   <!-- Governance Widget -->
   <Features2
-    title="Governance"
-    tagline="Legal Framework"
+    title="Legal Framework"
+    tagline="Governance Documents"
     items={[
       {
         title: 'Association Statutes',
-        description: 'Our formal bylaws define how the association is structured, governed, and operates.',
+        description: 'Our formal bylaws define how the association is structured, governed, and how decisions are made.',
         icon: 'tabler:gavel',
         callToAction: {
           text: 'Read Statutes',
@@ -169,7 +291,7 @@ const metadata = {
       },
       {
         title: 'Code of Conduct',
-        description: 'Community standards that all participants are expected to follow.',
+        description: 'Community standards that create a welcoming, respectful environment for all participants.',
         icon: 'tabler:book',
         callToAction: {
           text: 'View Code of Conduct',
@@ -178,7 +300,7 @@ const metadata = {
       },
       {
         title: 'Registered in Poland',
-        description: 'Mage-OS Association is legally registered in Poznań, Poland, but operates worldwide.',
+        description: 'Mage-OS Association is legally incorporated in Poland as a non-profit, operating globally.',
         icon: 'tabler:map-pin',
         callToAction: {
           text: 'View Imprint',
@@ -187,7 +309,7 @@ const metadata = {
       },
       {
         title: 'Open Collective',
-        description: 'All finances are managed transparently through Open Collective.',
+        description: 'Every contribution and expense is tracked publicly. Full financial transparency, always.',
         icon: 'tabler:wallet',
         callToAction: {
           text: 'View Finances',
@@ -197,6 +319,79 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- Testimonials Widget -->
+  <Testimonials
+    tagline="Community Voices"
+    title="What Our Community Says"
+    testimonials={[
+      {
+        testimonial:
+          'For us, supporting Mage-OS means taking Magento 2 back to its community roots. We believe this organisation will propel the Magento ecosystem forward. The Magento community has given us so much over the years, now it\'s our turn to contribute.',
+        name: 'Niek Verkolen & Tjitse Efde',
+        job: 'Co-founders, Vendic',
+      },
+      {
+        testimonial:
+          'We truly believe we can not only keep Magento alive, we can give it a bright future by putting the focus on merchants, big AND small. This is only the beginning. Magento has a bright future ahead.',
+        name: 'Founding Signatories',
+        job: 'The Open Letter, 2021',
+      },
+      {
+        testimonial:
+          'Our goal is to strengthen the Magento ecosystem and see it thrive for years to come. We intend to do that by giving everyone in the community the opportunity to get involved and make a difference.',
+        name: 'Mage-OS Association',
+        job: 'Founding Statement, 2022',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Testimonials>
+
+  <!-- FAQs Widget -->
+  <FAQs
+    id="faqs"
+    tagline="Common Questions"
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'What is the Mage-OS Association?',
+        description:
+          'The Mage-OS Association is a non-profit organization registered in Poland, created to safeguard and advance the Magento ecosystem. We are community-owned and governed democratically by our members.',
+      },
+      {
+        title: 'How is Mage-OS different from Magento Open Source?',
+        description:
+          'Mage-OS Distribution is built on the Magento Open Source codebase but includes community-driven enhancements, performance improvements, and faster security updates. All Magento extensions remain compatible.',
+      },
+      {
+        title: 'How is the Association funded?',
+        description:
+          'We are funded primarily through individual and company memberships, as well as donations via Open Collective. All contributions and expenses are publicly visible for complete transparency.',
+      },
+      {
+        title: 'How can I get involved?',
+        description:
+          'There are many ways to contribute: become a member, attend our weekly meetings, contribute code on GitHub, help with documentation, or join our Discord community to share ideas and participate in discussions.',
+      },
+      {
+        title: 'What is the relationship with the Magento Association?',
+        description:
+          'Mage-OS and the Magento Association collaborate on initiatives to strengthen the Magento community. In 2024, we jointly acquired the Magento brand and are co-developing improved merchant documentation.',
+      },
+      {
+        title: 'How are decisions made?',
+        description:
+          'Major decisions are made democratically at our annual General Assembly where members vote. The Board of Directors is elected annually by members and manages day-to-day affairs with oversight from the Business Control Committee.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
 
   <!-- CTA Widget -->
   <CallToAction
@@ -209,16 +404,25 @@ const metadata = {
         icon: 'tabler:heart',
       },
       {
+        text: 'Join Discord',
+        href: 'http://chat.mage-os.org',
+        target: '_blank',
+        icon: 'tabler:brand-discord',
+      },
+      {
         text: 'Get Involved',
         href: '/community',
       },
     ]}
   >
-    <Fragment slot="title"> Join the Mage-OS Association </Fragment>
+    <Fragment slot="title">
+      Join the Movement
+    </Fragment>
 
     <Fragment slot="subtitle">
-      Support the future of open-source ecommerce. Members get voting rights, can participate in elections, and help
-      shape the direction of Mage-OS.
+      Be part of the community that is shaping the future of open-source ecommerce. As a member, you gain voting rights
+      in elections, a voice in strategic decisions, and the satisfaction of supporting an ecosystem that benefits everyone.
+      Whether you contribute code, documentation, ideas, or financial support, every contribution makes a difference.
     </Fragment>
   </CallToAction>
 </Layout>
