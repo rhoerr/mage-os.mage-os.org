@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -30,8 +30,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
+  <PageHero
     tagline="Community"
+    variant="gradient"
     actions={[
       {
         variant: 'primary',
@@ -43,16 +44,14 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Built by the Community,<br />
-      <span class="text-accent dark:text-white">For the Community</span>
+      Built by the Community, <span class="text-accent dark:text-white">For the Community</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Mage-OS thrives because of contributions from people like you. Whether you are a <strong>developer</strong> contributing
-      code, an <strong>agency</strong> shaping the platform, or a <strong>merchant</strong> driving requirements—there is
-      a place for you here. No experience required.
+      Mage-OS thrives because of contributions from people like you. Whether you are a developer contributing
+      code, an agency shaping the platform, or a merchant driving requirements—there is a place for you here.
     </Fragment>
-  </Hero>
+  </PageHero>
 
   <!-- Note Widget ******************* -->
 

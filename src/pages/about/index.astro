@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -24,8 +24,9 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget -->
-  <Hero
+  <PageHero
     tagline="About Us"
+    variant="default"
     actions={[
       {
         variant: 'primary',
@@ -38,17 +39,15 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      The Mage-OS<br />
-      <span class="text-accent dark:text-white">Association</span>
+      The Mage-OS <span class="text-accent dark:text-white">Association</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       A non-profit organization born from community action, formed to safeguard and advance the Magento ecosystem. We
       are merchants, developers, agencies, and advocates united by a shared mission: ensuring Magento thrives for
-      generations to come. Together with the Magento Association, we reclaimed the Magento brand in 2024 and continue
-      building the future of open-source ecommerce.
+      generations to come.
     </Fragment>
-  </Hero>
+  </PageHero>
 
   <!-- Origin Story Widget -->
   <Content

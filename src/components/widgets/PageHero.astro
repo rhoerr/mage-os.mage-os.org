@@ -1,0 +1,149 @@
+---
+/**
+ * PageHero - A compact Flowbite-styled hero for interior pages
+ *
+ * Variants:
+ * - default: Clean minimal header with optional gradient
+ * - split: Two-column layout with image on right
+ * - gradient: Bold gradient background
+ */
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+
+import type { Hero as Props } from '~/types';
+
+interface ExtendedProps extends Props {
+  variant?: 'default' | 'split' | 'gradient';
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  content = await Astro.slots.render('content'),
+  actions = await Astro.slots.render('actions'),
+  image = await Astro.slots.render('image'),
+  variant = 'default',
+  id,
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as ExtendedProps;
+
+// Variant-specific container classes
+const containerClasses = {
+  default: 'bg-white dark:bg-gray-900',
+  split: 'bg-gray-50 dark:bg-gray-800',
+  gradient: 'bg-gradient-to-br from-primary/10 via-white to-blue-50 dark:from-primary/20 dark:via-gray-900 dark:to-gray-800',
+};
+---
+
+<section
+  class:list={[
+    'relative md:-mt-[76px] not-prose border-b border-gray-200 dark:border-gray-700',
+    containerClasses[variant],
+  ]}
+  {...id ? { id } : {}}
+>
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <slot name="bg">
+      {bg ? <Fragment set:html={bg} /> : null}
+    </slot>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+
+    {/* Default and Gradient variants - centered text */}
+    {(variant === 'default' || variant === 'gradient') && (
+      <div class="py-12 md:py-16">
+        <div class="text-center max-w-4xl mx-auto">
+          {tagline && (
+            <span
+              class="inline-flex items-center mb-4 px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary dark:bg-primary/20"
+              set:html={tagline}
+            />
+          )}
+          {title && (
+            <h1
+              class="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4 font-heading text-gray-900 dark:text-white"
+              set:html={title}
+            />
+          )}
+          {subtitle && (
+            <p
+              class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+              set:html={subtitle}
+            />
+          )}
+          {actions && (
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+              {Array.isArray(actions) ? (
+                actions.map((action) => (
+                  <Button {...(action || {})} />
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
+            </div>
+          )}
+          {content && <div class="mt-8"><Fragment set:html={content} /></div>}
+        </div>
+      </div>
+    )}
+
+    {/* Split variant - two columns with image */}
+    {variant === 'split' && (
+      <div class="py-12 md:py-16 lg:py-20 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="text-center lg:text-left">
+          {tagline && (
+            <span
+              class="inline-flex items-center mb-4 px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary dark:bg-primary/20"
+              set:html={tagline}
+            />
+          )}
+          {title && (
+            <h1
+              class="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4 font-heading text-gray-900 dark:text-white"
+              set:html={title}
+            />
+          )}
+          {subtitle && (
+            <p
+              class="text-lg text-gray-600 dark:text-gray-300"
+              set:html={subtitle}
+            />
+          )}
+          {actions && (
+            <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+              {Array.isArray(actions) ? (
+                actions.map((action) => (
+                  <Button {...(action || {})} />
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
+            </div>
+          )}
+          {content && <div class="mt-8"><Fragment set:html={content} /></div>}
+        </div>
+
+        {image && (
+          <div class="relative">
+            {typeof image === 'string' ? (
+              <Fragment set:html={image} />
+            ) : (
+              <Image
+                class="rounded-lg shadow-xl w-full"
+                widths={[400, 768, 1024]}
+                sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, 1024px"
+                loading="eager"
+                width={600}
+                height={400}
+                {...image}
+              />
+            )}
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+</section>

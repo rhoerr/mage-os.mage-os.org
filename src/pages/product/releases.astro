@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
 import ReleasePostsGrid from '~/components/widgets/ReleasePostsGrid.astro';
 import { findReleasePosts } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
@@ -18,12 +18,12 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget -->
-  <Hero tagline="Product">
+  <PageHero tagline="Product" variant="default">
     <Fragment slot="title">Releases</Fragment>
     <Fragment slot="subtitle">
       Download the latest Mage-OS Distribution and explore our complete release history below.
     </Fragment>
-  </Hero>
+  </PageHero>
 
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
     <!-- Latest Release Section -->

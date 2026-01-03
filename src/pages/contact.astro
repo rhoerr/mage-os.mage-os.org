@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -20,8 +20,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
+  <PageHero
     tagline="Contact"
+    variant="split"
     actions={[
       {
         variant: 'primary',
@@ -43,16 +44,13 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      Let's Connect!<br />
-      <span class="text-accent dark:text-white">We're Here to Help</span>
+      Let's Connect! <span class="text-accent dark:text-white">We're Here to Help</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Whether you need <strong>technical support</strong>, want to <strong>contribute</strong> to the project, or have <strong
-        >partnership inquiries</strong
-      >, we have the right channel for you. Our community is welcoming, responsive, and eager to help.
+      Whether you need technical support, want to contribute to the project, or have partnership inquiries, we have the right channel for you. Our community is welcoming, responsive, and eager to help.
     </Fragment>
-  </Hero>
+  </PageHero>
 
   <!-- Note Widget: Discord Emphasis ******************* -->
 

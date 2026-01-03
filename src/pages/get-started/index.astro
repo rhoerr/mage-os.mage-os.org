@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -21,8 +21,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
+  <PageHero
     tagline="Get Started"
+    variant="default"
     actions={[
       {
         variant: 'primary',
@@ -41,7 +42,7 @@ const metadata = {
       Whether you're launching a new store, migrating from Magento Open Source, or setting up a development
       environment—we have a clear path to get you running quickly.
     </Fragment>
-  </Hero>
+  </PageHero>
 
   <!-- Note Widget ******************* -->
 

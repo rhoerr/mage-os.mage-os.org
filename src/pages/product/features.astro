@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
 import Note from '~/components/widgets/Note.astro';
 import FeaturesWidget from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -19,8 +19,9 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
+  <PageHero
     tagline="Mage-OS Distribution"
+    variant="gradient"
     actions={[
       {
         variant: 'primary',
@@ -42,7 +43,7 @@ const metadata = {
       and developer experience. 100% compatible with existing Magento extensions. Free, open source, and ready for
       production.
     </Fragment>
-  </Hero>
+  </PageHero>
 
   <!-- Note Widget ******************* -->
 
@@ -203,76 +204,76 @@ const metadata = {
       <p class="mb-4 text-muted">
         See how Mage-OS compares to Magento Open Source and Adobe Commerce across key capabilities.
       </p>
-      <div class="overflow-x-auto">
-        <table class="min-w-full text-sm">
-          <thead>
-            <tr class="border-b dark:border-gray-700">
-              <th class="text-left py-3 px-4 font-semibold">Capability</th>
-              <th class="text-center py-3 px-4 font-semibold">Mage-OS</th>
-              <th class="text-center py-3 px-4 font-semibold">Magento OS</th>
-              <th class="text-center py-3 px-4 font-semibold">Adobe Commerce</th>
+      <div class="relative overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
+        <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300">
+          <thead class="text-xs uppercase bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+            <tr>
+              <th scope="col" class="px-6 py-4 font-semibold">Capability</th>
+              <th scope="col" class="px-6 py-4 font-semibold text-center">Mage-OS</th>
+              <th scope="col" class="px-6 py-4 font-semibold text-center">Magento OS</th>
+              <th scope="col" class="px-6 py-4 font-semibold text-center">Adobe Commerce</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">Performance Optimization</td>
-              <td class="text-center py-3 px-4 text-green-600">Enhanced</td>
-              <td class="text-center py-3 px-4">Standard</td>
-              <td class="text-center py-3 px-4">Enterprise</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Performance Optimization</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Enhanced</span></td>
+              <td class="px-6 py-4 text-center">Standard</td>
+              <td class="px-6 py-4 text-center">Enterprise</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">Security Patches</td>
-              <td class="text-center py-3 px-4 text-green-600">Community-accelerated</td>
-              <td class="text-center py-3 px-4">Adobe schedule</td>
-              <td class="text-center py-3 px-4">Adobe schedule</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Security Patches</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Community-accelerated</span></td>
+              <td class="px-6 py-4 text-center">Adobe schedule</td>
+              <td class="px-6 py-4 text-center">Adobe schedule</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">PCI DSS 4.0 Features</td>
-              <td class="text-center py-3 px-4 text-green-600">Included</td>
-              <td class="text-center py-3 px-4">Partial</td>
-              <td class="text-center py-3 px-4">Included</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">PCI DSS 4.0 Features</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Included</span></td>
+              <td class="px-6 py-4 text-center">Partial</td>
+              <td class="px-6 py-4 text-center">Included</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">Open Governance</td>
-              <td class="text-center py-3 px-4 text-green-600">100% transparent</td>
-              <td class="text-center py-3 px-4">Adobe-controlled</td>
-              <td class="text-center py-3 px-4">Adobe-controlled</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Open Governance</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">100% transparent</span></td>
+              <td class="px-6 py-4 text-center">Adobe-controlled</td>
+              <td class="px-6 py-4 text-center">Adobe-controlled</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">Extension Compatibility</td>
-              <td class="text-center py-3 px-4 text-green-600">Full</td>
-              <td class="text-center py-3 px-4">Full</td>
-              <td class="text-center py-3 px-4">Full</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Extension Compatibility</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Full</span></td>
+              <td class="px-6 py-4 text-center">Full</td>
+              <td class="px-6 py-4 text-center">Full</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">API Access</td>
-              <td class="text-center py-3 px-4">REST, GraphQL</td>
-              <td class="text-center py-3 px-4">REST, GraphQL</td>
-              <td class="text-center py-3 px-4">REST, GraphQL</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">API Access</td>
+              <td class="px-6 py-4 text-center">REST, GraphQL</td>
+              <td class="px-6 py-4 text-center">REST, GraphQL</td>
+              <td class="px-6 py-4 text-center">REST, GraphQL</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">AI-Powered Translation</td>
-              <td class="text-center py-3 px-4 text-green-600">Built-in</td>
-              <td class="text-center py-3 px-4">Third-party</td>
-              <td class="text-center py-3 px-4">Third-party</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">AI-Powered Translation</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Built-in</span></td>
+              <td class="px-6 py-4 text-center">Third-party</td>
+              <td class="px-6 py-4 text-center">Third-party</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">Community Contribution</td>
-              <td class="text-center py-3 px-4 text-green-600">Open to all</td>
-              <td class="text-center py-3 px-4">Limited</td>
-              <td class="text-center py-3 px-4">Closed</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Community Contribution</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">Open to all</span></td>
+              <td class="px-6 py-4 text-center">Limited</td>
+              <td class="px-6 py-4 text-center">Closed</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4">Vendor Lock-in</td>
-              <td class="text-center py-3 px-4 text-green-600">None</td>
-              <td class="text-center py-3 px-4">None</td>
-              <td class="text-center py-3 px-4">Adobe ecosystem</td>
+            <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900 dark:even:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4">Vendor Lock-in</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300">None</span></td>
+              <td class="px-6 py-4 text-center">None</td>
+              <td class="px-6 py-4 text-center">Adobe ecosystem</td>
             </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4 font-semibold">Cost</td>
-              <td class="text-center py-3 px-4 text-green-600 font-semibold">Free</td>
-              <td class="text-center py-3 px-4 font-semibold">Free</td>
-              <td class="text-center py-3 px-4 font-semibold">Enterprise pricing</td>
+            <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td class="px-6 py-4 font-semibold">Cost</td>
+              <td class="px-6 py-4 text-center"><span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-primary text-white">Free</span></td>
+              <td class="px-6 py-4 text-center font-medium">Free</td>
+              <td class="px-6 py-4 text-center font-medium">Enterprise pricing</td>
             </tr>
           </tbody>
         </table>
