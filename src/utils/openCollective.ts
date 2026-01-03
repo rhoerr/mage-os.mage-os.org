@@ -317,3 +317,172 @@ function getDefaultStats(): CommunityStats {
     partnerCompanies: 10,
   };
 }
+
+// Individual member types
+export type MemberTier = 'community' | 'professional';
+
+export interface IndividualMember {
+  id: number;
+  name: string;
+  tier: MemberTier;
+  imageUrl: string | null;
+  profileUrl: string;
+  website: string | null;
+  twitter: string | null;
+  github: string | null;
+  description: string | null;
+  totalDonated: number;
+  isActive: boolean;
+  joinedAt: Date;
+}
+
+// Tier ID mapping for individual members
+const MEMBER_TIER_IDS: Record<MemberTier, number> = {
+  community: 44722,
+  professional: 44723,
+};
+
+const MEMBERS_CACHE_FILE = path.join(process.cwd(), '.cache/members.json');
+
+interface CachedMembersData {
+  timestamp: number;
+  members: IndividualMember[];
+}
+
+function readMembersCache(): CachedMembersData | null {
+  try {
+    if (!fs.existsSync(MEMBERS_CACHE_FILE)) return null;
+    const data = JSON.parse(fs.readFileSync(MEMBERS_CACHE_FILE, 'utf-8'));
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function writeMembersCache(members: IndividualMember[]): void {
+  ensureCacheDir();
+  const data: CachedMembersData = {
+    timestamp: Date.now(),
+    members,
+  };
+  fs.writeFileSync(MEMBERS_CACHE_FILE, JSON.stringify(data, null, 2));
+}
+
+// Fetch members for a specific tier
+async function fetchTierMembers(tier: MemberTier): Promise<IndividualMember[]> {
+  const tierId = MEMBER_TIER_IDS[tier];
+  const url = `${BASE_URL}?TierId=${tierId}&limit=500`;
+
+  const response = await fetch(url, {
+    headers: {
+      Accept: 'application/json',
+      'User-Agent': 'Mage-OS-Website/1.0',
+    },
+  });
+
+  if (!response.ok) {
+    console.warn(`[Members] Failed to fetch ${tier} members: ${response.status}`);
+    return [];
+  }
+
+  const members: OpenCollectiveMember[] = await response.json();
+
+  return members
+    .filter((m) => m.isActive && m.name !== 'Incognito')
+    .map((m) => ({
+      id: m.MemberId,
+      name: m.name,
+      tier,
+      imageUrl: m.image || null,
+      profileUrl: m.profile,
+      website: m.website,
+      twitter: m.twitter,
+      github: m.github,
+      description: m.description,
+      totalDonated: m.totalAmountDonated,
+      isActive: m.isActive,
+      joinedAt: new Date(m.createdAt),
+    }));
+}
+
+// Fetch all individual members (community and professional)
+export async function getIndividualMembers(options?: { skipCache?: boolean }): Promise<IndividualMember[]> {
+  const isDev = import.meta.env.DEV;
+
+  // In dev mode, use cache if valid
+  if (isDev && !options?.skipCache) {
+    const cached = readMembersCache();
+    if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+      console.log('[Members] Using cached data');
+      return cached.members.map((m) => ({
+        ...m,
+        joinedAt: new Date(m.joinedAt),
+      }));
+    }
+  }
+
+  console.log('[Members] Fetching from Open Collective API...');
+
+  try {
+    const tiers: MemberTier[] = ['professional', 'community'];
+    const results = await Promise.allSettled(tiers.map((tier) => fetchTierMembers(tier)));
+
+    const members: IndividualMember[] = [];
+
+    results.forEach((result, index) => {
+      if (result.status === 'fulfilled') {
+        members.push(...result.value);
+      } else {
+        console.warn(`[Members] Failed to fetch ${tiers[index]} members:`, result.reason);
+      }
+    });
+
+    // Sort by tier (professional first), then by name
+    const sorted = members.sort((a, b) => {
+      if (a.tier !== b.tier) {
+        return a.tier === 'professional' ? -1 : 1;
+      }
+      return a.name.localeCompare(b.name);
+    });
+
+    // Cache results in dev mode
+    if (isDev && sorted.length > 0) {
+      writeMembersCache(sorted);
+    }
+
+    return sorted;
+  } catch (error) {
+    console.error('[Members] API fetch failed:', error);
+    return [];
+  }
+}
+
+// Group members by tier
+export function groupMembersByTier(members: IndividualMember[]): Record<MemberTier, IndividualMember[]> {
+  return {
+    professional: members.filter((m) => m.tier === 'professional'),
+    community: members.filter((m) => m.tier === 'community'),
+  };
+}
+
+// Calculate partnership stats
+export interface PartnershipStats {
+  totalPartners: number;
+  totalContributions: number;
+  platinumCount: number;
+  goldCount: number;
+  silverCount: number;
+  bronzeCount: number;
+}
+
+export function calculatePartnerStats(partners: Partner[]): PartnershipStats {
+  const grouped = groupPartnersByTier(partners);
+  return {
+    totalPartners: partners.length,
+    totalContributions: partners.reduce((sum, p) => sum + p.totalDonated, 0),
+    platinumCount: grouped.platinum.length,
+    goldCount: grouped.gold.length,
+    silverCount: grouped.silver.length,
+    bronzeCount: grouped.bronze.length,
+  };
+}
