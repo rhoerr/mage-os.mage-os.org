@@ -8,7 +8,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import PartnerTiers from '~/components/widgets/PartnerTiers.astro';
-import PartnersGrid from '~/components/widgets/PartnersGrid.astro';
+import PartnersList from '~/components/widgets/PartnersList.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -19,6 +19,8 @@ import {
   groupPartnersByTier,
   groupMembersByTier,
   calculatePartnerStats,
+  getCommunityStats,
+  formatContributions,
   getInitials,
   type Partner,
   type IndividualMember,
@@ -30,22 +32,13 @@ const members = await getIndividualMembers();
 const partnersByTier = groupPartnersByTier(partners);
 const membersByTier = groupMembersByTier(members);
 const partnerStats = calculatePartnerStats(partners);
+const communityStats = await getCommunityStats();
 
 const metadata = {
   title: 'Partners & Members | Mage-OS',
   description:
     'Meet the companies and individuals supporting Mage-OS. Our partners and members make open-source commerce possible through their contributions.',
 };
-
-// Format currency
-function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'EUR',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(amount);
-}
 ---
 
 <Layout metadata={metadata}>
@@ -73,15 +66,15 @@ function formatCurrency(amount: number): string {
     </Fragment>
   </PageHero>
 
-  <!-- Stats Widget -->
+  <!-- Stats Widget (includes all contributors, active and past) -->
   <Stats
     stats={[
-      { title: 'Partner Companies', amount: `${partnerStats.totalPartners}`, icon: 'tabler:building' },
-      { title: 'Professional Members', amount: `${membersByTier.professional.length}`, icon: 'tabler:briefcase' },
-      { title: 'Community Members', amount: `${membersByTier.community.length}`, icon: 'tabler:users' },
+      { title: 'Partner Companies', amount: `${communityStats.partnerCompanies}`, icon: 'tabler:building' },
+      { title: 'Professional Members', amount: `${communityStats.professionalMembers}`, icon: 'tabler:briefcase' },
+      { title: 'Community Members', amount: `${communityStats.communityMembers}`, icon: 'tabler:users' },
       {
         title: 'Total Contributions',
-        amount: formatCurrency(partnerStats.totalContributions),
+        amount: formatContributions(communityStats.totalContributions),
         icon: 'tabler:currency-euro',
       },
     ]}
@@ -134,8 +127,8 @@ function formatCurrency(amount: number): string {
     </Fragment>
   </Content>
 
-  <!-- Current Partners Grid -->
-  <PartnersGrid
+  <!-- Current Partners List -->
+  <PartnersList
     id="current-partners"
     title="Our Current Partners"
     subtitle="These organizations are actively supporting Mage-OS development through financial contributions and community involvement."

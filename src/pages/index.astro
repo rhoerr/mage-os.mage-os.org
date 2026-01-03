@@ -6,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -116,6 +117,46 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="The Mage-OS Distribution"
+    title="Built on Magento, Enhanced by Community"
+    items={[
+      {
+        title: 'Based on Magento 2.4.8-p3',
+        description:
+          'Built on the rock-solid Magento foundation with all the latest security fixes and platform improvements.',
+      },
+      {
+        title: 'Community-Driven Features',
+        description:
+          'Innovations from the Mage-OS Lab including PCI DSS 4.0 compliance, AI-powered translation, and performance optimization.',
+      },
+      {
+        title: 'Developer-Friendly',
+        description:
+          'Accessible contribution pathways, comprehensive documentation, and active community support empower developers at every level.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Mage-OS Development',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Open Source Commerce, Reimagined
+      </h3>
+      The Mage-OS Distribution delivers everything you need to run a successful online store.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <!-- Stats Widget ****************** -->
 

@@ -34,8 +34,10 @@ export interface Partner {
   logoUrl: string | null;
   profileUrl: string;
   website: string | null;
+  description: string | null;
   totalDonated: number;
   isActive: boolean;
+  joinedAt: Date;
   lastTransactionAt: Date;
 }
 
@@ -117,8 +119,10 @@ async function fetchTierPartners(tier: PartnerTier): Promise<Partner[]> {
       logoUrl: m.image || null,
       profileUrl: m.profile,
       website: m.website,
+      description: m.description,
       totalDonated: m.totalAmountDonated,
       isActive: m.isActive,
+      joinedAt: new Date(m.createdAt),
       lastTransactionAt: new Date(m.lastTransactionAt),
     }));
 }
@@ -184,8 +188,10 @@ function loadFallbackData(): Partner[] {
           logoUrl: null, // YAML uses local paths, not URLs
           profileUrl: p.url,
           website: p.url,
+          description: null,
           totalDonated: 0,
           isActive: true,
+          joinedAt: new Date(),
           lastTransactionAt: new Date(),
         });
       });
@@ -209,6 +215,7 @@ export async function getPartners(options?: { skipCache?: boolean }): Promise<Pa
       console.log('[Partners] Using cached data');
       return cached.partners.map((p) => ({
         ...p,
+        joinedAt: new Date(p.joinedAt),
         lastTransactionAt: new Date(p.lastTransactionAt),
       }));
     }

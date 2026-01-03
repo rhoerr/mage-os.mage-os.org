@@ -1,0 +1,189 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { getPartners, groupPartnersByTier, getInitials, type PartnerTier, type Partner } from '~/utils/openCollective';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  id?: string;
+  isDark?: boolean;
+}
+
+const {
+  title = 'Our Partners',
+  subtitle = 'Companies supporting the Mage-OS community',
+  tagline,
+  id,
+  isDark = false,
+} = Astro.props;
+
+const partners = await getPartners();
+const partnersByTier = groupPartnersByTier(partners);
+
+// Tier display configuration
+const tierConfig: Record<
+  PartnerTier,
+  {
+    label: string;
+    columns: string;
+    logoSize: string;
+    cardClass: string;
+    badgeClass: string;
+  }
+> = {
+  platinum: {
+    label: 'Platinum Partners',
+    columns: 'grid-cols-1',
+    logoSize: 'w-24 h-24 md:w-32 md:h-32',
+    cardClass: 'ring-2 ring-slate-300 dark:ring-slate-600 bg-white dark:bg-slate-800',
+    badgeClass: 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-200',
+  },
+  gold: {
+    label: 'Gold Partners',
+    columns: 'grid-cols-1',
+    logoSize: 'w-20 h-20 md:w-24 md:h-24',
+    cardClass: 'ring-2 ring-amber-300 dark:ring-amber-600 bg-white dark:bg-slate-800',
+    badgeClass: 'bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200',
+  },
+  silver: {
+    label: 'Silver Partners',
+    columns: 'grid-cols-1 md:grid-cols-2',
+    logoSize: 'w-16 h-16 md:w-20 md:h-20',
+    cardClass: 'ring-1 ring-gray-300 dark:ring-gray-600 bg-white dark:bg-slate-800',
+    badgeClass: 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200',
+  },
+  bronze: {
+    label: 'Bronze Partners',
+    columns: 'grid-cols-1 md:grid-cols-2',
+    logoSize: 'w-14 h-14 md:w-16 md:h-16',
+    cardClass: 'ring-1 ring-orange-200 dark:ring-orange-700 bg-white dark:bg-slate-800',
+    badgeClass: 'bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200',
+  },
+};
+
+const tiersToDisplay: PartnerTier[] = ['platinum', 'gold', 'silver', 'bronze'];
+const hasAnyPartners = partners.length > 0;
+
+// Format the partner since date
+function formatPartnerSince(date: Date): string {
+  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+
+// Extract domain from URL
+function extractDomain(url: string | null): string | null {
+  if (!url) return null;
+  try {
+    const domain = new URL(url).hostname.replace(/^www\./, '');
+    return domain;
+  } catch {
+    return null;
+  }
+}
+
+// Capitalize tier name
+function formatTierName(tier: PartnerTier): string {
+  return tier.charAt(0).toUpperCase() + tier.slice(1);
+}
+---
+
+{
+  hasAnyPartners && (
+    <WidgetWrapper id={id} isDark={isDark} containerClass="max-w-6xl mx-auto">
+      <Headline title={title} subtitle={subtitle} tagline={tagline} />
+
+      <div class="space-y-12">
+        {tiersToDisplay.map((tier) => {
+          const tierPartners = partnersByTier[tier];
+          const config = tierConfig[tier];
+
+          if (tierPartners.length === 0) return null;
+
+          return (
+            <div class="space-y-4">
+              <h3 class="text-sm font-semibold text-center text-muted uppercase tracking-wider">{config.label}</h3>
+
+              <div class={`grid ${config.columns} gap-4`}>
+                {tierPartners.map((partner: Partner) => {
+                  const domain = extractDomain(partner.website);
+                  return (
+                    <a
+                      href={partner.website || partner.profileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class={`group flex items-start gap-4 md:gap-6 p-4 md:p-6 rounded-xl transition-all duration-200 hover:shadow-lg ${config.cardClass}`}
+                    >
+                      {/* Logo */}
+                      <div
+                        class={`flex-shrink-0 ${config.logoSize} flex items-center justify-center rounded-lg bg-gray-50 dark:bg-slate-700 overflow-hidden`}
+                      >
+                        {partner.logoUrl ? (
+                          <img
+                            src={partner.logoUrl}
+                            alt={partner.name}
+                            class="w-full h-full object-contain p-2"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <span class="text-2xl md:text-3xl font-bold text-gray-400 dark:text-gray-500">
+                            {getInitials(partner.name)}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Content */}
+                      <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                          <h4 class="text-lg md:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                            {partner.name}
+                          </h4>
+                          <span class={`inline-flex px-2 py-0.5 text-xs font-medium rounded-full ${config.badgeClass}`}>
+                            {formatTierName(tier)}
+                          </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted mb-2">
+                          <span>Partner since {formatPartnerSince(partner.joinedAt)}</span>
+                          {domain && (
+                            <>
+                              <span class="hidden sm:inline">·</span>
+                              <span class="text-primary">{domain}</span>
+                            </>
+                          )}
+                        </div>
+
+                        {partner.description && (
+                          <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{partner.description}</p>
+                        )}
+                      </div>
+
+                      {/* Arrow */}
+                      <div class="flex-shrink-0 hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-slate-700 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="https://opencollective.com/mage-os"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-primary bg-transparent border-2 border-primary hover:bg-primary hover:text-white rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+        >
+          Become a Partner
+        </a>
+      </div>
+    </WidgetWrapper>
+  )
+}
