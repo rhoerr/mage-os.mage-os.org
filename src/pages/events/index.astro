@@ -149,7 +149,7 @@ const eventTypes = [
                 )}
                 <div class="bg-gradient-to-r from-primary/10 to-orange-100 dark:from-primary/20 dark:to-slate-700 p-4">
                   <div class="flex items-center justify-between">
-                    <span class="text-sm font-semibold text-primary dark:text-blue-400">
+                    <span class="text-sm font-semibold text-primary dark:text-indigo-400">
                       {formatDate(event.data.eventDate)}
                       {event.data.endDate &&
                         event.data.endDate.getTime() !== event.data.eventDate.getTime() &&
@@ -164,7 +164,7 @@ const eventTypes = [
                   </div>
                 </div>
                 <div class="p-6">
-                  <h3 class="text-xl font-bold mb-3 dark:text-white group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                  <h3 class="text-xl font-bold mb-3 dark:text-white group-hover:text-primary dark:group-hover:text-indigo-400 transition-colors">
                     {event.data.title}
                   </h3>
                   {event.data.location && (
@@ -181,7 +181,7 @@ const eventTypes = [
                       href={event.data.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center text-primary dark:text-blue-400 font-medium text-sm hover:underline group-hover:gap-2 transition-all"
+                      class="inline-flex items-center text-primary dark:text-indigo-400 font-medium text-sm hover:underline group-hover:gap-2 transition-all"
                     >
                       View Details
                       <Icon
@@ -237,7 +237,7 @@ const eventTypes = [
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full">
-            <Icon name="tabler:calendar-repeat" class="w-8 h-8 text-primary dark:text-blue-400" />
+            <Icon name="tabler:calendar-repeat" class="w-8 h-8 text-primary dark:text-indigo-400" />
           </div>
           <div>
             <h2 class="text-xl font-bold dark:text-white">Weekly Tech Meetings</h2>
@@ -307,7 +307,7 @@ const eventTypes = [
   <!-- Recent Event Highlights from Blog -->
   {
     eventPostsWithImages.length > 0 && (
-      <section class="bg-blue-50 dark:bg-slate-800/50 not-prose">
+      <section class="bg-indigo-50 dark:bg-slate-800/50 not-prose">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
           <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4 text-center">
             Recent Event Highlights
@@ -347,13 +347,13 @@ const eventTypes = [
                     <Icon name="tabler:calendar" class="w-4 h-4" />
                     {formatDate(post.publishDate)}
                   </div>
-                  <h3 class="font-bold dark:text-white text-lg leading-6 mb-2 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors">
+                  <h3 class="font-bold dark:text-white text-lg leading-6 mb-2 group-hover:text-primary dark:group-hover:text-indigo-400 transition-colors">
                     {post.title}
                   </h3>
                   {post.excerpt && (
                     <p class="text-gray-600 dark:text-slate-400 text-sm line-clamp-3">{post.excerpt}</p>
                   )}
-                  <span class="inline-flex items-center text-primary dark:text-blue-400 font-medium text-sm mt-4 group-hover:gap-2 transition-all">
+                  <span class="inline-flex items-center text-primary dark:text-indigo-400 font-medium text-sm mt-4 group-hover:gap-2 transition-all">
                     Read More
                     <Icon name="tabler:arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -364,7 +364,7 @@ const eventTypes = [
           <div class="text-center mt-8">
             <a
               href={getPermalink('events', 'category')}
-              class="inline-flex items-center gap-2 text-primary dark:text-blue-400 font-medium hover:underline"
+              class="inline-flex items-center gap-2 text-primary dark:text-indigo-400 font-medium hover:underline"
             >
               View All Event Recaps
               <Icon name="tabler:arrow-right" class="w-4 h-4" />
@@ -383,7 +383,7 @@ const eventTypes = [
         eventTypes.map((type) => (
           <div class="text-center p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
             <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-full inline-block mb-4">
-              <Icon name={type.icon} class="w-8 h-8 text-primary dark:text-blue-400" />
+              <Icon name={type.icon} class="w-8 h-8 text-primary dark:text-indigo-400" />
             </div>
             <h3 class="text-lg font-semibold dark:text-white mb-2">{type.title}</h3>
             <p class="text-gray-600 dark:text-slate-400 text-sm">{type.description}</p>
@@ -488,7 +488,7 @@ const eventTypes = [
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-indigo-50 dark:bg-transparent"></div>
     </Fragment>
   </CallToAction>
 

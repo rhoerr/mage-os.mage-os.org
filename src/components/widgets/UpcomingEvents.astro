@@ -82,18 +82,18 @@ function formatDateRange(startDate: Date, endDate?: Date) {
             href={event.data.url || '/events'}
             target={event.data.url ? '_blank' : undefined}
             rel={event.data.url ? 'noopener noreferrer' : undefined}
-            class="group flex gap-4 p-4 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-blue-400 hover:shadow-md transition-all"
+            class="group flex gap-4 p-4 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 hover:border-primary dark:hover:border-indigo-400 hover:shadow-md transition-all"
           >
             <div class="flex-shrink-0 flex flex-col items-center justify-center bg-primary/10 dark:bg-primary/20 rounded-lg p-3 min-w-[70px]">
-              <span class="text-xs font-medium text-primary dark:text-blue-400 uppercase">
+              <span class="text-xs font-medium text-primary dark:text-indigo-400 uppercase">
                 {new Intl.DateTimeFormat('en-US', { month: 'short' }).format(new Date(event.data.eventDate))}
               </span>
-              <span class="text-2xl font-bold text-primary dark:text-blue-400">
+              <span class="text-2xl font-bold text-primary dark:text-indigo-400">
                 {new Date(event.data.eventDate).getDate()}
               </span>
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-blue-400 transition-colors truncate">
+              <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-indigo-400 transition-colors truncate">
                 {event.data.title}
               </h3>
               {event.data.location && (
@@ -110,7 +110,7 @@ function formatDateRange(startDate: Date, endDate?: Date) {
             </div>
             <Icon
               name="tabler:chevron-right"
-              class="w-5 h-5 text-gray-400 dark:text-slate-500 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors flex-shrink-0 self-center"
+              class="w-5 h-5 text-gray-400 dark:text-slate-500 group-hover:text-primary dark:group-hover:text-indigo-400 transition-colors flex-shrink-0 self-center"
             />
           </a>
         ))}

@@ -41,7 +41,7 @@ const {
   isFullWidth = false,
   showToggleTheme = false,
   showRssFeed = false,
-  position = 'right',
+  position = 'center',
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
@@ -58,13 +58,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 lg:px-6 mx-auto w-full',
-      {
-        'lg:flex lg:justify-between': position !== 'center',
-      },
-      {
-        'lg:grid lg:grid-cols-3 lg:items-center': position === 'center',
-      },
+      'relative text-default py-3 px-3 lg:px-6 mx-auto w-full lg:flex lg:justify-between',
       {
         'max-w-7xl': !isFullWidth,
       },
