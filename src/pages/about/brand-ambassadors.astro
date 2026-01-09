@@ -1,0 +1,328 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Brand Ambassador Program',
+  description:
+    'Join the Mage-OS Brand Ambassador Program. Represent our community at conferences and events, connect with eCommerce professionals, and help advance open-source commerce.',
+};
+
+// Ambassador benefits for Features widget
+const ambassadorBenefits = [
+  {
+    title: 'Event Representation',
+    description: 'Represent Mage-OS at industry conferences, meetups, and community events around the world.',
+    icon: 'tabler:calendar-event',
+  },
+  {
+    title: 'Exclusive Materials',
+    description: 'Access to marketing presentations, branded promotional items, and training resources.',
+    icon: 'tabler:presentation',
+  },
+  {
+    title: 'Ambassador Apparel',
+    description: 'Receive custom-designed ambassador t-shirts and branded gear to wear at events.',
+    icon: 'tabler:shirt',
+  },
+  {
+    title: 'Featured Recognition',
+    description: 'Get recognized on the official Mage-OS website and in community communications.',
+    icon: 'tabler:award',
+  },
+  {
+    title: 'Professional Networking',
+    description: 'Connect with eCommerce professionals, developers, and industry leaders worldwide.',
+    icon: 'tabler:users-group',
+  },
+  {
+    title: 'Personal Brand Building',
+    description: 'Develop your reputation as a community leader and open-source advocate.',
+    icon: 'tabler:trending-up',
+  },
+];
+
+// How it works steps
+const programSteps = [
+  {
+    title: 'Board Nomination',
+    description:
+      'The Mage-OS Board identifies and nominates potential ambassadors based on their community involvement and contribution history.',
+    icon: 'tabler:user-check',
+  },
+  {
+    title: 'Invitation & Onboarding',
+    description:
+      'Nominated candidates receive an invitation to join the program and complete onboarding with access to resources and training.',
+    icon: 'tabler:mail',
+  },
+  {
+    title: 'Represent at Events',
+    description:
+      'Attend regional events, conferences, and meetups as an official Mage-OS representative, equipped with branded materials.',
+    icon: 'tabler:microphone-2',
+  },
+  {
+    title: 'Grow the Community',
+    description:
+      'Share your passion for open-source commerce, create content, mentor newcomers, and help expand the Mage-OS ecosystem.',
+    icon: 'tabler:heart-handshake',
+  },
+];
+
+// Eligibility requirements
+const eligibilityRequirements = [
+  {
+    title: 'Active Community Member',
+    description: 'Demonstrated involvement in the Mage-OS ecosystem through contributions, discussions, or event participation.',
+  },
+  {
+    title: 'Open-Source Advocate',
+    description: 'Genuine passion for open-source solutions and commitment to community-driven development.',
+  },
+  {
+    title: 'Positive Ambassador',
+    description: 'Constructive perspective and willingness to share positive, helpful content about the platform.',
+  },
+  {
+    title: 'eCommerce Experience',
+    description: 'Background in eCommerce or Magento platforms, whether as a developer, merchant, or agency professional.',
+  },
+  {
+    title: 'Event Availability',
+    description: 'Ability to attend regional events (attendance is self-funded unless otherwise arranged).',
+  },
+];
+
+// Current Ambassadors
+const currentAmbassadors = [
+  {
+    name: 'Alessandro Ronchi',
+  },
+  {
+    name: 'Cainan Senra',
+  },
+  {
+    name: 'Davide Lumardon',
+  },
+  {
+    name: 'John Hughes',
+  },
+  {
+    name: 'Luke Collymore',
+  },
+  {
+    name: 'Roland Hasselager',
+  },
+  {
+    name: 'Simon Sprankel',
+  },
+];
+
+// FAQs
+const ambassadorFaqs = [
+  {
+    title: 'How do I become a Brand Ambassador?',
+    description:
+      'The Brand Ambassador Program is invitation-based. The Mage-OS Board nominates potential ambassadors individually based on their community involvement and contributions. If you are interested, email info@mage-os.org to express your interest.',
+  },
+  {
+    title: 'What commitment is required?',
+    description:
+      'Ambassadors are expected to represent Mage-OS at events they attend, share their experiences with the community, and maintain a positive, constructive presence. The specific time commitment varies based on your availability and regional events.',
+  },
+  {
+    title: 'Are travel expenses covered?',
+    description:
+      'Event attendance is generally self-funded. However, Mage-OS provides branded materials, promotional items, and may offer support for specific strategic events on a case-by-case basis.',
+  },
+  {
+    title: 'What resources do ambassadors receive?',
+    description:
+      'Ambassadors receive marketing presentations, branded promotional items, custom ambassador apparel, training sessions on platform developments, and featured recognition on the Mage-OS website.',
+  },
+  {
+    title: 'Can I nominate someone for the program?',
+    description:
+      'Yes! If you know someone who would be a great ambassador for Mage-OS, you can recommend them by contacting the Board at info@mage-os.org with details about their community involvement.',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Ambassador Program"
+    title="Mage-OS Brand Ambassadors"
+    subtitle="Join a global network of passionate advocates representing Mage-OS at conferences, meetups, and community events. Help advance open-source commerce while building your personal brand as a community leader."
+  />
+
+  <!-- Current Ambassadors -->
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="text-center mb-10">
+      <p class="text-base text-secondary dark:text-indigo-200 font-bold tracking-wide uppercase mb-2">Our Team</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Meet Our Ambassadors</h2>
+      <p class="text-xl text-muted max-w-3xl mx-auto">
+        These community leaders represent Mage-OS at events around the world, spreading the word about open-source commerce.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+      {
+        currentAmbassadors.map((ambassador) => (
+          <div class="bg-white dark:bg-slate-900 rounded-xl px-6 py-4 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center flex-shrink-0">
+              <Icon name="tabler:user" class="w-5 h-5 text-white" />
+            </div>
+            <span class="font-semibold text-gray-900 dark:text-white">{ambassador.name}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Ambassador Benefits -->
+  <Features
+    id="benefits"
+    tagline="Why Become an Ambassador"
+    title="Program Benefits"
+    subtitle="As a Mage-OS Brand Ambassador, you'll receive exclusive resources and recognition while making a meaningful impact on the open-source commerce community."
+    items={ambassadorBenefits}
+    columns={3}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- How It Works -->
+  <Steps
+    title="How the Program Works"
+    subtitle="The Brand Ambassador Program operates on an invitation-based model, ensuring our ambassadors truly represent the values and mission of Mage-OS."
+    tagline="The Process"
+    items={programSteps}
+  />
+
+  <!-- Eligibility Requirements -->
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl bg-indigo-50 dark:bg-slate-800/50">
+    <div class="text-center mb-10">
+      <p class="text-base text-secondary dark:text-indigo-200 font-bold tracking-wide uppercase mb-2">Requirements</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Eligibility Criteria</h2>
+      <p class="text-xl text-muted max-w-3xl mx-auto">
+        Candidates for the Brand Ambassador Program should demonstrate the following qualities and experience.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+      {
+        eligibilityRequirements.map((req, index) => (
+          <div class="bg-white dark:bg-slate-900 rounded-xl p-5 border border-indigo-100 dark:border-gray-700 shadow-md hover:shadow-lg transition-shadow">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center flex-shrink-0">
+                <span class="text-primary-600 dark:text-primary-400 font-bold text-sm">{index + 1}</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 dark:text-white mb-1">{req.title}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">{req.description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- What Ambassadors Do -->
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="text-center mb-10">
+      <p class="text-base text-secondary dark:text-indigo-200 font-bold tracking-wide uppercase mb-2">Ambassador Activities</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">What Ambassadors Do</h2>
+      <p class="text-xl text-muted max-w-3xl mx-auto">
+        Ambassadors serve as advocates who advance the Mage-OS platform through various activities.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:microphone" class="w-7 h-7 text-primary-600 dark:text-primary-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Speaking</h3>
+        <p class="text-sm text-muted">Present at conferences and share knowledge about Mage-OS</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:pencil" class="w-7 h-7 text-green-600 dark:text-green-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Content Creation</h3>
+        <p class="text-sm text-muted">Write articles, create tutorials, and share experiences</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:users" class="w-7 h-7 text-orange-600 dark:text-orange-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Networking</h3>
+        <p class="text-sm text-muted">Connect professionals and grow the community</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center hover:shadow-lg transition-shadow">
+        <div class="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center mx-auto mb-4">
+          <Icon name="tabler:calendar" class="w-7 h-7 text-purple-600 dark:text-purple-400" />
+        </div>
+        <h3 class="font-bold text-lg mb-2">Event Participation</h3>
+        <p class="text-sm text-muted">Attend and represent Mage-OS at industry events</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Common questions about the Brand Ambassador Program"
+    tagline="FAQs"
+    items={ambassadorFaqs}
+    columns={2}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+  <!-- Contact CTA -->
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-slate-800 dark:to-slate-800/80 rounded-xl p-8 border border-indigo-200 dark:border-slate-700 text-center">
+      <div class="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mx-auto mb-6">
+        <Icon name="tabler:mail" class="w-8 h-8 text-primary-600 dark:text-primary-400" />
+      </div>
+      <h2 class="text-2xl font-bold tracking-tight mb-4">Interested in Becoming an Ambassador?</h2>
+      <p class="text-muted max-w-2xl mx-auto mb-6">
+        While the program is invitation-based, we welcome expressions of interest from passionate community members.
+        Reach out to learn more about the program and how you can get involved.
+      </p>
+      <a
+        href="mailto:info@mage-os.org"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors"
+      >
+        <Icon name="tabler:mail" class="w-5 h-5" />
+        Contact Us at info@mage-os.org
+      </a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CallToAction
+    title="Join the Mage-OS Community"
+    subtitle="Whether as an ambassador or contributor, there are many ways to get involved with Mage-OS and help shape the future of open-source commerce."
+    actions={[
+      { text: 'Get Involved', href: '/community', variant: 'primary' },
+      { text: 'Join Discord', href: '/discord-channel', variant: 'secondary', icon: 'tabler:brand-discord' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-900 dark:to-slate-900"></div>
+    </Fragment>
+  </CallToAction>
+</Layout>

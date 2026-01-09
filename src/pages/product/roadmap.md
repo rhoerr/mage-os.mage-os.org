@@ -11,7 +11,7 @@ Our roadmap is community-driven and transparent. See what we're working on, what
 
 ## Version & Support Policy
 
-Starting with Mage-OS 1.2, we adopted a new versioning strategy to provide clarity and predictability for upgrades.
+Since July 2025, se've adopted the following versioning strategy to provide clarity and predictability for upgrades.
 
 | Release Type | Version Change | Frequency | What to Expect |
 |-------------|---------------|-----------|----------------|
@@ -23,9 +23,9 @@ Starting with Mage-OS 1.2, we adopted a new versioning strategy to provide clari
 
 ---
 
-## Current Release: Mage-OS 2.0
+## Current Release: Mage-OS 2
 
-Released in late 2025, Mage-OS 2.0 represents our most feature-rich release to date:
+Released in late 2025, Mage-OS 2 represents our most feature-rich release to date:
 
 | Feature | Description |
 |---------|-------------|
@@ -37,7 +37,7 @@ Released in late 2025, Mage-OS 2.0 represents our most feature-rich release to d
 | **Theme Optimization** | Back/forward cache support, speculative preloading, and smooth page transitions |
 | **PHP 8.4 Support** | Full compatibility with the latest PHP version |
 
-Ready to try it? [Get started with Mage-OS 2.0](/get-started/quick-start)
+Ready to try it? [Get started with Mage-OS 2](/get-started/quick-start)
 
 ---
 
@@ -47,7 +47,7 @@ Our development priorities are shaped by community input through weekly tech mee
 
 ### Q1 2026 (January - March)
 
-- **Mage-OS 2.1** - Minor release incorporating upstream security patches
+- **Mage-OS 2.1-2.4** - Minor releases incorporating upstream security patches
 - Continued Mage-OS Lab module evaluations
 - Developer experience improvements
 - Documentation expansion

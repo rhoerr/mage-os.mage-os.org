@@ -268,9 +268,127 @@ const metadata = {
     </Fragment>
   </Features3>
 
+  <!-- Features2 Widget: Developer Resources ************** -->
+
+  <Features2
+    title="Developer Resources"
+    tagline="Essential Tools"
+    subtitle="Quick access to official Mage-OS resources, documentation, and development tools."
+    items={[
+      {
+        title: 'Mage-OS GitHub',
+        description: 'Source code, issues, and contributions',
+        icon: 'tabler:brand-github',
+        callToAction: {
+          text: 'View Repository',
+          href: 'https://github.com/mage-os',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'Developer Documentation',
+        description: 'Guides, API references, and tutorials',
+        icon: 'tabler:book',
+        callToAction: {
+          text: 'Read DevDocs',
+          href: 'https://devdocs.mage-os.org',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'Magento Stack Exchange',
+        description: 'Q&A from the developer community',
+        icon: 'tabler:messages',
+        callToAction: {
+          text: 'Ask Questions',
+          href: 'https://magento.stackexchange.com',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'Mage-OS Lab',
+        description: 'Experimental projects and prototypes',
+        icon: 'tabler:flask',
+        callToAction: {
+          text: 'Explore Lab',
+          href: 'https://github.com/mage-os-lab',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'Awesome Magento 2',
+        description: 'Curated list of extensions and tools',
+        icon: 'tabler:star',
+        callToAction: {
+          text: 'Browse List',
+          href: 'https://github.com/run-as-root/awesome-magento2',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'MageRes',
+        description: 'Community resource collection',
+        icon: 'tabler:library',
+        callToAction: {
+          text: 'View Resources',
+          href: 'https://github.com/aleron75/mageres',
+          target: '_blank',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget: Community & Support ************** -->
+
+  <Features
+    tagline="Get Help"
+    title="Community & Support Channels"
+    subtitle="Connect with the Mage-OS community and get help from experienced developers."
+    columns={3}
+    items={[
+      {
+        title: 'Mage-OS Discord',
+        description:
+          'Join our active Discord server for real-time discussions, support, and community events. The fastest way to get help.',
+        icon: 'tabler:brand-discord',
+        callToAction: {
+          text: 'Join Discord',
+          href: '/discord-channel',
+        },
+      },
+      {
+        title: 'Magento Open Source Slack',
+        description:
+          'The official Magento Community Engineering Slack workspace with channels for development, contributions, and announcements.',
+        icon: 'tabler:brand-slack',
+        callToAction: {
+          text: 'Join Slack',
+          href: 'https://magentocommeng.slack.com',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'Magento Association Slack',
+        description:
+          'Connect with the Magento Association community for governance discussions and ecosystem initiatives.',
+        icon: 'tabler:users-group',
+        callToAction: {
+          text: 'Join MA Slack',
+          href: 'https://www.magentoassociation.org',
+          target: '_blank',
+        },
+      },
+    ]}
+  />
+
   <!-- Content Widget: Learning & Training ************** -->
 
   <Content
+    isReversed
     tagline="Level Up Your Skills"
     title="Learning & Training Resources"
     items={[
@@ -298,13 +416,61 @@ const metadata = {
       href: 'https://github.com/aleron75/mageres',
       target: '_blank',
     }}
+    image={{
+      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Team collaborating on code representing the learning community',
+    }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">From Beginner to Expert</h3>
       Invest in your skills with training resources from trusted community educators. These courses cover everything from
       Magento fundamentals to advanced development techniques.
     </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
   </Content>
+
+  <!-- Features2 Widget: Stay Informed ************** -->
+
+  <Features2
+    title="Stay Informed"
+    tagline="News & Updates"
+    subtitle="Keep up with the latest Mage-OS and Magento ecosystem news through these community channels."
+    columns={3}
+    items={[
+      {
+        title: 'Mage-OS Newsletter',
+        description: 'Official updates on releases, features, and community news delivered to your inbox.',
+        icon: 'tabler:mail',
+        callToAction: {
+          text: 'Subscribe',
+          href: '/blog',
+        },
+      },
+      {
+        title: 'Magento Association Podcast',
+        description: 'Discussions about Magento development, ecommerce trends, and community updates.',
+        icon: 'tabler:microphone',
+        callToAction: {
+          text: 'Listen Now',
+          href: 'https://open.spotify.com/show/0Yo2cBuLcildzPsotXcR0k',
+          target: '_blank',
+        },
+      },
+      {
+        title: 'MageDispatch Newsletter',
+        description: 'Curated news, tutorials, and updates from the Magento ecosystem.',
+        icon: 'tabler:news',
+        callToAction: {
+          text: 'Subscribe',
+          href: 'https://www.magedispatch.com/',
+          target: '_blank',
+        },
+      },
+    ]}
+  />
 
   <!-- FAQs Widget ******************* -->
 
@@ -320,7 +486,7 @@ const metadata = {
       {
         title: 'Can I migrate from Adobe Commerce?',
         description:
-          'Mage-OS is based on Magento Open Source. If you are using Adobe Commerce-specific features, some additional planning may be required. Contact our community for guidance on your specific situation.',
+          'Mage-OS is based on Magento Open Source. If you are using Adobe Commerce-specific features, some additional planning may be required. Contact one of our partners for guidance on your specific situation.',
       },
       {
         title: 'What support is available during setup?',
@@ -330,7 +496,7 @@ const metadata = {
       {
         title: 'How long does migration from Magento take?',
         description:
-          'A straightforward migration typically takes 15-30 minutes. Complex stores with many customizations should plan additional time for testing but rarely exceed a few hours.',
+          'A straightforward migration can take under 30 minutes. Complex stores with many customizations should plan additional time for testing.',
       },
     ]}
   />

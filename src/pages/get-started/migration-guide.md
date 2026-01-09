@@ -1,11 +1,11 @@
 ---
 title: 'Migration Guide'
-description: 'Seamlessly migrate from Magento Open Source to Mage-OS with zero downtime and full compatibility.'
+description: 'Seamlessly migrate from Magento Open Source to Mage-OS with minimal downtime and full compatibility.'
 tagline: 'Get Started'
 layout: '~/layouts/ContentPageLayout.astro'
 ---
 
-Migrating from Magento Open Source to Mage-OS is straightforward and typically takes **15-30 minutes**. Your existing extensions, themes, and customizations will continue to work without modification.
+Migrating from Magento Open Source to Mage-OS is straightforward and typically takes **under 30 minutes**. Your existing extensions, themes, and customizations will continue to work with little or no changes needed.
 
 ## Why Migrate to Mage-OS?
 
@@ -22,7 +22,7 @@ Mage-OS is built on the same Magento Open Source foundation you already trust, e
 - **Enhanced Page Builder** - CMS Widget support with live previews and import/export capabilities
 
 ### Compatibility & Freedom
-- **100% Compatible** - All your existing Magento extensions, themes, and customizations work without modification
+- **Broadly Compatible** - Your existing Magento extensions, themes, and customizations should continue to work with little or no changes
 - **No Vendor Lock-in** - Fully open source with transparent, community-led governance
 - **Seamless Upgrade Path** - Stay current with Magento improvements while gaining Mage-OS enhancements
 
@@ -140,36 +140,38 @@ Mage-OS is designed for seamless migration. Your existing Magento ecosystem rema
 
 ### Extensions
 
-Mage-OS maintains **100% compatibility** with Magento Open Source extensions. Your existing extensions will continue to work without modification, including:
+Mage-OS maintains almost complete compatibility with Magento Open Source extensions. Your existing extensions will continue to work with little or no changes, including:
 
 - Marketplace extensions from Adobe Commerce Marketplace
 - Third-party payment gateways and shipping providers
 - Custom modules developed for your store
 - All composer-based extensions
+- API integrations
 
 ### Themes
 
-All Magento 2 themes are fully compatible with Mage-OS:
+Magento 2 themes are fully compatible with Mage-OS:
 
 - **Luma** - Default Magento theme
 - **Blank** - Base theme for custom development
 - **Custom themes** - Your own theme implementations
 - **Third-party themes** - Hyva, Porto, and other popular themes
+- **Progressive Web Apps** - Headless frontends, leveraging Magento's GraphQL API
 
 ### Customizations
 
-Custom modules, plugins, observers, and customizations built for Magento Open Source will work on Mage-OS without changes. This includes:
+Custom modules, plugins, observers, and customizations built for Magento Open Source will work on Mage-OS with little or no changes. This includes:
 
 - Custom API integrations
 - Event observers and plugins
 - Layout and template overrides
 - Custom CLI commands
 
-> **Important:** Mage-OS uses the same codebase structure as Magento Open Source. There are no breaking changes to worry about.
+> **Important:** Mage-OS uses the same codebase structure as Magento Open Source.
 
 ---
 
-## Zero-Downtime Migration
+## Migration Process
 
 For production environments, use a staged approach:
 
@@ -198,16 +200,6 @@ For the final switchover:
 3. Perform migration
 4. Test critical paths
 5. Disable maintenance mode
-
-```bash
-# Enable maintenance mode
-bin/magento maintenance:enable
-
-# ... perform migration ...
-
-# Disable maintenance mode
-bin/magento maintenance:disable
-```
 
 ---
 
@@ -241,18 +233,9 @@ Congratulations on migrating to Mage-OS! Complete these verification steps to en
 
 ### Verify Your Installation
 
-Run these checks to confirm a successful migration:
-
 ```bash
 # Confirm Mage-OS version
 bin/magento --version
-# Expected output: Mage-OS 2.x.x
-
-# Check module status
-bin/magento module:status
-
-# Verify indexer health
-bin/magento indexer:status
 ```
 
 ### Test Critical Functionality
@@ -270,22 +253,9 @@ Manually verify these key areas:
 Mage-OS 2.0 includes powerful new capabilities:
 
 - **PCI DSS 4.0 Compliance** - Review new security settings in Admin > Stores > Configuration > Security
-- **AI-Powered Translation** - Configure in Admin > Stores > Configuration > General > AI Translation (requires API key)
-- **Theme Optimization** - Enable bfcache and speculative loading in theme settings
-- **Enhanced Page Builder** - Try the new CMS Widget support with live previews
-
-### Finalize Your Migration
-
-```bash
-# Ensure cron is running
-bin/magento cron:run
-
-# Clear all caches
-bin/magento cache:flush
-
-# Recompile (if needed)
-bin/magento setup:di:compile
-```
+- **AI-Powered Translation** - Configure in Admin > Stores > Configuration > Services > AI Translation _(requires API key)_
+- **Theme Optimization** - Enable bfcache and speculative loading in Advanced settings
+- **Enhanced Page Builder** - Try the new CMS Widget support with live previews, and template import/export
 
 ---
 
@@ -302,7 +272,7 @@ composer update --with-all-dependencies
 ### Module Version Mismatches
 
 ```bash
-bin/magento setup:upgrade --keep-generated
+bin/magento setup:upgrade
 bin/magento module:status
 ```
 
@@ -317,7 +287,7 @@ bin/magento setup:static-content:deploy -f
 
 ## Need Help?
 
-You are not alone. The Mage-OS community is here to support your migration journey.
+The Mage-OS community is here to support your migration journey.
 
 ### Community Support (Free)
 
