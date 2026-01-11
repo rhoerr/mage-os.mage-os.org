@@ -3,7 +3,17 @@ import sharp from 'sharp';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import type { ReactNode } from 'react';
+
+// Define our own type for Satori's expected input (React-like node structure)
+type SatoriNode =
+  | {
+      type: string;
+      props: {
+        children?: SatoriNode | SatoriNode[] | string;
+        [key: string]: unknown;
+      };
+    }
+  | string;
 
 // Get the directory of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -39,14 +49,19 @@ export interface OgImageOptions {
 function h(
   type: string,
   props: Record<string, unknown> | null,
-  ...children: (ReactNode | string | undefined | null | false)[]
-): ReactNode {
-  const filteredChildren = children.filter((c): c is ReactNode | string => c !== undefined && c !== null && c !== false);
+  ...children: (SatoriNode | undefined | null | false)[]
+): SatoriNode {
+  const filteredChildren = children.filter((c): c is SatoriNode => c !== undefined && c !== null && c !== false);
   return {
     type,
     props: {
       ...props,
-      children: filteredChildren.length === 1 ? filteredChildren[0] : filteredChildren.length > 0 ? filteredChildren : undefined,
+      children:
+        filteredChildren.length === 1
+          ? filteredChildren[0]
+          : filteredChildren.length > 0
+            ? filteredChildren
+            : undefined,
     },
   };
 }
@@ -59,91 +74,114 @@ export async function generateOgImage(options: OgImageOptions): Promise<Buffer> 
   const fonts = loadFonts();
 
   // Truncate description if too long
-  const truncatedDescription = description && description.length > 140
-    ? description.slice(0, 137) + '...'
-    : description;
+  const truncatedDescription =
+    description && description.length > 140 ? description.slice(0, 137) + '...' : description;
 
   // Calculate font size based on title length
   const titleFontSize = title.length > 60 ? 42 : title.length > 40 ? 52 : 58;
 
   // Build markup using React-like objects (no HTML parsing = no escaping issues)
-  const markup = h('div', {
-    style: {
-      height: '100%',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      padding: 60,
-      background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%)',
-      fontFamily: 'Inter, sans-serif',
+  const markup = h(
+    'div',
+    {
+      style: {
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: 60,
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%)',
+        fontFamily: 'Inter, sans-serif',
+      },
     },
-  },
     // Logo
-    h('div', { style: { display: 'flex', alignItems: 'center' } },
+    h(
+      'div',
+      { style: { display: 'flex', alignItems: 'center' } },
       h('img', { src: logoDataUri, width: 200, height: 32 })
     ),
 
     // Content
-    h('div', {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 16,
-        flex: 1,
-        justifyContent: 'center',
-        paddingTop: 20,
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 16,
+          flex: 1,
+          justifyContent: 'center',
+          paddingTop: 20,
+        },
       },
-    },
       // Category badge
-      category && h('div', { style: { display: 'flex', alignItems: 'center' } },
-        h('span', {
-          style: {
-            color: '#f97316',
-            fontSize: 22,
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: 2,
-          },
-        }, category)
-      ),
+      category &&
+        h(
+          'div',
+          { style: { display: 'flex', alignItems: 'center' } },
+          h(
+            'span',
+            {
+              style: {
+                color: '#f97316',
+                fontSize: 22,
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: 2,
+              },
+            },
+            category
+          )
+        ),
 
       // Title
-      h('div', {
-        style: {
-          color: 'white',
-          fontSize: titleFontSize,
-          fontWeight: 700,
-          lineHeight: 1.15,
-          maxWidth: 1000,
-          wordWrap: 'break-word',
+      h(
+        'div',
+        {
+          style: {
+            color: 'white',
+            fontSize: titleFontSize,
+            fontWeight: 700,
+            lineHeight: 1.15,
+            maxWidth: 1000,
+            wordWrap: 'break-word',
+          },
         },
-      }, title),
+        title
+      ),
 
       // Description
-      truncatedDescription && h('div', {
-        style: {
-          color: '#94a3b8',
-          fontSize: 26,
-          lineHeight: 1.4,
-          maxWidth: 900,
-        },
-      }, truncatedDescription)
+      truncatedDescription &&
+        h(
+          'div',
+          {
+            style: {
+              color: '#94a3b8',
+              fontSize: 26,
+              lineHeight: 1.4,
+              maxWidth: 900,
+            },
+          },
+          truncatedDescription
+        )
     ),
 
     // Footer
-    h('div', {
-      style: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-        alignItems: 'center',
+    h(
+      'div',
+      {
+        style: {
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+        },
       },
-    },
       h('span', { style: { color: '#64748b', fontSize: 20 } }, 'mage-os.org')
     )
   );
 
-  const svg = await satori(markup as ReactNode, {
+  const svg = await satori(markup, {
     width: 1200,
     height: 630,
     fonts: [
@@ -171,31 +209,32 @@ export async function generateOgImage(options: OgImageOptions): Promise<Buffer> 
  * Get page metadata for static pages
  */
 export const staticPagesMeta: Record<string, { title: string; description: string }> = {
-  'home': {
+  home: {
     title: 'Mage-OS',
     description: 'Community-Driven Open Source Commerce Platform built on Magento Open Source.',
   },
-  'about': {
+  about: {
     title: 'About the Mage-OS Association',
     description: 'A non-profit organization born from community action to safeguard and advance the Magento ecosystem.',
   },
-  'events': {
+  events: {
     title: 'Community Events',
-    description: 'Join the Mage-OS community at events worldwide. From Meet Magento conferences to weekly tech meetings.',
+    description:
+      'Join the Mage-OS community at events worldwide. From Meet Magento conferences to weekly tech meetings.',
   },
-  'community': {
+  community: {
     title: 'Join the Community',
     description: 'Connect with merchants, developers, and agencies shaping the future of open-source commerce.',
   },
-  'product': {
+  product: {
     title: 'Mage-OS Distribution',
     description: 'A community-driven, performance-optimized fork of Magento Open Source.',
   },
-  'features': {
+  features: {
     title: 'Mage-OS Features',
     description: 'Discover the enhancements and optimizations that make Mage-OS stand out.',
   },
-  'releases': {
+  releases: {
     title: 'Mage-OS Releases',
     description: 'Stay up to date with the latest Mage-OS releases and security updates.',
   },
@@ -203,27 +242,27 @@ export const staticPagesMeta: Record<string, { title: string; description: strin
     title: 'Get Started with Mage-OS',
     description: 'Everything you need to start using Mage-OS for your ecommerce project.',
   },
-  'contact': {
+  contact: {
     title: 'Contact Mage-OS',
     description: 'Get in touch with the Mage-OS team for questions, partnerships, or support.',
   },
-  'faq': {
+  faq: {
     title: 'Frequently Asked Questions',
     description: 'Find answers to common questions about Mage-OS, the Association, and getting involved.',
   },
-  'partners': {
+  partners: {
     title: 'Mage-OS Partners',
     description: 'Meet the companies and organizations supporting the Mage-OS ecosystem.',
   },
-  'blog': {
+  blog: {
     title: 'Mage-OS Blog',
     description: 'News, updates, and insights from the Mage-OS community.',
   },
-  'privacy': {
+  privacy: {
     title: 'Privacy Policy',
     description: 'How Mage-OS handles and protects your data.',
   },
-  'terms': {
+  terms: {
     title: 'Terms of Service',
     description: 'Terms and conditions for using Mage-OS services.',
   },
@@ -231,7 +270,7 @@ export const staticPagesMeta: Record<string, { title: string; description: strin
     title: 'Code of Conduct',
     description: 'Community standards that create a welcoming, respectful environment for all participants.',
   },
-  'imprint': {
+  imprint: {
     title: 'Legal Imprint',
     description: 'Legal information about the Mage-OS Association.',
   },

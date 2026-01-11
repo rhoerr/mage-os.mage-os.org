@@ -19,7 +19,7 @@ export const GET: APIRoute = async ({ props }) => {
     type: 'page',
   });
 
-  return new Response(png, {
+  return new Response(new Uint8Array(png), {
     status: 200,
     headers: {
       'Content-Type': 'image/png',
