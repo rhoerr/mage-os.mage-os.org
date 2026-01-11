@@ -8,6 +8,7 @@ export interface Props {
     title?: string;
     description?: string;
     tagline?: string;
+    ogImage?: string;
   };
 }
 
@@ -16,6 +17,9 @@ const { frontmatter } = Astro.props;
 const metadata: MetaData = {
   title: frontmatter?.title,
   description: frontmatter?.description,
+  openGraph: frontmatter?.ogImage
+    ? { images: [{ url: frontmatter.ogImage, width: 1200, height: 630 }] }
+    : undefined,
 };
 ---
 

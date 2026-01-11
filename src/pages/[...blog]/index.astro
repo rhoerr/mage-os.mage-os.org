@@ -26,6 +26,11 @@ const { post } = Astro.props as Props;
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
 
+// Use featured image if available, otherwise use dynamic OG image
+const ogImage = image
+  ? { url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }
+  : { url: `/og/${post.permalink}.png`, width: 1200, height: 630 };
+
 const metadata = merge(
   {
     title: post.title,
@@ -36,9 +41,7 @@ const metadata = merge(
     },
     openGraph: {
       type: 'article',
-      ...(image
-        ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] }
-        : {}),
+      images: [ogImage],
     },
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
