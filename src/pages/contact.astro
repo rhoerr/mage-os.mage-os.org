@@ -10,6 +10,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Newsletter from '~/components/widgets/Newsletter.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
 
 const metadata = {
   title: 'Contact | Mage-OS',
@@ -181,41 +182,120 @@ const metadata = {
   <WidgetWrapper id="form" containerClass="max-w-4xl mx-auto">
     <Headline
       title="Send Us a Message"
-      subtitle="Can't find what you need above? Use this form for general inquiries. For faster support, we recommend joining our Discord community."
-      tagline="Contact"
+      subtitle="Need to reach us? Use this form for general inquiries. For faster support, we recommend joining our Discord community."
+      tagline="Contact Form"
       classes={{
         container: 'mb-8 md:mb-10',
         title: 'text-3xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
         subtitle: 'text-xl text-muted dark:text-slate-400',
       }}
     />
-    <div class="w-full flex justify-center">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSeL8f7ckVgHjU7SJPKdfSzr4HQR5Q8y9DnQ3V_bq8y70Nrd0g/viewform?embedded=true"
-        class="w-full max-w-[640px] h-[912px] border-0 overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-        title="Contact Form"
-        loading="lazy"
-        scrolling="no"
-      >Loading…</iframe>
+    <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
+      <form
+        action="https://submit-form.com/UTjOJJ3Ey"
+        method="POST"
+        aria-label="Contact form"
+      >
+        <!-- Honeypot field for spam protection -->
+        <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="mb-6">
+          <label for="name" class="block text-sm font-medium">
+            Name
+            <span class="text-red-500 ml-1" aria-hidden="true">*</span>
+            <span class="sr-only">(required)</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            aria-required="true"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            placeholder="Your name"
+          />
+        </div>
+
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium">
+            Email
+            <span class="text-red-500 ml-1" aria-hidden="true">*</span>
+            <span class="sr-only">(required)</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            aria-required="true"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div class="mb-6">
+          <label for="subject" class="block text-sm font-medium">
+            Subject
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          >
+            <option value="General inquiry">General inquiry</option>
+            <option value="Contributing">Contributing to Mage-OS</option>
+            <option value="Technical question">Technical question</option>
+            <option value="Partnership">Partnership opportunity</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-6">
+          <label for="message" class="block text-sm font-medium">
+            Message
+            <span class="text-red-500 ml-1" aria-hidden="true">*</span>
+            <span class="sr-only">(required)</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            aria-required="true"
+            class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            placeholder="How can we help?"
+          ></textarea>
+        </div>
+
+        <!-- GDPR Notice -->
+        <div class="mb-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>
+            By submitting this form, you agree that we may process your information in accordance with our
+            <a href="/privacy-policy" class="text-primary hover:underline">Privacy Policy</a>.
+            We use <a href="https://formspark.io/legal/privacy-policy/" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Formspark</a>
+            to process form submissions. Your data is stored in the EU.
+          </p>
+        </div>
+
+        <!-- Cloudflare Turnstile -->
+        <div class="mb-6">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAACMKGFTo5c0cc9e8" data-theme="auto"></div>
+        </div>
+
+        <div class="grid">
+          <Button variant="primary" type="submit">
+            Send Message
+          </Button>
+        </div>
+      </form>
     </div>
-    <p class="text-sm text-muted text-center mt-4">We typically respond to form submissions within 2-3 business days.</p>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-indigo-50 dark:bg-transparent"></div>
-    </Fragment>
+    <p class="text-sm text-muted text-center mt-6">We typically respond to form submissions within 2-3 business days.</p>
   </WidgetWrapper>
 
-  <!-- Newsletter Widget ************** -->
-
-  <Newsletter
-    id="newsletter"
-    title="Subscribe to Our Newsletter"
-    subtitle="Stay up to date with Mage-OS releases, community news, and upcoming events. We send occasional updates—no spam, ever."
-    tagline="Newsletter"
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-[#f6f6f6] dark:bg-transparent"></div>
-    </Fragment>
-  </Newsletter>
+  <!-- Cloudflare Turnstile Script (loaded once for the page) -->
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <!-- Features2 Widget: Follow Us ************** -->
 
@@ -247,7 +327,7 @@ const metadata = {
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-indigo-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
 
@@ -284,11 +364,20 @@ const metadata = {
           'The Mage-OS Association is registered in Poland at Jeżycka 39 / 56, 60-864 Poznań, Poland. For legal correspondence, please use this address or email board@mage-os.org.',
       },
     ]}
+  />
+
+  <!-- Newsletter Widget ************** -->
+
+  <Newsletter
+    id="newsletter"
+    title="Subscribe to Our Newsletter"
+    subtitle="Stay up to date with Mage-OS releases, community news, and upcoming events. We send occasional updates—no spam, ever."
+    tagline="Newsletter"
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-[#f6f6f6] dark:bg-transparent"></div>
     </Fragment>
-  </FAQs>
+  </Newsletter>
 
   <!-- CallToAction Widget *********** -->
 
@@ -319,10 +408,6 @@ const metadata = {
       Beyond just asking questions, become part of a global community building the future of open-source ecommerce.
       Whether you contribute code, documentation, ideas, or financial support—<strong>every contribution matters</strong
       >.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
     </Fragment>
   </CallToAction>
 </Layout>
