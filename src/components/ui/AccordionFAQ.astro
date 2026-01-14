@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: FAQItem[];
+  defaultOpen?: boolean;
+  class?: string;
+}
+
+const { items = [], defaultOpen = false, class: className } = Astro.props;
+---
+
+<div class={twMerge('not-prose divide-y divide-gray-200 dark:divide-gray-700', className)}>
+  {items.map((item, index) => (
+    <details
+      class="group"
+      open={defaultOpen && index === 0}
+    >
+      <summary
+        class={twMerge(
+          'flex cursor-pointer items-center justify-between gap-4 py-4',
+          'text-left font-medium text-gray-900 dark:text-white',
+          'hover:text-primary dark:hover:text-primary',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+          'transition-colors duration-200'
+        )}
+      >
+        <span>{item.question}</span>
+        <Icon
+          name="tabler:chevron-down"
+          class="h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-300 group-open:rotate-180 dark:text-gray-400"
+          aria-hidden="true"
+        />
+      </summary>
+      <div class="accordion-content overflow-hidden">
+        <div class="pb-4 text-gray-600 dark:text-gray-300">
+          <Fragment set:html={item.answer} />
+        </div>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  /* Smooth height transition for accordion content */
+  details .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+  }
+
+  details[open] .accordion-content {
+    grid-template-rows: 1fr;
+  }
+
+  details .accordion-content > div {
+    overflow: hidden;
+  }
+</style>
