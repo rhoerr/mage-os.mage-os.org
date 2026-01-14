@@ -73,7 +73,7 @@ const installationTabs = [
     <div class="px-4 sm:px-6 mx-auto lg:px-8 max-w-5xl">
       <TabbedContent tabs={installationTabs} defaultTab="composer">
         <!-- Composer Tab -->
-        <div slot="composer">
+        <div data-tab="composer">
           <div class="bg-white dark:bg-slate-900 rounded-lg p-6 shadow-sm">
             <div class="flex items-center gap-3 mb-6">
               <Icon name="tabler:package" class="w-8 h-8 text-primary" />
@@ -206,7 +206,7 @@ bin/magento cache:flush`}</code></pre>
         </div>
 
         <!-- Docker Tab -->
-        <div slot="docker">
+        <div data-tab="docker">
           <div class="bg-white dark:bg-slate-900 rounded-lg p-6 shadow-sm">
             <div class="flex items-center gap-3 mb-6">
               <Icon name="tabler:brand-docker" class="w-8 h-8 text-primary" />
@@ -476,7 +476,7 @@ bin/magento cache:flush`}</code></pre>
         </div>
 
         <!-- Cloud Tab -->
-        <div slot="cloud">
+        <div data-tab="cloud">
           <div class="bg-white dark:bg-slate-900 rounded-lg p-6 shadow-sm">
             <div class="flex items-center gap-3 mb-6">
               <Icon name="tabler:cloud" class="w-8 h-8 text-primary" />
