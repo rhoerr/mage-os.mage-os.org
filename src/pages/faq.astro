@@ -1,0 +1,749 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
+import AccordionFAQ from '~/components/ui/AccordionFAQ.astro';
+import Callout from '~/components/ui/Callout.astro';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Frequently Asked Questions',
+  description: 'Common questions about Mage-OS, the distribution, membership, and how to get involved.',
+  openGraph: {
+    images: [{ url: '/og/page/faq.png', width: 1200, height: 630 }],
+  },
+};
+
+// Section definitions with icons
+const sections = [
+  { id: 'value-proposition', label: 'Value Proposition', icon: 'tabler:star' },
+  { id: 'the-distribution', label: 'The Distribution', icon: 'tabler:package' },
+  { id: 'vision-and-sustainability', label: 'Vision & Sustainability', icon: 'tabler:rocket' },
+  { id: 'finances', label: 'Finances', icon: 'tabler:wallet' },
+  { id: 'community', label: 'Community', icon: 'tabler:users' },
+  { id: 'ecosystem-compatibility', label: 'Ecosystem Compatibility', icon: 'tabler:puzzle' },
+  { id: 'usage', label: 'Usage', icon: 'tabler:settings' },
+  { id: 'contribution', label: 'Contribution', icon: 'tabler:git-pull-request' },
+  { id: 'technology', label: 'Technology', icon: 'tabler:code' },
+  { id: 'getting-help', label: 'Getting Help', icon: 'tabler:help-circle' },
+];
+
+// FAQ content organized by section
+const valuePropositionFAQ = [
+  {
+    question: 'What is the purpose of Mage-OS?',
+    answer: `<p class="mb-4"><strong>We want businesses and careers built around Magento Open Source to prosper.</strong></p>
+<p class="mb-4">Magento Open Source is a mature eCommerce platform, with tens of thousands of businesses worldwide depending on it.</p>
+<p class="mb-2">We are ensuring a bright future for Magento by:</p>
+<ul class="list-disc pl-6 space-y-1">
+<li><strong>Enabling the development community</strong> to enhance the platform</li>
+<li><strong>Providing merchants and agencies</strong> the long-term reliability they require</li>
+<li><strong>Giving newcomers</strong> an easy entry into the platform</li>
+</ul>`,
+  },
+  {
+    question: 'How will Mage-OS fulfill its purpose?',
+    answer: `<p class="mb-4">Mage-OS is an eCommerce platform, evolved from Magento Open Source. It can be used to build online stores, in the same way that Magento Open Source can be used.</p>
+<p class="mb-2">Because Mage-OS is focused on improving the components that make up the platform, we envision it becoming a foundation that many purpose-built variations of eCommerce systems can be built on, such as:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li>A <strong>minimal system</strong> optimized for low resource consumption</li>
+<li>A system optimized for <strong>headless storefronts</strong></li>
+<li>Systems for <strong>modern server-side rendered stores</strong></li>
+<li>Specialized <strong>B2B e-procurement</strong> systems</li>
+</ul>
+<p>We are also driving the ecosystem by providing content for merchants and agencies, including comparisons to other platforms, showcases, FAQs, directories, and more.</p>`,
+  },
+  {
+    question: 'How is Mage-OS better than Magento Open Source?',
+    answer: `<p class="mb-4">Our initial focus is on <strong>significant performance and usability improvements</strong>. We integrate changes that have been suggested as Pull Requests to Magento Open Source by the community, but haven't been included by Adobe due to resource constraints.</p>
+<p>Over time, those bug fixes and improvements will become an increasingly large advantage for Mage-OS over Magento.</p>`,
+  },
+  {
+    question: 'How is Mage-OS better than other eCommerce platforms?',
+    answer: `<p class="mb-2">Magento is a <strong>very stable and feature-rich</strong> eCommerce platform with:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li>A huge number of integrations with third-party services</li>
+<li>A rich and experienced developer community</li>
+<li>Proven scalability for enterprises of all sizes</li>
+</ul>
+<p>Mage-OS is and will remain fully compatible with Magento solutions and integrations, while providing additional enhancements on top.</p>`,
+  },
+  {
+    question: 'Why should a merchant consider using Mage-OS?',
+    answer: `<p class="mb-2">Mage-OS offers:</p>
+<ul class="list-disc pl-6 space-y-1">
+<li><strong>Mature and stable platform</strong> with a huge amount of existing third-party integrations</li>
+<li><strong>Ownership of the platform</strong> by becoming a <a href="/membership" class="text-primary hover:underline">member of the Mage-OS Association</a></li>
+<li><strong>Unparalleled flexibility</strong> and customizability for your unique business needs</li>
+<li><strong>Large global community</strong> of developers, agencies, and support options</li>
+</ul>`,
+  },
+  {
+    question: 'As an agency, what value do I get from Mage-OS?',
+    answer: `<ul class="list-disc pl-6 space-y-1">
+<li><strong>Direct influence and ownership</strong> of the platform by becoming a member</li>
+<li><strong>Stable and mature</strong> eCommerce platform, evolved from Magento Open Source</li>
+<li><strong>Participation</strong> in the vibrant global Magento community</li>
+<li><strong>Faster release cycles</strong> for security patches and improvements</li>
+<li><strong>Referral opportunities</strong> from the Mage-OS network for merchant services</li>
+</ul>`,
+  },
+];
+
+const distributionFAQ = [
+  {
+    question: 'What is the Mage-OS Distribution?',
+    answer: `<p class="mb-4">The Mage-OS Distribution is a <strong>community-driven eCommerce platform</strong> built on top of Magento Open Source. It includes all the same core functionality plus community-developed enhancements such as:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li><strong>Faster security patches</strong> released as soon as they are validated</li>
+<li><strong>Performance optimizations</strong> for better page load times</li>
+<li><strong>Innovative features</strong> developed through the <a href="https://github.com/mage-os-lab" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Mage-OS Lab</a></li>
+</ul>
+<p>The distribution is highly compatible with existing Magento 2 extensions, themes, and integrations, while offering improvements that are not available in Magento itself.</p>`,
+  },
+  {
+    question: 'What is the Mage-OS Lab?',
+    answer: `<p class="mb-4">The <a href="https://github.com/mage-os-lab" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Mage-OS Lab</a> is our community innovation space where members experiment, develop, and perfect new features before they graduate to the core distribution. It operates as a sandbox for trying new ideas without impacting the stability of the main distribution.</p>
+<p class="mb-2">Lab projects have included:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li>AI-powered translation tools</li>
+<li>Theme and performance optimizations</li>
+<li>Page Builder widgets and import/export</li>
+<li>Developer experience enhancements</li>
+</ul>
+<p>Everyone is welcome to contribute modules, improvements, and ideas to the Lab.</p>`,
+  },
+  {
+    question: 'What enhancements does Mage-OS include?',
+    answer: `<p class="mb-4">Mage-OS focuses on several key areas:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Area</th>
+<th class="text-left py-2 font-semibold">Enhancements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Performance</td>
+<td class="py-2">Optimized caching, database queries, and frontend performance for faster page loads</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Security</td>
+<td class="py-2">Faster security patches that ship as soon as they are validated by the community</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Modern PHP</td>
+<td class="py-2">Quick adaptation to new PHP versions for compatibility with modern hosting</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Developer Experience</td>
+<td class="py-2">Improved debugging tools, better error messages, and modern development practices</td>
+</tr>
+</tbody>
+</table>
+<p>See our <a href="/product/features" class="text-primary hover:underline">Features page</a> for a detailed breakdown.</p>`,
+  },
+  {
+    question: 'How does Mage-OS handle security patches?',
+    answer: `<p>Security issues are prioritized and fixed quickly through an open, transparent review process. Critical patches ship as soon as they are validated by the community, rather than waiting for quarterly corporate release schedules. This approach helps merchants stay protected against emerging threats.</p>`,
+  },
+];
+
+const visionFAQ = [
+  {
+    question: 'What is the long-term vision?',
+    answer: `<p>Our vision for Mage-OS is to provide a high-quality, dependable, and better alternative to the Adobe-curated Magento Open Source project. We will demonstrate an ability to process contributions quickly and effectively, improve the quality and accessibility of the platform, and release updates on a regular cadence.</p>`,
+  },
+  {
+    question: 'What is the current status of Mage-OS?',
+    answer: `<p class="mb-4"><strong>Mage-OS is a mature, production-ready platform.</strong> Current initiatives include:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Initiative</th>
+<th class="text-left py-2 font-semibold">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Mage-OS Distribution</td>
+<td class="py-2">Based on Magento Open Source 2.4.8-p3, available and usable today</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Mage-OS Lab</td>
+<td class="py-2">Community innovation hub for developing new features</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Public Magento Mirror</td>
+<td class="py-2">Composer repositories with no Adobe account required</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Nightly Builds</td>
+<td class="py-2">Development builds available via Composer</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Developer Documentation</td>
+<td class="py-2"><a href="https://devdocs.mage-os.org/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">devdocs.mage-os.org</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">GitHub Actions</td>
+<td class="py-2">Open source testing and validation tools</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Local Communities</td>
+<td class="py-2">Meetups and events to engage the ecosystem worldwide</td>
+</tr>
+</tbody>
+</table>
+<p>The Mage-OS Distribution is open for contributions and pull requests at <a href="https://github.com/mage-os/mageos-magento2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">github.com/mage-os/mageos-magento2</a>.</p>`,
+  },
+  {
+    question: 'When can I start using Mage-OS?',
+    answer: `<p><strong>You can use Mage-OS today!</strong> See the <a href="/get-started" class="text-primary hover:underline">Get Started</a> page for instructions.</p>`,
+  },
+  {
+    question: 'What are the plans for if Adobe no longer supports Magento Open Source?',
+    answer: `<p class="mb-4">If or when Adobe stops supporting Magento Open Source, <strong>Mage-OS will be well positioned to step into its place.</strong> This is an important aspect of Mage-OS: to provide certainty and a long-term plan for the ecosystem, regardless of factors outside our control.</p>
+<p>In the meantime, we make every effort to preserve compatibility with Magento Open Source, while improving performance and adding new features.</p>`,
+  },
+  {
+    question: 'What is the roadmap?',
+    answer: `<p class="mb-2">Our roadmap focuses on:</p>
+<ol class="list-decimal pl-6 space-y-1 mb-4">
+<li><strong>Immediate priorities:</strong> Improving platform stability and performance, reducing total cost of ownership</li>
+<li><strong>Architecture improvements:</strong> Reducing dependencies between modules to allow sites to remove features they don't need</li>
+<li><strong>Community-driven features:</strong> Platform enhancements contributed by the ecosystem</li>
+<li><strong>Long-term:</strong> Enhancing Mage-OS capabilities to remain competitive against other modern ecommerce platforms</li>
+</ol>
+<p>See our <a href="/roadmap" class="text-primary hover:underline">Roadmap page</a> for more details.</p>`,
+  },
+  {
+    question: 'How is Mage-OS going to ensure long-term support?',
+    answer: `<p>We follow an approach inspired by the Typo3 Association. This model of a community-owned organization provides the vendor-based support and financial backing required for the long-term success of businesses built around Mage-OS.</p>`,
+  },
+];
+
+const financesFAQ = [
+  {
+    question: 'How is the Mage-OS Association funded?',
+    answer: `<p>Mage-OS is fully funded by membership fees and donations from our members and partner companies. All payments are visible through our <a href="https://opencollective.com/mage-os" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Open Collective</a>.</p>`,
+  },
+  {
+    question: 'How are funds used?',
+    answer: `<p class="mb-2">The Mage-OS Association is not-for-profit, and invests funds into:</p>
+<ul class="list-disc pl-6 space-y-1">
+<li><strong>Operational expenses:</strong> Accountant, lawyer, bank fees, website, software and licenses</li>
+<li><strong>Staffing:</strong> Part-time staff to organize contributors and efforts</li>
+<li><strong>Development:</strong> Funding development of features and improvements to support ecosystem growth</li>
+</ul>`,
+  },
+  {
+    question: 'What protections are in place?',
+    answer: `<p>As a legally registered association, we are bound by our <a href="/about/statutes" class="text-primary hover:underline">statutes</a>, which include multiple approvals for all spending, audits by our Business Control Committee, and an annual budget and financials approved by the members.</p>`,
+  },
+  {
+    question: 'Can I pay for a feature?',
+    answer: `<p>Yes! If you would like to see a feature developed and are willing to put funds toward it, talk to us about the Mage-OS grant program. All grants are subject to applicability to the broad community and feasibility of completion.</p>`,
+  },
+  {
+    question: 'How can I apply for a development grant?',
+    answer: `<p>We are continuing to develop our grant program. If you have an idea for a feature that would benefit the broader Mage-OS community, reach out to us on <a href="/discord-channel" class="text-primary hover:underline">Discord</a> to discuss the possibility.</p>`,
+  },
+];
+
+const communityFAQ = [
+  {
+    question: 'How is Mage-OS related to the Magento Association?',
+    answer: `<p class="mb-4">Mage-OS and the Magento Association both deal with the Magento ecosystem, but focus on different things.</p>
+<p class="mb-4"><strong>Magento Association</strong> focuses on community events, content, outreach, and representing the Magento brand with Adobe.</p>
+<p class="mb-4"><strong>Mage-OS Association</strong> is more technology-focused—we publish an improved but compatible distribution of Magento and focus on growing independently of Adobe.</p>
+<p>We look forward to collaborating with the Magento Association as we both share the same fundamental purpose of supporting the Magento Open Source ecosystem.</p>`,
+  },
+  {
+    question: 'Why create a whole new association and brand?',
+    answer: `<p class="mb-4">We fundamentally disagree with the direction Adobe is taking the platform. In order to take the steps we see as necessary for Magento to thrive, we need control and nimbleness that is not possible in the Adobe-controlled Magento Open Source project.</p>
+<p>For this reason, we made the decision to create our own fork and distribution based on the Magento open source code. The Magento name and logo are trademarks we can't use, so we call this new product Mage-OS.</p>`,
+  },
+  {
+    question: 'Is Mage-OS specific to Europe?',
+    answer: `<p>No. Mage-OS was started by a group of companies located mostly in Europe, but we are actively growing our member base all over the world.</p>`,
+  },
+  {
+    question: "Isn't it a conflict of interest to have companies represented by leadership?",
+    answer: `<p>Any people with a business that relies on Magento have a vested interest in Magento's success. The Mage-OS Association's <a href="/about/statutes" class="text-primary hover:underline">statutes</a> have specific requirements for avoiding direct conflicts of interest, which all board members must abide by.</p>`,
+  },
+  {
+    question: 'Is Mage-OS going to have its own certification path?',
+    answer: `<p>At this time, Mage-OS does not offer its own certification. There are many excellent resources to learn Magento as a merchant, solution architect, or developer. We may consider offering certification in the future if it serves the community's needs.</p>`,
+  },
+  {
+    question: 'Is Mage-OS going to organize its own events?',
+    answer: `<p class="mb-4">Members are organizing Mage-OS meetups and participating in events including Meet-Commerce conferences and Unconferences. If you are interested in representing Mage-OS at a conference you are planning to attend, let us know on Discord!</p>
+<p>Once a year, all members are invited to the General Assembly of the Mage-OS Association, which governs the association according to its <a href="/about/statutes" class="text-primary hover:underline">statutes</a>.</p>`,
+  },
+];
+
+const ecosystemFAQ = [
+  {
+    question: 'Is Mage-OS going to split the Magento ecosystem?',
+    answer: `<p class="mb-4"><strong>No, splitting the ecosystem is the last thing we want to do.</strong> Mage-OS was created to revitalize and sustain the community of developers, agencies, merchants, and partners that built their business around Magento.</p>
+<p>The best way for us to do that is to stay compatible with Magento Open Source and Adobe Commerce to the greatest extent possible, for as long as we can.</p>`,
+  },
+  {
+    question: 'How compatible is Mage-OS with Magento?',
+    answer: `<p class="mb-4">Mage-OS is designed to maintain <strong>full compatibility</strong> with the Magento ecosystem. Extensions, themes, code samples, developer knowledge, and integrations all work seamlessly between the platforms.</p>
+<p>Mage-OS makes improvements and fixes to the core, but those changes will not break or fundamentally change the nature of Magento. It is still the same architecture with the same incredible customizability.</p>`,
+  },
+  {
+    question: 'Will Mage-OS compete with my business?',
+    answer: `<p class="mb-4"><strong>No.</strong> Mage-OS's intention is to support the ecosystem, not undermine it. The Mage-OS Association will not provide conventional merchant services.</p>
+<p>Any requests we receive for development, integration, site builds, or audits are referred to our community of agencies and developers. We exist to help the ecosystem thrive, not to compete with it.</p>`,
+  },
+];
+
+const usageFAQ = [
+  {
+    question: "Can I switch to Mage-OS if I'm already running Magento?",
+    answer: `<p><strong>Yes!</strong> You will need to make some changes to your <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">composer.json</code> file and then update. The Mage-OS mirror is compatible with all your existing Magento code, but please <strong>test in a development environment</strong> before switching on a live site.</p>`,
+  },
+  {
+    question: 'Can I switch back to Magento after using Mage-OS?',
+    answer: `<p><strong>Yes!</strong> You can switch back by updating your <code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">composer.json</code> file. You will lose any Mage-OS-specific enhancements in the process, but you can always switch again later.</p>`,
+  },
+  {
+    question: 'Can I move from Mage-OS to Adobe Commerce?',
+    answer: `<p><strong>Yes.</strong> It is very similar to moving from Magento Open Source to Adobe Commerce. You will lose Mage-OS-specific features, but your data will stay intact.</p>`,
+  },
+  {
+    question: 'Can I move from Adobe Commerce to Mage-OS?',
+    answer: `<p><strong>Yes.</strong> You will lose any Adobe Commerce-specific features in the process, but both are based on the same Magento core, so all of your data will stay intact. The process is very similar to moving from Adobe Commerce to Magento Open Source.</p>`,
+  },
+  {
+    question: 'How long does migration from Magento take?',
+    answer: `<p>A straightforward migration typically takes <strong>30 minutes</strong> or less. Stores with extensive customizations should allocate adequate testing time to be safe. See our <a href="/get-started/migration-guide" class="text-primary hover:underline">Migration Guide</a> for step-by-step instructions.</p>`,
+  },
+  {
+    question: 'How do I install Mage-OS?',
+    answer: `<p class="mb-4"><strong>Magento from public mirror:</strong></p>
+<pre class="bg-gray-900 text-gray-100 p-3 rounded text-sm overflow-x-auto mb-4"><code>composer create-project --repository-url=https://mirror.mage-os.org \\
+  magento/project-community-edition</code></pre>
+<p class="mb-4"><strong>Mage-OS Distribution:</strong></p>
+<pre class="bg-gray-900 text-gray-100 p-3 rounded text-sm overflow-x-auto mb-4"><code>composer create-project --repository-url=https://repo.mage-os.org \\
+  mage-os/project-community-edition</code></pre>
+<p class="mb-2">Available repositories:</p>
+<ul class="list-disc pl-6 space-y-1">
+<li><code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">mirror.mage-os.org</code> - Magento Open Source versions since 2.3.7-p3</li>
+<li><code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">upstream-nightly.mage-os.org</code> - Nightly builds from develop branches</li>
+<li><code class="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">nightly.mage-os.org</code> - Mage-OS Distribution nightly builds</li>
+</ul>`,
+  },
+];
+
+const contributionFAQ = [
+  {
+    question: 'How can I contribute to Mage-OS?',
+    answer: `<p class="mb-2">There are many ways to contribute:</p>
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Contribution Type</th>
+<th class="text-left py-2 font-semibold">How to Get Started</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Join the conversation</td>
+<td class="py-2"><a href="/discord-channel" class="text-primary hover:underline">Discord</a> at chat.mage-os.org</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Financial support</td>
+<td class="py-2"><a href="/membership" class="text-primary hover:underline">Become a member</a> and gain voting rights</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Code contributions</td>
+<td class="py-2"><a href="https://github.com/mage-os/mageos-magento2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">github.com/mage-os/mageos-magento2</a></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Experimental features</td>
+<td class="py-2"><a href="https://github.com/mage-os-lab" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">github.com/mage-os-lab</a></td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Documentation</td>
+<td class="py-2"><a href="https://github.com/mage-os/devdocs" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">github.com/mage-os/devdocs</a></td>
+</tr>
+</tbody>
+</table>`,
+  },
+  {
+    question: 'Why should I contribute?',
+    answer: `<p>By contributing to Mage-OS, you are <strong>directly supporting development</strong> of the Mage-OS and Magento ecosystem. You can directly influence the direction of the platform and help to keep it modern and relevant.</p>`,
+  },
+  {
+    question: 'What kind of contributions are accepted?',
+    answer: `<p class="mb-2">We are particularly interested in <strong>backwards-compatible changes</strong>:</p>
+<ul class="list-disc pl-6 space-y-1">
+<li>Bug fixes</li>
+<li>Improvements to the developer experience</li>
+<li>Performance improvements</li>
+<li>Improvements to maintainability</li>
+<li>Independent modules which enhance or add functionality</li>
+</ul>`,
+  },
+  {
+    question: 'Are there meetings I can join?',
+    answer: `<p class="mb-4"><strong>Yes!</strong> Meetings happen in Discord in the "Public Meeting Room" voice channel:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Day</th>
+<th class="text-left py-2 pr-4 font-semibold">Time</th>
+<th class="text-left py-2 font-semibold">Meeting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4">Tuesday</td>
+<td class="py-2 pr-4">3:00 PM CET (9am EST)</td>
+<td class="py-2">Technical meeting</td>
+</tr>
+<tr>
+<td class="py-2 pr-4">Friday</td>
+<td class="py-2 pr-4">3:00 PM CET (9am EST)</td>
+<td class="py-2">Business meeting (occasional, as needed)</td>
+</tr>
+</tbody>
+</table>
+<p class="mb-4">Contributors meet to discuss progress, infrastructure, tooling, and new features. Join the <a href="/discord-channel" class="text-primary hover:underline">Discord</a> and participate! <strong>If you just want to listen, that is fine too.</strong></p>
+<p><a href="https://www.worldtimebuddy.com/?qm=1&lid=8,5,14,12,13,30,21&h=12&sln=15-16&hf=1" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Convert to your timezone</a></p>`,
+  },
+];
+
+const technologyFAQ = [
+  {
+    question: 'What versions of Magento is Mage-OS based on?',
+    answer: `<p class="mb-4">Mage-OS is focused on <strong>Magento 2</strong>, particularly the supported release line (2.4). For Magento 1, we encourage you to look at <a href="https://github.com/OpenMage/magento-lts" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">OpenMage LTS</a>.</p>
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Repository</th>
+<th class="text-left py-2 font-semibold">Versions Available</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Mage-OS Mirror</td>
+<td class="py-2">All Magento 2 versions since 2.3.7-p3</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Mage-OS Distribution</td>
+<td class="py-2">Based on the latest Magento Open Source version</td>
+</tr>
+</tbody>
+</table>`,
+  },
+  {
+    question: 'Will changes be merged into Magento Open Source?',
+    answer: `<p class="mb-4">We have had informal discussions with Adobe and the Community Council about merging Mage-OS PRs into Magento Open Source. The exact process is still being worked out.</p>
+<p><strong>Regarding divergence:</strong> Our goal is to maintain backwards compatibility as long as possible. Mage-OS and Magento will diverge over time as we add enhancements and features that Magento may not.</p>`,
+  },
+  {
+    question: 'How do new feature proposals work?',
+    answer: `<p class="mb-4">For new features, we deliver these as <strong>separate packages</strong>. This allows for an independent release schedule and makes it easier to keep upstream compatibility with Magento Open Source intact.</p>
+<p class="mb-2"><strong>The approach:</strong></p>
+<ul class="list-disc pl-6 space-y-1">
+<li>New features = new modules</li>
+<li>Backwards-compatible improvements to the core can go into the Mage-OS core</li>
+</ul>`,
+  },
+  {
+    question: 'Will Mage-OS have extra modules not in Magento Open Source?',
+    answer: `<p class="mb-4"><strong>Yes</strong>, add-on modules are the plan for enhancements and additions to the platform. This has numerous advantages:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li>Easier maintenance</li>
+<li>Separate release schedules</li>
+<li>Keeping the main repository closer to the upstream Magento core</li>
+</ul>
+<p>The <a href="https://github.com/mage-os-lab" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Mage-OS Lab</a> is where many of these modules are developed and tested before being considered for inclusion in the distribution.</p>`,
+  },
+];
+
+const helpFAQ = [
+  {
+    question: 'Where can I get support for Mage-OS?',
+    answer: `<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Support Channel</th>
+<th class="text-left py-2 font-semibold">Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4"><a href="/discord-channel" class="text-primary hover:underline font-medium">Discord</a></td>
+<td class="py-2">Real-time help, community discussions, quick questions</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4"><a href="https://devdocs.mage-os.org/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Developer Documentation</a></td>
+<td class="py-2">Technical guides, API references, tutorials</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4"><a href="https://github.com/mage-os/mageos-magento2/issues" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">GitHub Issues</a></td>
+<td class="py-2">Bug reports, feature requests</td>
+</tr>
+<tr>
+<td class="py-2 pr-4"><a href="/contact" class="text-primary hover:underline font-medium">Contact Form</a></td>
+<td class="py-2">Official inquiries, partnership discussions</td>
+</tr>
+</tbody>
+</table>`,
+  },
+  {
+    question: 'What if I need professional services?',
+    answer: `<p class="mb-4">The Mage-OS Association does not provide implementation services directly. However, we work with a network of <strong>experienced agencies and developers</strong> who specialize in Mage-OS and Magento. We encourage you to check out our partners below.</p>
+<p>Looking for help with your project? Reach out on <a href="/discord-channel" class="text-primary hover:underline">Discord</a> and we can connect you with qualified professionals in our community.</p>`,
+  },
+  {
+    question: 'How do I report a security issue?',
+    answer: `<p class="mb-4">If you discover a security vulnerability in Mage-OS, please report it responsibly by emailing <strong>security@mage-os.org</strong>. Do not disclose security issues publicly until they have been addressed.</p>
+<p>If your issue also affects Magento Open Source, please report it directly to Adobe via their <a href="https://hackerone.com/adobe" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">HackerOne Bug Bounty program</a>.</p>`,
+  },
+];
+
+// Compatibility items for ItemGrid
+const compatibilityItems = [
+  {
+    title: 'Magento Extensions',
+    description: 'Extensions that work with Magento work with Mage-OS',
+    icon: 'tabler:puzzle',
+  },
+  {
+    title: 'Mage-OS Extensions',
+    description: 'Extensions for Mage-OS work with Magento (unless using Mage-OS-specific features)',
+    icon: 'tabler:puzzle-2',
+  },
+  {
+    title: 'Code Samples',
+    description: 'Code and syntax for Magento works for Mage-OS',
+    icon: 'tabler:code',
+  },
+  {
+    title: 'Developer Knowledge',
+    description: 'Anyone who knows Magento or Mage-OS can switch with minimal effort',
+    icon: 'tabler:brain',
+  },
+  {
+    title: 'Themes',
+    description: 'Existing themes are fully compatible',
+    icon: 'tabler:palette',
+  },
+  {
+    title: 'Integrations',
+    description: 'Third-party integrations continue to work',
+    icon: 'tabler:plug-connected',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <PageHero tagline="FAQ" variant="default">
+    <Fragment slot="title">Frequently Asked Questions</Fragment>
+    <Fragment slot="subtitle">
+      Common questions about Mage-OS, the distribution, membership, and how to get involved.
+    </Fragment>
+  </PageHero>
+
+  <!-- Jump Links as Pill Buttons -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-5xl -mt-8 mb-8">
+    <div class="flex flex-wrap justify-center gap-2">
+      {
+        sections.map((section) => (
+          <a
+            href={`#${section.id}`}
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors"
+          >
+            <Icon name={section.icon} class="w-4 h-4" />
+            {section.label}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <Callout type="info" title="Ready to Get Started?" class="mx-auto max-w-4xl px-4 mb-8">
+    <p>
+      Mage-OS is available now! Visit our <a href="/get-started" class="underline font-medium">Get Started guide</a> to install
+      Mage-OS in under 30 minutes.
+    </p>
+  </Callout>
+
+  <!-- FAQ Sections -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-4xl">
+    <!-- Value Proposition -->
+    <div id="value-proposition" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:star" class="w-7 h-7 text-primary" />
+        Value Proposition
+      </h2>
+      <AccordionFAQ items={valuePropositionFAQ} defaultOpen={true} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- The Distribution -->
+    <div id="the-distribution" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:package" class="w-7 h-7 text-primary" />
+        The Distribution
+      </h2>
+      <AccordionFAQ items={distributionFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Vision & Sustainability -->
+    <div id="vision-and-sustainability" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:rocket" class="w-7 h-7 text-primary" />
+        Vision & Sustainability
+      </h2>
+      <AccordionFAQ items={visionFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Finances -->
+    <div id="finances" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:wallet" class="w-7 h-7 text-primary" />
+        Finances
+      </h2>
+      <Callout type="tip" title="Full Transparency" class="mb-6">
+        <p>
+          All Mage-OS finances are publicly visible through our <a
+            href="https://opencollective.com/mage-os"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline font-medium">Open Collective</a
+          > page.
+        </p>
+      </Callout>
+      <AccordionFAQ items={financesFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Community -->
+    <div id="community" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:users" class="w-7 h-7 text-primary" />
+        Community
+      </h2>
+      <AccordionFAQ items={communityFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Ecosystem Compatibility -->
+    <div id="ecosystem-compatibility" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:puzzle" class="w-7 h-7 text-primary" />
+        Ecosystem Compatibility
+      </h2>
+
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4 dark:text-white">Full Compatibility with Magento</h3>
+        <ItemGrid
+          columns={3}
+          items={compatibilityItems}
+          classes={{
+            container: 'gap-4 md:gap-6',
+            panel: 'bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg',
+            title: 'text-base',
+            description: 'text-sm',
+          }}
+        />
+      </div>
+
+      <AccordionFAQ items={ecosystemFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Usage -->
+    <div id="usage" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:settings" class="w-7 h-7 text-primary" />
+        Usage
+      </h2>
+      <AccordionFAQ items={usageFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Contribution -->
+    <div id="contribution" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:git-pull-request" class="w-7 h-7 text-primary" />
+        Contribution
+      </h2>
+      <AccordionFAQ items={contributionFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Technology -->
+    <div id="technology" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:code" class="w-7 h-7 text-primary" />
+        Technology
+      </h2>
+      <AccordionFAQ items={technologyFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Getting Help -->
+    <div id="getting-help" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:help-circle" class="w-7 h-7 text-primary" />
+        Getting Help
+      </h2>
+      <AccordionFAQ items={helpFAQ} />
+    </div>
+  </section>
+
+  <!-- More Questions Section -->
+  <section class="bg-gray-50 dark:bg-slate-800/50 py-16">
+    <div class="px-4 sm:px-6 mx-auto lg:px-8 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold font-heading mb-4 dark:text-white">More Questions?</h2>
+      <p class="text-xl text-muted mb-8">
+        If you don't find your answer here, we're here to help. We welcome feedback on this FAQ!
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/discord-channel"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+        >
+          <Icon name="tabler:brand-discord" class="w-5 h-5" />
+          Join Discord
+        </a>
+        <a
+          href="mailto:info@mage-os.org"
+          class="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+        >
+          <Icon name="tabler:mail" class="w-5 h-5" />
+          Email Us
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium"
+        >
+          <Icon name="tabler:message" class="w-5 h-5" />
+          Contact Form
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
