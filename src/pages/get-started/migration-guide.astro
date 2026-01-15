@@ -199,24 +199,33 @@ tar -czvf magento-backup.tar.gz /path/to/magento`}
         Switch to Mage-OS Repository
       </h3>
 
+      <p>
+        Use the official migration script to automate the repository switch and dependency updates. Run this command
+        from your Magento root directory:
+      </p>
+
       <CodeBlock
         code={`cd /path/to/your/magento
-
-# Add Mage-OS repository
-composer config repositories.0 composer https://repo.mage-os.org/
-
-# Require Mage-OS product
-composer require mage-os/product-community-edition --no-update
-
-# Remove Magento product
-composer remove magento/product-community-edition \\
-  magento/composer-dependency-version-audit-plugin \\
-  magento/composer-root-update-plugin --no-update
-
-# Update all dependencies
-composer update --no-plugins --with-all-dependencies`}
+bash <(curl -s https://raw.githubusercontent.com/mage-os-lab/migrate-m2-to-mageos/refs/heads/main/migrate-to-mage-os.sh)`}
         lang="bash"
       />
+
+      <Callout type="warning" title="Script Requirements">
+        <ul class="text-sm mt-1 space-y-1 list-disc list-inside">
+          <li>Magento 2.4.8 or later (including patch versions)</li>
+          <li>Developer mode enabled</li>
+          <li>Local or staging environment only — <strong>do not run on production</strong></li>
+        </ul>
+        <p class="mt-2 text-sm">
+          <a
+            href="https://github.com/mage-os-lab/migrate-m2-to-mageos"
+            target="_blank"
+            class="text-primary hover:underline"
+          >
+            View script documentation on GitHub →
+          </a>
+        </p>
+      </Callout>
 
       <h3 id="step-3-upgrade" class="flex items-center gap-3">
         <span
@@ -259,49 +268,6 @@ bin/magento --version
 # Should output: Mage-OS 2.x.x`}
         lang="bash"
       />
-    </div>
-
-    <!-- Automated Migration Script -->
-    <div class="mt-12 bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <Icon name="tabler:terminal" class="w-6 h-6 text-primary" />
-        <h3 class="text-lg font-bold dark:text-white">Automated Migration Script</h3>
-        <span class="text-xs bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 px-2 py-0.5 rounded"
-          >Recommended</span
-        >
-      </div>
-      <p class="text-muted mb-4 text-sm">
-        For Magento 2.4.8+ installations, use the official migration script to automate the process:
-      </p>
-      <pre
-        class="bg-gray-900 text-gray-100 p-4 rounded text-xs overflow-x-auto"><code class="language-bash">bash &lt;(curl -s https://raw.githubusercontent.com/mage-os-lab/migrate-m2-to-mageos/refs/heads/main/migrate-to-mage-os.sh)</code></pre>
-      <div
-        class="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded text-sm"
-      >
-        <div class="flex items-start gap-2">
-          <Icon
-            name="tabler:alert-triangle"
-            class="w-5 h-5 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-0.5"
-          />
-          <div>
-            <p class="font-medium text-yellow-800 dark:text-yellow-200">Requirements</p>
-            <ul class="text-yellow-700 dark:text-yellow-300 text-xs mt-1 space-y-1">
-              <li>• Magento 2.4.8 or later (including patch versions)</li>
-              <li>• Developer mode enabled</li>
-              <li>• Local or staging environment only — <strong>do not run on production</strong></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <p class="text-muted mt-4 text-xs">
-        <a
-          href="https://github.com/mage-os-lab/migrate-m2-to-mageos"
-          target="_blank"
-          class="text-primary hover:underline"
-        >
-          View script documentation on GitHub →
-        </a>
-      </p>
     </div>
   </section>
 
