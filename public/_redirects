@@ -1,117 +1,193 @@
 # Redirects from old WordPress URLs to new Astro URLs
 # Format: /old-path /new-path [status-code]
-
-# Strip trailing slashes (Cloudflare Pages requires exact matches)
-/*/ /:splat 301
+# Each rule is duplicated with trailing slash to handle both URL formats
 
 # =============================================================================
 # ABOUT SECTION
 # =============================================================================
 /about-the-mage-os-association /about 301
+/about-the-mage-os-association/ /about 301
 /about/why-does-mage-os-exist /about 301
+/about/why-does-mage-os-exist/ /about 301
 /leadership-team /about/leadership 301
+/leadership-team/ /about/leadership 301
 /about/leadership-team /about/leadership 301
+/about/leadership-team/ /about/leadership 301
 /organization/leadership-team /about/leadership 301
+/organization/leadership-team/ /about/leadership 301
 /statutes /about/statutes 301
+/statutes/ /about/statutes 301
 /organization/statutes /about/statutes 301
+/organization/statutes/ /about/statutes 301
 /contributors /about/contributors 301
+/contributors/ /about/contributors 301
 /mage-os-brand-ambassador-program /about/brand-ambassadors 301
+/mage-os-brand-ambassador-program/ /about/brand-ambassadors 301
 
 # =============================================================================
 # COMMUNITY SECTION
 # =============================================================================
 /mage-os-membership /community 301
+/mage-os-membership/ /community 301
 /about/mage-os-membership /community 301
+/about/mage-os-membership/ /community 301
 /get-involved /community 301
+/get-involved/ /community 301
 /about/get-involved /community 301
+/about/get-involved/ /community 301
 /about/get-involved/blog-content-submission-guidelines /community 301
+/about/get-involved/blog-content-submission-guidelines/ /community 301
 /newsletter /community 301
+/newsletter/ /community 301
 /community/local-mage-os-communities /community 301
+/community/local-mage-os-communities/ /community 301
 /community/developer-resources/gender-equality /community 301
+/community/developer-resources/gender-equality/ /community 301
 /community/ecosystem /community/partners 301
+/community/ecosystem/ /community/partners 301
 /member-badges /community/partners 301
+/member-badges/ /community/partners 301
 /about/mage-os-compatibility-badge /community/partners 301
+/about/mage-os-compatibility-badge/ /community/partners 301
 /swag /community/apparel 301
+/swag/ /community/apparel 301
 /community/magento-events /events 301
+/community/magento-events/ /events 301
 /event-landing /events 301
+/event-landing/ /events 301
 
 # =============================================================================
 # PRODUCT SECTION
 # =============================================================================
 /why-magento /product 301
+/why-magento/ /product 301
 /why-magento/magento-vs-adobe-vs-mage-os /product 301
+/why-magento/magento-vs-adobe-vs-mage-os/ /product 301
 /distribution /product 301
+/distribution/ /product 301
 /distribution/product-vision /product/roadmap 301
+/distribution/product-vision/ /product/roadmap 301
 /versioning-strategy /product/releases 301
+/versioning-strategy/ /product/releases 301
 /mage%e2%80%91os-distribution-versions-vs-magento-open-source /product/releases 301
+/mage%e2%80%91os-distribution-versions-vs-magento-open-source/ /product/releases 301
 
 # Features pages
 /why-magento/features /product/features 301
+/why-magento/features/ /product/features 301
 /why-magento/solutions /product/features 301
+/why-magento/solutions/ /product/features 301
 /why-magento/features/multistore /product/features 301
+/why-magento/features/multistore/ /product/features 301
 /why-magento/features/page-builder-cms /product/features 301
+/why-magento/features/page-builder-cms/ /product/features 301
 /why-magento/features/catalog-search /product/features 301
+/why-magento/features/catalog-search/ /product/features 301
 /why-magento/features/pricing-promotions /product/features 301
+/why-magento/features/pricing-promotions/ /product/features 301
 /why-magento/features/checkout /product/features 301
+/why-magento/features/checkout/ /product/features 301
 /why-magento/features/marketing-seo /product/features 301
+/why-magento/features/marketing-seo/ /product/features 301
 /why-magento/features/customers-fulfilment /product/features 301
+/why-magento/features/customers-fulfilment/ /product/features 301
 /why-magento/features/store-management-tools /product/features 301
+/why-magento/features/store-management-tools/ /product/features 301
 /why-magento/features/front-end-options /product/features 301
+/why-magento/features/front-end-options/ /product/features 301
 /why-magento/solutions/b2b /product/features 301
+/why-magento/solutions/b2b/ /product/features 301
 /why-magento/solutions/international-global /product/features 301
+/why-magento/solutions/international-global/ /product/features 301
 /why-magento/solutions/payments /product/features 301
+/why-magento/solutions/payments/ /product/features 301
 /why-magento/solutions/integrations-extensions /product/features 301
+/why-magento/solutions/integrations-extensions/ /product/features 301
 /mage-os-vs-magento-open-source-vs-adobe-commerce-feature-comparison /product/features 301
+/mage-os-vs-magento-open-source-vs-adobe-commerce-feature-comparison/ /product/features 301
 /mage-os-mageos-features-magento-fork-open-source-ecommerce-magento-alternative-mage-os-community-mage-os-platform-mage-os-vs-magento-mage-os-release-ecommerce-platform /product/features 301
+/mage-os-mageos-features-magento-fork-open-source-ecommerce-magento-alternative-mage-os-community-mage-os-platform-mage-os-vs-magento-mage-os-release-ecommerce-platform/ /product/features 301
 
 # =============================================================================
 # DEVELOPER RESOURCES
 # =============================================================================
 /community/developer-resources /get-started 301
+/community/developer-resources/ /get-started 301
 /why-magento/resources /get-started 301
+/why-magento/resources/ /get-started 301
 /community-modules-directory /get-started 301
+/community-modules-directory/ /get-started 301
 
 # =============================================================================
 # LEGAL & CONTACT PAGES
 # =============================================================================
 /privacy-policy /privacy 301
+/privacy-policy/ /privacy 301
 /frequently-asked-questions /faq 301
+/frequently-asked-questions/ /faq 301
 /faqs /faq 301
+/faqs/ /faq 301
 /about/frequently-asked-questions /faq 301
+/about/frequently-asked-questions/ /faq 301
 /contact-us /contact 301
+/contact-us/ /contact 301
 /submit-your-case-study /contact 301
+/submit-your-case-study/ /contact 301
 
 # =============================================================================
 # BLOG POSTS - Release announcements (moved from /updates to /releases)
 # =============================================================================
 /updates/mirror-2-4-5-release-and-many-contributions /releases/mirror-2-4-5-release-and-many-contributions 301
+/updates/mirror-2-4-5-release-and-many-contributions/ /releases/mirror-2-4-5-release-and-many-contributions 301
 /updates/magento-2-4-5-p1-release /releases/magento-2-4-5-p1-release 301
+/updates/magento-2-4-5-p1-release/ /releases/magento-2-4-5-p1-release 301
 /updates/202303magento-2-4-6-release /releases/202303magento-2-4-6-release 301
+/updates/202303magento-2-4-6-release/ /releases/202303magento-2-4-6-release 301
 /updates/introducing-the-mage-os-distribution /releases/introducing-the-mage-os-distribution 301
+/updates/introducing-the-mage-os-distribution/ /releases/introducing-the-mage-os-distribution 301
 /updates/release-mage-os-distribution-1-0-3 /releases/release-mage-os-distribution-1-0-3 301
+/updates/release-mage-os-distribution-1-0-3/ /releases/release-mage-os-distribution-1-0-3 301
 /updates/release-mage-os-distribution-1-0-4 /releases/release-mage-os-distribution-1-0-4 301
+/updates/release-mage-os-distribution-1-0-4/ /releases/release-mage-os-distribution-1-0-4 301
 /updates/release-mage-os-distribution-1-0-5 /releases/release-mage-os-distribution-1-0-5 301
+/updates/release-mage-os-distribution-1-0-5/ /releases/release-mage-os-distribution-1-0-5 301
 /updates/release-mage-os-distribution-1-0-6 /releases/release-mage-os-distribution-1-0-6 301
+/updates/release-mage-os-distribution-1-0-6/ /releases/release-mage-os-distribution-1-0-6 301
 /updates/mage-os-1-1-a-new-admin-experience-and-so-much-more /releases/mage-os-1-1-a-new-admin-experience-and-so-much-more 301
+/updates/mage-os-1-1-a-new-admin-experience-and-so-much-more/ /releases/mage-os-1-1-a-new-admin-experience-and-so-much-more 301
 /updates/mage-os-1-2-0 /releases/mage-os-1-2-0 301
+/updates/mage-os-1-2-0/ /releases/mage-os-1-2-0 301
 /updates/mage-os-1-3-0-is-out-now /releases/mage-os-1-3-0-is-out-now 301
+/updates/mage-os-1-3-0-is-out-now/ /releases/mage-os-1-3-0-is-out-now 301
 /updates/mage-os-1-3-1-is-out /releases/mage-os-1-3-1-is-out 301
+/updates/mage-os-1-3-1-is-out/ /releases/mage-os-1-3-1-is-out 301
 /updates/mage-os-2-0-innovation-takes-flight /releases/mage-os-2-0-innovation-takes-flight 301
+/updates/mage-os-2-0-innovation-takes-flight/ /releases/mage-os-2-0-innovation-takes-flight 301
 
 # =============================================================================
 # BLOG POSTS - Event recaps (moved from /updates to /events)
 # =============================================================================
 /updates/the-first-mage-os-meetup-in-italy /events/the-first-mage-os-meetup-in-italy 301
+/updates/the-first-mage-os-meetup-in-italy/ /events/the-first-mage-os-meetup-in-italy 301
 /updates/mage-titans-2023-the-mage-os-recap /events/mage-titans-2023-the-mage-os-recap 301
+/updates/mage-titans-2023-the-mage-os-recap/ /events/mage-titans-2023-the-mage-os-recap 301
 /updates/hackathon-mage-os-magic-in-action /events/hackathon-mage-os-magic-in-action 301
+/updates/hackathon-mage-os-magic-in-action/ /events/hackathon-mage-os-magic-in-action 301
 /updates/mageunconference-germany-2023-recap /events/mageunconference-germany-2023-recap 301
+/updates/mageunconference-germany-2023-recap/ /events/mageunconference-germany-2023-recap 301
 /updates/meet-magento-nyc-2023-a-gathering-of-the-mage-os-community /events/meet-magento-nyc-2023-a-gathering-of-the-mage-os-community 301
+/updates/meet-magento-nyc-2023-a-gathering-of-the-mage-os-community/ /events/meet-magento-nyc-2023-a-gathering-of-the-mage-os-community 301
 /updates/meet-magento-nl-2023-recap-the-dutch-are-back /events/meet-magento-nl-2023-recap-the-dutch-are-back 301
+/updates/meet-magento-nl-2023-recap-the-dutch-are-back/ /events/meet-magento-nl-2023-recap-the-dutch-are-back 301
 /updates/magento-community-events-september-highlights-and-insights /events/magento-community-events-september-highlights-and-insights 301
+/updates/magento-community-events-september-highlights-and-insights/ /events/magento-community-events-september-highlights-and-insights 301
 /updates/hyva-developers-paradise-2025-the-power-of-community-driving-magentos-future /events/hyva-developers-paradise-2025-the-power-of-community-driving-magentos-future 301
+/updates/hyva-developers-paradise-2025-the-power-of-community-driving-magentos-future/ /events/hyva-developers-paradise-2025-the-power-of-community-driving-magentos-future 301
 
 # =============================================================================
 # BLOG POSTS - Insights (moved from /updates to /ecommerce-insights)
 # =============================================================================
 /updates/transforming-magento-the-power-of-community-contributions-and-innovation /ecommerce-insights/transforming-magento-the-power-of-community-contributions-and-innovation 301
+/updates/transforming-magento-the-power-of-community-contributions-and-innovation/ /ecommerce-insights/transforming-magento-the-power-of-community-contributions-and-innovation 301
 /updates/the-evolution-of-documentation-in-the-age-of-ai-a-magento-case-study /ecommerce-insights/the-evolution-of-documentation-in-the-age-of-ai-a-magento-case-study 301
+/updates/the-evolution-of-documentation-in-the-age-of-ai-a-magento-case-study/ /ecommerce-insights/the-evolution-of-documentation-in-the-age-of-ai-a-magento-case-study 301
