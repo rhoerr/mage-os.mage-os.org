@@ -7,6 +7,7 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 import { Icon } from 'astro-icon/components';
 import CodeBlock from '~/components/ui/CodeBlock.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 const releasePosts = await findReleasePosts();
 const latestRelease = releasePosts.length > 0 ? releasePosts[0] : null;
@@ -73,12 +74,11 @@ const metadata = {
         code="bash <(curl -s https://raw.githubusercontent.com/mage-os-lab/migrate-m2-to-mageos/refs/heads/main/migrate-to-mage-os.sh)"
         lang="bash"
       />
-      <blockquote>
-        <p>
-          <strong>Important:</strong> Run in developer mode on a local or staging environment only. See the{' '}
-          <a href="/get-started/migration-guide">Migration Guide</a> for full requirements and manual migration steps.
-        </p>
-      </blockquote>
+      <Callout type="warning" title="Important">
+        Run in developer mode on a local or staging environment only. See the{' '}
+        <a href="/get-started/migration-guide" class="underline">Migration Guide</a> for full requirements and manual migration
+        steps.
+      </Callout>
       <p>
         <a href="/get-started/installation">Full Installation Guide</a> |{' '}
         <a href="/get-started/migration-guide">Migration Guide</a> |{' '}
@@ -103,12 +103,10 @@ const metadata = {
         Adobe releases security patches on the second Tuesday of each month ("Patch Tuesday"). Mage-OS typically
         publishes corresponding updates within days of each Adobe release to incorporate the latest security fixes.
       </p>
-      <blockquote>
-        <p>
-          <strong>Why upgrade regularly?</strong> Security patches address vulnerabilities that could put your store and customer
-          data at risk. Staying current is the best way to protect your business.
-        </p>
-      </blockquote>
+      <Callout type="tip" title="Why upgrade regularly?">
+        Security patches address vulnerabilities that could put your store and customer data at risk. Staying current is
+        the best way to protect your business.
+      </Callout>
 
       <hr />
 
@@ -133,12 +131,10 @@ bin/magento setup:static-content:deploy -f
 bin/magento cache:flush`}
         lang="bash"
       />
-      <blockquote>
-        <p>
-          <strong>Before upgrading:</strong> Always back up your database and files before performing any upgrade. Test the
-          upgrade in a staging environment first.
-        </p>
-      </blockquote>
+      <Callout type="warning" title="Before upgrading">
+        Always back up your database and files before performing any upgrade. Test the upgrade in a staging environment
+        first.
+      </Callout>
 
       <h3>From Magento Open Source</h3>
       <p>
