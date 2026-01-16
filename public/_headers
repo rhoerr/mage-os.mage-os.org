@@ -1,2 +1,13 @@
+# Astro hashed assets - immutable long-term cache
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages - revalidate but allow bfcache
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Security headers
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
