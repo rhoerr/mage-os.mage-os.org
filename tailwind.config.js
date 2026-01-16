@@ -13,6 +13,8 @@ export default {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
+        icon: 'var(--aw-color-icon)',
+        link: 'var(--aw-color-link)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
