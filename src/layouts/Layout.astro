@@ -43,23 +43,25 @@ const { language, textDirection } = I18N;
     <ClientRouter fallback="swap" />
 
     <!-- Speculation Rules for instant page navigations -->
-    <script type="speculationrules">
-      {
-        "prerender": [
+    <script
+      is:inline
+      type="speculationrules"
+      set:html={JSON.stringify({
+        prerender: [
           {
-            "where": {
-              "and": [
-                { "href_matches": "/*" },
-                { "not": { "href_matches": "/discord-channel" } },
-                { "not": { "selector_matches": "[target=_blank]" } },
-                { "not": { "selector_matches": "[download]" } }
-              ]
+            where: {
+              and: [
+                { href_matches: '/*' },
+                { not: { href_matches: '/discord-channel' } },
+                { not: { selector_matches: '[target=_blank]' } },
+                { not: { selector_matches: '[download]' } },
+              ],
             },
-            "eagerness": "moderate"
-          }
-        ]
-      }
-    </script>
+            eagerness: 'moderate',
+          },
+        ],
+      })}
+    />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
