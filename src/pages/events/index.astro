@@ -129,11 +129,10 @@ const eventTypes = [
           <h2 id="upcoming-events-heading" class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">
             Upcoming Events
           </h2>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" role="list">
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((event) => (
               <article
                 class="group bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-slate-700 overflow-hidden"
-                role="listitem"
               >
                 {event.data.image && (
                   <div class="h-40 overflow-hidden">
@@ -235,7 +234,7 @@ const eventTypes = [
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full">
-            <Icon name="tabler:calendar-repeat" class="w-8 h-8 text-primary dark:text-indigo-400" />
+            <Icon name="tabler:calendar-repeat" class="w-8 h-8 text-icon dark:text-indigo-400" />
           </div>
           <div>
             <h2 class="text-xl font-bold dark:text-white">Weekly Tech Meetings</h2>
@@ -341,7 +340,7 @@ const eventTypes = [
                   </div>
                 )}
                 <div class="p-6">
-                  <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-500 font-medium mb-3">
+                  <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-slate-400 font-medium mb-3">
                     <Icon name="tabler:calendar" class="w-4 h-4" />
                     {formatDate(post.publishDate)}
                   </div>
@@ -382,7 +381,7 @@ const eventTypes = [
         eventTypes.map((type) => (
           <div class="text-center p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
             <div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-full inline-block mb-4">
-              <Icon name={type.icon} class="w-8 h-8 text-primary dark:text-indigo-400" />
+              <Icon name={type.icon} class="w-8 h-8 text-icon dark:text-indigo-400" />
             </div>
             <h3 class="text-lg font-semibold dark:text-white mb-2">{type.title}</h3>
             <p class="text-gray-600 dark:text-slate-400 text-sm">{type.description}</p>
@@ -399,19 +398,18 @@ const eventTypes = [
           <h2 id="past-events-heading" class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8">
             Past Events
           </h2>
-          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" role="list">
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {pastEvents.map((event) => (
               <article
                 class="bg-gray-50 dark:bg-slate-800/50 rounded-lg p-5 border border-gray-200 dark:border-slate-700 hover:border-gray-300 dark:hover:border-slate-600 transition-colors"
-                role="listitem"
               >
-                <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-500 font-medium mb-2">
+                <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-slate-400 font-medium mb-2">
                   <Icon name="tabler:calendar" class="w-4 h-4" />
                   {formatDate(event.data.eventDate)}
                 </div>
                 <h3 class="text-lg font-semibold dark:text-white">{event.data.title}</h3>
                 {event.data.location && (
-                  <p class="text-gray-500 dark:text-slate-500 text-sm mt-2 flex items-center">
+                  <p class="text-gray-600 dark:text-slate-400 text-sm mt-2 flex items-center">
                     <Icon name="tabler:map-pin" class="w-4 h-4 mr-1" />
                     {event.data.location}
                   </p>
@@ -493,7 +491,7 @@ const eventTypes = [
 
   <!-- Community Note -->
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl text-center">
-    <p class="text-sm text-gray-500 dark:text-slate-500">
+    <p class="text-sm text-gray-600 dark:text-slate-400">
       Community calendar maintained by Simon Sprankel. Thank you for supporting the Mage-OS community!
     </p>
   </section>
