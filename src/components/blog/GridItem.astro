@@ -30,7 +30,6 @@ const category = post.category;
 
 <article
   class="group flex flex-col h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-lg transition-shadow overflow-hidden"
-  role="listitem"
 >
   {/* Image */}
   <div class="relative h-40 md:h-44 overflow-hidden bg-gray-100 dark:bg-gray-700">
@@ -79,7 +78,7 @@ const category = post.category;
   {/* Content */}
   <div class="flex flex-col flex-grow p-5">
     <div class="flex items-center gap-2 mb-3">
-      <time datetime={post.publishDate.toISOString()} class="text-xs font-medium text-gray-500 dark:text-gray-400">
+      <time datetime={post.publishDate.toISOString()} class="text-xs font-medium text-gray-600 dark:text-gray-400">
         {formatDate(post.publishDate)}
       </time>
     </div>
@@ -87,7 +86,10 @@ const category = post.category;
     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
       {
         link ? (
-          <a class="hover:text-primary dark:hover:text-primary transition-colors" href={link}>
+          <a
+            class="underline decoration-gray-300 dark:decoration-gray-600 hover:text-link hover:decoration-link transition-colors"
+            href={link}
+          >
             {post.title}
           </a>
         ) : (
@@ -100,7 +102,7 @@ const category = post.category;
 
     {
       link && (
-        <a href={link} class="inline-flex items-center mt-4 text-sm font-medium text-primary hover:underline">
+        <a href={link} class="inline-flex items-center mt-4 text-sm font-medium text-link hover:underline">
           Read more
           <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

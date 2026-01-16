@@ -64,13 +64,13 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     <header>
       <div class="mb-1">
         <span class="text-sm">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 text-gray-600 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
             post.author && (
               <>
                 {' '}
-                · <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                · <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 text-gray-600 dark:text-gray-400" />
                 <span>{post.author.replaceAll('-', ' ')}</span>
               </>
             )
@@ -92,7 +92,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         {
           link ? (
             <a
-              class="inline-block hover:text-primary dark:hover:text-indigo-700 transition ease-in duration-200"
+              class="inline-block underline decoration-gray-300 dark:decoration-gray-600 hover:text-link hover:decoration-link transition ease-in duration-200"
               href={link}
             >
               {post.title}
