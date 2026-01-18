@@ -17,6 +17,7 @@ const metadata = {
 // Section definitions with icons
 const sections = [
   { id: 'value-proposition', label: 'Value Proposition', icon: 'tabler:star' },
+  { id: 'for-merchants', label: 'For Merchants', icon: 'tabler:shopping-cart' },
   { id: 'the-distribution', label: 'The Distribution', icon: 'tabler:package' },
   { id: 'vision-and-sustainability', label: 'Vision & Sustainability', icon: 'tabler:rocket' },
   { id: 'finances', label: 'Finances', icon: 'tabler:wallet' },
@@ -87,6 +88,108 @@ const valuePropositionFAQ = [
 <li><strong>Faster release cycles</strong> for security patches and improvements</li>
 <li><strong>Referral opportunities</strong> from the Mage-OS network for merchant services</li>
 </ul>`,
+  },
+];
+
+const forMerchantsFAQ = [
+  {
+    question: 'Do I need technical skills to use Mage-OS?',
+    answer: `<p class="mb-4">You don't need to be a developer, but <strong>Mage-OS is best suited for businesses that have access to technical resources</strong>—either in-house or through an agency partner.</p>
+<p class="mb-4">Day-to-day store management (adding products, processing orders, managing customers) is done through a user-friendly admin panel that doesn't require coding knowledge.</p>
+<p>However, initial setup, customization, and ongoing maintenance typically require a developer or agency. Check out our <a href="/community/partners" class="text-primary hover:underline">Partner Directory</a> to find qualified help.</p>`,
+  },
+  {
+    question: 'What will it cost to run a Mage-OS store?',
+    answer: `<p class="mb-4"><strong>Mage-OS itself is completely free</strong>—there are no licensing fees. However, running an online store involves other costs:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Cost Category</th>
+<th class="text-left py-2 font-semibold">Typical Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Hosting</td>
+<td class="py-2">$50–$500+/month depending on traffic</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Initial Development</td>
+<td class="py-2">$10,000–$100,000+ depending on complexity</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Ongoing Maintenance</td>
+<td class="py-2">$500–$2,000+/month for updates and support</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Extensions</td>
+<td class="py-2">$0–$5,000+ (many quality free options exist)</td>
+</tr>
+</tbody>
+</table>
+<p>These costs are comparable to other enterprise platforms, but you have full control and ownership of your store.</p>`,
+  },
+  {
+    question: 'How do I find someone to build my store?',
+    answer: `<p class="mb-4">We maintain a network of <strong>experienced agencies and developers</strong> who specialize in Mage-OS and Magento development:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li><strong><a href="/community/partners" class="text-primary hover:underline">Partner Directory</a></strong> – Browse our certified partners by tier</li>
+<li><strong><a href="/discord-channel" class="text-primary hover:underline">Discord Community</a></strong> – Ask for recommendations from the community</li>
+</ul>
+<p>When evaluating partners, ask about their Magento/Mage-OS experience, request references, and ensure they understand your specific business requirements.</p>`,
+  },
+  {
+    question: 'Is Mage-OS suitable for a small business?',
+    answer: `<p class="mb-4">Mage-OS <strong>can work for small businesses</strong>, but it's important to understand what you're taking on:</p>
+<p class="mb-2"><strong>Mage-OS may be a good fit if you:</strong></p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li>Have complex product catalogs or unique business logic</li>
+<li>Plan to scale significantly over time</li>
+<li>Need extensive customization that SaaS platforms can't provide</li>
+<li>Have budget for professional development and maintenance</li>
+</ul>
+<p class="mb-2"><strong>Consider simpler alternatives if you:</strong></p>
+<ul class="list-disc pl-6 space-y-1">
+<li>Have a straightforward product catalog (under 1,000 SKUs)</li>
+<li>Don't need heavy customization</li>
+<li>Have a very limited budget (under $10K for setup)</li>
+<li>Prefer to manage everything yourself without technical help</li>
+</ul>`,
+  },
+  {
+    question: 'What ongoing maintenance does a store require?',
+    answer: `<p class="mb-4">Running a Mage-OS store involves regular maintenance to keep it secure and performing well:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Task</th>
+<th class="text-left py-2 font-semibold">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Security patches</td>
+<td class="py-2">As released (typically monthly)</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Core updates</td>
+<td class="py-2">Every few months</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Extension updates</td>
+<td class="py-2">As needed</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Performance monitoring</td>
+<td class="py-2">Ongoing</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Backups</td>
+<td class="py-2">Daily (automated)</td>
+</tr>
+</tbody>
+</table>
+<p>Most merchants work with an agency or developer to handle these technical tasks while they focus on running their business.</p>`,
   },
 ];
 
@@ -588,6 +691,23 @@ const compatibilityItems = [
         Value Proposition
       </h2>
       <AccordionFAQ items={valuePropositionFAQ} defaultOpen={true} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- For Merchants -->
+    <div id="for-merchants" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:shopping-cart" class="w-7 h-7 text-icon" />
+        For Merchants
+      </h2>
+      <Callout type="tip" title="New to Mage-OS?" class="mb-6">
+        <p>
+          These questions are designed to help merchants evaluate whether Mage-OS is the right platform for their business.
+          See our <a href="/community/partners" class="underline font-medium">Partner Directory</a> to find expert help.
+        </p>
+      </Callout>
+      <AccordionFAQ items={forMerchantsFAQ} />
     </div>
 
     <hr class="border-gray-200 dark:border-gray-700 my-8" />
