@@ -1,0 +1,394 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import PageHero from '~/components/widgets/PageHero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import Callout from '~/components/ui/Callout.astro';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+
+const metadata = {
+  title: 'Is Mage-OS Right For You? | Platform Decision Guide',
+  description:
+    'A decision guide to help merchants, developers, and agencies evaluate if Mage-OS is the right e-commerce platform for their needs, budget, and technical capacity.',
+  openGraph: {
+    images: [{ url: '/og/page/is-it-right-for-you.png', width: 1200, height: 630 }],
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <PageHero tagline="Decision Guide" variant="default">
+    <Fragment slot="title">Is Mage-OS Right For You?</Fragment>
+    <Fragment slot="subtitle">
+      Mage-OS is powerful, flexible, and free—but it's not for everyone. Use this guide to evaluate if our platform
+      matches your needs, budget, and technical capacity.
+    </Fragment>
+  </PageHero>
+
+  <!-- Who Uses Mage-OS -->
+  <Features
+    id="who-uses"
+    tagline="Our Users"
+    title="Who Uses Mage-OS?"
+    subtitle="Mage-OS serves a diverse community with different needs and technical backgrounds"
+    columns={3}
+    items={[
+      {
+        title: 'Merchants',
+        description:
+          'Online retailers from specialty shops to enterprise brands who need flexibility, customization, and control over their e-commerce platform.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'Developers',
+        description:
+          'PHP developers building custom e-commerce solutions who value open source, extensibility, and a mature ecosystem of tools and resources.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Agencies',
+        description:
+          'Digital agencies and consultancies managing e-commerce projects for clients who need enterprise-grade features without enterprise licensing costs.',
+        icon: 'tabler:building-store',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-indigo-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Decision Framework -->
+  <Steps
+    id="assessment"
+    title="Assessment Framework"
+    subtitle="Work through these questions to determine if Mage-OS is the right fit"
+    tagline="Evaluate Your Fit"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Assess Your Technical Capacity</span>',
+        description:
+          'Do you have in-house developers, or budget for an agency? Mage-OS requires technical resources for setup, customization, and maintenance. If you prefer a fully managed solution with no technical involvement, a SaaS platform may be simpler.',
+        icon: 'tabler:code',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Evaluate Your Budget</span>',
+        description:
+          'While Mage-OS is free, running a store requires hosting ($50-$500+/month), development ($10K-$100K+ for initial build), and ongoing maintenance ($500-$2K+/month). Total first-year investment typically ranges from $15K for small stores to $150K+ for enterprise.',
+        icon: 'tabler:wallet',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Consider Your Complexity</span>',
+        description:
+          'Mage-OS shines with complex catalogs, custom business logic, multi-store setups, and B2B scenarios. If you have a simple catalog with standard checkout, simpler platforms may serve you well with less overhead.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Review Your Growth Plans</span>',
+        description:
+          'Mage-OS scales from small to enterprise without platform migrations. If you expect significant growth, starting on Mage-OS can prevent painful replatforming later. But if you're testing a market, a simpler MVP might be wiser.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Person evaluating options at a desk with a laptop and notepad',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <!-- Mage-OS Shines When -->
+  <Features2
+    title="Mage-OS Is Ideal When..."
+    subtitle="Our platform excels in these scenarios"
+    tagline="Best Fit"
+    columns={3}
+    items={[
+      {
+        title: 'Complex Product Catalogs',
+        description: '1,000+ SKUs, configurable products, custom attributes, complex pricing rules',
+        icon: 'tabler:box-multiple',
+      },
+      {
+        title: 'Custom Business Logic',
+        description: 'Unique checkout flows, custom shipping calculations, ERP integrations, B2B workflows',
+        icon: 'tabler:settings-automation',
+      },
+      {
+        title: 'Multi-Store Operations',
+        description: 'Multiple brands, regions, or languages from a single platform with shared inventory',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Long-Term Investment',
+        description: 'Building a platform to own and grow for years, not a quick experiment',
+        icon: 'tabler:plant',
+      },
+      {
+        title: 'Developer Resources',
+        description: 'In-house developers or budget for agency partnership for ongoing development',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Control & Independence',
+        description: 'Full ownership of code, data, and infrastructure without vendor lock-in',
+        icon: 'tabler:lock-open',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-indigo-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Consider Alternatives When -->
+  <Features2
+    title="Consider Alternatives If..."
+    subtitle="Be honest about when simpler solutions might serve you better"
+    tagline="Alternative Fit"
+    columns={3}
+    items={[
+      {
+        title: 'Very Limited Budget',
+        description: 'Under $10K for setup and under $500/month total—SaaS platforms like Shopify start at $29/month',
+        icon: 'tabler:coin-off',
+      },
+      {
+        title: 'No Technical Resources',
+        description:
+          'No developers and no budget for an agency—fully hosted platforms handle everything for you',
+        icon: 'tabler:user-off',
+      },
+      {
+        title: 'Simple Catalog Needs',
+        description:
+          'Under 100 products with standard options—WooCommerce or Shopify may be simpler and cheaper',
+        icon: 'tabler:list',
+      },
+      {
+        title: 'Testing a Market',
+        description: 'Validating an idea before committing—start simple and migrate later if successful',
+        icon: 'tabler:test-pipe',
+      },
+      {
+        title: 'Need SaaS Support',
+        description:
+          'Require 24/7 vendor support hotline—Mage-OS relies on community and partner support',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Tight Timeline',
+        description: 'Need to launch in weeks, not months—template-based platforms launch faster',
+        icon: 'tabler:clock',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-800/50"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Platform Comparison -->
+  <section class="px-4 py-16 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-base text-secondary dark:text-indigo-200 font-bold tracking-wide uppercase mb-2">
+          Platform Comparison
+        </p>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4 dark:text-white">How Does Mage-OS Compare?</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto">
+          A simplified comparison to help you understand where Mage-OS fits in the e-commerce landscape
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b-2 border-gray-200 dark:border-gray-700">
+              <th class="text-left py-4 pr-4 font-bold text-gray-900 dark:text-white">Factor</th>
+              <th class="text-center py-4 px-4 font-bold text-primary">Mage-OS</th>
+              <th class="text-center py-4 px-4 font-bold text-gray-900 dark:text-white">Shopify</th>
+              <th class="text-center py-4 px-4 font-bold text-gray-900 dark:text-white">WooCommerce</th>
+              <th class="text-center py-4 px-4 font-bold text-gray-900 dark:text-white">Adobe Commerce</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">License Cost</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Free</td>
+              <td class="py-4 px-4 text-center">$29-$399+/mo</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Free</td>
+              <td class="py-4 px-4 text-center">$22K-$125K+/year</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">Technical Skill Needed</td>
+              <td class="py-4 px-4 text-center">High</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Low</td>
+              <td class="py-4 px-4 text-center">Medium</td>
+              <td class="py-4 px-4 text-center">High</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">Customization</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Unlimited</td>
+              <td class="py-4 px-4 text-center">Limited</td>
+              <td class="py-4 px-4 text-center">High</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Unlimited</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">Scalability</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Enterprise</td>
+              <td class="py-4 px-4 text-center">Good (Plus: Better)</td>
+              <td class="py-4 px-4 text-center">Medium</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Enterprise</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">B2B Features</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Native + Extensions</td>
+              <td class="py-4 px-4 text-center">Plus only</td>
+              <td class="py-4 px-4 text-center">Extensions</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">Native</td>
+            </tr>
+            <tr class="border-b border-gray-200 dark:border-gray-700">
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">Vendor Lock-in</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">None</td>
+              <td class="py-4 px-4 text-center">High</td>
+              <td class="py-4 px-4 text-center text-green-600 dark:text-green-400">None</td>
+              <td class="py-4 px-4 text-center">Low</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-4 font-medium text-gray-900 dark:text-white">Best For</td>
+              <td class="py-4 px-4 text-center text-sm">Complex, custom stores</td>
+              <td class="py-4 px-4 text-center text-sm">Quick launch, simple stores</td>
+              <td class="py-4 px-4 text-center text-sm">Small-medium with WordPress</td>
+              <td class="py-4 px-4 text-center text-sm">Enterprise with Adobe budget</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center text-sm text-muted mt-6">
+        This is a simplified comparison. Each platform has strengths for specific use cases.
+      </p>
+    </div>
+  </section>
+
+  <!-- Recommendation Section -->
+  <Content
+    isReversed
+    tagline="Our Recommendation"
+    title="How to Decide"
+    items={[
+      {
+        title: 'Start with your budget',
+        description:
+          'If total first-year investment under $15K is a hard constraint, explore Shopify or WooCommerce first.',
+      },
+      {
+        title: 'Consider your complexity',
+        description:
+          'If you have unique requirements that off-the-shelf solutions can\'t handle, Mage-OS flexibility is worth the investment.',
+      },
+      {
+        title: 'Think long-term',
+        description:
+          'If you plan to grow significantly, investing in Mage-OS now prevents costly replatforming later.',
+      },
+      {
+        title: 'Evaluate resources honestly',
+        description:
+          'Without developer access (in-house or agency), Mage-OS will be frustrating. This is non-negotiable.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Team discussing strategy at a whiteboard',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Be Honest With Yourself</h3>
+      We'd rather you choose the right platform than struggle with Mage-OS if it's not a good fit. A successful Shopify
+      store beats a struggling Mage-OS store every time.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-orange-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Quick Decision Callouts -->
+  <section class="px-4 py-16 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <Callout type="tip" title="Mage-OS is likely right for you if...">
+        <p>
+          You have a complex catalog, unique business requirements, development resources (or agency budget), and are
+          building for the long term. You value open source, control, and flexibility over simplicity.
+        </p>
+      </Callout>
+
+      <Callout type="warning" title="Consider alternatives if...">
+        <p>
+          You have a limited budget (under $15K first year), no technical resources, a simple catalog, or need to
+          launch in weeks. There's no shame in starting simple and migrating to Mage-OS when you're ready.
+        </p>
+      </Callout>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="px-4 py-16 sm:px-6 lg:px-8 bg-indigo-50 dark:bg-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4 dark:text-white">Ready to Move Forward?</h2>
+        <p class="text-xl text-muted max-w-3xl mx-auto">
+          Whether Mage-OS is right for you or not, here are your next steps
+        </p>
+      </div>
+
+      <ItemGrid
+        columns={3}
+        items={[
+          {
+            title: 'Try Mage-OS',
+            description: 'Install Mage-OS locally or on a staging server to experience it firsthand',
+            icon: 'tabler:rocket',
+            callToAction: {
+              text: 'Quick Start Guide',
+              href: '/get-started/quick-start',
+            },
+          },
+          {
+            title: 'Find a Partner',
+            description: 'Connect with an agency who can assess your needs and provide guidance',
+            icon: 'tabler:building',
+            callToAction: {
+              text: 'Partner Directory',
+              href: '/community/partners',
+            },
+          },
+          {
+            title: 'Ask the Community',
+            description: 'Get honest feedback from developers and merchants who use Mage-OS daily',
+            icon: 'tabler:message-circle',
+            callToAction: {
+              text: 'Join Discord',
+              href: '/discord-channel',
+            },
+          },
+        ]}
+        classes={{
+          container: 'gap-6',
+          panel:
+            'bg-white dark:bg-slate-900 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow',
+          title: 'text-lg font-bold',
+          description: 'text-sm text-muted',
+          icon: 'text-primary',
+        }}
+      />
+    </div>
+  </section>
+</Layout>
