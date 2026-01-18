@@ -96,7 +96,7 @@ export const footerData = {
       href: getPermalink('/about'),
       links: [
         { text: 'Contributors', href: getPermalink('/about/contributors') },
-        { text: 'Presskit', href: 'https://drive.google.com/drive/folders/1Z4rz4Or1u6p5Xg6ozSmMs2q287OhOa3H' },
+        { text: 'Media Kit', href: getPermalink('/about/media-kit') },
         { text: 'FAQ', href: getPermalink('/faq') },
         { text: 'Contact', href: getPermalink('/contact') },
       ],
