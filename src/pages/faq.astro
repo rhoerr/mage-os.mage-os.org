@@ -18,6 +18,7 @@ const metadata = {
 const sections = [
   { id: 'value-proposition', label: 'Value Proposition', icon: 'tabler:star' },
   { id: 'for-merchants', label: 'For Merchants', icon: 'tabler:shopping-cart' },
+  { id: 'enterprise', label: 'Enterprise', icon: 'tabler:building' },
   { id: 'the-distribution', label: 'The Distribution', icon: 'tabler:package' },
   { id: 'vision-and-sustainability', label: 'Vision & Sustainability', icon: 'tabler:rocket' },
   { id: 'finances', label: 'Finances', icon: 'tabler:wallet' },
@@ -190,6 +191,99 @@ const forMerchantsFAQ = [
 </tbody>
 </table>
 <p>Most merchants work with an agency or developer to handle these technical tasks while they focus on running their business.</p>`,
+  },
+];
+
+const enterpriseFAQ = [
+  {
+    question: 'Is there enterprise-grade support available?',
+    answer: `<p class="mb-4">Mage-OS is a community-driven project, and we don't provide direct commercial support. However, <strong>enterprise support is available through our partner network</strong>:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li><strong>Hosting partners</strong> offer managed Mage-OS hosting with SLAs</li>
+<li><strong>Agency partners</strong> provide ongoing maintenance and support contracts</li>
+<li><strong>Independent consultants</strong> offer specialized expertise</li>
+</ul>
+<p>Visit our <a href="/community/partners" class="text-primary hover:underline">Partner Directory</a> to find providers who offer enterprise-level support agreements.</p>`,
+  },
+  {
+    question: 'How does Mage-OS handle security vulnerabilities?',
+    answer: `<p class="mb-4">Security is a top priority for Mage-OS:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Process</th>
+<th class="text-left py-2 font-semibold">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Reporting</td>
+<td class="py-2">Report via <strong>security@mage-os.org</strong></td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Response Time</td>
+<td class="py-2">Critical issues addressed within days, not months</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Patch Release</td>
+<td class="py-2">Released as soon as validated, not on quarterly schedules</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Transparency</td>
+<td class="py-2">Public advisories after patches are available</td>
+</tr>
+</tbody>
+</table>
+<p>Our community-driven model allows us to respond to security issues faster than traditional corporate release cycles.</p>`,
+  },
+  {
+    question: 'What compliance certifications does Mage-OS support?',
+    answer: `<p class="mb-4">Mage-OS includes features to help you achieve compliance:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li><strong>PCI DSS 4.0</strong> – The Mage-OS Lab includes modules for payment page script integrity verification and other 4.0 requirements</li>
+<li><strong>GDPR</strong> – Built-in privacy controls, data export/deletion tools, and cookie consent integrations</li>
+<li><strong>SOC 2</strong> – Achievable through proper hosting infrastructure and operational controls</li>
+</ul>
+<p>Note: Compliance depends on your overall infrastructure, processes, and third-party integrations. The platform provides the foundation; your implementation determines certification readiness.</p>`,
+  },
+  {
+    question: 'How stable is the Mage-OS organization for long-term partnerships?',
+    answer: `<p class="mb-4">Mage-OS was designed for long-term sustainability:</p>
+<ul class="list-disc pl-6 space-y-1 mb-4">
+<li><strong>Legal structure:</strong> Registered non-profit association in Poland since 2022</li>
+<li><strong>Democratic governance:</strong> Board elected annually by members, not controlled by any single company</li>
+<li><strong>Financial transparency:</strong> All contributions and expenses publicly visible via <a href="https://opencollective.com/mage-os" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Open Collective</a></li>
+<li><strong>1,641+ signatories:</strong> Strong community backing from the original Open Letter</li>
+<li><strong>Independent oversight:</strong> Business Control Committee ensures accountability</li>
+</ul>
+<p>Our structure mirrors successful open-source foundations like the TYPO3 Association, designed to outlast any individual contributor or company.</p>`,
+  },
+  {
+    question: 'What SLA options are available?',
+    answer: `<p class="mb-4">The Mage-OS Association does not directly offer SLAs. However, <strong>SLA-backed services are available through our ecosystem</strong>:</p>
+<table class="w-full border-collapse mb-4">
+<thead>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<th class="text-left py-2 pr-4 font-semibold">Service Type</th>
+<th class="text-left py-2 font-semibold">SLA Provider</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Hosting uptime</td>
+<td class="py-2">Managed hosting providers (e.g., 99.9% uptime guarantees)</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-2 pr-4 font-medium">Support response</td>
+<td class="py-2">Agency maintenance contracts with defined response times</td>
+</tr>
+<tr>
+<td class="py-2 pr-4 font-medium">Security patches</td>
+<td class="py-2">Some hosting providers offer guaranteed patch application windows</td>
+</tr>
+</tbody>
+</table>
+<p>For vendor assessment purposes, contact our partners directly to discuss SLA requirements. You can also reach out on <a href="/discord-channel" class="text-primary hover:underline">Discord</a> for recommendations.</p>`,
   },
 ];
 
@@ -708,6 +802,23 @@ const compatibilityItems = [
         </p>
       </Callout>
       <AccordionFAQ items={forMerchantsFAQ} />
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700 my-8" />
+
+    <!-- Enterprise -->
+    <div id="enterprise" class="mb-12 scroll-mt-24">
+      <h2 class="flex items-center gap-3 text-2xl font-bold font-heading mb-6 dark:text-white">
+        <Icon name="tabler:building" class="w-7 h-7 text-icon" />
+        Enterprise
+      </h2>
+      <Callout type="info" title="Enterprise Evaluation?" class="mb-6">
+        <p>
+          These questions address common concerns from IT leaders, CTOs, and enterprise procurement teams.
+          For detailed vendor assessment information, see our <a href="/about" class="underline font-medium">About page</a>.
+        </p>
+      </Callout>
+      <AccordionFAQ items={enterpriseFAQ} />
     </div>
 
     <hr class="border-gray-200 dark:border-gray-700 my-8" />
