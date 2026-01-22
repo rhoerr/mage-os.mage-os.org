@@ -27,29 +27,47 @@ const countryNames: Record<string, string> = {
   ES: 'Spain',
   PL: 'Poland',
   IT: 'Italy',
+  ZA: 'South Africa',
+  HR: 'Croatia',
 };
 
 const technicalTeam = [
   { name: 'Vinai Kopp', role: 'Lead', country: 'DE' },
-  { name: 'David Lambauer', role: 'Contributor', country: 'DE' },
   { name: 'Ryan Hoerr', role: 'Contributor', country: 'US' },
+  { name: 'Fabrizio Balliano', role: 'Contributor', country: 'IT' },
+  { name: 'Artem Kozynets', role: 'Contributor', country: 'UA' },
+  { name: 'Andreas von Studnitz', role: 'Contributor', country: 'DE' },
+  { name: 'Davide Lunardon', role: 'Contributor', country: 'IT' },
   { name: 'Willem Wigman', role: 'Contributor', country: 'NL' },
-  { name: 'Daniel Sloof', role: 'Contributor', country: 'NL' },
-  { name: 'Adam Crossland', role: 'Contributor', country: 'UK' },
   { name: 'Christian Münch', role: 'Contributor', country: 'DE' },
   { name: 'Simon Sprankel', role: 'Contributor', country: 'DE' },
-  { name: 'Alexander Buch', role: 'Contributor', country: 'DE' },
+  { name: 'Sean van Zuidam', role: 'Contributor', country: 'NL' },
+  { name: 'Lucas van Staden', role: 'Contributor', country: 'ZA' },
+  { name: 'Simon Humeau', role: 'Contributor', country: 'FR' },
+  { name: 'Vova Yatsyuk', role: 'Contributor', country: 'UA' },
+  { name: 'Oliver Jaufmann', role: 'Contributor', country: 'DE' },
+  { name: 'Luca Fuser', role: 'Contributor', country: 'IT' },
+  { name: 'Samuele Martini', role: 'Contributor', country: 'IT' },
+  { name: 'Francis Gallagher', role: 'Contributor', country: 'IE' },
+  { name: 'Jakub Winkler', role: 'Contributor', country: 'PL' },
+  { name: 'Melinda Humphrey', role: 'Contributor', country: 'US' },
+  { name: 'Sam James', role: 'Contributor', country: 'UK' },
+  { name: 'Bhushan Kumar', role: 'Contributor', country: 'IN' },
   { name: 'Damien Retzinger', role: 'Contributor', country: 'US' },
-  { name: 'Gowri Sankar', role: 'Contributor', country: 'AU' },
   { name: 'Timon de Groot', role: 'Contributor', country: 'NL' },
-  { name: 'Anton Siniorg', role: 'Contributor', country: 'EE' },
-  { name: 'Daniel Fahlke', role: 'Contributor', country: 'DE' },
-  { name: 'Kamlesh Luhana', role: 'Contributor', country: 'IN' },
-  { name: 'Vitaliy Golomozy', role: 'Contributor', country: 'UA' },
-  { name: 'Barbaros Selim Büyükelçi', role: 'Contributor', country: 'TR' },
 ];
 
-const documentationTeam = [{ name: 'David Lambauer', role: 'Lead', country: 'DE' }];
+const documentationTeam = [
+  { name: 'David Lambauer', role: 'Lead', country: 'DE' },
+  { name: 'Christian Münch', role: 'Contributor', country: 'DE' },
+  { name: 'Fabrizio Balliano', role: 'Contributor', country: 'IT' },
+  { name: 'Vinai Kopp', role: 'Contributor', country: 'DE' },
+  { name: 'Ryan Hoerr', role: 'Contributor', country: 'US' },
+  { name: 'Simon Sprankel', role: 'Contributor', country: 'DE' },
+  { name: 'Alessandro Ronchi', role: 'Contributor', country: 'IT' },
+  { name: 'Jelle Siderius', role: 'Contributor', country: 'NL' },
+  { name: 'Brent Peterson', role: 'Contributor', country: 'US' },
+];
 
 const formerWorkingGroups = [
   {
@@ -309,11 +327,23 @@ const contributionSteps = [
       </div>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-lg">
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {
         documentationTeam.map((member) => (
-          <div class="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
-            <div class="w-12 h-12 rounded-full bg-green-200 dark:bg-green-800 flex items-center justify-center flex-shrink-0">
+          <div
+            class:list={[
+              'flex items-center gap-3 rounded-lg p-4 border transition-shadow hover:shadow-md',
+              member.role === 'Lead'
+                ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+                : 'bg-white dark:bg-slate-900 border-gray-200 dark:border-gray-700',
+            ]}
+          >
+            <div
+              class:list={[
+                'w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0',
+                member.role === 'Lead' ? 'bg-green-200 dark:bg-green-800' : 'bg-green-100 dark:bg-green-900',
+              ]}
+            >
               <span class="text-green-600 dark:text-green-400 font-bold">
                 {member.name
                   .split(' ')
@@ -324,9 +354,11 @@ const contributionSteps = [
             <div class="min-w-0">
               <div class="flex items-center gap-2">
                 <p class="font-medium text-gray-900 dark:text-white truncate">{member.name}</p>
-                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                  Lead
-                </span>
+                {member.role === 'Lead' && (
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                    Lead
+                  </span>
+                )}
               </div>
               <p class="text-sm text-gray-500 dark:text-gray-400">{countryNames[member.country] || member.country}</p>
             </div>
