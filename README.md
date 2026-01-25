@@ -237,16 +237,87 @@ npm run build
 
 The optimized site is generated in the `dist/` folder.
 
-### Hosting Platforms
+### Cloudflare Pages (Recommended)
+
+Cloudflare Pages is the recommended hosting platform, providing edge deployment, automatic HTTPS, and preview deployments for every PR.
+
+#### Initial Setup
+
+1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com)
+2. Go to **Workers & Pages** → **Create application** → **Pages**
+3. Click **Connect to Git** → Authorize GitHub → Select the repository
+4. Configure build settings:
+
+| Setting | Value |
+|---------|-------|
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | `astro` |
+
+5. Add environment variable: `NODE_VERSION` = `20`
+6. Click **Save and Deploy**
+
+#### Preview Deployments
+
+Cloudflare Pages automatically creates preview deployments for every branch and pull request:
+
+| Branch | URL Pattern |
+|--------|-------------|
+| `main` (production) | `https://mage-os.org` or `https://<project>.pages.dev` |
+| Feature branches | `https://<branch-name>.<project>.pages.dev` |
+| Pull requests | `https://<commit-hash>.<project>.pages.dev` |
+
+**Example:** A PR from branch `feature/new-hero` deploys to `https://feature-new-hero.mage-os-website.pages.dev`
+
+Preview URLs are automatically posted as comments on pull requests.
+
+#### Setting Up a Staging Environment
+
+For a dedicated staging environment with a custom domain:
+
+1. Create a `staging` branch in GitHub
+2. In Cloudflare Pages → **Settings** → **Builds & deployments**
+3. Under **Branch deployments**, configure:
+   - Production branch: `main`
+   - Preview branches: Include `staging`
+4. Go to **Custom domains** → Add `staging.mage-os.org`
+5. Configure DNS to point `staging.mage-os.org` to Cloudflare Pages
+
+#### Manual Deployments
+
+Trigger a manual deployment:
+
+```bash
+# Via GitHub Actions (uses deploy hook)
+gh workflow run scheduled-deploy.yaml
+
+# Or push to main branch
+git push origin main
+```
+
+#### Rollback Procedure
+
+To rollback to a previous deployment:
+
+1. Go to Cloudflare Pages → Your project → **Deployments**
+2. Find the previous working deployment
+3. Click the three-dot menu → **Rollback to this deployment**
+
+Alternatively, revert the commit in Git and push to trigger a new deployment.
+
+#### Monitoring & Logs
+
+- **Build logs:** Cloudflare Pages → Deployments → Select deployment → View logs
+- **Analytics:** Cloudflare Dashboard → Analytics & Logs → Web Analytics
+- **Real-time errors:** Enable Cloudflare Web Analytics for Core Web Vitals
+
+### Alternative Hosting Platforms
 
 **Netlify:**
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
 
 **Vercel:**
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-**Cloudflare Pages:**
-Connect your GitHub repository in the Cloudflare dashboard.
 
 ### URL Redirects
 
@@ -258,6 +329,16 @@ Legacy WordPress URLs are redirected via `public/_redirects`:
 | `/leadership-team` | `/about/leadership` |
 | `/frequently-asked-questions` | `/faq` |
 | `/get-involved` | `/community` |
+
+### Security Headers
+
+Security headers are configured in `public/_headers` and include:
+
+- **X-Content-Type-Options:** Prevents MIME sniffing
+- **X-Frame-Options:** Prevents clickjacking
+- **Referrer-Policy:** Controls referrer information
+- **Strict-Transport-Security:** Enforces HTTPS
+- **Permissions-Policy:** Restricts browser APIs
 
 ## Contributing
 

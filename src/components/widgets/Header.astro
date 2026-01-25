@@ -119,7 +119,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                   {/* Desktop: hover-based dropdown with clickable parent link */}
                   <a
                     class:list={[
-                      'hidden lg:flex hover:text-link dark:hover:text-white px-4 py-3 items-center whitespace-nowrap',
+                      'hidden lg:flex text-gray-900 dark:text-gray-100 hover:text-link dark:hover:text-white px-4 py-3 items-center whitespace-nowrap',
                       { 'aw-link-active': href === currentPath },
                     ]}
                     href={href}
@@ -157,7 +157,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-4 py-3.5 lg:py-3 flex items-center whitespace-nowrap border-b border-gray-100 dark:border-slate-800 lg:border-0',
+                    'text-gray-900 dark:text-gray-100 hover:text-link dark:hover:text-white px-4 py-3.5 lg:py-3 flex items-center whitespace-nowrap border-b border-gray-100 dark:border-slate-800 lg:border-0',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}

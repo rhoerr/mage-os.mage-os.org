@@ -65,10 +65,10 @@ const category = post.category;
           />
         ))
     }
-    {/* Category badge */}
+    {/* Category badge - uses secondary color for better contrast with white text */}
     {
       category && (
-        <span class="absolute top-3 left-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
+        <span class="absolute top-3 left-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary text-white">
           {category.title}
         </span>
       )
@@ -100,11 +100,13 @@ const category = post.category;
 
     <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 flex-grow">{post.excerpt}</p>
 
+    {/* Decorative "Read more" link - hidden from screen readers since title is already linked */}
     {
       link && (
         <a
           href={link}
           aria-hidden="true"
+          tabindex={-1}
           class="inline-flex items-center mt-4 text-sm font-medium text-link hover:underline"
         >
           Read more

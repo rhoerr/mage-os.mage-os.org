@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 1000,
+    "standard": "WCAG2AA",
+    "runners": ["axe"],
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    },
+    "ignore": ["color-contrast"]
+  },
+  "urls": [
+    "http://localhost:4321/",
+    "http://localhost:4321/product",
+    "http://localhost:4321/get-started",
+    "http://localhost:4321/community",
+    "http://localhost:4321/about",
+    "http://localhost:4321/blog",
+    "http://localhost:4321/events",
+    "http://localhost:4321/faq"
+  ]
+}
