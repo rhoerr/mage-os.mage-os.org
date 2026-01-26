@@ -99,22 +99,5 @@ const category = post.category;
     </h3>
 
     <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 flex-grow">{post.excerpt}</p>
-
-    {/* Decorative "Read more" link - hidden from screen readers since title is already linked */}
-    {
-      link && (
-        <a
-          href={link}
-          aria-hidden="true"
-          tabindex={-1}
-          class="inline-flex items-center mt-4 text-sm font-medium text-link hover:underline"
-        >
-          Read more
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      )
-    }
   </div>
 </article>
