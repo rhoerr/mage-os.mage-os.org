@@ -1,8 +1,8 @@
 ---
 title: "MageUnConference 2023: A Deep Dive into Mage-OS's Momentum"
 publishDate: "2023-10-19T00:00:00.000Z"
-category: "Events"
-author: "Mage-OS Team"
+category: "Updates"
+author: "mage-os-team"
 draft: false
 excerpt: "Hello Mage-OS community! Last month marked another successful MageUnConference in Cologne, Germany, organized by FireGento e.V., and the energy surrounding..."
 image: "~/assets/images/blog/2023/Mage_Unconf_DE_2023_Mage_OS-3.png"

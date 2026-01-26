@@ -2,7 +2,7 @@
 title: "January 2023 Updates"
 publishDate: "2023-01-27T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Happy New Year, dear friends! Over the holidays we took some time to rest and reflect on all that we’ve achieved last year. We hope you found as much energy as..."
 image: "~/assets/images/blog/2023/January-2023-Updates.png"

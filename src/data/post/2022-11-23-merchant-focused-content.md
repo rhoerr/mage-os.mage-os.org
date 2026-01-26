@@ -2,7 +2,7 @@
 title: "Merchant Focused Content"
 publishDate: "2022-11-23T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "While a lot of the focus of Mage-OS to date has been on forming our organization and moving things forward technically, there has also been work ongoing around..."
 image: "~/assets/images/blog/2022/Merchant-Focused-Content.png"

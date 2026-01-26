@@ -2,7 +2,7 @@
 title: "Diversity and Inclusion!"
 publishDate: "2022-09-20T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Diversity and Inclusion is an important and complex topic that is close to our heart. We strongly believe that a wide array of perspectives are a key factor in..."
 ---

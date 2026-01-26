@@ -2,7 +2,7 @@
 title: "Mage-OS May Recap"
 publishDate: "2025-06-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Abi Green\_ – professional member          - Ruthger Idema – community member - You too can become a Mage-OS..."
 image: "~/assets/images/blog/2025/mage-os-may-blog.jpg"

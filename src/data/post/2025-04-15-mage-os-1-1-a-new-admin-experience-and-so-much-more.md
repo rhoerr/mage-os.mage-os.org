@@ -2,7 +2,7 @@
 title: "Mage-OS 1.1: A new admin experience, and so much more!"
 publishDate: "2025-04-15T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "fabrizio-balliano"
 draft: false
 excerpt: "We are excited to announce the release of Mage-OS Distribution 1.1.0, a milestone in the development of our community project! This release packs one huge..."
 tags:

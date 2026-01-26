@@ -8,6 +8,38 @@ media_folder: 'src/assets/images'
 public_folder: '/_astro'
 
 collections:
+  # Authors
+  - name: 'authors'
+    label: 'Authors'
+    label_singular: 'Author'
+    folder: 'src/data/authors'
+    create: true
+    identifier_field: 'name'
+    slug: '{{slug}}'
+    summary: '{{name}}'
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string', required: true }
+      - {
+          label: 'Slug',
+          name: 'slug',
+          widget: 'string',
+          required: true,
+          hint: 'URL-friendly identifier (e.g., john-doe)',
+        }
+      - { label: 'Avatar', name: 'avatar', widget: 'image', required: false }
+      - { label: 'Bio', name: 'bio', widget: 'text', required: false }
+      - { label: 'Website', name: 'website', widget: 'string', required: false }
+      - label: 'Social Links'
+        name: 'social'
+        widget: 'object'
+        required: false
+        collapsed: true
+        fields:
+          - { label: 'GitHub', name: 'github', widget: 'string', required: false }
+          - { label: 'Twitter/X', name: 'twitter', widget: 'string', required: false }
+          - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false }
+          - { label: 'Discord', name: 'discord', widget: 'string', required: false }
+
   # Blog Posts
   - name: 'post'
     label: 'Blog Posts'
@@ -15,6 +47,7 @@ collections:
     folder: 'src/data/post'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} — {{publishDate | date("MMM D, YYYY")}}'
     sortable_fields: ['publishDate', 'title']
     view_filters:
       - label: Published
@@ -23,38 +56,53 @@ collections:
       - label: Drafts
         field: draft
         pattern: true
+    view_groups:
+      - label: By Year
+        field: publishDate
+        pattern: '\d{4}'
+      - label: By Category
+        field: category
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Excerpt', name: 'excerpt', widget: 'text', required: true }
       - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: true }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: false, required: false }
-      - {
-          label: 'Category',
-          name: 'category',
-          widget: 'select',
-          options:
-            [
-              'Releases',
-              'Updates',
-              'Community',
-              'Events',
-              'Technical',
-              'Initiatives',
-              'eCommerce Insights',
-              'Case Studies',
-            ],
-          required: true,
-        }
-      - {
-          label: 'Tags',
-          name: 'tags',
-          widget: 'list',
-          allow_add: true,
-          required: false,
-          field: { label: 'Tag', name: 'tag', widget: 'string' },
-        }
+      - label: 'Category'
+        name: 'category'
+        widget: 'select'
+        options:
+          - 'Releases'
+          - 'Updates'
+          - 'Community'
+          - 'Events'
+          - 'Technical'
+          - 'Initiatives'
+          - 'eCommerce Insights'
+          - 'Case Studies'
+        required: true
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        allow_add: true
+        required: false
+        field: { label: 'Tag', name: 'tag', widget: 'string' }
       - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Author', name: 'author', widget: 'string', default: 'Mage-OS', required: false }
+      - {
+          label: 'Image Alt Text',
+          name: 'imageAlt',
+          widget: 'string',
+          required: false,
+          hint: 'Describe the image for accessibility',
+        }
+      - label: 'Author'
+        name: 'author'
+        widget: 'relation'
+        collection: 'authors'
+        search_fields: ['name']
+        value_field: 'slug'
+        display_fields: ['name']
+        default: 'mage-os-team'
+        required: false
       - { label: 'Content', name: 'body', widget: 'markdown' }
 
   # Events
@@ -64,15 +112,33 @@ collections:
     folder: 'src/data/events'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    sortable_fields: ['date', 'title']
+    summary: '{{title}} — {{eventDate | date("MMM D, YYYY")}}'
+    sortable_fields: ['eventDate', 'title']
+    view_groups:
+      - label: By Year
+        field: eventDate
+        pattern: '\d{4}'
+      - label: By Location
+        field: location
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Event Date', name: 'date', widget: 'datetime', required: true }
+      - { label: 'Event Date', name: 'eventDate', widget: 'datetime', required: true }
       - { label: 'End Date', name: 'endDate', widget: 'datetime', required: false }
       - { label: 'Location', name: 'location', widget: 'string', required: false }
       - { label: 'Venue', name: 'venue', widget: 'string', required: false }
-      - { label: 'Event URL', name: 'url', widget: 'string', required: false }
+      - label: 'Event URL'
+        name: 'url'
+        widget: 'string'
+        required: false
+        pattern: ['^https?://', 'Must be a valid URL starting with http:// or https://']
       - { label: 'Excerpt', name: 'excerpt', widget: 'text', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - {
+          label: 'Image Alt Text',
+          name: 'imageAlt',
+          widget: 'string',
+          required: false,
+          hint: 'Describe the image for accessibility',
+        }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: false, required: false }
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }

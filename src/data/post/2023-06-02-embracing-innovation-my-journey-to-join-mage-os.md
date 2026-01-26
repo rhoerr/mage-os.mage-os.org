@@ -2,7 +2,7 @@
 title: "Embracing Innovation: My Journey to Join Mage-OS"
 publishDate: "2023-06-02T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "marek-kubacak"
 draft: false
 excerpt: "Once upon a time, I found myself seeking a new adventure in the world of e-commerce. Having worked extensively with Magento, I was drawn to its flexibility and..."
 image: "~/assets/images/blog/2023/Marek.jpg"
@@ -22,7 +22,7 @@ I was not just joining a platform; I was joining a community united by a shared 
 
 So here I stand today, proud to be a member of the [Mage-OS community](https://mage-os.org/about/). The journey has been nothing short of incredible, filled with continuous learning, collaboration, and growth. Being part of Mage-OS has allowed me to expand my skill set, engage with forward-thinking professionals, and contribute to a project that is reshaping the future of e-commerce.
 
-Suppose you, too, seek an adventure, a chance to be part of a movement that embraces innovation and pushes the boundaries of what is possible. In that case, [I invite you to join me](/community#get-involved) on this extraordinary journey with Mage-OS. Together, let us shape the future of e-commerce and make our mark on the industry.
+Suppose you, too, seek an adventure, a chance to be part of a movement that embraces innovation and pushes the boundaries of what is possible. In that case, [I invite you to join me](https://mage-os.org/about/get-involved/) on this extraordinary journey with Mage-OS. Together, let us shape the future of e-commerce and make our mark on the industry.
 
 Marek Kubačák
 
@@ -32,7 +32,7 @@ Marek Kubačák
 
 Inspired by Marek's story and want to find out more? We'd love to hear from you. Marek currently attends our weekly content committee calls on Mondays, but there are multiple ways you can get involved, such as by joining the discussions on our Discord server or our technical meetings on Tuesdays.
 
-[Get Involved](/community#get-involved)
+[Get Involved](https://mage-os.org/about/get-involved/)
 
 ##### About Marek
 

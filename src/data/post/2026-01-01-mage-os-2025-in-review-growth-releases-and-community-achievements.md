@@ -2,7 +2,7 @@
 title: "Mage-OS 2025 in Review: Growth, Releases, and Community Achievements"
 publishDate: "2026-01-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "As 2025 draws to a close, it’s time to reflect on a remarkable year for Mage-OS. From major software releases to community expansion and strengthened..."
 image: "~/assets/images/blog/2026/ChatGPT-Image-Jan-1-2026-04_48_05-PM.png"

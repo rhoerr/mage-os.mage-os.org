@@ -2,7 +2,7 @@
 title: "Mage-OS Nov Recap"
 publishDate: "2024-12-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Jeanmarcos\_ - community member          - Kyle\_ - community member          - Ben Wake - community member  ..."
 image: "~/assets/images/blog/2024/mageos_blog_november-2024-update.jpg"

@@ -2,7 +2,7 @@
 title: "New Mage-OS Website"
 publishDate: "2023-03-16T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "john-hughes"
 draft: false
 excerpt: "We're excited to announce the launch of the brand new Mage-OS website, which brings a fresh new design, more content on Mage-OS itself, and, even more..."
 image: "~/assets/images/blog/2023/New-Mage-OS-Website.png"
@@ -100,6 +100,6 @@ Our new site and its content could not have been made possible without the time,
 
 If our new site, values or mission have inspired you to join our cause and ensure a brighter future for the Magento Open Source ecosystem, then please get involved in one of our committees or get in touch!
 
-[Get Involved](/community#get-involved)
+[Get Involved](https://mage-os.org/about/get-involved/)
 
 [Get In Touch](https://mage-os.org/contact-us/)

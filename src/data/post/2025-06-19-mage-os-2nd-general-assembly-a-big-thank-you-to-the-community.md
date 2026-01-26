@@ -2,7 +2,7 @@
 title: "Mage-OS 2nd General Assembly: A Big Thank You to the Community"
 publishDate: "2025-06-19T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "This week, we wrapped up our second-ever General Assembly, and we’re honestly feeling energized, proud, and deeply grateful for everyone who helped make it..."
 image: "~/assets/images/blog/2025/mage-os-may-blog-1.jpg"

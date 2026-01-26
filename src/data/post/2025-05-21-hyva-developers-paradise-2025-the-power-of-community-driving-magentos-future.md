@@ -2,7 +2,7 @@
 title: "Hyvä Developers Paradise 2025: The Power of Community Driving Magento’s Future"
 publishDate: "2025-05-21T00:00:00.000Z"
 category: "Events"
-author: "Mage-OS Team"
+author: "ruggero-landolina"
 draft: false
 excerpt: "Article by Ruggero Landolina From February 27 to March 1, 2025, the first-ever Hyvä Developers Paradise took place at the Lopesan Baobab Resort in Las Palmas..."
 tags:

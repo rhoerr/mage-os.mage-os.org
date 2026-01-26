@@ -2,7 +2,7 @@
 title: "We're Hiring! Project Manager / Chief of Staff\_Role"
 publishDate: "2024-03-13T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Due to the funds raised from our generous partners and members since we opened membership last September, we're now looking to make our first hire to..."
 image: "~/assets/images/blog/2024/Going-beyond-the-Mirror-–-Mage-OS-Nightlies.png"

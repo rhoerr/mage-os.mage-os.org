@@ -2,7 +2,7 @@
 title: "Mage-OS 2.1 is out now!"
 publishDate: "2026-01-20T01:55:25.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "We are excited to announce the release of Mage-OS Distribution 2.1.0, continuing our mission to provide a community-driven, open, and reliable e-commerce..."
 image: "~/assets/images/blog/2026/New-Mage-OS-Website.png"

@@ -2,7 +2,7 @@
 title: "Dependency Graphs, Website, and more"
 publishDate: "2023-02-28T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "See\_Adam Crossland’s NX demo for a sneak peek of where Mage-OS tech is headed. Adam Crossland and Damien Retzinger have been working on using a tool called NX..."
 image: "~/assets/images/blog/2023/Dependency-Graphs-Website-and-more.png"

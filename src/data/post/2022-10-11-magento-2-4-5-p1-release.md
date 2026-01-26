@@ -2,7 +2,7 @@
 title: "Magento 2.4.5-p1 release"
 publishDate: "2022-10-11T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Adobe has released updates to Magento Open Source today, versions 2.4.5-p1 and 2.4.4-p2. Those same updates are now also available if you’re using our Magento..."
 tags:

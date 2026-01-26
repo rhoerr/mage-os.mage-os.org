@@ -2,7 +2,7 @@
 title: "Meet you soon in Madrid!"
 publishDate: "2022-12-02T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Meet Commerce Spain is taking place on Tuesday 13th December, in Madrid, Spain. For a couple of months, the team at Mage-OS has been preparing for this event with much enthusiasm and excitement."
 image: "~/assets/images/blog/2022/Meet-you-soon-in-Madrid.png"

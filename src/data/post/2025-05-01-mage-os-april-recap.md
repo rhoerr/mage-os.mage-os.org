@@ -2,7 +2,7 @@
 title: "Mage-OS April Recap"
 publishDate: "2025-05-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Melinda Humphrey\_ – professional member          - Webcode\_ – community member          - Cainan Senra –..."
 image: "~/assets/images/blog/2025/mage-os-may-blog.jpg"

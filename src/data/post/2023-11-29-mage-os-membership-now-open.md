@@ -2,7 +2,7 @@
 title: "Mage-OS Membership Now Open"
 publishDate: "2023-11-29T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Hello friends! As you may know, one of the main ways we plan for Mage-OS to be funded is through a membership and partner program. This is a chance to support..."
 image: "~/assets/images/blog/2023/Mage_Os_memberships_open_1600_x_1100.jpg"

@@ -2,7 +2,7 @@
 title: "Mage-OS update January 2022"
 publishDate: "2022-02-02T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Dear Magento community members, It has been a while since you last heard from us. Apart from updates on social media and conferences/discussion panels we..."
 ---

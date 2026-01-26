@@ -2,7 +2,7 @@
 title: "Mage-OS Async Events: Gowri's Journey"
 publishDate: "2024-03-18T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "gowri-sankar"
 draft: false
 excerpt: "Gowri Sankar is a DevOps engineer from down under with a lot of interest in distributed systems and programming and solving problems at scale. Gowri is a..."
 image: "~/assets/images/blog/2024/gowri-1.jpg"

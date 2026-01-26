@@ -2,7 +2,7 @@
 title: "Release: Mage-OS Distribution 1.0.6"
 publishDate: "2025-02-13T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "fabrizio-balliano"
 draft: false
 excerpt: "We are excited to announce the release of Mage-OS Distribution 1.0.6! This release achieves full parity with Magento Open Source 2.4.7-p4, which incorporates..."
 tags:

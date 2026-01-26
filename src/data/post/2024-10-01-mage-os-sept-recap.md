@@ -2,7 +2,7 @@
 title: "Mage-OS Sept Recap"
 publishDate: "2024-10-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Ricardo Muñoz Zuñiga\_ - community member          - Michiel Gerritsen - professional member - You too can..."
 image: "~/assets/images/blog/2024/mageos_blog_september-2024-update.jpg"

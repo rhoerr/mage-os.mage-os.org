@@ -2,7 +2,7 @@
 title: "Mage-OS Aug Update"
 publishDate: "2025-08-30T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Conference season is right around the corner! The first stop is Meet Magento Ukraine on September 4, an excellent chance to connect with fellow Mage-OS..."
 image: "~/assets/images/blog/2025/mage-os-may-blog-2.jpg"

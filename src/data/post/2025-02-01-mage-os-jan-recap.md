@@ -2,7 +2,7 @@
 title: "Mage-OS Jan Recap"
 publishDate: "2025-02-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Mino\_ – community member          - David Nimorwicz\_ – professional member - You too can become a Mage-OS..."
 image: "~/assets/images/blog/2025/mageos_blog_jan-2025-update.jpg"

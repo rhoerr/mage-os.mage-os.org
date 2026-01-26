@@ -1,8 +1,8 @@
 ---
 title: "The first Mage-OS meetup in Italy"
 publishDate: "2023-04-24T00:00:00.000Z"
-category: "Events"
-author: "Mage-OS Team"
+category: "Updates"
+author: "alessandro-ronchi"
 draft: false
 excerpt: "Hello from Italy! This is Alessandro Ronchi, on behalf of the Mage-OS Association. On April 4th, 2023, I participated as a speaker in the first Mage-OS meetup..."
 image: "~/assets/images/blog/2023/Meet-you-soon-in-Madrid.png"
@@ -64,7 +64,7 @@ Sandwiches
 
 </figure>
 
-I want to thank PUG Romagna and Extera for the opportunity (and the buffet) and all those who participated. I invite everyone who believes in our project to join us: you can find all the useful references on the [Get Involved page.](/community#get-involved)
+I want to thank PUG Romagna and Extera for the opportunity (and the buffet) and all those who participated. I invite everyone who believes in our project to join us: you can find all the useful references on the [Get Involved page.](https://mage-os.org/about/get-involved/)
 
 Alessandro Ronchi  
 Board Member - Mage-OS Association

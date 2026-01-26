@@ -2,7 +2,7 @@
 title: "Revitalizing Magento Through Mage-OS and Smarter Frontend Design"
 publishDate: "2025-07-14T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "In a world where Magento has often felt caught between its open-source roots and corporate oversight, Davide Lunardon is one of the developers pushing it back..."
 image: "~/assets/images/blog/2025/davide.jpg"

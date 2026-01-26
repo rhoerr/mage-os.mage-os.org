@@ -2,7 +2,7 @@
 title: "Mage-OS June 2024 Recap"
 publishDate: "2024-07-02T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Nikola - community member          - Szymon Niedziela - professional member          - Ryan Sun - community..."
 image: "~/assets/images/blog/2024/mage-os-june-2024.jpg"

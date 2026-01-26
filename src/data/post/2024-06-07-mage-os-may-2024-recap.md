@@ -2,7 +2,7 @@
 title: "Mage-OS May 2024 Recap"
 publishDate: "2024-06-07T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome and thank you to our newest partners and members:              - ![MDOQ](https://www.mdoq.io/) \\- Gold Partner\_                      “Making the..."
 image: "~/assets/images/blog/2024/mage-os-may-blog.jpg"

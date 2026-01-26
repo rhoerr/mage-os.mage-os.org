@@ -2,7 +2,7 @@
 title: "Introducing the Mage-OS Distribution"
 publishDate: "2023-10-09T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "We are proud to announce version 1 of the Mage-OS Distribution! This release is based on Magento 2.4.6-p3, plus additional contributions including a refreshed..."
 tags:

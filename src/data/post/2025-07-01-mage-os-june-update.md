@@ -2,7 +2,7 @@
 title: "Mage-OS June Update"
 publishDate: "2025-07-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Carl – community member          - Jacqueline Gerritsen – community member          - Ben – community..."
 image: "~/assets/images/blog/2025/mage-os-may-blog.jpg"

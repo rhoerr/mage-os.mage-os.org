@@ -2,7 +2,7 @@
 title: "Launching the Very First Mage-OS Store Ever – Our Journey..."
 publishDate: "2025-08-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "john-prendergast"
 draft: false
 excerpt: "For years, our agency website was a bit like that old rag rug everyone has—a collection of patches and mismatched pieces that somehow managed to hold together..."
 image: "~/assets/images/blog/2025/First-Mage-OS-Live-Store-Ever-3-2.png"

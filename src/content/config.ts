@@ -46,6 +46,25 @@ const metadataDefinition = () =>
     })
     .optional();
 
+const authorCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/authors' }),
+  schema: z.object({
+    name: z.string(),
+    slug: z.string(),
+    avatar: z.string().optional(),
+    bio: z.string().optional(),
+    website: z.string().url().optional(),
+    social: z
+      .object({
+        github: z.string().optional(),
+        twitter: z.string().optional(),
+        linkedin: z.string().optional(),
+        discord: z.string().optional(),
+      })
+      .optional(),
+  }),
+});
+
 const postCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/post' }),
   schema: z.object({
@@ -56,6 +75,7 @@ const postCollection = defineCollection({
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
@@ -76,11 +96,13 @@ const eventCollection = defineCollection({
     url: z.string().url().optional(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     draft: z.boolean().optional(),
   }),
 });
 
 export const collections = {
+  authors: authorCollection,
   post: postCollection,
   event: eventCollection,
 };

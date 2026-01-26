@@ -2,7 +2,7 @@
 title: "Achieving Zero-Downtime deployments with Magento Open Source"
 publishDate: "2023-02-25T00:00:00.000Z"
 category: "eCommerce Insights"
-author: "Mage-OS Team"
+author: "arron-moss"
 draft: false
 excerpt: "Introducing Zero-Downtime deployments facilitates faster, more frequent deployments As an agency working with Magento since 2009, we are always excited at the..."
 ---

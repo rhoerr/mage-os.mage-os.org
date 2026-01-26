@@ -2,7 +2,7 @@
 title: "Mage-OS March Recap"
 publishDate: "2025-04-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Jonathan Visser\_ – community member          - Alin Munteanu\_ – community member          - Illya Arefiev –..."
 image: "~/assets/images/blog/2025/mage-os-may-blog.jpg"

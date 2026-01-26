@@ -2,7 +2,7 @@
 title: "Calling All Merchants - Purchase Your Own Extensions"
 publishDate: "2023-02-25T00:00:00.000Z"
 category: "eCommerce Insights"
-author: "Mage-OS Team"
+author: "arron-moss"
 draft: false
 excerpt: "Simple ways to streamline operations and reduce costs In almost 15 years of working with Magento we have taken on many projects from other agencies large and..."
 ---

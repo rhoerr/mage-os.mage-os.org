@@ -2,7 +2,7 @@
 title: "October 2023 Update"
 publishDate: "2023-11-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Another month in 2023 has passed, and yet again, we’ve got lots of updates to bring you! The big news from October is the initial release of the Mage-OS..."
 image: "~/assets/images/blog/2023/mageos_blog_october-update.jpg"

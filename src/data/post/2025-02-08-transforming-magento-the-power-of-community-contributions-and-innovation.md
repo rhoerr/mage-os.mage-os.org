@@ -1,8 +1,8 @@
 ---
 title: "Transforming Magento: The Power of Community, Contributions, and Innovation"
 publishDate: "2025-02-08T00:00:00.000Z"
-category: "eCommerce Insights"
-author: "Mage-OS Team"
+category: "Initiatives"
+author: "anita-miller"
 draft: false
 excerpt: "E-commerce is constantly changing, and Magento continues to be a leading platform, providing great tools for developers and businesses. Two exciting additions..."
 tags:

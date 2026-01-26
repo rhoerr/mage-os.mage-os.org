@@ -2,7 +2,7 @@
 title: "The Future of Magento"
 publishDate: "2021-09-14T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Dear Magento community, With this open announcement we are letting you know that there will be a community organization driven fork of Magento. The purpose is..."
 ---

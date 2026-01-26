@@ -2,7 +2,7 @@
 title: "Mage-OS March 2024 Recap"
 publishDate: "2024-04-12T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome to our newest partners and members!              -..."
 image: "~/assets/images/blog/2024/mage-os-march-2024.jpg"

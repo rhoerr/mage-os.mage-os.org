@@ -2,7 +2,7 @@
 title: "Mage-OS October Update"
 publishDate: "2025-10-31T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "Happy Halloween, developers and merchants! 👻      While others are out hunting for candy, the Mage-OS community has been serving up something even sweeter,..."
 image: "~/assets/images/blog/2025/ChatGPT-Image-31.-Okt.-2025-15_31_29.png"

@@ -2,7 +2,7 @@
 title: "Mage-OS January 2024 Recap"
 publishDate: "2024-02-12T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "With increased collaboration with Magento Association and Adobe, we’ve decided to shift our goals for the coming year. In 2024, our intentions are to: - Make..."
 image: "~/assets/images/blog/2024/Mage-OS-January-2024.jpg"

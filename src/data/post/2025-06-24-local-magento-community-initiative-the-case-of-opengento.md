@@ -2,7 +2,7 @@
 title: "Local Magento Community initiative: the case of Opengento"
 publishDate: "2025-06-24T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "thien-lan-weber"
 draft: false
 excerpt: "On 25th March, a couple of Mage-OS active members attended the first ever Meet Magento France, and since many recaps have already been published online, we..."
 image: "~/assets/images/blog/2025/250325_VIP_BOX-351-scaled.jpg"

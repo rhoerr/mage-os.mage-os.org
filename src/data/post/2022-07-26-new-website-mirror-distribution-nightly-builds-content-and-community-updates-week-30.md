@@ -2,7 +2,7 @@
 title: "New Website, Mirror Distribution, Nightly Builds, Content and Community Updates (Week 30)"
 publishDate: "2022-07-26T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Lots is happening, folks! You can find a lot of content beyond the blog now by visiting\_https://mage-os.org! Many thanks to Ryan Hoerr who spent a lot of time..."
 ---

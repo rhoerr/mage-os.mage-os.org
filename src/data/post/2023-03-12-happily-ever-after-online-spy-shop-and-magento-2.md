@@ -2,7 +2,7 @@
 title: "Happily ever after\_- Online Spy Shop and Magento 2"
 publishDate: "2023-03-12T00:00:00.000Z"
 category: "Case Studies"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Hollywood love stories usually start with some ups and downs in a relationship and then a big showdown – preferably with a great sunset as a backdrop. True..."
 image: "~/assets/images/blog/2023/OnlineSpyShop.png"

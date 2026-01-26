@@ -2,7 +2,7 @@
 title: "Mage OS Sept Update"
 publishDate: "2025-10-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "Meet Magento Italy was attended by several Mage-OS contributors. While the event was more marketing-oriented with fewer technical sessions, the networking..."
 image: "~/assets/images/blog/2025/mage-os-may-blog-2.jpg"

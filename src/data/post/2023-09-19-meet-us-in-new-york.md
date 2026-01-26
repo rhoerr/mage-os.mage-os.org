@@ -2,7 +2,7 @@
 title: "Meet us in New York"
 publishDate: "2023-09-19T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "ryan-hoerr"
 draft: false
 excerpt: "In case you missed the news, Meet Magento New York 2023 is coming up! If you can make your way to New York City on October 10th and 11th, you should. Mage-OS..."
 image: "~/assets/images/blog/2023/Mage-OS-MM23NYC.jpg"

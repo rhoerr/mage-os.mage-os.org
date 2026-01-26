@@ -2,7 +2,7 @@
 title: "Mage-OS 2.0: Innovation Takes Flight"
 publishDate: "2025-10-16T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "fabrizio-balliano"
 draft: false
 excerpt: "We are excited to announce the release of Mage-OS Distribution 2.0, a major milestone that shows the power of community-driven innovation. This release..."
 tags:

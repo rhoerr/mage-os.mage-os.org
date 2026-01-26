@@ -2,7 +2,7 @@
 title: "December 2023 Update"
 publishDate: "2024-01-10T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "Below is our Mage-OS recap for December 2023, but first off a Happy New Year to everyone in the Magento ecosystem from all of us at Mage-OS!..."
 image: "~/assets/images/blog/2024/mageos_blog_december-update.jpg"

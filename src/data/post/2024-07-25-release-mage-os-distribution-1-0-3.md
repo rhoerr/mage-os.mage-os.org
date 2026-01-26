@@ -2,7 +2,7 @@
 title: "Release: Mage-OS Distribution 1.0.3"
 publishDate: "2024-07-25T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "ryan-hoerr"
 draft: false
 excerpt: "We are proud to announce Mage-OS Distribution version 1.0.3 is now available! This Mage-OS update brings parity with Magento Open Source 2.4.7 and 2.4.7-p1,..."
 tags:

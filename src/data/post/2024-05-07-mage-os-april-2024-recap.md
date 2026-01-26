@@ -2,7 +2,7 @@
 title: "Mage-OS April 2024 Recap"
 publishDate: "2024-05-07T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- Welcome to our newest members!              - Kliment Ognianov - Community Member          - Cainan Senra - Community Member          - Ryan Grippeling -..."
 image: "~/assets/images/blog/2024/mage-os-april-2024.jpg"

@@ -2,7 +2,7 @@
 title: "Mage-OS Oct Recap"
 publishDate: "2024-11-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "- It was a busy month! Welcome to our newest partners and members!     - Jim Gilbert\_ - community member          - \_Wouter Steenmeijer - community member     ..."
 image: "~/assets/images/blog/2024/mageos_blog_october-2024-update.jpg"

@@ -2,7 +2,7 @@
 title: "Mage-OS Nederland member meeting"
 publishDate: "2024-03-07T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "On February 29th (a leap day), the second member meeting of Mage-OS Nederland took place: Hosted at the beautiful venue of De Rechtbank in the center of..."
 image: "~/assets/images/blog/2024/mage-os-nl.webp"

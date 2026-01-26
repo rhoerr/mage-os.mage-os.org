@@ -2,7 +2,7 @@
 title: "Release: Mage-OS Distribution 1.0.4"
 publishDate: "2024-08-22T00:00:00.000Z"
 category: "Releases"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "We are proud to announce Mage-OS Distribution version 1.0.4 is now available! This Mage-OS update brings parity with Magento Open Source 2.4.7-p2, which was..."
 tags:

@@ -2,7 +2,7 @@
 title: "Join Mage-OS as a Part-Time Release Manager"
 publishDate: "2025-11-24T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "Help Keep Magento Moving Forward Release Manager Location: Remote   Schedule: Meeting: Tuesdays 15:00 CET on Discord   Compensation: Up to €1000 per month  ..."
 image: "~/assets/images/blog/2025/ChatGPT-Image-Nov-24-2025-11_55_38-AM-1.png"

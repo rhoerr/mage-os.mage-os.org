@@ -2,7 +2,7 @@
 title: "November 2023 Update"
 publishDate: "2023-12-06T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "mage-os-team"
 draft: false
 excerpt: "We hope that everyone in the Community had a successful Black Friday and Cyber Monday. In the meantime, while it might already be snowing in your part of the..."
 image: "~/assets/images/blog/2023/mageos_blog_november-update.jpg"

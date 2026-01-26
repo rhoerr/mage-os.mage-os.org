@@ -2,7 +2,7 @@
 title: "Mage-OS July Update"
 publishDate: "2025-08-01T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "Themes, Transitions, and Tactical Wins July has been a pivotal month for Mage-OS, marked by major strides across frontend innovation, developer documentation,..."
 image: "~/assets/images/blog/2025/mage-os-may-blog-1.jpg"

@@ -2,7 +2,7 @@
 title: "Mage-OS November Update"
 publishDate: "2025-11-30T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "November has been an exciting and busy month for the Mage-OS community. Between major announcements, global conferences, and hackathon sessions, there’s a lot..."
 image: "~/assets/images/blog/2025/mage-os-may-blog-2.jpg"

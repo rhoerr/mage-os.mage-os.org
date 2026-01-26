@@ -2,7 +2,7 @@
 title: "Mage-OS Aug Recap"
 publishDate: "2024-08-31T00:00:00.000Z"
 category: "Updates"
-author: "Mage-OS Team"
+author: "anita-miller"
 draft: false
 excerpt: "- Welcome to our newest partners and members!     - Joshua Hughes\_ - community member          - Greg Caughill\_ - community member          - Lucas van Staden..."
 image: "~/assets/images/blog/2024/mageos_blog_august-2024-update.jpg"
