@@ -4,6 +4,8 @@ backend:
   branch: main
   base_url: https://sveltia-cms-auth.tiny-butterfly-a8c1.workers.dev
 
+publish_mode: editorial_workflow
+
 media_folder: 'src/assets/images'
 public_folder: '/_astro'
 
