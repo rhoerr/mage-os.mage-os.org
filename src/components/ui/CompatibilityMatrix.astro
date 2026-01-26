@@ -1,0 +1,83 @@
+---
+/**
+ * Displays the Mage-OS version compatibility matrix
+ *
+ * Shows major releases with their PHP, MySQL, OpenSearch versions and release dates.
+ * Data is fetched from the centralized system requirements.
+ *
+ * Usage:
+ * <CompatibilityMatrix /> - Show last 5 major releases
+ * <CompatibilityMatrix limit={3} /> - Show last 3 major releases
+ * <CompatibilityMatrix showEol /> - Include EOL column
+ */
+import { getMajorReleases, formatReleaseDate, getMajorMinor } from '~/data/system-requirements';
+import VersionBadge from './VersionBadge.astro';
+
+interface Props {
+  /** Number of releases to show */
+  limit?: number;
+  /** Show EOL date column */
+  showEol?: boolean;
+  /** Additional CSS classes */
+  class?: string;
+}
+
+const { limit = 5, showEol = false, class: className = '' } = Astro.props;
+
+const releases = await getMajorReleases(limit);
+
+// Get the latest release version for highlighting
+const latestVersion = releases.length > 0 ? releases[0].version : null;
+---
+
+<div class:list={['overflow-x-auto bg-white dark:bg-slate-900 rounded-lg shadow-sm', className]}>
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="border-b-2 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+        <th class="text-left py-3 px-4 font-bold">Mage-OS</th>
+        <th class="text-left py-3 px-4 font-bold">PHP</th>
+        <th class="text-left py-3 px-4 font-bold">MySQL</th>
+        <th class="text-left py-3 px-4 font-bold">OpenSearch</th>
+        <th class="text-left py-3 px-4 font-bold">Release</th>
+        {showEol && <th class="text-left py-3 px-4 font-bold">EOL</th>}
+      </tr>
+    </thead>
+    <tbody class="text-muted">
+      {
+        releases.map((release) => {
+          const isLatest = release.version === latestVersion;
+          const displayVersion = getMajorMinor(release.version);
+
+          return (
+            <tr class:list={['border-b dark:border-gray-700', isLatest && 'bg-green-50 dark:bg-green-900/20']}>
+              <td class="py-3 px-4 font-bold">
+                {displayVersion}
+                {isLatest && <VersionBadge status="recommended" class="ml-2" />}
+              </td>
+              <td class="py-3 px-4">{release.php}</td>
+              <td class="py-3 px-4">{release.mysql || 'MariaDB 10.6+'}</td>
+              <td class="py-3 px-4">{release.opensearch || release.elasticsearch || '2.5+'}</td>
+              <td class="py-3 px-4">{formatReleaseDate(release.releaseDate)}</td>
+              {showEol && (
+                <td class="py-3 px-4">
+                  {release.isActive ? (
+                    <span class="text-green-600 dark:text-green-400">Active</span>
+                  ) : (
+                    formatReleaseDate(release.eolDate)
+                  )}
+                </td>
+              )}
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+</div>
+
+<p class="text-center text-muted mt-6">
+  By policy, only the latest version is actively supported. For the latest version information, see the <a
+    href="/product/releases"
+    class="text-primary hover:underline">Releases</a
+  > page.
+</p>

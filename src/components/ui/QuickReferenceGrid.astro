@@ -1,0 +1,61 @@
+---
+/**
+ * Displays system requirements in a quick reference grid format
+ *
+ * Used on the system-requirements page for the overview section.
+ * Fetches data from centralized system requirements.
+ *
+ * Usage:
+ * <QuickReferenceGrid /> - Show default components
+ */
+import ItemGrid from './ItemGrid.astro';
+import { getQuickRequirements } from '~/data/system-requirements';
+
+const requirements = await getQuickRequirements();
+
+// Build grid items with recommended versions from centralized data
+const items = [
+  {
+    title: 'PHP',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 8.3 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: ${requirements.php}</span>`,
+    icon: 'tabler:brand-php',
+  },
+  {
+    title: 'Composer',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 2.7 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: ${requirements.composer}</span>`,
+    icon: 'tabler:package',
+  },
+  {
+    title: 'OpenSearch',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 2.5 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: ${requirements.opensearch}</span>`,
+    icon: 'tabler:search',
+  },
+  {
+    title: 'MySQL / MariaDB',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 8.0 / 10.6 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: ${requirements.mysql} / ${requirements.mariadb}</span>`,
+    icon: 'tabler:database',
+  },
+  {
+    title: 'Redis / Valkey',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 7.0 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: Valkey ${requirements.valkey || '8'}</span>`,
+    icon: 'tabler:bolt',
+  },
+  {
+    title: 'RabbitMQ',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 3.12 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: ${requirements.rabbitmq}</span>`,
+    icon: 'tabler:message-bolt',
+  },
+  {
+    title: 'Varnish',
+    description: `<span class="text-gray-500 dark:text-gray-400">Min:</span> 7.x <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: ${requirements.varnish}</span>`,
+    icon: 'tabler:rocket',
+  },
+  {
+    title: 'Web Server',
+    description: `Apache ${requirements.apache}+ or nginx ${requirements.nginx}+ <span class="text-green-600 dark:text-green-400 font-medium">(${requirements.nginx} rec)</span>`,
+    icon: 'tabler:server',
+  },
+];
+---
+
+<ItemGrid columns={4} items={items} />

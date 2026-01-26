@@ -8,6 +8,9 @@ import Callout from '~/components/ui/Callout.astro';
 import VersionBadge from '~/components/ui/VersionBadge.astro';
 import { Icon } from 'astro-icon/components';
 import CodeBlock from '~/components/ui/CodeBlock.astro';
+import { getQuickRequirements } from '~/data/system-requirements';
+
+const requirements = await getQuickRequirements();
 
 const metadata = {
   title: 'Installation Guide',
@@ -93,18 +96,24 @@ const installationTabs = [
               </p>
               <ul class="list-disc list-inside space-y-1 text-sm">
                 <li>
-                  <strong>PHP 8.3 or 8.4</strong> with required extensions
+                  <strong>PHP {requirements.php}</strong> with required extensions
                 </li>
                 <li>
-                  <strong>Composer 2.8+</strong> (<a
+                  <strong>Composer {requirements.composer}+</strong> (<a
                     href="https://getcomposer.org/"
                     target="_blank"
                     class="text-primary hover:underline">Get Composer</a
                   >)
                 </li>
-                <li><strong>MySQL 8.4+</strong> or <strong>MariaDB 11.4+</strong></li>
-                <li><strong>OpenSearch 2.19+</strong> or <strong>Elasticsearch 8.x</strong></li>
-                <li><strong>Apache 2.4+</strong> or <strong>Nginx 1.26+</strong></li>
+                <li>
+                  <strong>MySQL {requirements.mysql}+</strong> or <strong>MariaDB {requirements.mariadb}+</strong>
+                </li>
+                <li>
+                  <strong>OpenSearch {requirements.opensearch}+</strong> or <strong
+                    >Elasticsearch {requirements.elasticsearch}</strong
+                  >
+                </li>
+                <li><strong>Apache {requirements.apache}+</strong> or <strong>nginx {requirements.nginx}+</strong></li>
               </ul>
             </Callout>
 

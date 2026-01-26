@@ -5,6 +5,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import Callout from '~/components/ui/Callout.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import SystemRequirements from '~/components/ui/SystemRequirements.astro';
 import { Icon } from 'astro-icon/components';
 import CodeBlock from '~/components/ui/CodeBlock.astro';
 
@@ -40,38 +41,13 @@ const metadata = {
       <h2>Before You Begin</h2>
 
       <h3>System Requirements</h3>
+    </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Component</th>
-            <th>Version Required</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>PHP</td>
-            <td>8.3 or 8.4</td>
-          </tr>
-          <tr>
-            <td>Composer</td>
-            <td>2.8+</td>
-          </tr>
-          <tr>
-            <td>MySQL</td>
-            <td>8.4+ (or MariaDB 11.4+)</td>
-          </tr>
-          <tr>
-            <td>OpenSearch</td>
-            <td>2.19+</td>
-          </tr>
-          <tr>
-            <td>Web Server</td>
-            <td>Apache 2.4+ or Nginx 1.26+</td>
-          </tr>
-        </tbody>
-      </table>
+    <SystemRequirements components={['php', 'composer', 'mysql', 'opensearch', 'nginx']} class="mb-6" />
 
+    <div
+      class="prose prose-lg max-w-none dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded"
+    >
       <p>
         Need the full list? See <a href="/get-started/system-requirements">System Requirements</a>.
       </p>

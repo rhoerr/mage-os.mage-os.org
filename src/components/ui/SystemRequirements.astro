@@ -1,0 +1,98 @@
+---
+/**
+ * Displays system requirements from centralized data
+ *
+ * Usage:
+ * <SystemRequirements /> - Show all components in table layout
+ * <SystemRequirements components={['php', 'composer', 'mysql']} /> - Show specific components
+ * <SystemRequirements layout="list" /> - Show as a list (for prerequisites)
+ */
+import { getQuickRequirements, type QuickRequirements } from '~/data/system-requirements';
+
+interface Props {
+  /** Which components to display */
+  components?: (keyof QuickRequirements)[];
+  /** Display layout: 'table' (default), 'list', or 'inline' */
+  layout?: 'table' | 'list' | 'inline';
+  /** Additional CSS classes */
+  class?: string;
+}
+
+const {
+  components = ['php', 'composer', 'mysql', 'opensearch', 'nginx'],
+  layout = 'table',
+  class: className = '',
+} = Astro.props;
+
+const requirements = await getQuickRequirements();
+
+const labels: Record<keyof QuickRequirements, string> = {
+  php: 'PHP',
+  composer: 'Composer',
+  mysql: 'MySQL',
+  mariadb: 'MariaDB',
+  opensearch: 'OpenSearch',
+  elasticsearch: 'Elasticsearch',
+  redis: 'Redis',
+  valkey: 'Valkey',
+  rabbitmq: 'RabbitMQ',
+  varnish: 'Varnish',
+  nginx: 'nginx',
+  apache: 'Apache',
+};
+
+const items = components
+  .filter((key) => requirements[key])
+  .map((key) => ({
+    key,
+    label: labels[key],
+    version: requirements[key],
+  }));
+---
+
+{
+  layout === 'table' && (
+    <table class:list={['w-full text-sm', className]}>
+      <thead>
+        <tr class="border-b dark:border-gray-700">
+          <th class="text-left py-2 font-medium">Component</th>
+          <th class="text-left py-2 font-medium">Recommended Version</th>
+        </tr>
+      </thead>
+      <tbody class="text-muted">
+        {items.map((item) => (
+          <tr class="border-b dark:border-gray-700">
+            <td class="py-2">{item.label}</td>
+            <td class="py-2 font-mono">{item.version}+</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
+{
+  layout === 'list' && (
+    <ul class:list={['list-disc list-inside space-y-1 text-sm', className]}>
+      {items.map((item) => (
+        <li>
+          <strong>
+            {item.label} {item.version}+
+          </strong>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+{
+  layout === 'inline' && (
+    <span class:list={['text-sm', className]}>
+      {items.map((item, i) => (
+        <>
+          <strong>{item.label}</strong> {item.version}+{i < items.length - 1 && ', '}
+        </>
+      ))}
+    </span>
+  )
+}
