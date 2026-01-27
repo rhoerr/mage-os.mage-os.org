@@ -44,8 +44,9 @@ function getMajorMinor(version: string): string {
         <tr class="border-b-2 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
           <th class="text-left py-3 px-4 font-bold">Mage-OS</th>
           <th class="text-left py-3 px-4 font-bold">PHP</th>
-          <th class="text-left py-3 px-4 font-bold">MySQL</th>
-          <th class="text-left py-3 px-4 font-bold">OpenSearch</th>
+          <th class="text-left py-3 px-4 font-bold">Database</th>
+          <th class="text-left py-3 px-4 font-bold">Search</th>
+          <th class="text-left py-3 px-4 font-bold">Cache</th>
           <th class="text-left py-3 px-4 font-bold">Magento Base</th>
           <th class="text-left py-3 px-4 font-bold">Release</th>
         </tr>
@@ -68,8 +69,25 @@ function getMajorMinor(version: string): string {
                   ? versionSpecs.php.recommended
                   : `${versionSpecs.php.minimum}-${versionSpecs.php.recommended}`}
               </td>
-              <td class="py-3 px-4">{versionSpecs.mysql.minimum}+</td>
-              <td class="py-3 px-4">{versionSpecs.opensearch.minimum}+</td>
+              <td class="py-3 px-4">
+                <span title="MySQL">MySQL {versionSpecs.mysql.minimum}+</span>
+                <span class="text-gray-400 mx-1">/</span>
+                <span title="MariaDB">MariaDB {versionSpecs.mariadb.minimum}+</span>
+              </td>
+              <td class="py-3 px-4">
+                <span title="OpenSearch">OS {versionSpecs.opensearch.minimum}+</span>
+                {versionSpecs.elasticsearch && (
+                  <>
+                    <span class="text-gray-400 mx-1">/</span>
+                    <span title="Elasticsearch">ES {versionSpecs.elasticsearch.minimum}+</span>
+                  </>
+                )}
+              </td>
+              <td class="py-3 px-4">
+                <span title="Valkey">Valkey {versionSpecs.valkey.minimum}+</span>
+                <span class="text-gray-400 mx-1">/</span>
+                <span title="Redis">Redis {versionSpecs.redis.minimum}+</span>
+              </td>
               <td class="py-3 px-4">{versionSpecs.magentoBase}</td>
               <td class="py-3 px-4">{formatDate(versionSpecs.releaseDate)}</td>
             </tr>
