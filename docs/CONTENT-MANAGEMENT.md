@@ -97,6 +97,29 @@ Common categories used:
 
 ### Release Post Template
 
+For release posts, you can use dynamic version specs to keep version tables accurate:
+
+```astro
+---
+// For .astro blog post files, import specs
+import { getLatestSpecs } from '~/utils/systemSpecs';
+const specs = await getLatestSpecs();
+---
+
+The latest recommended software versions are:
+
+| Component     | Version                                                                |
+| ------------- | ---------------------------------------------------------------------- |
+| PHP           | {specs.php.recommended}/{specs.php.minimum}                            |
+| Composer      | {specs.composer.recommended}                                           |
+| OpenSearch    | {specs.opensearch.recommended}                                         |
+| MariaDB       | {specs.mariadb.recommended}                                            |
+| MySQL         | {specs.mysql.recommended}                                              |
+| Redis         | Valkey {specs.valkey.recommended} (or Redis {specs.redis.recommended}+)|
+```
+
+**For Markdown release posts**, use static version values since Markdown doesn't support dynamic imports. The versions table can be manually updated, or converted to MDX for dynamic support.
+
 ```markdown
 ---
 title: 'Mage-OS X.Y.Z is out now!'
@@ -121,7 +144,7 @@ The latest recommended software versions are:
 | Component     | Version                   |
 | ------------- | ------------------------- |
 | PHP           | 8.4/8.3                   |
-| Composer      | 2.8                       |
+| Composer      | 2.9                       |
 | OpenSearch    | 2.19                      |
 | MariaDB       | 11.4                      |
 | MySQL         | 8.4                       |
@@ -305,6 +328,45 @@ Import from `~/components/widgets/`:
 | `PartnersBar` | Partner logo bar | `title`, `partners` |
 | `Pricing` | Pricing table | `title`, `prices` |
 
+### System Specs Components
+
+Import from `~/components/ui/`:
+
+| Component | Description | Key Props |
+|-----------|-------------|-----------|
+| `SpecsQuickRef` | Quick reference grid of component versions | `version` (optional) |
+| `SpecsTable` | Generic table for component min/recommended versions | `rows`, `title`, `showNotes` |
+| `SpecsMatrix` | Compatibility matrix of Mage-OS versions | `limit` |
+
+**SpecsQuickRef usage:**
+```astro
+import SpecsQuickRef from '~/components/ui/SpecsQuickRef.astro';
+
+<SpecsQuickRef />
+```
+
+**SpecsTable usage:**
+```astro
+import SpecsTable from '~/components/ui/SpecsTable.astro';
+import { getLatestSpecs } from '~/utils/systemSpecs';
+
+const specs = await getLatestSpecs();
+
+<SpecsTable
+  rows={[
+    { name: 'MySQL', minimum: specs.mysql.minimum, recommended: specs.mysql.recommended, notes: 'Oracle distribution' },
+    { name: 'MariaDB', minimum: specs.mariadb.minimum, recommended: specs.mariadb.recommended, notes: 'MySQL alternative' },
+  ]}
+/>
+```
+
+**SpecsMatrix usage:**
+```astro
+import SpecsMatrix from '~/components/ui/SpecsMatrix.astro';
+
+<SpecsMatrix limit={5} />
+```
+
 ### Widget Item Structure
 
 Most widgets accept `items` arrays with this structure:
@@ -427,18 +489,23 @@ export const footerData = {
 
 ### System Requirements Update
 
-**File:** `astro/src/pages/get-started/system-requirements.md`
+System requirements are now **automatically fetched** from the authoritative GitHub source at build time. The data source is:
+- `https://raw.githubusercontent.com/mage-os/github-actions/main/supported-version/src/versions/mage-os/composite.json`
 
-Update the Quick Reference table:
+**Configuration file:** `src/data/system-specs-config.yaml`
 
-```markdown
-## Quick Reference (Mage-OS X.Y)
+To update minimum/recommended versions:
 
-| Component      | Minimum | Recommended |
-| -------------- | ------- | ----------- |
-| PHP            | 8.3     | 8.4         |
-| OpenSearch     | 2.5     | 2.19        |
-| ...            | ...     | ...         |
+```yaml
+# src/data/system-specs-config.yaml
+components:
+  php:
+    minimum: "8.3"
+    recommended: "8.4"
+  mysql:
+    minimum: "8.0"
+    recommended: "8.4"
+  # ... other components
 ```
 
 ### Adding a New Event
@@ -613,7 +680,7 @@ When modifying content:
 | New blog post | `src/data/post/YYYY-MM-DD-slug.md` |
 | New event | `src/data/events/YYYY-MM-DD-slug.md` |
 | Update navigation | `src/navigation.ts` |
-| Update system requirements | `src/pages/get-started/system-requirements.md` |
+| Update system requirements | `src/data/system-specs-config.yaml` (for min/recommended overrides) |
 | New release announcement | `src/data/post/` + `src/pages/product/releases.md` |
 | Update leadership | `src/pages/about/leadership.astro` |
 | Update FAQ | `src/pages/faq.mdx` |
@@ -621,4 +688,4 @@ When modifying content:
 
 ---
 
-*Last updated: January 2026*
+*Last updated: January 2026 (added system specs management)*

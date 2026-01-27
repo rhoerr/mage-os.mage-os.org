@@ -7,6 +7,9 @@ import ItemGrid from '~/components/ui/ItemGrid.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { Icon } from 'astro-icon/components';
 import CodeBlock from '~/components/ui/CodeBlock.astro';
+import { getLatestSpecs } from '~/utils/systemSpecs';
+
+const specs = await getLatestSpecs();
 
 const metadata = {
   title: 'Quick Start Guide',
@@ -51,23 +54,23 @@ const metadata = {
         <tbody>
           <tr>
             <td>PHP</td>
-            <td>8.3 or 8.4</td>
+            <td>{specs.php.minimum} or {specs.php.recommended}</td>
           </tr>
           <tr>
             <td>Composer</td>
-            <td>2.8+</td>
+            <td>{specs.composer.minimum}+</td>
           </tr>
           <tr>
             <td>MySQL</td>
-            <td>8.4+ (or MariaDB 11.4+)</td>
+            <td>{specs.mysql.recommended}+ (or MariaDB {specs.mariadb.recommended}+)</td>
           </tr>
           <tr>
             <td>OpenSearch</td>
-            <td>2.19+</td>
+            <td>{specs.opensearch.recommended}+</td>
           </tr>
           <tr>
             <td>Web Server</td>
-            <td>Apache 2.4+ or Nginx 1.26+</td>
+            <td>Apache {specs.apache.minimum}+ or Nginx {specs.nginx.recommended}+</td>
           </tr>
         </tbody>
       </table>

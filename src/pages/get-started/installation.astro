@@ -8,6 +8,9 @@ import Callout from '~/components/ui/Callout.astro';
 import VersionBadge from '~/components/ui/VersionBadge.astro';
 import { Icon } from 'astro-icon/components';
 import CodeBlock from '~/components/ui/CodeBlock.astro';
+import { getLatestSpecs } from '~/utils/systemSpecs';
+
+const specs = await getLatestSpecs();
 
 const metadata = {
   title: 'Installation Guide',
@@ -93,18 +96,28 @@ const installationTabs = [
               </p>
               <ul class="list-disc list-inside space-y-1 text-sm">
                 <li>
-                  <strong>PHP 8.3 or 8.4</strong> with required extensions
+                  <strong>PHP {specs.php.minimum} or {specs.php.recommended}</strong> with required extensions
                 </li>
                 <li>
-                  <strong>Composer 2.8+</strong> (<a
+                  <strong>Composer {specs.composer.minimum}+</strong> (<a
                     href="https://getcomposer.org/"
                     target="_blank"
                     class="text-primary hover:underline">Get Composer</a
                   >)
                 </li>
-                <li><strong>MySQL 8.4+</strong> or <strong>MariaDB 11.4+</strong></li>
-                <li><strong>OpenSearch 2.19+</strong> or <strong>Elasticsearch 8.x</strong></li>
-                <li><strong>Apache 2.4+</strong> or <strong>Nginx 1.26+</strong></li>
+                <li>
+                  <strong>MySQL {specs.mysql.recommended}+</strong> or <strong
+                    >MariaDB {specs.mariadb.recommended}+</strong
+                  >
+                </li>
+                <li>
+                  <strong>OpenSearch {specs.opensearch.recommended}+</strong> or <strong
+                    >Elasticsearch {specs.elasticsearch?.recommended || '8.x'}</strong
+                  >
+                </li>
+                <li>
+                  <strong>Apache {specs.apache.minimum}+</strong> or <strong>Nginx {specs.nginx.recommended}+</strong>
+                </li>
               </ul>
             </Callout>
 

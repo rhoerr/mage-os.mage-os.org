@@ -1,0 +1,99 @@
+---
+/**
+ * SpecsMatrix - Compatibility matrix showing Mage-OS versions
+ *
+ * Displays a table of Mage-OS versions with their component requirements,
+ * highlighting the latest version.
+ */
+import VersionBadge from '~/components/ui/VersionBadge.astro';
+import { getSystemSpecs } from '~/utils/systemSpecs';
+
+interface Props {
+  /** Maximum number of versions to display */
+  limit?: number;
+  /** Additional classes for the container */
+  class?: string;
+}
+
+const { limit = 5, class: className } = Astro.props;
+
+const specs = await getSystemSpecs();
+
+// Sort versions by release date (newest first) and limit
+const sortedVersions = Object.entries(specs.versions)
+  .sort(([, a], [, b]) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime())
+  .slice(0, limit);
+
+// Format date for display
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+
+// Extract major.minor from version string
+function getMajorMinor(version: string): string {
+  const parts = version.split('.');
+  return parts.slice(0, 2).join('.');
+}
+---
+
+<div class={className}>
+  <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b-2 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+          <th class="text-left py-3 px-4 font-bold">Mage-OS</th>
+          <th class="text-left py-3 px-4 font-bold">PHP</th>
+          <th class="text-left py-3 px-4 font-bold">Database</th>
+          <th class="text-left py-3 px-4 font-bold">Search</th>
+          <th class="text-left py-3 px-4 font-bold">Cache</th>
+          <th class="text-left py-3 px-4 font-bold">Magento Base</th>
+          <th class="text-left py-3 px-4 font-bold">Release</th>
+        </tr>
+      </thead>
+      <tbody class="text-muted">
+        {
+          sortedVersions.map(([version, versionSpecs], index) => (
+            <tr
+              class:list={[
+                index < sortedVersions.length - 1 ? 'border-b dark:border-gray-700' : '',
+                versionSpecs.isLatest ? 'bg-green-50 dark:bg-green-900/20' : '',
+              ]}
+            >
+              <td class="py-3 px-4 font-bold">
+                {getMajorMinor(version)}
+                {versionSpecs.isLatest && <VersionBadge status="recommended" class="ml-2" />}
+              </td>
+              <td class="py-3 px-4">
+                {versionSpecs.php.minimum === versionSpecs.php.recommended
+                  ? versionSpecs.php.recommended
+                  : `${versionSpecs.php.minimum}-${versionSpecs.php.recommended}`}
+              </td>
+              <td class="py-3 px-4">
+                <span title="MySQL">MySQL {versionSpecs.mysql.minimum}+</span>
+                <span class="text-gray-400 mx-1">/</span>
+                <span title="MariaDB">MariaDB {versionSpecs.mariadb.minimum}+</span>
+              </td>
+              <td class="py-3 px-4">
+                <span title="OpenSearch">OS {versionSpecs.opensearch.minimum}+</span>
+                {versionSpecs.elasticsearch && (
+                  <>
+                    <span class="text-gray-400 mx-1">/</span>
+                    <span title="Elasticsearch">ES {versionSpecs.elasticsearch.minimum}+</span>
+                  </>
+                )}
+              </td>
+              <td class="py-3 px-4">
+                <span title="Valkey">Valkey {versionSpecs.valkey.minimum}+</span>
+                <span class="text-gray-400 mx-1">/</span>
+                <span title="Redis">Redis {versionSpecs.redis.minimum}+</span>
+              </td>
+              <td class="py-3 px-4">{versionSpecs.magentoBase}</td>
+              <td class="py-3 px-4">{formatDate(versionSpecs.releaseDate)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

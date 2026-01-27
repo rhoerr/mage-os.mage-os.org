@@ -10,6 +10,9 @@ import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getLatestSpecs } from '~/utils/systemSpecs';
+
+const specs = await getLatestSpecs();
 
 const metadata = {
   title: 'Get Started with Mage-OS',
@@ -216,22 +219,22 @@ const metadata = {
     subtitle="Most modern hosting environments meet these requirements. Check our detailed system requirements page for compatibility notes."
     items={[
       {
-        title: 'PHP 8.3 or 8.4',
+        title: `PHP ${specs.php.minimum} or ${specs.php.recommended}`,
         description: 'With required extensions (intl, soap, gd, etc.)',
         icon: 'tabler:brand-php',
       },
       {
-        title: 'MySQL 8.4 or MariaDB 11.4',
+        title: `MySQL ${specs.mysql.recommended} or MariaDB ${specs.mariadb.recommended}`,
         description: 'For product, customer, and order data',
         icon: 'tabler:database',
       },
       {
-        title: 'Composer 2.8+',
+        title: `Composer ${specs.composer.minimum}+`,
         description: 'Manages PHP dependencies and updates',
         icon: 'tabler:package',
       },
       {
-        title: 'OpenSearch 2.19',
+        title: `OpenSearch ${specs.opensearch.recommended}`,
         description: 'Powers catalog and site search',
         icon: 'tabler:search',
       },
@@ -241,7 +244,7 @@ const metadata = {
         icon: 'tabler:bolt',
       },
       {
-        title: 'Apache 2.4 or nginx 1.26',
+        title: `Apache ${specs.apache.minimum} or nginx ${specs.nginx.recommended}`,
         description: 'Serves your storefront to visitors',
         icon: 'tabler:server',
       },

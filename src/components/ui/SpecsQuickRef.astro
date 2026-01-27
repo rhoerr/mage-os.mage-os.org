@@ -1,0 +1,15 @@
+---
+/**
+ * SpecsQuickRef - Quick reference grid for system specifications
+ *
+ * Displays the essential component versions at a glance using ItemGrid.
+ * Pulls data from the systemSpecs utility.
+ */
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+import { getLatestSpecs, buildQuickReferenceItems } from '~/utils/systemSpecs';
+
+const specs = await getLatestSpecs();
+const items = buildQuickReferenceItems(specs);
+---
+
+<ItemGrid columns={4} items={items} />

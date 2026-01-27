@@ -9,6 +9,9 @@ import Callout from '~/components/ui/Callout.astro';
 import ChecklistItem from '~/components/ui/ChecklistItem.astro';
 import { Icon } from 'astro-icon/components';
 import CodeBlock from '~/components/ui/CodeBlock.astro';
+import { getLatestSpecs } from '~/utils/systemSpecs';
+
+const specs = await getLatestSpecs();
 
 const metadata = {
   title: 'Migration Guide',
@@ -108,8 +111,8 @@ const metadata = {
         <div role="list">
           <ChecklistItem>SSH/command-line access to your server</ChecklistItem>
           <ChecklistItem
-            >Composer 2.8+ installed (<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded text-xs"
-              >composer --version</code
+            >Composer {specs.composer.minimum}+ installed (<code
+              class="bg-gray-100 dark:bg-gray-800 px-1 rounded text-xs">composer --version</code
             >)</ChecklistItem
           >
           <ChecklistItem>Sufficient disk space (at least 2x current installation size)</ChecklistItem>

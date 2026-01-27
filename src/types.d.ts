@@ -282,3 +282,39 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+// System Specifications Types
+export interface ComponentVersion {
+  minimum: string;
+  maximum?: string;
+  recommended: string;
+}
+
+export interface ComponentSpecs {
+  php: ComponentVersion;
+  composer: ComponentVersion;
+  mysql: ComponentVersion;
+  mariadb: ComponentVersion;
+  opensearch: ComponentVersion;
+  elasticsearch?: ComponentVersion;
+  redis: ComponentVersion;
+  valkey: ComponentVersion;
+  varnish: ComponentVersion;
+  nginx: ComponentVersion;
+  apache: ComponentVersion;
+  rabbitmq: ComponentVersion;
+}
+
+export interface VersionSpecs extends ComponentSpecs {
+  mageosVersion: string;
+  magentoBase: string;
+  releaseDate: string;
+  eolDate: string;
+  isLatest: boolean;
+}
+
+export interface SystemSpecs {
+  fetchedAt: string;
+  latest: VersionSpecs;
+  versions: Record<string, VersionSpecs>;
+}

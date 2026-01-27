@@ -5,7 +5,14 @@ import Headline from '~/components/ui/Headline.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import Callout from '~/components/ui/Callout.astro';
 import VersionBadge from '~/components/ui/VersionBadge.astro';
+import SpecsQuickRef from '~/components/ui/SpecsQuickRef.astro';
+import SpecsTable from '~/components/ui/SpecsTable.astro';
+import SpecsMatrix from '~/components/ui/SpecsMatrix.astro';
 import { Icon } from 'astro-icon/components';
+import { getLatestSpecs } from '~/utils/systemSpecs';
+
+// Fetch latest specs for dynamic display
+const specs = await getLatestSpecs();
 
 const metadata = {
   title: 'System Requirements',
@@ -28,61 +35,13 @@ const metadata = {
 
   <!-- Quick Reference with ItemGrid -->
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 max-w-6xl">
-    <Headline title="Quick Reference" subtitle="Essential components for Mage-OS 2.1 at a glance" tagline="Overview" />
-
-    <ItemGrid
-      columns={4}
-      items={[
-        {
-          title: 'PHP',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 8.3 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: 8.4</span>',
-          icon: 'tabler:brand-php',
-        },
-        {
-          title: 'Composer',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 2.7 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: 2.9</span>',
-          icon: 'tabler:package',
-        },
-        {
-          title: 'OpenSearch',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 2.5 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: 2.19</span>',
-          icon: 'tabler:search',
-        },
-        {
-          title: 'MySQL / MariaDB',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 8.0 / 10.6 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: 8.4 / 11.4</span>',
-          icon: 'tabler:database',
-        },
-        {
-          title: 'Redis / Valkey',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 7.0 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: Valkey 8</span>',
-          icon: 'tabler:bolt',
-        },
-        {
-          title: 'RabbitMQ',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 3.12 <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: 4.0</span>',
-          icon: 'tabler:message-bolt',
-        },
-        {
-          title: 'Varnish',
-          description:
-            '<span class="text-gray-500 dark:text-gray-400">Min:</span> 7.x <span class="mx-1">|</span> <span class="text-green-600 dark:text-green-400 font-medium">Rec: 7.6</span>',
-          icon: 'tabler:rocket',
-        },
-        {
-          title: 'Web Server',
-          description:
-            'Apache 2.4+ or nginx 1.24+ <span class="text-green-600 dark:text-green-400 font-medium">(1.26 rec)</span>',
-          icon: 'tabler:server',
-        },
-      ]}
+    <Headline
+      title="Quick Reference"
+      subtitle={`Essential components for Mage-OS ${specs.mageosVersion} at a glance`}
+      tagline="Overview"
     />
+
+    <SpecsQuickRef />
 
     <p class="text-center text-muted mt-8">
       <strong>Minimum</strong> versions are the oldest supported. <strong>Recommended</strong> versions provide optimal performance
@@ -195,8 +154,8 @@ const metadata = {
             <tr class="border-b dark:border-gray-700">
               <td class="py-2 font-medium">Version</td>
               <td class="py-2">
-                1.24+ <VersionBadge status="minimum" text="1.24" class="ml-2" />
-                <VersionBadge status="recommended" text="1.26" class="ml-1" />
+                {specs.nginx.minimum}+ <VersionBadge status="minimum" text={specs.nginx.minimum} class="ml-2" />
+                <VersionBadge status="recommended" text={specs.nginx.recommended} class="ml-1" />
               </td>
             </tr>
             <tr>
@@ -221,14 +180,14 @@ const metadata = {
           <div class="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 rounded-lg px-4 py-3">
             <Icon name="tabler:brand-php" class="w-8 h-8 text-green-600 dark:text-green-400" />
             <div>
-              <span class="text-2xl font-bold text-green-700 dark:text-green-300">PHP 8.4</span>
+              <span class="text-2xl font-bold text-green-700 dark:text-green-300">PHP {specs.php.recommended}</span>
               <VersionBadge status="recommended" class="ml-2" />
             </div>
           </div>
           <div class="flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg px-4 py-3">
             <Icon name="tabler:brand-php" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
             <div>
-              <span class="text-2xl font-bold text-blue-700 dark:text-blue-300">PHP 8.3</span>
+              <span class="text-2xl font-bold text-blue-700 dark:text-blue-300">PHP {specs.php.minimum}</span>
               <VersionBadge status="supported" class="ml-2" />
             </div>
           </div>
@@ -279,38 +238,30 @@ const metadata = {
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 max-w-4xl">
     <Headline title="Database" subtitle="MySQL, MariaDB, or Percona Server" />
 
-    <div class="overflow-x-auto mb-8">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b-2 dark:border-gray-700">
-            <th class="text-left py-3 font-bold">Database</th>
-            <th class="text-left py-3 font-bold">Minimum</th>
-            <th class="text-left py-3 font-bold">Recommended</th>
-            <th class="text-left py-3 font-bold">Notes</th>
-          </tr>
-        </thead>
-        <tbody class="text-muted">
-          <tr class="border-b dark:border-gray-700">
-            <td class="py-3 font-medium">MySQL</td>
-            <td class="py-3">8.0 <VersionBadge status="minimum" class="ml-2" /></td>
-            <td class="py-3">8.4 <VersionBadge status="recommended" class="ml-2" /></td>
-            <td class="py-3">Oracle's official distribution</td>
-          </tr>
-          <tr class="border-b dark:border-gray-700">
-            <td class="py-3 font-medium">MariaDB</td>
-            <td class="py-3">10.6 <VersionBadge status="minimum" class="ml-2" /></td>
-            <td class="py-3">11.4 <VersionBadge status="recommended" class="ml-2" /></td>
-            <td class="py-3">Popular MySQL alternative</td>
-          </tr>
-          <tr>
-            <td class="py-3 font-medium">Percona</td>
-            <td class="py-3">8.0 <VersionBadge status="minimum" class="ml-2" /></td>
-            <td class="py-3">8.0 <VersionBadge status="supported" class="ml-2" /></td>
-            <td class="py-3">Enterprise MySQL variant</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <SpecsTable
+      class="mb-8"
+      rows={[
+        {
+          name: 'MySQL',
+          minimum: specs.mysql.minimum,
+          recommended: specs.mysql.recommended,
+          notes: "Oracle's official distribution",
+        },
+        {
+          name: 'MariaDB',
+          minimum: specs.mariadb.minimum,
+          recommended: specs.mariadb.recommended,
+          notes: 'Popular MySQL alternative',
+        },
+        {
+          name: 'Percona',
+          minimum: specs.mysql.minimum,
+          recommended: specs.mysql.minimum,
+          notes: 'Enterprise MySQL variant',
+          showRecBadge: false,
+        },
+      ]}
+    />
 
     <Callout type="tip" title="Database Configuration">
       <p class="mb-2">
@@ -348,8 +299,12 @@ max_connections = 150`}</code></pre>
           </div>
           <p class="text-muted mb-4">Open source, community-maintained fork. Recommended for new installations.</p>
           <div class="text-sm">
-            <span class="text-gray-500">Min:</span> 2.5 <span class="mx-2">|</span>
-            <span class="text-green-600 dark:text-green-400 font-medium">Recommended: 2.19</span>
+            <span class="text-gray-500">Min:</span>
+            {specs.opensearch.minimum}
+            <span class="mx-2">|</span>
+            <span class="text-green-600 dark:text-green-400 font-medium"
+              >Recommended: {specs.opensearch.recommended}</span
+            >
           </div>
         </div>
 
@@ -361,8 +316,12 @@ max_connections = 150`}</code></pre>
           </div>
           <p class="text-muted mb-4">Requires license for some features. Legacy option.</p>
           <div class="text-sm">
-            <span class="text-gray-500">Min:</span> 7.17 <span class="mx-2">|</span>
-            <span class="text-blue-600 dark:text-blue-400 font-medium">Supported: 8.x</span>
+            <span class="text-gray-500">Min:</span>
+            {specs.elasticsearch?.minimum || '7.17'}
+            <span class="mx-2">|</span>
+            <span class="text-blue-600 dark:text-blue-400 font-medium"
+              >Supported: {specs.elasticsearch?.recommended || '8.x'}</span
+            >
           </div>
         </div>
       </div>
@@ -414,11 +373,23 @@ max_connections = 150`}</code></pre>
           <tbody class="text-muted">
             <tr class="border-b dark:border-gray-700">
               <td class="py-2 font-medium">Valkey</td>
-              <td class="py-2">7.0+ <VersionBadge status="recommended" text="8.0" class="ml-2" /></td>
+              <td class="py-2"
+                >{specs.valkey.minimum}+ <VersionBadge
+                  status="recommended"
+                  text={specs.valkey.recommended}
+                  class="ml-2"
+                /></td
+              >
             </tr>
             <tr>
               <td class="py-2 font-medium">Redis</td>
-              <td class="py-2">7.0+ <VersionBadge status="supported" text="7.2+" class="ml-2" /></td>
+              <td class="py-2"
+                >{specs.redis.minimum}+ <VersionBadge
+                  status="supported"
+                  text={`${specs.redis.recommended}+`}
+                  class="ml-2"
+                /></td
+              >
             </tr>
           </tbody>
         </table>
@@ -435,7 +406,13 @@ max_connections = 150`}</code></pre>
           <tbody class="text-muted">
             <tr class="border-b dark:border-gray-700">
               <td class="py-2 font-medium">Version</td>
-              <td class="py-2">7.x <VersionBadge status="recommended" text="7.6" class="ml-2" /></td>
+              <td class="py-2"
+                >{specs.varnish.minimum.split('.')[0]}.x <VersionBadge
+                  status="recommended"
+                  text={specs.varnish.recommended}
+                  class="ml-2"
+                /></td
+              >
             </tr>
           </tbody>
         </table>
@@ -463,11 +440,13 @@ max_connections = 150`}</code></pre>
         </p>
         <div class="flex items-center gap-4">
           <span>
-            <span class="text-gray-500">Min:</span> 3.12
+            <span class="text-gray-500">Min:</span>
+            {specs.rabbitmq.minimum}
             <VersionBadge status="minimum" class="ml-2" />
           </span>
           <span>
-            <span class="text-gray-500">Recommended:</span> 4.0
+            <span class="text-gray-500">Recommended:</span>
+            {specs.rabbitmq.recommended}
             <VersionBadge status="recommended" class="ml-2" />
           </span>
         </div>
@@ -569,54 +548,7 @@ max_connections = 150`}</code></pre>
     <div class="px-4 sm:px-6 mx-auto lg:px-8 max-w-5xl">
       <Headline title="Compatibility Matrix" subtitle="Mage-OS version requirements at a glance" />
 
-      <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-lg shadow-sm">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b-2 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-              <th class="text-left py-3 px-4 font-bold">Mage-OS</th>
-              <th class="text-left py-3 px-4 font-bold">PHP</th>
-              <th class="text-left py-3 px-4 font-bold">MySQL</th>
-              <th class="text-left py-3 px-4 font-bold">OpenSearch</th>
-              <th class="text-left py-3 px-4 font-bold">Magento Base</th>
-              <th class="text-left py-3 px-4 font-bold">Release</th>
-            </tr>
-          </thead>
-          <tbody class="text-muted">
-            <tr class="border-b dark:border-gray-700 bg-green-50 dark:bg-green-900/20">
-              <td class="py-3 px-4 font-bold">2.1 <VersionBadge status="recommended" class="ml-2" /></td>
-              <td class="py-3 px-4">8.3-8.4</td>
-              <td class="py-3 px-4">8.0+</td>
-              <td class="py-3 px-4">2.5+</td>
-              <td class="py-3 px-4">2.4.8-p3</td>
-              <td class="py-3 px-4">January 2026</td>
-            </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4 font-medium">1.3</td>
-              <td class="py-3 px-4">8.2-8.3</td>
-              <td class="py-3 px-4">8.0+</td>
-              <td class="py-3 px-4">2.5+</td>
-              <td class="py-3 px-4">2.4.8-p2</td>
-              <td class="py-3 px-4">August 2025</td>
-            </tr>
-            <tr class="border-b dark:border-gray-700">
-              <td class="py-3 px-4 font-medium">1.2</td>
-              <td class="py-3 px-4">8.2-8.3</td>
-              <td class="py-3 px-4">8.0+</td>
-              <td class="py-3 px-4">2.5+</td>
-              <td class="py-3 px-4">2.4.8-p1</td>
-              <td class="py-3 px-4">June 2025</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-medium">1.1</td>
-              <td class="py-3 px-4">8.1-8.2</td>
-              <td class="py-3 px-4">8.0+</td>
-              <td class="py-3 px-4">2.5+</td>
-              <td class="py-3 px-4">2.4.8</td>
-              <td class="py-3 px-4">April 2025</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <SpecsMatrix limit={5} />
 
       <p class="text-center text-muted mt-6">
         For the latest version information, see the <a href="/product/releases" class="text-primary hover:underline"

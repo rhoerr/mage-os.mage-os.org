@@ -1,0 +1,65 @@
+---
+/**
+ * SpecsTable - Generic table for displaying component versions
+ *
+ * A reusable table component for showing min/recommended versions
+ * of system components.
+ */
+import VersionBadge from '~/components/ui/VersionBadge.astro';
+
+interface TableRow {
+  name: string;
+  minimum: string;
+  recommended: string;
+  notes?: string;
+  showMinBadge?: boolean;
+  showRecBadge?: boolean;
+}
+
+interface Props {
+  /** Table rows to display */
+  rows: TableRow[];
+  /** Optional table title */
+  title?: string;
+  /** Show notes column */
+  showNotes?: boolean;
+  /** Additional classes for the container */
+  class?: string;
+}
+
+const { rows, title, showNotes = true, class: className } = Astro.props;
+---
+
+<div class={className}>
+  {title && <h3 class="text-lg font-bold mb-4 dark:text-white">{title}</h3>}
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b-2 dark:border-gray-700">
+          <th class="text-left py-3 font-bold">Component</th>
+          <th class="text-left py-3 font-bold">Minimum</th>
+          <th class="text-left py-3 font-bold">Recommended</th>
+          {showNotes && <th class="text-left py-3 font-bold">Notes</th>}
+        </tr>
+      </thead>
+      <tbody class="text-muted">
+        {
+          rows.map((row, index) => (
+            <tr class={index < rows.length - 1 ? 'border-b dark:border-gray-700' : ''}>
+              <td class="py-3 font-medium">{row.name}</td>
+              <td class="py-3">
+                {row.minimum}
+                {row.showMinBadge !== false && <VersionBadge status="minimum" class="ml-2" />}
+              </td>
+              <td class="py-3">
+                {row.recommended}
+                {row.showRecBadge !== false && <VersionBadge status="recommended" class="ml-2" />}
+              </td>
+              {showNotes && <td class="py-3">{row.notes || ''}</td>}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
