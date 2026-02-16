@@ -55,7 +55,7 @@ image: "~/assets/images/blog/2024/mageos_blog_february-2024.jpg"
               
             
 
-- You too can become a Mage-OS member, for as little as 10 EUR/year! Show your support, and show the world this is something worth supporting. [mage-os.org/about/mage-os-membership/](/?page_id=384)
+- You too can become a Mage-OS member, for as little as 10 EUR/year! Show your support, and show the world this is something worth supporting. [mage-os.org/about/mage-os-membership/](/community/partners)
 
 ## Local Initiatives
 

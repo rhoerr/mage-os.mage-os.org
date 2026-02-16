@@ -212,7 +212,7 @@ The success of Mage-OS depends on community support and involvement. Whether you
 
 - **Platinum Partner**: €25,000/year - Be the first! Maximum impact and recognition
 
-**Become a sponsor today:** [**mage-os.org/about/mage-os-membership**](/?page_id=384)
+**Become a sponsor today:** [**mage-os.org/about/mage-os-membership**](/community/partners)
 
 ### **Get Involved in Development**
 

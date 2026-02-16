@@ -84,132 +84,86 @@ With Mage-OS 2.1.0 now live, attention is already shifting toward future goals, 
 
 As always, feedback, testing, and contributions are welcome. Join the discussion on GitHub or Discord and help guide the next phase of Mage-OS development.
 
-### **Partners**
+### Powered by Strong Partnerships
 
-### **Powered by Strong Partnerships**
+We are proud to collaborate with industry leaders who believe in open source and help accelerate the Mage-OS ecosystem.
 
-We are proud to collaborate with industry leaders who believe in open source and help accelerate the Mage-OS ecosystem. Their support makes our growth, innovation, and community-driven progress possible.
+#### Gold Partners
 
-#### **Gold Partners**
+<div class="not-prose" style="max-width: 140px;">
 
-[![](~/assets/images/blog/2026/image-1-1024x1024.png)](https://opencollective.com/mdoq)
+[![MDOQ](~/assets/images/blog/2026/image-1-1024x1024.png)](https://opencollective.com/mdoq)
 
-[MDOQ](https://opencollective.com/mdoq)
+</div>
 
-#### **Silver Partners**
+#### Silver Partners
 
-<figure>
+<div class="not-prose" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: center;">
 
-[![](~/assets/images/blog/2026/image-2.png)](https://opencollective.com/paradoxlabs)
+<div>
 
-<figcaption>
+[![ParadoxLabs](~/assets/images/blog/2026/image-2.png)](https://opencollective.com/paradoxlabs)
 
-[ParadoxLabs](https://opencollective.com/paradoxlabs)
+</div>
 
-</figcaption>
+<div>
 
-</figure>
+[![Vendic](~/assets/images/blog/2026/image-5-1024x1008.png)](https://opencollective.com/vendic)
 
-<figure>
+</div>
 
-[![](~/assets/images/blog/2026/image-5-1024x1008.png)](https://opencollective.com/vendic)
+<div>
 
-<figcaption>
+[![Hyvä](~/assets/images/blog/2026/image-6.png)](https://opencollective.com/hyva-themes)
 
-[Vendic](https://opencollective.com/vendic)
+</div>
 
-</figcaption>
+<div>
 
-</figure>
+[![Inchoo](~/assets/images/blog/2026/image-7-1024x1024.png)](https://opencollective.com/inchoo)
 
-<figure>
+</div>
 
-[![](~/assets/images/blog/2026/image-6.png)](https://opencollective.com/hyva-themes)
+</div>
 
-<figcaption>
+#### Bronze Partners
 
-[Hyvä](https://opencollective.com/hyva-themes)
+<div class="not-prose" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; align-items: center;">
 
-</figcaption>
+<div>
 
-</figure>
+[![JetRails](~/assets/images/blog/2026/image-8.png)](https://opencollective.com/jetrails)
 
-<figure>
+</div>
 
-[![](~/assets/images/blog/2026/image-7-1024x1024.png)](https://opencollective.com/inchoo)
+<div>
 
-<figcaption>
+[![Develo](~/assets/images/blog/2026/image-9.png)](https://opencollective.com/develo)
 
-[Inchoo](https://opencollective.com/inchoo)
+</div>
 
-</figcaption>
+<div>
 
-</figure>
+[![FindCanary](~/assets/images/blog/2026/image-10.png)](https://opencollective.com/canary)
 
-#### **Bronze Partners**
+</div>
 
-<figure>
+<div>
 
-[![](~/assets/images/blog/2026/image-8.png)](https://opencollective.com/jetrails)
+[![integer_net](~/assets/images/blog/2026/image-11.png)](https://opencollective.com/integer_net)
 
-<figcaption>
+</div>
 
-[JetRails](https://opencollective.com/jetrails)
+<div>
 
-</figcaption>
+[![JH](~/assets/images/blog/2026/image-12.png)](https://opencollective.com/wearejh)
 
-</figure>
+</div>
 
-<figure>
-
-[![](~/assets/images/blog/2026/image-9.png)](https://opencollective.com/develo)
-
-<figcaption>
-
-[Develo](https://opencollective.com/develo)
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-[![](~/assets/images/blog/2026/image-10.png)](https://opencollective.com/canary)
-
-<figcaption>
-
-[FindCanary](https://opencollective.com/canary)
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-[![](~/assets/images/blog/2026/image-11.png)](https://opencollective.com/integer_net)
-
-<figcaption>
-
-[integer\_net](https://opencollective.com/integer_net)
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-[![](~/assets/images/blog/2026/image-12.png)](https://opencollective.com/wearejh)
-
-<figcaption>
-
-[JH](https://opencollective.com/wearejh)
-
-</figcaption>
-
-</figure>
+</div>
 
 **Why Partner With Us?**
 
 Becoming a Mage-OS partner means more than visibility. It means shaping the future of open source commerce, gaining early insights into technical developments, and showcasing your brand to a global audience of merchants, developers, and agencies.
 
-[Learn more about partnership opportunities](/?page_id=384)
+[Learn more about partnership opportunities](/community/partners)

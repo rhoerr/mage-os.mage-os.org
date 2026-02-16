@@ -45,7 +45,7 @@ Sincere thank you to the following businesses for being the first to partner wit
 
 If you want to help us shape the future of the Magento ecosystem, join us!
 
-[Join Mage-OS](/?page_id=384)
+[Join Mage-OS](/community/partners)
 
 ## Meet Magento Netherlands 2023 Recap: the Renaissance
 
