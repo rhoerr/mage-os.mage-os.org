@@ -27,7 +27,7 @@ image: "~/assets/images/blog/2025/mage-os-may-blog.jpg"
     
     - Gianluca Porta – community member
 
-- You too can become a Mage-OS member and [join](/?page_id=384) our vibrant community, starting from just €10 per year!
+- You too can become a Mage-OS member and [join](/community/partners) our vibrant community, starting from just €10 per year!
 
 As summer gets into full swing, the Mage-OS project has continued to grow and evolve. Over the past month, we’ve seen progress on technical improvements, community projects, website updates, and leadership changes. Here’s a look at everything that happened recently.
 
@@ -49,7 +49,7 @@ Mage-OS held its second-ever General Assembly, where members came together to vo
 
 - Francis Michael Gallagher joined the Business Control Committee
 
-The community also thanked the outgoing board members for their time and dedication. Read more about the General Assembly [here](/?p=4597).
+The community also thanked the outgoing board members for their time and dedication. Read more about the General Assembly [here](/updates/2025-06-19-mage-os-2nd-general-assembly-a-big-thank-you-to-the-community).
 
 ### Finances and Transparency
 
@@ -61,7 +61,7 @@ The Business Control Committee shared the 2024 financial report, showing that Ma
 
 ### Website and Performance
 
-- A new page called the “[Community Modules Directory](/?page_id=4532)” was added to the Mage-OS website. It highlights useful extensions made by the community, organized into different categories, and invites feedback.
+- A new page called the “[Community Modules Directory](/community)” was added to the Mage-OS website. It highlights useful extensions made by the community, organized into different categories, and invites feedback.
 
 - Website performance improved thanks to a new caching plugin, making the site faster for visitors.
 
@@ -71,7 +71,7 @@ The Business Control Committee shared the 2024 financial report, showing that Ma
 
 - The team is experimenting with ways to run builds in parallel, but some limitations still exist due to tooling and infrastructure.
 
-- [Version 1.2](/?p=4590) was released recently, and early feedback has been very positive. The new admin theme received praise, and no major issues were reported.
+- [Version 1.2](/releases/2025-06-18-mage-os-1-2-0) was released recently, and early feedback has been very positive. The new admin theme received praise, and no major issues were reported.
 
 ## Frontend and Checkout Compliance
 

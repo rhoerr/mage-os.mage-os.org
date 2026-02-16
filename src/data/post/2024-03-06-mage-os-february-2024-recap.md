@@ -55,7 +55,7 @@ image: "~/assets/images/blog/2024/mageos_blog_february-2024.jpg"
               
             
 
-- You too can become a Mage-OS member, for as little as 10 EUR/year! Show your support, and show the world this is something worth supporting. [mage-os.org/about/mage-os-membership/](/?page_id=384)
+- You too can become a Mage-OS member, for as little as 10 EUR/year! Show your support, and show the world this is something worth supporting. [mage-os.org/about/mage-os-membership/](/community/partners)
 
 ## Local Initiatives
 
@@ -110,7 +110,7 @@ image: "~/assets/images/blog/2024/mageos_blog_february-2024.jpg"
 
 ## Events
 
-- We have an updated [events page](/?page_id=2587)! It’s now easier than ever to find all the events and gatherings in the worldwide Magento community. Please let us know if you have or know of an event that isn’t listed. Huge thanks to Marek Kubacak for making this happen.  
+- We have an updated [events page](/events)! It’s now easier than ever to find all the events and gatherings in the worldwide Magento community. Please let us know if you have or know of an event that isn’t listed. Huge thanks to Marek Kubacak for making this happen.  
       
     
 

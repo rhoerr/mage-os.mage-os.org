@@ -165,11 +165,11 @@ As a foundation to raise awareness about the structural advantages of the Magent
 
 Now that the promotion of the Magento brand is now in safe hands with the Magento Association, we are shifting our focus to becoming a **technology incubator**, giving Magento developers a playground to build and test things such as:
 
-- A brand [new Admin Pane](/?p=4400)l to  make it more modern, intuitive and fun for Magento users!
+- A brand [new Admin Pane](/updates/2025-04-10-m137-admin-theme)l to  make it more modern, intuitive and fun for Magento users!
 
-- [AI powered documentation](/?p=4521) so developers spend more time on what they love and less on tedious tasks
+- [AI powered documentation](/initiatives/2025-05-06-the-evolution-of-documentation-in-the-age-of-ai-a-magento-case-study) so developers spend more time on what they love and less on tedious tasks
 
-- Automatic [Translation Modules,](/?p=4329) Import/Export for Page Builder Modules
+- Automatic [Translation Modules,](/initiatives/2025-02-08-transforming-magento-the-power-of-community-contributions-and-innovation) Import/Export for Page Builder Modules
 
 - And [many more](/?cat_ID=40)
 
@@ -201,4 +201,4 @@ And this is just the visible tip of the iceberg.
 
 In short, the more the merrier. From super localised initiatives just like all the regional meet ups like in [Magento Meet-up Austria](https://www.meetup.com/magento-meetup-austria/), or  [Magento Stammtisch Rhein Main](https://www.meetup.com/de-DE/magento-stammtisch-rhein-main/) who recently celebrated their 50th edition to giant gathering at eCommerce expo like Webwinkelvakdagen or at Adobe Summit, every occasion to meet sparks passion, ideas, innovation and strengthen friendship, which the core and heart of our Magento Community.
 
-No local chapter? [Contact us](/?page_id=388) to help you set one up.
+No local chapter? [Contact us](/community) to help you set one up.

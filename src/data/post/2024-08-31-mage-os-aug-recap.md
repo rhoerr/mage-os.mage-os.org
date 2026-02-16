@@ -19,7 +19,7 @@ image: "~/assets/images/blog/2024/mageos_blog_august-2024-update.jpg"
     
     - Sean Breeden - professional member
 
-- You too can become a Mage-OS member and [join](/?page_id=384) our vibrant community, starting from just €10 per year!  
+- You too can become a Mage-OS member and [join](/community/partners) our vibrant community, starting from just €10 per year!  
     
 
 ## **Events** 
@@ -109,7 +109,7 @@ Our first LinkedIn campaign used these assets was launched, check out the posts 
 **Search Enhancements**Ryan Sun has submitted a merge request to improve search suggestions, which should make a better experience for new merchants. [Check out the merge request](https://github.com/mage-os/mageos-magento2/pull/102).
 
 **Mage-OS 1.0.4 Released!  
-**The new distribution is out, this release brings parity with #Magento Open Source 2.4.7-p2, with the latest platform security fixes. See the full release notes and install/update instructions [here](/?p=2736)
+**The new distribution is out, this release brings parity with #Magento Open Source 2.4.7-p2, with the latest platform security fixes. See the full release notes and install/update instructions [here](/releases/2024-08-22-release-mage-os-distribution-1-0-4)
 
 **Nightly Builds Resumed**Nightly builds are generating again, ensuring we stay on track!
 

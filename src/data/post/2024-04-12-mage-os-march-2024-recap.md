@@ -49,9 +49,9 @@ We received many good quality applications in just one week, and want to sincere
 
 - In case you missed them, see our recent articles!  
       
-    - [Mage-OS Nederland member meeting recap](/?p=3619) - Read about Mage-OS NL’s annual meeting, elections, and lessons learned from their first year in organizing a local community association
+    - [Mage-OS Nederland member meeting recap](/updates/2024-03-07-mage-os-nederland-member-meeting) - Read about Mage-OS NL’s annual meeting, elections, and lessons learned from their first year in organizing a local community association
     
-    - [Mage-OS Async Events: Gowri’s Journey](/?p=3641) - Learn the story behind the async events module contributed by Gowri and Agilent Technologies, and how it works and can help you create reliable and robust integrations with Mage-OS and Magento.  
+    - [Mage-OS Async Events: Gowri’s Journey](/updates/2024-03-18-mage-os-async-events-gowris-journey) - Learn the story behind the async events module contributed by Gowri and Agilent Technologies, and how it works and can help you create reliable and robust integrations with Mage-OS and Magento.  
           
           
         
@@ -84,7 +84,7 @@ We received many good quality applications in just one week, and want to sincere
 
 ## Events
 
-- We have an updated [events page](/?page_id=2587)! It’s now easier than ever to find all the events and gatherings in the worldwide Magento community. Please let us know if you have or know of an event that isn’t listed. Huge thanks to Marek Kubacak for making this happen.  
+- We have an updated [events page](/events)! It’s now easier than ever to find all the events and gatherings in the worldwide Magento community. Please let us know if you have or know of an event that isn’t listed. Huge thanks to Marek Kubacak for making this happen.  
       
     
 

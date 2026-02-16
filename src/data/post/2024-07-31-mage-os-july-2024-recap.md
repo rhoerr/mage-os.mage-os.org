@@ -29,7 +29,7 @@ _If you can, please consider sponsoring — together we will make a significant 
 
 - Bob - Community member
 
-- You too can become a Mage-OS member and [join our vibrant community](/?page_id=384), starting from just €10 per year!
+- You too can become a Mage-OS member and [join our vibrant community](/community/partners), starting from just €10 per year!
 
 ### **July Events**
 
@@ -39,7 +39,7 @@ _If you can, please consider sponsoring — together we will make a significant 
 
 ### **New Releases and Community Updates**
 
-- [**Mage-OS Distribution 1.0.3**](/?p=3987): The latest release aligns with Magento Open Source 2.4.7-p1, along with improvements in testing suites. Check out the full release notes and join the conversation on LinkedIn.  
+- [**Mage-OS Distribution 1.0.3**](/releases/2024-07-25-release-mage-os-distribution-1-0-3): The latest release aligns with Magento Open Source 2.4.7-p1, along with improvements in testing suites. Check out the full release notes and join the conversation on LinkedIn.  
     
 
 - **Crypt Key Rotation:** Gene Commerce has released a package to help encryption key rotation for the recent security patch. Check it out: [Gene\_EncryptionKeyManager](https://github.com/genecommerce/module-encryption-key-manager)
@@ -124,6 +124,6 @@ Stay updated with the latest events and gatherings in the worldwide Magento comm
 
 - [Meet Commerce ES](https://meetcommerce.es/) - 12 November 2024, Barcelona
 
-Get the full list on our [Events Calendar](/?page_id=2587)
+Get the full list on our [Events Calendar](/events)
 
 Stay tuned for more updates and announcements from Mage-OS!

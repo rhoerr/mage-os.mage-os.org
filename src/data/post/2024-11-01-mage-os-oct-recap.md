@@ -41,7 +41,7 @@ image: "~/assets/images/blog/2024/mageos_blog_october-2024-update.jpg"
     
     - Mike Parker  - professional member
 
-- You too can become a Mage-OS member and [join](/?page_id=384) our vibrant community, starting from just €10 per year!  
+- You too can become a Mage-OS member and [join](/community/partners) our vibrant community, starting from just €10 per year!  
     
 
 ## **Events** 
@@ -59,7 +59,7 @@ This season has been packed with Magento events, all reflecting the community’
 
 - **Magentiamo Day**: In Italy, the community came together after three years to celebrate Magento Open Source and its latest developments. Talks by Alessandro Ronchi and Rebecca Brocton highlighted efforts to simplify frontend development and revitalize the platform.
 
-         Read more about these events [here](/?p=4178). 
+         Read more about these events [here](/updates/2024-10-27-magento-community-events-september-highlights-and-insights). 
 
 **Upcoming Event**: [**Meet Magento Netherlands**](https://nl.meet-magento.com/) is just around the corner on **October 31**! Stay tuned for event photos, updates, and takeaways across our social media channels.
 
