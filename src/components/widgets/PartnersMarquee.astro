@@ -62,87 +62,52 @@ const hasPartners = partners.length > 0;
         <h2 class="text-center text-sm font-medium text-muted uppercase tracking-wider">Our Partners</h2>
       </div>
 
-      <div class="relative marquee-container">
+      <div
+        class="marquee"
+        style={`--marquee-duration: ${speed}s`}
+        data-pause-on-hover={pauseOnHover ? 'true' : 'false'}
+      >
         {/* Gradient masks */}
         <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-gray-50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none" />
         <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-gray-50 dark:from-slate-800/50 to-transparent z-10 pointer-events-none" />
 
-        {/* Marquee track */}
-        <div
-          class="marquee-track flex items-center gap-8 md:gap-12"
-          style={`--marquee-duration: ${speed}s`}
-          data-pause-on-hover={pauseOnHover ? 'true' : 'false'}
-        >
-          {/* First set */}
-          {partners.map((partner) => (
-            <a
-              href={partner.website || partner.profileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`marquee-item flex-shrink-0 flex flex-col items-center justify-center px-4 py-3 rounded-lg transition-transform hover:scale-105 ${tierStyles[partner.tier].bg}`}
-              title={`${partner.name} - ${partner.tier.charAt(0).toUpperCase() + partner.tier.slice(1)} Partner`}
-            >
-              {partner.logoUrl ? (
-                <img
-                  src={partner.logoUrl}
-                  alt={partner.name}
-                  class={`${tierStyles[partner.tier].size} w-auto max-w-[200px] object-contain`}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <div class={`${tierStyles[partner.tier].size} flex items-center justify-center px-4 min-w-[60px]`}>
-                  <span
-                    class={`${tierStyles[partner.tier].initialsClass} font-bold ${tierStyles[partner.tier].textClass}`}
-                  >
-                    {getInitials(partner.name)}
-                  </span>
-                </div>
-              )}
-              <span
-                class={`mt-2 text-center ${tierStyles[partner.tier].textClass} ${tierStyles[partner.tier].nameClass}`}
+        {[false, true].map((isClone) => (
+          <div class="marquee-group" aria-hidden={isClone ? 'true' : undefined}>
+            {partners.map((partner) => (
+              <a
+                href={partner.website || partner.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`marquee-item flex-shrink-0 flex flex-col items-center justify-center px-4 py-3 rounded-lg transition-transform hover:scale-105 ${tierStyles[partner.tier].bg}`}
+                title={`${partner.name} - ${partner.tier.charAt(0).toUpperCase() + partner.tier.slice(1)} Partner`}
+                tabindex={isClone ? -1 : undefined}
               >
-                {partner.name}
-              </span>
-            </a>
-          ))}
-
-          {/* Duplicate set for seamless loop */}
-          {partners.map((partner) => (
-            <a
-              href={partner.website || partner.profileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`marquee-item flex-shrink-0 flex flex-col items-center justify-center px-4 py-3 rounded-lg transition-transform hover:scale-105 ${tierStyles[partner.tier].bg}`}
-              title={`${partner.name} - ${partner.tier.charAt(0).toUpperCase() + partner.tier.slice(1)} Partner`}
-              aria-hidden="true"
-              tabindex="-1"
-            >
-              {partner.logoUrl ? (
-                <img
-                  src={partner.logoUrl}
-                  alt=""
-                  class={`${tierStyles[partner.tier].size} w-auto max-w-[200px] object-contain`}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <div class={`${tierStyles[partner.tier].size} flex items-center justify-center px-4 min-w-[60px]`}>
-                  <span
-                    class={`${tierStyles[partner.tier].initialsClass} font-bold ${tierStyles[partner.tier].textClass}`}
-                  >
-                    {getInitials(partner.name)}
-                  </span>
-                </div>
-              )}
-              <span
-                class={`mt-2 text-center ${tierStyles[partner.tier].textClass} ${tierStyles[partner.tier].nameClass}`}
-              >
-                {partner.name}
-              </span>
-            </a>
-          ))}
-        </div>
+                {partner.logoUrl ? (
+                  <img
+                    src={partner.logoUrl}
+                    alt={isClone ? '' : partner.name}
+                    class={`${tierStyles[partner.tier].size} w-auto max-w-[200px] object-contain`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div class={`${tierStyles[partner.tier].size} flex items-center justify-center px-4 min-w-[60px]`}>
+                    <span
+                      class={`${tierStyles[partner.tier].initialsClass} font-bold ${tierStyles[partner.tier].textClass}`}
+                    >
+                      {getInitials(partner.name)}
+                    </span>
+                  </div>
+                )}
+                <span
+                  class={`mt-2 text-center ${tierStyles[partner.tier].textClass} ${tierStyles[partner.tier].nameClass}`}
+                >
+                  {partner.name}
+                </span>
+              </a>
+            ))}
+          </div>
+        ))}
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 text-center">
@@ -158,42 +123,62 @@ const hasPartners = partners.length > 0;
 }
 
 <style>
-  .marquee-container {
+  /* Double-track marquee: two identical groups slide in lockstep so that as one
+     exits, the other is already in place, giving a seamless loop at any width. */
+  .marquee {
+    --marquee-gap: 2rem;
     position: relative;
+    display: flex;
     width: 100%;
+    overflow: hidden;
+    gap: var(--marquee-gap);
   }
 
-  .marquee-track {
+  @media (min-width: 768px) {
+    .marquee {
+      --marquee-gap: 3rem;
+    }
+  }
+
+  .marquee-group {
+    flex-shrink: 0;
     display: flex;
-    width: max-content;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--marquee-gap);
+    min-width: 100%;
     animation: marquee-scroll var(--marquee-duration, 40s) linear infinite;
   }
 
-  .marquee-track[data-pause-on-hover='true']:hover {
+  .marquee[data-pause-on-hover='true']:hover .marquee-group {
     animation-play-state: paused;
   }
 
   @keyframes marquee-scroll {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(-50%);
+    to {
+      transform: translateX(calc(-100% - var(--marquee-gap)));
     }
   }
 
   /* Accessibility: Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
+    .marquee {
       flex-wrap: wrap;
       justify-content: center;
-      width: 100%;
-      gap: 1rem;
       padding: 0 1rem;
     }
 
-    .marquee-item[aria-hidden='true'] {
+    .marquee-group {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .marquee-group[aria-hidden='true'] {
       display: none;
     }
   }
