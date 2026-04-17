@@ -31,7 +31,7 @@ export const GET = async ({ props }: APIContext) => {
   const posts = (await fetchPosts()).filter((post) => post.tags?.some((t) => t.slug === tag.slug));
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog — ${tag.title}`,
+    title: `${tag.title} — ${SITE.name}`,
     description: `Posts tagged ${tag.title}`,
     site: import.meta.env.SITE,
     items: await buildRssItems(posts),
