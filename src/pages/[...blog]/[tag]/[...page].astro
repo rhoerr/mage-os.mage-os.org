@@ -6,6 +6,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import RssLink from '~/components/blog/RssLink.astro';
 
 export const prerender = true;
 
@@ -26,11 +27,15 @@ const metadata = {
     follow: blogTagRobots?.follow,
   },
 };
+
+const rssHref = `/rss/tag/${tag.slug}.xml`;
+const rssFeed = { href: rssHref, title: `Mage-OS Blog — ${tag.title}` };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} rssFeed={rssFeed}>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline>Tag: {tag.title}</Headline>
+    <RssLink href={rssHref} label={`Subscribe to ${tag.title}`} />
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
