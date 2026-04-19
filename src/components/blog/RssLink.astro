@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getAsset } from '~/utils/permalinks';
+
+export interface Props {
+  href: string;
+  label?: string;
+}
+
+const { href, label = 'Subscribe via RSS' } = Astro.props;
+---
+
+<div class="flex justify-center mb-8">
+  <a
+    href={getAsset(href)}
+    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/30 dark:text-orange-300 dark:hover:bg-orange-900/50 text-sm font-medium transition-colors"
+  >
+    <Icon name="tabler:rss" class="w-4 h-4" />
+    {label}
+  </a>
+</div>

@@ -1,8 +1,8 @@
 import { getRssString } from '@astrojs/rss';
 
-import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
+import { SITE, METADATA, APP_BLOG, I18N } from 'astrowind:config';
 import { fetchPosts } from '~/utils/blog';
-import { getPermalink } from '~/utils/permalinks';
+import { buildRssItems } from '~/utils/rss';
 
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
@@ -15,18 +15,12 @@ export const GET = async () => {
   const posts = await fetchPosts();
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog`,
+    title: `${SITE.name} Blog`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
-
-    items: posts.map((post) => ({
-      link: getPermalink(post.permalink, 'post'),
-      title: post.title,
-      description: post.excerpt,
-      pubDate: post.publishDate,
-    })),
-
+    items: await buildRssItems(posts),
     trailingSlash: SITE.trailingSlash,
+    customData: `<language>${I18N?.language || 'en'}</language><lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`,
   });
 
   return new Response(rss, {

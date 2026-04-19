@@ -13,9 +13,10 @@ import type { MetaData } from '~/types';
 export interface Props {
   metadata?: MetaData;
   editFile?: string;
+  rssFeed?: { href: string; title: string };
 }
 
-const { metadata, editFile } = Astro.props;
+const { metadata, editFile, rssFeed } = Astro.props;
 
 // Construct GitHub edit URL
 const GITHUB_REPO = 'https://github.com/mage-os/mage-os-org/tree/main';
@@ -60,7 +61,7 @@ function getEditUrl(): string | undefined {
 const editUrl = getEditUrl();
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} rssFeed={rssFeed}>
   <slot name="announcement">
     <Announcement />
   </slot>
