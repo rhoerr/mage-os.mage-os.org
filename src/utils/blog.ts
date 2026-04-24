@@ -104,9 +104,15 @@ const load = async function (): Promise<Array<Post>> {
   const posts = await getCollection('post');
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
+  // Hide posts dated 2+ days in the future; the build on the eve of a post's
+  // date surfaces it. Cutoff uses UTC to match the UTC frontmatter dates, so
+  // behavior is identical in CI and local preview regardless of timezone.
+  const now = new Date();
+  const cutoff = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 2));
+
   const results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
-    .filter((post) => !post.draft);
+    .filter((post) => !post.draft && post.publishDate.valueOf() < cutoff.valueOf());
 
   return results;
 };
